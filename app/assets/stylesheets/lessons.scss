@@ -1,3 +1,36 @@
 // Place all the styles related to the lessons controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+nav {
+	background: #E8F4FA;
+	height: 50px;
+}
+h1 {
+	font-family: 'Open Sans Condensed', sans-serif; 
+	font-weight: 700;
+	text-transform: uppercase;
+}
+
+.show-left {
+	background-color: #E7E7E7;
+}
+.show-left h3, .show-right h3 {
+	font-family: 'Open Sans Condensed', sans-serif;
+}
+p, ol, li {
+	font-family: 'Merriweather Sans'
+}
+.first-group-form {
+	background: #BDC3C7;
+	padding: 20px;
+}
+
+.second-group-form {
+	background: #EEEEEE;
+	padding: 20px;
+}
+
+.form-group h2, .form-group h3 {
+	text-align: center;
+}

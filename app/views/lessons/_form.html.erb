@@ -10,24 +10,26 @@
       </ul>
     </div>
   <% end %>
-<div class="form-group">
-    <%= f.label :course_id, name="Course ID" %><br>
-    <%= f.text_field :course_id %>
-  </div>
+<div class="first-group-form">
   <div class="form-group">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
+      <%= f.label :course_id, name="Course ID" %><br>
+      <%= f.text_field :course_id, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :name %>
+      <%= f.text_field :name, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :week %>
+      <%= f.text_field :week, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :date %>
+      <%= f.date_select :date, class: "form-control" %>
+    </div>
   </div>
-  <div class="form-group">
-    <%= f.label :week %><br>
-    <%= f.text_field :week %>
-  </div>
-  <div class="form-group">
-    <%= f.label :date %><br>
-    <%= f.date_select :date %>
-  </div>
-  <br />
 
+<div class="second-group-form">
   <%= f.fields_for :objectives do |builder| %>
   <%= render 'objectives_fields', f:builder %>
   <% end %>
@@ -44,28 +46,16 @@
   <%= render 'homeworks_fields', f:builder %>
 
   <% end %>
-  <div class="form-group">
-    <%= f.label :image %><br>
-    <%= f.file_field :image %>
-  </div>
+</div>
 
   <div class="field">
     <%= f.label :document %><br>
-    <%= f.file_field :document, :class => "form-control-file" %>
+    <%= f.file_field :document, :class => "form-control-file", class: "form-control" %>
   </div>
 
-<div class="control-group">
-    <%= f.label :attachments, :class => 'control-label' %>
-    <div class="controls">
-      <!-- The magic is coming ...look at my eyes....shazammmm -->
-      <!-- Use HTML5 multiple attribute to enable multiple selection
-           and pass back to controller all files as an array, ready 
-           for paperclip!!
-           file_field_tag, since images is not a gallery attribute
-       -->
-    </div>
-  </div>
+
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Create Lesson", class: "btn btn-primary" %>
   </div>
 <% end %>
+
