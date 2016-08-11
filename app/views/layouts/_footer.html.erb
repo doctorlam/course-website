@@ -1,25 +1,31 @@
 <footer>
+	<div class="container">
 	<div class="row">
-		<div class="col-md-4">
-			
-		</div>
-		<div class="col-md-4">
-			<h2>Company</h2>
+		<div class="col-sm-5">
+			<h2>Course Info</h2>
 			<ul>
-				<li><a href="index.html">Home</a></li>
-				<li><a href="about.html">About</a></li>
-				<li>Products</li>
-				<li>Contact</li>
+				<li>Office Hours: M/W 2:00-3:00 or by appointment</li>
+				<li>Office: AudB316</li>
+				<li>Contact: chris.lam at unt dot edu</li>
+			</ul>
+
+		</div>
+		<div class="col-sm-3">
+			<h2>Site Map</h2>
+			<ul>
+				<li><%= link_to "Schedule", lessons_path %></li>
+			<li><%= link_to "About", pages_about_path %></li>
+			<li><%= link_to "Policies", pages_policies_path %></li>
 			</ul>
 		</div>
-		<div class="col-md-4">
+		<div class="col-sm-4">
 			<h2>Social</h2>
 			<ul>
-				<li>Facebook</li>
-				<li>Twitter</li>
-				<li>LinkedIn</li>
+				<li>Twitter:@doctor_lam</li>
+				<li>Hashtag: #tecm4400</li>
 			</ul>
 		</div>
 		
+	</div>
 	</div>
 </footer>
