@@ -1,5 +1,7 @@
 class LessonsController < ApplicationController
   before_action :set_lesson, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+  before_filter :check_user, only: [:edit, :update, :destroy]
 
   # GET /lessons
   # GET /lessons.json
@@ -34,6 +36,7 @@ class LessonsController < ApplicationController
   # POST /lessons.json
   def create
     @lesson = Lesson.new(lesson_params)
+    @lesson.user_id = current_user.id
 
     respond_to do |format|
       if @lesson.save
@@ -86,9 +89,14 @@ class LessonsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def lesson_params
-      params.require(:lesson).permit(:name, :week, :date, :image, :document, :attachment,
+      params.require(:lesson).permit(:course_id, :name, :week, :date, :image, :document, :attachment,
       objectives_attributes: [:id, :content, :_destroy],  readings_attributes: [:id, :content, :_destroy],  homeworks_attributes: [:id, :content, :_destroy],
       classactivitys_attributes: [:id, :content, :_destroy])
 
+    end
+    def check_user
+      if current_user != @lesson.user
+        redirect_to root_url, alert: "Sorry!"
+      end 
     end
 end

@@ -1,6 +1,4 @@
 class Lesson < ActiveRecord::Base
-
-	belongs_to :course
 	has_many :objectives, :dependent => :destroy
 	has_many :readings, :dependent => :destroy
 	has_many :homeworks, :dependent => :destroy
@@ -19,7 +17,7 @@ validates_attachment :document, :content_type => { :content_type => %w(applicati
 	accepts_nested_attributes_for :classactivitys, :reject_if => lambda { |a| a[:content].blank? }, :allow_destroy => true
 
 	has_many :attachments
-
-
+	belongs_to :user
+	belongs_to :course
 
 end

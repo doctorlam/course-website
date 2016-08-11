@@ -10,19 +10,23 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
+<div class="form-group">
+    <%= f.label :course_id, name="Course ID" %><br>
+    <%= f.text_field :course_id %>
+  </div>
+  <div class="form-group">
     <%= f.label :name %><br>
     <%= f.text_field :name %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :week %><br>
     <%= f.text_field :week %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :date %><br>
     <%= f.date_select :date %>
   </div>
+  <br />
 
   <%= f.fields_for :objectives do |builder| %>
   <%= render 'objectives_fields', f:builder %>
