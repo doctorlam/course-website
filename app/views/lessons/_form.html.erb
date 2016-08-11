@@ -45,8 +45,22 @@
     <%= f.file_field :image %>
   </div>
 
-    
+  <div class="field">
+    <%= f.label :document %><br>
+    <%= f.file_field :document, :class => "form-control-file" %>
+  </div>
 
+<div class="control-group">
+    <%= f.label :attachments, :class => 'control-label' %>
+    <div class="controls">
+      <!-- The magic is coming ...look at my eyes....shazammmm -->
+      <!-- Use HTML5 multiple attribute to enable multiple selection
+           and pass back to controller all files as an array, ready 
+           for paperclip!!
+           file_field_tag, since images is not a gallery attribute
+       -->
+    </div>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>

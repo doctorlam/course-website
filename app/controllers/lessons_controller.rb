@@ -37,12 +37,20 @@ class LessonsController < ApplicationController
 
     respond_to do |format|
       if @lesson.save
+         if params[:attachments]
+        #===== The magic is here ;)
+        params[:attachments].each { |attachment|
+          @lesson.attachments.create(attachment: file)
+        }
+      end
         format.html { redirect_to @lesson, notice: 'Lesson was successfully created.' }
         format.json { render :show, status: :created, location: @lesson }
       else
         format.html { render :new }
         format.json { render json: @lesson.errors, status: :unprocessable_entity }
       end
+      
+
     end
   end
 
@@ -78,7 +86,7 @@ class LessonsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def lesson_params
-      params.require(:lesson).permit(:name, :week, :date, :image,
+      params.require(:lesson).permit(:name, :week, :date, :image, :document, :attachment,
       objectives_attributes: [:id, :content, :_destroy],  readings_attributes: [:id, :content, :_destroy],  homeworks_attributes: [:id, :content, :_destroy],
       classactivitys_attributes: [:id, :content, :_destroy])
 

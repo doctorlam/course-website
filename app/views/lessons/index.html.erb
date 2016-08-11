@@ -12,6 +12,7 @@
        <th>In-Class Activities</th>
         <th>Readings</th>
          <th>Homework</th>
+          <th>Associated Documents</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -38,6 +39,12 @@
       <td><% for homework in lesson.homeworks %>
         <ul><li><%= homework.content %></li></ul>
       <%end%></td>
+
+         <% if lesson.document? %>
+          <td><a target=_blank href=" <%= lesson.document.url %>">Attached Document</a></td>
+        <% else %>
+          <td>No document(s) attached</td>
+        <% end %> 
 
         <td><%= link_to 'Show', lesson %></td>
         <td><%= link_to 'Edit', edit_lesson_path(lesson) %></td>

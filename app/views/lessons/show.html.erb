@@ -42,5 +42,14 @@
 	<% end %>
 	</ol>
 
+<% if @lesson.document? %>
+	<a target=_blank href=" <%= @lesson.document.url %>">Attached Document</a>
+
+<% else %>
+  No Document(s) Attached!
+<% end %>
+
+
+
 <%= link_to 'Edit', edit_lesson_path(@lesson) %> |
 <%= link_to 'Back', lessons_path %>
