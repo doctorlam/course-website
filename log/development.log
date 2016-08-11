@@ -58603,3 +58603,85 @@ Processing by LessonsController#index as HTML
   Rendered layouts/_header.html.erb (0.3ms)
   Rendered layouts/_footer.html.erb (0.1ms)
 Completed 200 OK in 47ms (Views: 45.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2016-08-11 18:46:30 -0500
+Processing by LessonsController#index as HTML
+  [1m[36mLesson Load (0.1ms)[0m  [1mSELECT "lessons".* FROM "lessons"[0m
+  [1m[35mObjective Load (0.1ms)[0m  SELECT "objectives".* FROM "objectives" WHERE "objectives"."lesson_id" = ?  [["lesson_id", 1]]
+  [1m[36mClassactivity Load (0.0ms)[0m  [1mSELECT "classactivities".* FROM "classactivities" WHERE "classactivities"."lesson_id" = ?[0m  [["lesson_id", 1]]
+  [1m[35mReading Load (0.0ms)[0m  SELECT "readings".* FROM "readings" WHERE "readings"."lesson_id" = ?  [["lesson_id", 1]]
+  [1m[36mHomework Load (0.0ms)[0m  [1mSELECT "homeworks".* FROM "homeworks" WHERE "homeworks"."lesson_id" = ?[0m  [["lesson_id", 1]]
+  [1m[35mObjective Load (0.0ms)[0m  SELECT "objectives".* FROM "objectives" WHERE "objectives"."lesson_id" = ?  [["lesson_id", 9]]
+  [1m[36mClassactivity Load (0.0ms)[0m  [1mSELECT "classactivities".* FROM "classactivities" WHERE "classactivities"."lesson_id" = ?[0m  [["lesson_id", 9]]
+  [1m[35mReading Load (0.0ms)[0m  SELECT "readings".* FROM "readings" WHERE "readings"."lesson_id" = ?  [["lesson_id", 9]]
+  [1m[36mHomework Load (0.0ms)[0m  [1mSELECT "homeworks".* FROM "homeworks" WHERE "homeworks"."lesson_id" = ?[0m  [["lesson_id", 9]]
+  [1m[35mObjective Load (0.0ms)[0m  SELECT "objectives".* FROM "objectives" WHERE "objectives"."lesson_id" = ?  [["lesson_id", 10]]
+  [1m[36mClassactivity Load (0.0ms)[0m  [1mSELECT "classactivities".* FROM "classactivities" WHERE "classactivities"."lesson_id" = ?[0m  [["lesson_id", 10]]
+  [1m[35mReading Load (0.0ms)[0m  SELECT "readings".* FROM "readings" WHERE "readings"."lesson_id" = ?  [["lesson_id", 10]]
+  [1m[36mHomework Load (0.0ms)[0m  [1mSELECT "homeworks".* FROM "homeworks" WHERE "homeworks"."lesson_id" = ?[0m  [["lesson_id", 10]]
+  Rendered lessons/index.html.erb within layouts/application (6.4ms)
+  Rendered layouts/_header.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 120ms (Views: 118.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/lessons.self-43ac818fc131bfe7adfde29de9957ec8d0816687acadcdb412cd8ef2733c444b.css?body=1" for ::1 at 2016-08-11 18:46:30 -0500
+
+
+Started GET "/assets/pages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-08-11 18:46:30 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-08-11 18:46:30 -0500
+
+
+Started GET "/assets/scaffolds.self-d9f11e5db806eb204f5c91de0e072afb25eebe6c27662c85782078b636cf054e.css?body=1" for ::1 at 2016-08-11 18:46:30 -0500
+
+
+Started GET "/assets/courses.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-08-11 18:46:30 -0500
+
+
+Started GET "/assets/custom.self-6d9439b3d9e99f71c52defa4967a24ca5d0516cdf49a6a3f85570f4578bb34f9.css?body=1" for ::1 at 2016-08-11 18:46:30 -0500
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-08-11 18:46:30 -0500
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-08-11 18:46:30 -0500
+
+
+Started GET "/assets/bootstrap.self-d0e973a52d36a01036265aeefaf2d1ae3499d2cb231a9be3bd846432daf231de.js?body=1" for ::1 at 2016-08-11 18:46:30 -0500
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for ::1 at 2016-08-11 18:46:30 -0500
+
+
+Started GET "/assets/courses.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-08-11 18:46:30 -0500
+
+
+Started GET "/assets/lessons.self-d81ef4a4ab6b542439ab2444530250570fceeb8d0e2b7c5bf27368e944d449dc.js?body=1" for ::1 at 2016-08-11 18:46:30 -0500
+
+
+Started GET "/assets/pages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-08-11 18:46:30 -0500
+
+
+Started GET "/assets/application.self-eae2bd022c8dd0c6bfa83054de3608ee3f640ffe61e6821d04e9796d2b41d929.js?body=1" for ::1 at 2016-08-11 18:46:30 -0500
+
+
+Started GET "/assets/hero-38012c85f70c2faca0c0d7b1f62301a684ae709673ff4452f217f356d9212f57.jpg" for ::1 at 2016-08-11 18:46:30 -0500
+
+
+Started GET "/pages/projects" for ::1 at 2016-08-11 18:46:41 -0500
+Processing by PagesController#projects as HTML
+  Rendered pages/projects.html.erb within layouts/application (0.4ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 55ms (Views: 54.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/policies" for ::1 at 2016-08-11 18:46:46 -0500
+Processing by PagesController#policies as HTML
+  Rendered pages/policies.html.erb within layouts/application (0.7ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 53ms (Views: 51.9ms | ActiveRecord: 0.0ms)
