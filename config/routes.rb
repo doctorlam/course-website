@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
-  resources :lessons
+root :to => 'lessons#index'  
+resources :lessons
   get 'pages/about'
 
   get 'pages/policies'
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
