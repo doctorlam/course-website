@@ -46,8 +46,8 @@
           <td>No document(s) attached</td>
         <% end %> 
 
-        <td><%= link_to 'Show', lesson %></td>
-        <% if (user_signed_in?) && (current_user == lesson.user) %>
+        <td><%= link_to 'View Lesson', lesson %></td>
+        <% if current_user.try(:admin?) %>
         <td><%= link_to 'Edit', edit_lesson_path(lesson) %></td>
         <td><%= link_to 'Destroy', lesson, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <% end %>
