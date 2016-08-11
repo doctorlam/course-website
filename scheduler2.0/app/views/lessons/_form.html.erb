@@ -1,0 +1,53 @@
+<%= form_for(@lesson, html: { multipart: true }) do |f| %>
+  <% if @lesson.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@lesson.errors.count, "error") %> prohibited this lesson from being saved:</h2>
+
+      <ul>
+      <% @lesson.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :week %><br>
+    <%= f.text_field :week %>
+  </div>
+  <div class="field">
+    <%= f.label :date %><br>
+    <%= f.date_select :date %>
+  </div>
+
+  <%= f.fields_for :objectives do |builder| %>
+  <%= render 'objectives_fields', f:builder %>
+  <% end %>
+
+  <%= f.fields_for :classactivitys do |builder| %>
+  <%= render 'classactivitys_fields', f:builder %>
+  <% end %>
+
+<%= f.fields_for :readings do |builder| %>
+  <%= render 'readings_fields', f:builder %>
+  <% end %>
+
+  <%= f.fields_for :homeworks do |builder| %>
+  <%= render 'homeworks_fields', f:builder %>
+
+  <% end %>
+  <div class="form-group">
+    <%= f.label :image %><br>
+    <%= f.file_field :image %>
+  </div>
+
+    
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

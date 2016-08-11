@@ -1,0 +1,46 @@
+<p id="notice"><%= notice %></p>
+<%= image_tag @lesson.image.url(:medium) %>
+<p>
+  <strong>Name:</strong>
+  <%= @lesson.name %>
+</p>
+
+<p>
+  <strong>Week:</strong>
+  <%= @lesson.week %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @lesson.date %>
+</p>
+
+	<strong>Objectives:</strong>
+	<ol>
+	<% for objective in @lesson.objectives %>
+	<li><%= objective.content %></li>
+	<% end %>
+	</ol>
+
+	<strong>In-Class Activities:</strong>
+	<ol>
+	<% for classactivity in @lesson.classactivitys %>
+	<li><%= classactivity.content %></li>
+	<% end %>
+	</ol>
+
+	<strong>Readings:</strong>
+	<ol>
+	<% for reading in @lesson.readings %>
+	<li><%= reading.content %></li>
+	<% end %>
+	</ol>
+	<strong>Homework:</strong>
+	<ol>
+	<% for homework in @lesson.homeworks %>
+	<li><%= homework.content %></li>
+	<% end %>
+	</ol>
+
+<%= link_to 'Edit', edit_lesson_path(@lesson) %> |
+<%= link_to 'Back', lessons_path %>
