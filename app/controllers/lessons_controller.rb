@@ -96,7 +96,7 @@ class LessonsController < ApplicationController
     end
     def check_user
       if current_user != @lesson.user
-        redirect_to root_url, alert: "Sorry!"
+        redirect_to root_url, alert: "You don't have permission to do that!"
       end 
     end
 end

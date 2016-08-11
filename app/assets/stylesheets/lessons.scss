@@ -1,10 +1,23 @@
 // Place all the styles related to the lessons controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.container-fluid {
+	padding: 0;
+}
 
-nav {
-	background: #E8F4FA;
-	height: 50px;
+.container {
+	width: 90%;
+	margin: 0 auto;
+}
+nav a, nav a:visited {
+	color: white !important;
+	font-size: 1.5rem;
+}
+.navbar-right {
+	padding-right:10px;
+}
+nav a:hover {
+	background: none !important;
 }
 h1 {
 	font-family: 'Open Sans Condensed', sans-serif; 
@@ -33,4 +46,54 @@ p, ol, li {
 
 .form-group h2, .form-group h3 {
 	text-align: center;
+}
+.hero-image {
+	height: 400px;
+	background: image-url('hero.jpg') no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.tagline {
+	padding-top: 150px;
+
+}
+.tagline h1 {
+	font-family: 'Abril Fatface', cursive;
+	text-align: center !important;
+	font-size: 5.5rem;
+	color: white;
+	text-transform: none;
+
+}
+.tagline h2 {
+	font-family: 'Muli', sans-serif;
+	text-align: center;
+	color: white;
+	font-size: 2rem;
+}
+
+footer {
+	min-height: 300px;
+	background: #2a2a29;
+	padding-top: 4rem;
+	padding-bottom: 2rem;
+}
+
+footer h2 {
+	font-size: 1.5rem;
+	color: #666666;
+	font-family: 'Muli';
+	font-weight: 700;
+	text-transform: uppercase;
+}
+
+footer ul li, footer a {
+	color: #99b3ab;
+	text-transform: uppercase;
+	font-size: 1.3rem;
+	text-decoration: none;
+	list-style-type: none;
 }
