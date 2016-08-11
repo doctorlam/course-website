@@ -30656,3 +30656,78 @@ Processing by LessonsController#new as HTML
   Rendered lessons/_form.html.erb (57.3ms)
   Rendered lessons/new.html.erb within layouts/application (60.3ms)
 Completed 200 OK in 125ms (Views: 110.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-08-10 23:08:09 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by LessonsController#index as HTML
+  [1m[35mLesson Load (0.3ms)[0m  SELECT "lessons".* FROM "lessons"
+  [1m[36mObjective Load (0.2ms)[0m  [1mSELECT "objectives".* FROM "objectives" WHERE "objectives"."lesson_id" = ?[0m  [["lesson_id", 1]]
+  [1m[35mClassactivity Load (0.1ms)[0m  SELECT "classactivities".* FROM "classactivities" WHERE "classactivities"."lesson_id" = ?  [["lesson_id", 1]]
+  [1m[36mReading Load (0.1ms)[0m  [1mSELECT "readings".* FROM "readings" WHERE "readings"."lesson_id" = ?[0m  [["lesson_id", 1]]
+  [1m[35mHomework Load (0.1ms)[0m  SELECT "homeworks".* FROM "homeworks" WHERE "homeworks"."lesson_id" = ?  [["lesson_id", 1]]
+  Rendered lessons/index.html.erb within layouts/application (50.7ms)
+Completed 200 OK in 350ms (Views: 333.9ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/lessons/1/edit" for ::1 at 2016-08-10 23:08:13 -0500
+Processing by LessonsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mLesson Load (0.2ms)[0m  [1mSELECT  "lessons".* FROM "lessons" WHERE "lessons"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mObjective Load (0.1ms)[0m  SELECT "objectives".* FROM "objectives" WHERE "objectives"."lesson_id" = ?  [["lesson_id", 1]]
+  Rendered lessons/_objectives_fields.html.erb (2.8ms)
+  Rendered lessons/_objectives_fields.html.erb (1.0ms)
+  Rendered lessons/_objectives_fields.html.erb (0.3ms)
+  Rendered lessons/_objectives_fields.html.erb (0.7ms)
+  [1m[36mClassactivity Load (0.1ms)[0m  [1mSELECT "classactivities".* FROM "classactivities" WHERE "classactivities"."lesson_id" = ?[0m  [["lesson_id", 1]]
+  Rendered lessons/_classactivitys_fields.html.erb (1.2ms)
+  Rendered lessons/_classactivitys_fields.html.erb (0.3ms)
+  Rendered lessons/_classactivitys_fields.html.erb (1.0ms)
+  Rendered lessons/_classactivitys_fields.html.erb (1.0ms)
+  [1m[35mReading Load (0.1ms)[0m  SELECT "readings".* FROM "readings" WHERE "readings"."lesson_id" = ?  [["lesson_id", 1]]
+  Rendered lessons/_readings_fields.html.erb (1.5ms)
+  Rendered lessons/_readings_fields.html.erb (0.3ms)
+  [1m[36mHomework Load (0.1ms)[0m  [1mSELECT "homeworks".* FROM "homeworks" WHERE "homeworks"."lesson_id" = ?[0m  [["lesson_id", 1]]
+  Rendered lessons/_homeworks_fields.html.erb (2.1ms)
+  Rendered lessons/_homeworks_fields.html.erb (0.6ms)
+  Rendered lessons/_form.html.erb (67.6ms)
+  Rendered lessons/edit.html.erb within layouts/application (73.7ms)
+Completed 200 OK in 126ms (Views: 114.3ms | ActiveRecord: 0.6ms)
+
+
+Started PATCH "/lessons/1" for ::1 at 2016-08-10 23:08:17 -0500
+Processing by LessonsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+kEDvThR0D2nSO63ihKt3Z7vPSDsZz30+PmnaIYWCVT4wY2+Pi8u+5ZnKqtz0uoxsq3KeDnGLss3BIj0Rw+q9A==", "lesson"=>{"name"=>"Course Introduction", "week"=>"1.0", "date(1i)"=>"2016", "date(2i)"=>"8", "date(3i)"=>"29", "objectives_attributes"=>{"0"=>{"content"=>"Objective 1", "_destroy"=>"false", "id"=>"1"}, "1"=>{"content"=>"Objective 2", "_destroy"=>"false", "id"=>"2"}, "2"=>{"content"=>"Objective 3", "_destroy"=>"false", "id"=>"3"}, "3"=>{"content"=>"", "_destroy"=>"1"}}, "classactivitys_attributes"=>{"0"=>{"content"=>"Introductions", "_destroy"=>"false", "id"=>"1"}, "1"=>{"content"=>"Course overview", "_destroy"=>"false", "id"=>"2"}, "2"=>{"content"=>"Teams", "_destroy"=>"false", "id"=>"3"}, "3"=>{"content"=>"", "_destroy"=>"false"}}, "readings_attributes"=>{"0"=>{"content"=>"N/A", "_destroy"=>"false", "id"=>"1"}, "1"=>{"content"=>"", "_destroy"=>"false"}}, "homeworks_attributes"=>{"0"=>{"content"=>"N/A", "_destroy"=>"false", "id"=>"1"}, "1"=>{"content"=>"f", "_destroy"=>"false"}}}, "commit"=>"Update Lesson", "id"=>"1"}
+  [1m[35mLesson Load (0.1ms)[0m  SELECT  "lessons".* FROM "lessons" WHERE "lessons"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mObjective Load (0.2ms)[0m  SELECT "objectives".* FROM "objectives" WHERE "objectives"."lesson_id" = ? AND "objectives"."id" IN (1, 2, 3)  [["lesson_id", 1]]
+  [1m[36mReading Load (0.1ms)[0m  [1mSELECT "readings".* FROM "readings" WHERE "readings"."lesson_id" = ? AND "readings"."id" = 1[0m  [["lesson_id", 1]]
+  [1m[35mHomework Load (0.1ms)[0m  SELECT "homeworks".* FROM "homeworks" WHERE "homeworks"."lesson_id" = ? AND "homeworks"."id" = 1  [["lesson_id", 1]]
+  [1m[36mClassactivity Load (0.1ms)[0m  [1mSELECT "classactivities".* FROM "classactivities" WHERE "classactivities"."lesson_id" = ? AND "classactivities"."id" IN (1, 2, 3)[0m  [["lesson_id", 1]]
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "homeworks" ("content", "lesson_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["content", "f"], ["lesson_id", 1], ["created_at", "2016-08-11 04:08:17.635539"], ["updated_at", "2016-08-11 04:08:17.635539"]]
+  [1m[36m (2.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/lessons/1
+Completed 302 Found in 14ms (ActiveRecord: 3.2ms)
+
+
+Started GET "/lessons/1" for ::1 at 2016-08-10 23:08:17 -0500
+Processing by LessonsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mLesson Load (0.1ms)[0m  SELECT  "lessons".* FROM "lessons" WHERE "lessons"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mObjective Load (0.1ms)[0m  [1mSELECT "objectives".* FROM "objectives" WHERE "objectives"."lesson_id" = ?[0m  [["lesson_id", 1]]
+  [1m[35mClassactivity Load (0.1ms)[0m  SELECT "classactivities".* FROM "classactivities" WHERE "classactivities"."lesson_id" = ?  [["lesson_id", 1]]
+  [1m[36mReading Load (0.1ms)[0m  [1mSELECT "readings".* FROM "readings" WHERE "readings"."lesson_id" = ?[0m  [["lesson_id", 1]]
+  [1m[35mHomework Load (0.1ms)[0m  SELECT "homeworks".* FROM "homeworks" WHERE "homeworks"."lesson_id" = ?  [["lesson_id", 1]]
+  Rendered lessons/show.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 28ms (Views: 26.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/lessons" for ::1 at 2016-08-10 23:08:19 -0500
+Processing by LessonsController#index as HTML
+  [1m[36mLesson Load (0.2ms)[0m  [1mSELECT "lessons".* FROM "lessons"[0m
+  [1m[35mObjective Load (0.1ms)[0m  SELECT "objectives".* FROM "objectives" WHERE "objectives"."lesson_id" = ?  [["lesson_id", 1]]
+  [1m[36mClassactivity Load (0.1ms)[0m  [1mSELECT "classactivities".* FROM "classactivities" WHERE "classactivities"."lesson_id" = ?[0m  [["lesson_id", 1]]
+  [1m[35mReading Load (0.1ms)[0m  SELECT "readings".* FROM "readings" WHERE "readings"."lesson_id" = ?  [["lesson_id", 1]]
+  [1m[36mHomework Load (0.1ms)[0m  [1mSELECT "homeworks".* FROM "homeworks" WHERE "homeworks"."lesson_id" = ?[0m  [["lesson_id", 1]]
+  Rendered lessons/index.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 30ms (Views: 28.1ms | ActiveRecord: 0.6ms)
