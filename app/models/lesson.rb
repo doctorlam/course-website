@@ -1,4 +1,6 @@
 class Lesson < ActiveRecord::Base
+
+	belongs_to :course
 	has_many :objectives, :dependent => :destroy
 	has_many :readings, :dependent => :destroy
 	has_many :homeworks, :dependent => :destroy

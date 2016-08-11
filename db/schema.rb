@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160811142728) do
+ActiveRecord::Schema.define(version: 20160811165744) do
 
   create_table "add_attachment_to_lessons", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -27,6 +27,14 @@ ActiveRecord::Schema.define(version: 20160811142728) do
   create_table "classactivities", force: :cascade do |t|
     t.integer  "lesson_id"
     t.text     "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "courses", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "code"
+    t.string   "semester"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -97,6 +105,7 @@ ActiveRecord::Schema.define(version: 20160811142728) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.string   "name"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
