@@ -27,6 +27,8 @@ gem 'devise'
 gem 'ancestry'
 gem 'commontator'
 gem 'acts_as_votable'
+gem "cocoon"
+
 
 group :production do 
 	gem 'pg'

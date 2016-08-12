@@ -19,10 +19,10 @@ class LessonsController < ApplicationController
   # GET /lessons/new
   def new
     @lesson = Lesson.new
-    3.times { @lesson.objectives.build }
-    3.times { @lesson.readings.build }
-    3.times { @lesson.homeworks.build }
-    3.times { @lesson.classactivitys.build }
+    @lesson.objectives.build
+    @lesson.readings.build
+    @lesson.homeworks.build
+    @lesson.classactivitys.build
 
   end
 

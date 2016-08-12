@@ -92,12 +92,39 @@ p, ol, li, td {
 .first-group-form {
 	background: #BDC3C7;
 	padding: 20px;
+	margin-bottom: 20px;
 }
 
-.second-group-form {
-	background: #EEEEEE;
+.second-form-group {
+	background: #454444;
 	padding: 20px;
+		margin-bottom: 20px;
+
 }
+.third-form-group {
+	background: #BDC3C7;
+		padding: 20px;
+		margin-bottom: 20px;
+
+
+}
+.second-form-group a, .second-form-group a:visited, .second-form-group, .fourth-form-group a, .fourth-form-group a:visited, .fourth-form-group {
+	color: white !important;
+}
+.fourth-form-group {
+	background: #454444;
+	padding:20px;
+	margin-bottom: 20px;
+
+	
+}
+
+.fifth-form-group {
+	background: #BDC3C7;
+		padding: 20px;
+
+}
+
 
 .form-group h2, .form-group h3 {
 	text-align: center;
@@ -172,6 +199,8 @@ footer ul {
 	text-transform: uppercase;
 	border-bottom: 1px dotted #666666;
 }
+
+
 
 
 @media only screen and (max-width: 1000px) {
