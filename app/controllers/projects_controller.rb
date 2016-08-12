@@ -81,7 +81,7 @@ class ProjectsController < ApplicationController
     end
 
      def check_user
-      if current_user != @lesson.user
+      if current_user != @project.user
         redirect_to root_url, alert: "You don't have permission to do that!"
       end 
     end
