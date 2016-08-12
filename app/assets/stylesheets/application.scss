@@ -27,7 +27,7 @@ body {
 
 .container-fluid {
 	padding: 0;
-	background: #EEEEEE;
+	background: #E8E8E8;
 }
 
 .container {
@@ -57,13 +57,32 @@ h1 {
 	font-family: 'Open Sans Condensed', sans-serif; 
 	font-weight: 700;
 	text-transform: uppercase;
+	border-bottom: gray 1px dotted;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+h2 {
+	font-family: 'Open Sans Condensed', sans-serif;
+	font-weight: 700;
 }
 
+h3 {
+	font-family: 'Muli', sans-serif;
+}
 .show-left {
 	background-color: #E7E7E7;
 }
 .show-left h3, .show-right h3 {
 	font-family: 'Open Sans Condensed', sans-serif;
+}
+
+.show-right, .show-right a, .show-right a:visited {
+	background: #2a2a29;
+	color: #99b3ab;
+}
+.show-right {
+	padding-bottom: 30px;
+	
 }
 p, ol, li, td {
 	font-family: 'Muli', sans-serif !important;
@@ -99,16 +118,18 @@ p, ol, li, td {
 .tagline h1 {
 	font-family: 'Abril Fatface', cursive;
 	text-align: center !important;
-	font-size: 3rem;
+	font-size: 3.25rem;
 	color: white;
 	text-transform: none;
+	border-bottom: none;
 
 }
 .tagline h2 {
-	font-family: 'Muli', sans-serif;
+	font-family: 'Open Sans Condensed', sans-serif;
 	text-align: center;
 	color: white;
 	font-size: 1.75rem;
+	margin-top: -30px;
 }
 
 footer {
@@ -140,11 +161,19 @@ footer ul {
 }
 
 .projects-right {
-	background: #BDC3C7;
+	background: #2a2a29;
+	color: #99b3ab;
 	margin-bottom: 100px;
 	padding-bottom: 20px;
 	padding-top: 5px
 }
+.projects-right h3 {
+	color: #666666;
+	text-transform: uppercase;
+	border-bottom: 1px dotted #666666;
+}
+
+
 @media only screen and (max-width: 1000px) {
 	body {
     margin: 0 0 350px !important; /* bottom = footer height */

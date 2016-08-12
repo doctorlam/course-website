@@ -37,6 +37,7 @@
 
 .comment_div {
 	clear: both;
+  font-size: .8rem !important;
 }
 
 .comment_form_actions {
