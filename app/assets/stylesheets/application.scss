@@ -125,6 +125,10 @@ p, ol, li, td {
 
 }
 
+a.add_fields, a.remove_fields {
+	float: right !important;
+	display: inline-block;
+}
 
 .form-group h2, .form-group h3 {
 	text-align: center;
@@ -200,7 +204,14 @@ footer ul {
 	border-bottom: 1px dotted #666666;
 }
 
+.btn-primary {
+	background: #99b3ab;
+	border: #99b3ab;
+}
+.btn-primary:hover {
+		background: #2a2a29;
 
+}
 
 
 @media only screen and (max-width: 1000px) {

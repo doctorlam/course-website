@@ -28,10 +28,7 @@ class LessonsController < ApplicationController
 
   # GET /lessons/1/edit
   def edit
-    @lesson.objectives.build
-    @lesson.readings.build
-    @lesson.homeworks.build
-    @lesson.classactivitys.build
+  
   end
 
   # POST /lessons

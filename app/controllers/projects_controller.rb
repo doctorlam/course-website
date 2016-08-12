@@ -17,16 +17,14 @@ class ProjectsController < ApplicationController
   # GET /projects/new
   def new
     @project = Project.new
-    3.times { @project.deliverables.build }
-    3.times { @project.rubrics.build }
-    3.times { @project.related.build }
+    @project.deliverables.build
+    @project.rubrics.build
+    @project.related.build
   end
 
   # GET /projects/1/edit
   def edit
-      @project.deliverables.build
-      @project.rubrics.build
-      @project.related.build
+  
   end
 
   # POST /projects

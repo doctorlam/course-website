@@ -30,6 +30,7 @@
   </div>
 
   <div class="second-form-group">
+  <h2>Learning Objectives</h2>
   <%= f.fields_for :objectives do |builder| %>
   <%= render 'objective_fields', f:builder %>
 
@@ -38,7 +39,7 @@
 </div>
 
 <div class="third-form-group">
-
+  <h2>Class Activities</h2>
   <%= f.fields_for :classactivitys do |builder| %>
   <%= render 'classactivity_fields', f:builder %>
   <% end %>
@@ -46,13 +47,14 @@
 </div>
 
 <div class="fourth-form-group">
-
+  <h2>Readings</h2>
   <%= f.fields_for :readings do |builder| %>
   <%= render 'reading_fields', f:builder %>
   <% end %>
   <%= link_to_add_fields "Add Reading", f, :readings, class: "btn btn-mini btn-info" %>
 </div>
-<div class="fifth-form-group">
+<div class="third-form-group">
+  <h2>Homework</h2>
   <%= f.fields_for :homeworks do |builder| %>
   <%= render 'homework_fields', f:builder %>
   <% end %>
@@ -60,8 +62,9 @@
 </div>
 
 
-  <div class="field">
-    <%= f.label :document %><br>
+  <div class="fourth-form-group">
+  <h2>Powerpoint</h2>
+    <%= f.label :document %>
     <%= f.file_field :document, :class => "form-control-file", class: "form-control" %>
   </div>
 
