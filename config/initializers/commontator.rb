@@ -35,7 +35,7 @@ Commontator.configure do |config|
   # Arguments: a user (acts_as_commontator)
   # Returns: the user's name (String)
   # Default: lambda { |user| I18n.t('commontator.anonymous') } (all users are anonymous)
-  config.user_name_proc = lambda { |user| I18n.t('commontator.anonymous') }
+config.user_name_proc = lambda { |user| user.name }
 
   # user_link_proc
   # Type: Proc
@@ -119,7 +119,7 @@ Commontator.configure do |config|
   #   :l (only if it's the latest comment)
   #   :n (never)
   # Default: :l
-  config.comment_editing = :l
+  config.comment_editing = :a
 
   # comment_deletion
   # Type: Symbol
@@ -130,7 +130,7 @@ Commontator.configure do |config|
   #   :n (never)
   # Note: For moderators, see the next option
   # Default: :l
-  config.comment_deletion = :l
+  config.comment_deletion = :a
 
   # moderator_permissions
   # Type: Symbol
@@ -153,7 +153,7 @@ Commontator.configure do |config|
   #   :s  (star ratings)
   #   :r  (reputation system)
   # Default: :n
-  config.comment_voting = :n
+  config.comment_voting = :ld
 
   # vote_count_proc
   # Type: Proc
@@ -191,7 +191,7 @@ Commontator.configure do |config|
   # Not yet implemented:
   #   :n (link to the form; opens in a new window)
   # Default: :l
-  config.new_comment_style = :l
+  config.new_comment_style = :t
 
   # comments_per_page
   # Type: Fixnum or nil
@@ -254,7 +254,7 @@ Commontator.configure do |config|
   #   false (no mentions)
   #   true  (mentions enabled)
   # Default: false
-  config.mentions_enabled = false
+  config.mentions_enabled = true
 
   # user_mentions_proc
   # Type: Proc
