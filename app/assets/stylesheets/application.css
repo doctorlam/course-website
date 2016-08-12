@@ -14,9 +14,6 @@
  *= require_self
 *= require commontator/application
 */
-// Place all the styles related to the lessons controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
 html {
     position: relative;
     min-height: 100%;
@@ -181,3 +178,4 @@ footer ul {
 	}
 	
 }
+
