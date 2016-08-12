@@ -14,6 +14,7 @@
  *= require_self
 *= require commontator/application
 */
+
 html {
     position: relative;
     min-height: 100%;
@@ -107,7 +108,7 @@ p, ol, li, td {
 	font-family: 'Muli', sans-serif;
 	text-align: center;
 	color: white;
-	font-size: 1.5rem;
+	font-size: 1.75rem;
 }
 
 footer {
@@ -178,4 +179,3 @@ footer ul {
 	}
 	
 }
-
