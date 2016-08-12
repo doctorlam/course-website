@@ -119,7 +119,7 @@ config.user_name_proc = lambda { |user| user.name }
   #   :l (only if it's the latest comment)
   #   :n (never)
   # Default: :l
-  config.comment_editing = :l
+  config.comment_editing = :a
 
   # comment_deletion
   # Type: Symbol
@@ -130,7 +130,7 @@ config.user_name_proc = lambda { |user| user.name }
   #   :n (never)
   # Note: For moderators, see the next option
   # Default: :l
-  config.comment_deletion = :l
+  config.comment_deletion = :a
 
   # moderator_permissions
   # Type: Symbol
@@ -140,7 +140,7 @@ config.user_name_proc = lambda { |user| user.name }
   #   :d (delete comments and close threads)
   #   :c (close threads only)
   # Default: :d
-  config.moderator_permissions = :d
+  config.moderator_permissions = :e
 
   # comment_voting
   # Type: Symbol
@@ -153,7 +153,7 @@ config.user_name_proc = lambda { |user| user.name }
   #   :s  (star ratings)
   #   :r  (reputation system)
   # Default: :n
-  config.comment_voting = :l
+  config.comment_voting = :n
 
   # vote_count_proc
   # Type: Proc
