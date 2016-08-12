@@ -1,7 +1,6 @@
 class ProjectsController < ApplicationController
   before_action :set_project, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
-  before_filter :check_user, only: [:edit, :update, :destroy]
 
   # GET /projects
   # GET /projects.json
@@ -33,6 +32,7 @@ class ProjectsController < ApplicationController
   # POST /projects.json
   def create
     @project = Project.new(project_params)
+    @project.user_id = current_user.id 
 
     respond_to do |format|
       if @project.save
@@ -80,9 +80,5 @@ class ProjectsController < ApplicationController
       params.require(:project).permit(:name, :description, :project_id, criterium_attribute: [:description, :id, :_destroy], deliverables_attributes: [:id, :description, :_destroy], related_attributes: [:description, :id, :_destroy])
     end
 
-     def check_user
-      if current_user != @project.user
-        redirect_to root_url, alert: "You don't have permission to do that!"
-      end 
-    end
+    
 end
