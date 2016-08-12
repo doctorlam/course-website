@@ -6,6 +6,8 @@ class User < ActiveRecord::Base
 
   validates :name, presence: true
   has_many :lessons, dependent: :destroy 
+   has_many :projects, dependent: :destroy 
+
   acts_as_commontator
 
 end

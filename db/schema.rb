@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160812024945) do
+ActiveRecord::Schema.define(version: 20160812145613) do
 
   create_table "add_attachment_to_lessons", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -82,6 +82,20 @@ ActiveRecord::Schema.define(version: 20160812024945) do
     t.integer  "user_id"
   end
 
+  create_table "criteria", force: :cascade do |t|
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "project_id"
+  end
+
+  create_table "deliverables", force: :cascade do |t|
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "project_id"
+  end
+
   create_table "entries", force: :cascade do |t|
     t.decimal  "week"
     t.date     "date"
@@ -121,11 +135,25 @@ ActiveRecord::Schema.define(version: 20160812024945) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "projects", force: :cascade do |t|
+    t.string   "name"
+    t.string   "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
   create_table "readings", force: :cascade do |t|
     t.integer  "lesson_id"
     t.text     "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "relateds", force: :cascade do |t|
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "project_id"
   end
 
   create_table "uploads", force: :cascade do |t|

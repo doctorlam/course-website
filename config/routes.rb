@@ -1,12 +1,10 @@
 Rails.application.routes.draw do
-  get 'pages/projects'
-
+  resources :projects
   resources :courses
   devise_for :users
 root :to => 'lessons#index'  
 resources :lessons
   get 'pages/about'
-  get 'pages/projects'
   get 'pages/policies'
 mount Commontator::Engine => '/commontator'
 
