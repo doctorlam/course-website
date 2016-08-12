@@ -19,5 +19,6 @@ validates_attachment :document, :content_type => { :content_type => %w(applicati
 	has_many :attachments
 	belongs_to :user
 	belongs_to :course
+	acts_as_commontable
 
 end

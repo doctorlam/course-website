@@ -25,7 +25,7 @@ gem 'bootstrap-sass', '~> 3.3.6'
 gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
 gem 'devise'
 gem 'ancestry'
-gem 'commontator', '~> 4.11.1'
+gem 'commontator'
 
 group :production do 
 	gem 'pg'

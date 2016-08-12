@@ -15,7 +15,6 @@
        <th>In-Class Activities</th>
         <th>Readings</th>
          <th>Homework</th>
-          <th>Associated Documents</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -43,11 +42,6 @@
         <ul><li><%= homework.content %></li></ul>
       <%end%></td>
 
-         <% if lesson.document? %>
-          <td><a target=_blank href=" <%= lesson.document.url %>">Attached Document</a></td>
-        <% else %>
-          <td>No document(s) attached</td>
-        <% end %> 
 
         <td><%= link_to 'View Lesson', lesson %></td>
         <% if current_user.try(:admin?) %>

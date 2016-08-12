@@ -8,6 +8,8 @@ resources :lessons
   get 'pages/about'
   get 'pages/projects'
   get 'pages/policies'
+  mount Commontator::Engine => '/commontator'
+
 
 
   # The priority is based upon order of creation: first created -> highest priority.
