@@ -153,7 +153,7 @@ config.user_name_proc = lambda { |user| user.name }
   #   :s  (star ratings)
   #   :r  (reputation system)
   # Default: :n
-  config.comment_voting = :n
+  config.comment_voting = :l
 
   # vote_count_proc
   # Type: Proc
