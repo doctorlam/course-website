@@ -119,7 +119,7 @@ config.user_name_proc = lambda { |user| user.name }
   #   :l (only if it's the latest comment)
   #   :n (never)
   # Default: :l
-  config.comment_editing = :a
+  config.comment_editing = :l
 
   # comment_deletion
   # Type: Symbol
@@ -130,7 +130,7 @@ config.user_name_proc = lambda { |user| user.name }
   #   :n (never)
   # Note: For moderators, see the next option
   # Default: :l
-  config.comment_deletion = :a
+  config.comment_deletion = :l
 
   # moderator_permissions
   # Type: Symbol
@@ -153,7 +153,7 @@ config.user_name_proc = lambda { |user| user.name }
   #   :s  (star ratings)
   #   :r  (reputation system)
   # Default: :n
-  config.comment_voting = :ld
+  config.comment_voting = :n
 
   # vote_count_proc
   # Type: Proc
@@ -191,7 +191,7 @@ config.user_name_proc = lambda { |user| user.name }
   # Not yet implemented:
   #   :n (link to the form; opens in a new window)
   # Default: :l
-  config.new_comment_style = :t
+  config.new_comment_style = :l
 
   # comments_per_page
   # Type: Fixnum or nil
@@ -254,7 +254,7 @@ config.user_name_proc = lambda { |user| user.name }
   #   false (no mentions)
   #   true  (mentions enabled)
   # Default: false
-  config.mentions_enabled = true
+  config.mentions_enabled = false
 
   # user_mentions_proc
   # Type: Proc
