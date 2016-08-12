@@ -4,6 +4,7 @@
 html {
     position: relative;
     min-height: 100%;
+    font-size: 16px;
 }
 
 body {
@@ -26,7 +27,7 @@ body {
 	padding: 20px;
 }
 nav a, nav a:visited {
-	font-size: 1.5rem;
+	font-size: 1.1rem;
 	font-weight: bold;
 }
 .navbar {
@@ -52,6 +53,7 @@ h1 {
 }
 p, ol, li, td {
 	font-family: 'Muli', sans-serif !important;
+	font-size: 1rem !important;
 }
 .first-group-form {
 	background: #BDC3C7;
@@ -82,7 +84,7 @@ p, ol, li, td {
 .tagline h1 {
 	font-family: 'Abril Fatface', cursive;
 	text-align: center !important;
-	font-size: 5.5rem;
+	font-size: 4rem;
 	color: white;
 	text-transform: none;
 
@@ -104,7 +106,7 @@ footer {
 }
 
 footer h2 {
-	font-size: 1.5rem;
+	font-size: 1.25rem;
 	color: #666666;
 	font-family: 'Muli';
 	font-weight: 700;
@@ -113,7 +115,7 @@ footer h2 {
 
 footer ul li, footer a, footer a:visited {
 	color: #99b3ab;
-	font-size: 1.3rem;
+	font-size: 1rem;
 	text-decoration: none;
 	list-style-type: none;
 	margin-left: auto;
@@ -129,12 +131,13 @@ footer ul {
 	padding-top: 5px
 }
 @media only screen and (max-width: 900px) {
+	html {
+	font-size: 15px;
+	}
 	.tagline {
 	padding-top: 50px;
 	}
-	.tagline h1 {
-	font-size: 4rem;
-	}
+	
 	.navbar a {
 	text-align: center;
 	}
@@ -144,6 +147,10 @@ footer ul {
 	}
 }
 @media only screen and (max-width: 768px) {
+	html {
+	font-size: 14px;
+	}
+
 	footer {
 		text-align:center;
 	}

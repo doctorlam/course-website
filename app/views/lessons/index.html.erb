@@ -22,7 +22,7 @@
   <tbody>
     <% @lessons.each do |lesson| %>
       <tr>
-        <td><td class="name"><%= link_to [lesson.name].join(" "), lesson %></td></td>
+        <td class="name"><%= link_to [lesson.name].join(" "), lesson %></td>
         <td><%= lesson.week %></td>
         <td><%= lesson.date %></td>
 
