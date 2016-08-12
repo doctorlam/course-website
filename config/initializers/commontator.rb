@@ -35,7 +35,7 @@ Commontator.configure do |config|
   # Arguments: a user (acts_as_commontator)
   # Returns: the user's name (String)
   # Default: lambda { |user| I18n.t('commontator.anonymous') } (all users are anonymous)
-  config.user_name_proc = lambda { |user| user.name }
+  config.user_name_proc = lambda { |user| I18n.t('commontator.anonymous') }
 
   # user_link_proc
   # Type: Proc
@@ -119,7 +119,7 @@ Commontator.configure do |config|
   #   :l (only if it's the latest comment)
   #   :n (never)
   # Default: :l
-  config.comment_editing = :a
+  config.comment_editing = :l
 
   # comment_deletion
   # Type: Symbol
@@ -130,7 +130,7 @@ Commontator.configure do |config|
   #   :n (never)
   # Note: For moderators, see the next option
   # Default: :l
-  config.comment_deletion = :a
+  config.comment_deletion = :l
 
   # moderator_permissions
   # Type: Symbol
@@ -140,7 +140,7 @@ Commontator.configure do |config|
   #   :d (delete comments and close threads)
   #   :c (close threads only)
   # Default: :d
-  config.moderator_permissions = :e
+  config.moderator_permissions = :d
 
   # comment_voting
   # Type: Symbol
@@ -153,7 +153,7 @@ Commontator.configure do |config|
   #   :s  (star ratings)
   #   :r  (reputation system)
   # Default: :n
-  config.comment_voting = :ld
+  config.comment_voting = :n
 
   # vote_count_proc
   # Type: Proc
@@ -180,7 +180,7 @@ Commontator.configure do |config|
   # If :l is selected, the "reply to thread" form will appear before the comments
   # Otherwise, it will appear after the comments
   # Default: :e
-  config.comment_order = :l
+  config.comment_order = :e
 
   # new_comment_style
   # Type: Symbol
@@ -254,7 +254,7 @@ Commontator.configure do |config|
   #   false (no mentions)
   #   true  (mentions enabled)
   # Default: false
-  config.mentions_enabled = true
+  config.mentions_enabled = false
 
   # user_mentions_proc
   # Type: Proc
