@@ -18,14 +18,14 @@ class ProjectsController < ApplicationController
   def new
     @project = Project.new
     3.times { @project.deliverables.build }
-    3.times { @project.criterium.build }
+    3.times { @project.rubrics.build }
     3.times { @project.related.build }
   end
 
   # GET /projects/1/edit
   def edit
       @project.deliverables.build
-      @project.criterium.build
+      @project.rubrics.build
       @project.related.build
   end
 
@@ -77,7 +77,7 @@ class ProjectsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def project_params
-      params.require(:project).permit(:user_id, :name, :description, :project_id, criteriums_attribute: [:description, :id, :_destroy], deliverables_attributes: [:id, :description, :_destroy], related_attributes: [:description, :id, :_destroy])
+      params.require(:project).permit(:user_id, :name, :description, :project_id, rubrics_attributes: [:id, :description, :_destroy], deliverables_attributes: [:id, :description, :_destroy], related_attributes: [:description, :id, :_destroy])
     end
 
      def check_user

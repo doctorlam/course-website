@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160812163113) do
+ActiveRecord::Schema.define(version: 20160812172352) do
 
   create_table "add_attachment_to_lessons", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -155,6 +155,13 @@ ActiveRecord::Schema.define(version: 20160812163113) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.integer  "project_id"
+  end
+
+  create_table "rubrics", force: :cascade do |t|
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.text     "project_id"
   end
 
   create_table "uploads", force: :cascade do |t|

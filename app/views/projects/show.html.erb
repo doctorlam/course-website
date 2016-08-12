@@ -22,8 +22,8 @@
 
         <h2>Grading Criteria:</h2>
 
-  <% for criterium in @project.criterium %>
-        <ul><li><%= criterium.description %></li></ul>
+  <% for rubric in @project.rubrics %>
+        <ul><li><%= rubric.description %></li></ul>
         <% end %>
 </div>
 <div class="col-md-4 projects-right">

@@ -24,8 +24,8 @@
     <%= render 'deliverables_fields', f:builder %>
   <% end %>
 
-  <%= f.fields_for :criterium do |builder| %>
-    <%= render 'criterium_fields', f:builder %>
+  <%= f.fields_for :rubrics do |builder| %>
+    <%= render 'rubric_fields', f:builder %>
   <% end %>
 
    <%= f.fields_for :related do |builder| %>
