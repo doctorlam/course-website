@@ -26,6 +26,7 @@ gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
 gem 'devise'
 gem 'ancestry'
 gem 'commontator'
+gem 'acts_as_votable'
 
 group :production do 
 	gem 'pg'

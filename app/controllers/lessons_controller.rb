@@ -12,6 +12,8 @@ class LessonsController < ApplicationController
   # GET /lessons/1
   # GET /lessons/1.json
   def show
+    commontator_thread_show(@lesson)
+
   end
 
   # GET /lessons/new
@@ -89,7 +91,7 @@ class LessonsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def lesson_params
-      params.require(:lesson).permit(:course_id, :name, :week, :date, :image, :document, :attachment,
+      params.require(:lesson).permit(:thread, :course_id, :name, :week, :date, :image, :document, :attachment,
       objectives_attributes: [:id, :content, :_destroy],  readings_attributes: [:id, :content, :_destroy],  homeworks_attributes: [:id, :content, :_destroy],
       classactivitys_attributes: [:id, :content, :_destroy])
 
