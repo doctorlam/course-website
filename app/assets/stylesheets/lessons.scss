@@ -1,6 +1,15 @@
 // Place all the styles related to the lessons controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin: 0 0 300px; /* bottom = footer height */
+}
+
 .container-fluid {
 	padding: 0;
 	background: #EEEEEE;
@@ -9,14 +18,19 @@
 .container {
 	width: 90%;
 	margin: 0 auto;
-	padding-bottom: 20px;
-	margin-top: -20px;
-
+	margin-top: -40px;
+	margin-bottom: 80px;
 
 }
+.content-container {
+	padding: 20px;
+}
 nav a, nav a:visited {
-	color: white !important;
-	font-size: 1.5em;
+	font-size: 1.5rem;
+	font-weight: bold;
+}
+.navbar {
+	opacity: 0.7;
 }
 .navbar-right {
 	padding-right:10px;
@@ -62,13 +76,13 @@ p, ol, li {
 }
 
 .tagline {
-	padding-top: 150px;
+	padding-top: 100px;
 
 }
 .tagline h1 {
 	font-family: 'Abril Fatface', cursive;
 	text-align: center !important;
-	font-size: 5.5em;
+	font-size: 5.5rem;
 	color: white;
 	text-transform: none;
 
@@ -77,18 +91,20 @@ p, ol, li {
 	font-family: 'Muli', sans-serif;
 	text-align: center;
 	color: white;
-	font-size: 2em;
+	font-size: 2rem;
 }
 
 footer {
-	min-height: 300px;
 	background: #2a2a29;
-	padding-top: 4rem;
-	padding-bottom: 2rem;
+	position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 300px;
+    width: 100%;
 }
 
 footer h2 {
-	font-size: 1.5em;
+	font-size: 1.5rem;
 	color: #666666;
 	font-family: 'Muli';
 	font-weight: 700;
@@ -97,12 +113,41 @@ footer h2 {
 
 footer ul li, footer a, footer a:visited {
 	color: #99b3ab;
-	text-transform: uppercase;
-	font-size: 1.3em;
+	font-size: 1.3rem;
 	text-decoration: none;
 	list-style-type: none;
 	margin-left: auto;
 }
 footer ul {
 	padding: 0;
+}
+
+.projects-right {
+	background: #BDC3C7;
+	margin-bottom: 100px;
+	padding-bottom: 20px;
+	padding-top: 5px
+}
+@media only screen and (max-width: 900px) {
+	.tagline {
+	padding-top: 50px;
+	}
+	.tagline h1 {
+	font-size: 4rem;
+	}
+	.navbar a {
+	text-align: center;
+	}
+	.projects-right {
+		margin-bottom: 10px;
+
+	}
+}
+@media only screen and (max-width: 768px) {
+	footer {
+		text-align:center;
+	}
+	.container {
+	width: 95%;
+	}
 }
