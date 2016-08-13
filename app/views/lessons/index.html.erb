@@ -1,8 +1,11 @@
 <p id="notice"><%= notice %></p>
-
-<h1>Listing Lessons</h1>
-
-<table class="table table-striped table-condensed table-hover table-responsive">
+<div class="container">
+<% if current_user.try(:admin?) %>
+<%= link_to 'New Lesson', new_lesson_path, class: "btn btn-primary" %>
+<% end %>
+<h1>Course Schedule</h1>
+<div class="table-responsive">
+<table class="table table-striped table-condensed table-hover">
   <thead>
     <tr>
       <th>Name</th>
@@ -19,7 +22,7 @@
   <tbody>
     <% @lessons.each do |lesson| %>
       <tr>
-        <td><%= lesson.name %></td>
+        <td class="name"><%= link_to [lesson.name].join(" "), lesson %></td>
         <td><%= lesson.week %></td>
         <td><%= lesson.date %></td>
 
@@ -39,14 +42,17 @@
         <ul><li><%= homework.content %></li></ul>
       <%end%></td>
 
-        <td><%= link_to 'Show', lesson %></td>
+
+        <td><%= link_to 'View Lesson', lesson %></td>
+        <% if current_user.try(:admin?) %>
         <td><%= link_to 'Edit', edit_lesson_path(lesson) %></td>
         <td><%= link_to 'Destroy', lesson, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
 </table>
+</div>
 
-<br>
 
-<%= link_to 'New Lesson', new_lesson_path %>
+</div>

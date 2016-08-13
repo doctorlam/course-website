@@ -10,44 +10,67 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :week %><br>
-    <%= f.text_field :week %>
-  </div>
-  <div class="field">
-    <%= f.label :date %><br>
-    <%= f.date_select :date %>
-  </div>
-
-  <%= f.fields_for :objectives do |builder| %>
-  <%= render 'objectives_fields', f:builder %>
-  <% end %>
-
-  <%= f.fields_for :classactivitys do |builder| %>
-  <%= render 'classactivitys_fields', f:builder %>
-  <% end %>
-
-<%= f.fields_for :readings do |builder| %>
-  <%= render 'readings_fields', f:builder %>
-  <% end %>
-
-  <%= f.fields_for :homeworks do |builder| %>
-  <%= render 'homeworks_fields', f:builder %>
-
-  <% end %>
+<div class="first-group-form">
   <div class="form-group">
-    <%= f.label :image %><br>
-    <%= f.file_field :image %>
+      <%= f.label :course_id, name="Course ID" %><br>
+      <%= f.text_field :course_id, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :name %>
+      <%= f.text_field :name, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :week %>
+      <%= f.text_field :week, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :date %>
+      <%= f.date_select :date, class: "form-control" %>
+    </div>
   </div>
 
-    
+  <div class="second-form-group">
+  <h2>Learning Objectives</h2>
+  <%= f.fields_for :objectives do |builder| %>
+  <%= render 'objective_fields', f:builder %>
+
+  <% end %>
+<%= link_to_add_fields "Add Objective", f, :objectives, class: "btn btn-mini btn-info" %>
+</div>
+
+<div class="third-form-group">
+  <h2>Class Activities</h2>
+  <%= f.fields_for :classactivitys do |builder| %>
+  <%= render 'classactivity_fields', f:builder %>
+  <% end %>
+  <%= link_to_add_fields "Add Activity", f, :classactivitys, class: "btn btn-mini btn-info" %>
+</div>
+
+<div class="fourth-form-group">
+  <h2>Readings</h2>
+  <%= f.fields_for :readings do |builder| %>
+  <%= render 'reading_fields', f:builder %>
+  <% end %>
+  <%= link_to_add_fields "Add Reading", f, :readings, class: "btn btn-mini btn-info" %>
+</div>
+<div class="third-form-group">
+  <h2>Homework</h2>
+  <%= f.fields_for :homeworks do |builder| %>
+  <%= render 'homework_fields', f:builder %>
+  <% end %>
+  <%= link_to_add_fields "Add Homework", f, :homeworks, class: "btn btn-mini btn-info" %>
+</div>
+
+
+  <div class="fourth-form-group">
+  <h2>Powerpoint</h2>
+    <%= f.label :document %>
+    <%= f.file_field :document, :class => "form-control-file", class: "form-control" %>
+  </div>
+
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Create Lesson", class: "btn btn-primary" %>
   </div>
 <% end %>
+

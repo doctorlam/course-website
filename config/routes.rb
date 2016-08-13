@@ -1,9 +1,13 @@
 Rails.application.routes.draw do
+  resources :projects
+  resources :courses
+  devise_for :users
 root :to => 'lessons#index'  
 resources :lessons
   get 'pages/about'
-
   get 'pages/policies'
+mount Commontator::Engine => '/commontator'
+
 
 
   # The priority is based upon order of creation: first created -> highest priority.

@@ -23,3 +23,6 @@ Rails steps
 
 * be sure to add all variables in strong_params
 
+—-Adding Admin on console—
+1. Find the user by “u = User.last
+2. “u.update_attribute :admin, 1”
