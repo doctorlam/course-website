@@ -42,10 +42,14 @@ body {
 }
 nav a, nav a:visited {
 	font-size: 1.1rem;
-	font-weight: bold;
+	color: #99b3ab !important;
+	font-family: 'Muli', sans-serif !important;
+
 }
 .navbar {
-	opacity: 0.7;
+	opacity: 0.8;
+	background: #2a2a29 !important;
+	border: none;
 }
 .navbar-right {
 	padding-right:10px;
