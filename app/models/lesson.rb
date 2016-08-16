@@ -22,7 +22,5 @@ validates_attachment :document, :content_type => { :content_type => %w(applicati
 	acts_as_commontable
 	acts_as_votable
   	default_scope { order('date') } 
-  	  self.per_page = 10
-
 
 end
