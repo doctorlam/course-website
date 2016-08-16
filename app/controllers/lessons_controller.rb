@@ -6,8 +6,10 @@ class LessonsController < ApplicationController
   # GET /lessons
   # GET /lessons.json
   def index
-    @lessons = Lesson.all
-  end
+     @search = Lesson.search(params[:q])
+  @lessons = @search.result
+   
+end
 
   # GET /lessons/1
   # GET /lessons/1.json

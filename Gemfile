@@ -28,7 +28,8 @@ gem 'ancestry'
 gem 'commontator'
 gem 'acts_as_votable'
 gem "cocoon"
-
+gem 'filterrific'
+gem 'ransack'
 
 group :production do 
 	gem 'pg'
