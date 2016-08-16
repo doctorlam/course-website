@@ -154,16 +154,19 @@ a.add_fields, a.remove_fields {
 }
 
 .tagline {
-	padding-top: 100px;
+	padding-top: 60px;
 
 }
 .tagline h1 {
-	font-family: 'Abril Fatface', cursive;
+	font-family: 'Josefin Sans', sans-serif;
 	text-align: center !important;
-	font-size: 3.25rem;
+	font-size: 5rem;
+	letter-spacing: 15px;
 	color: white;
 	text-transform: none;
-	border-bottom: none;
+	border: 2px solid white;	
+	width: 50%;
+	margin: 0 auto;
 
 }
 .tagline h2 {
@@ -171,7 +174,7 @@ a.add_fields, a.remove_fields {
 	text-align: center;
 	color: white;
 	font-size: 1.75rem;
-	margin-top: -30px;
+	letter-spacing: 3px
 }
 
 footer {
@@ -232,13 +235,14 @@ footer ul {
 	body {
     margin: 0 0 350px !important; /* bottom = footer height */
 }
+.tagline h1 {
+		width: 90%;
+	}
+
 }
 @media only screen and (max-width: 900px) {
 	html {
 	font-size: 15px;
-	}
-	.tagline {
-	padding-top: 50px;
 	}
 	
 	.navbar a {
@@ -260,5 +264,16 @@ footer ul {
 	.container {
 	width: 95%;
 	}
-	
+	.tagline h1 {
+		width: 95%;
+		font-size: 3.5rem;
+	}
+}
+@media only screen and (max-width: 500px) {
+	html {
+	font-size: 13px;
+	}
+	.tagline h1 {
+		
+	}
 }
