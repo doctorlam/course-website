@@ -8,6 +8,7 @@ class LessonsController < ApplicationController
   def index
      @search = Lesson.search(params[:q])
   @lessons = @search.result
+  @search.build_sort if @search.sorts.empty?
    
 end
 
