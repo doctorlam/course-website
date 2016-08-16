@@ -9,5 +9,4 @@ def link_to_add_fields(name, f, association, locals={})
     link_to(name, '#', class: "add_fields", data: {id: id, fields: fields.gsub("\n", "")})
 end
 
-
 end
