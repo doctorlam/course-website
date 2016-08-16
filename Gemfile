@@ -30,7 +30,7 @@ gem 'acts_as_votable'
 gem "cocoon"
 gem 'filterrific'
 gem 'ransack'
-
+gem 'rinku'
 group :production do 
 	gem 'pg'
 	gem 'rails_12factor'
