@@ -10,7 +10,7 @@ class LessonsController < ApplicationController
   @search = Lesson.search(params[:q])
   @lessons = @search.result
   @search.build_sort if @search.sorts.empty?
-   
+  @lessons = Lesson.paginate(page: params[:page], per_page: 10) 
 end
 
   # GET /lessons/1
