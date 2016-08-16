@@ -9,7 +9,20 @@ class LessonsController < ApplicationController
   @search = Lesson.search(params[:q])
   @search.sorts = 'date' if @search.sorts.empty?
   @lessons = @search.result.paginate(:page => params[:page])
+  record_history
+
 end
+
+
+  def record_history
+    session[:history] ||= []
+    session[:history].push request.url
+    session[:history] = session[:history].last(10) # limit the size to 10
+  end
+
+  def back
+    session[:history].pop
+  end
 
   # GET /lessons/1
   # GET /lessons/1.json
