@@ -21,6 +21,5 @@ validates_attachment :document, :content_type => { :content_type => %w(applicati
 	belongs_to :course
 	acts_as_commontable
 	acts_as_votable
-
-
+	
 end
