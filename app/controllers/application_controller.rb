@@ -13,6 +13,5 @@ class ApplicationController < ActionController::Base
 
   end
   	WillPaginate.per_page = 6
-
 end
 
