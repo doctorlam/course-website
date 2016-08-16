@@ -7,7 +7,6 @@ class ProjectsController < ApplicationController
   # GET /projects.json
   def index
     @projects = Project.all
-    default_scope { order('name') } 
   end
 
   # GET /projects/1
