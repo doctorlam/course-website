@@ -1,18 +1,18 @@
 class Lesson < ActiveRecord::Base
+
 	has_many :objectives, :dependent => :destroy
 	has_many :readings, :dependent => :destroy
 	has_many :homeworks, :dependent => :destroy
 	has_many :classactivitys, :dependent => :destroy
 	has_many :learnings
 	has_many :projects, :through => :learnings
-	 has_attached_file :image, styles: { medium: "300x>", thumb: "100x100>" }, default_url: "/images/:style/missing.png"
-  validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
+	
+	has_attached_file :document2
+  	attr_accessor :document2_file_name
+  	validates_attachment_file_name :document2, :matches => [/pdf\Z/, /pptx\Z/, /docx\Z/]
 
-  	 has_attached_file :anotherdocument
-
-  	 attr_accessor :anotherdocument_file_name
-  	 has_attached_file :document
-
+  	has_attached_file :document
+  	validates_attachment_file_name :document, :matches => [/pdf\Z/, /pptx\Z/, /docx\Z/]
 
 	accepts_nested_attributes_for :objectives, :reject_if => lambda { |a| a[:content].blank? }, :allow_destroy => true
 	accepts_nested_attributes_for :readings, :reject_if => lambda { |a| a[:content].blank? }, :allow_destroy => true

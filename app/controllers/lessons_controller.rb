@@ -45,12 +45,8 @@ end
 
     respond_to do |format|
       if @lesson.save
-         if params[:attachments]
-        #===== The magic is here ;)
-        params[:attachments].each { |attachment|
-          @lesson.attachments.create(attachment: file)
-        }
-      end
+         
+      
         format.html { redirect_to @lesson, notice: 'Lesson was successfully created.' }
         format.json { render :show, status: :created, location: @lesson }
       else
@@ -95,7 +91,7 @@ end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def lesson_params
-      params.require(:lesson).permit(:file, {project_ids: []}, :project_id, :thread, :course_id, :name, :week, :date, :image, :document, :attachment,
+      params.require(:lesson).permit({project_ids: []},:project_id, :thread, :course_id, :name, :week, :date, :image, :document, :document2, :attachment,
       objectives_attributes: [:id, :content, :_destroy],  readings_attributes: [:id, :content, :_destroy],  homeworks_attributes: [:id, :content, :_destroy],
       classactivitys_attributes: [:id, :content, :_destroy])
 
