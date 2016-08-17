@@ -39,6 +39,7 @@ end
   # POST /lessons
   # POST /lessons.json
   def create
+
     @lesson = Lesson.new(lesson_params)
     @lesson.user_id = current_user.id
 
@@ -93,7 +94,7 @@ end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def lesson_params
-      params.require(:lesson).permit(:project_id, :thread, :course_id, :name, :week, :date, :image, :document, :attachment,
+      params.require(:lesson).permit({project_ids: []}, :project_id, :thread, :course_id, :name, :week, :date, :image, :document, :attachment,
       objectives_attributes: [:id, :content, :_destroy],  readings_attributes: [:id, :content, :_destroy],  homeworks_attributes: [:id, :content, :_destroy],
       classactivitys_attributes: [:id, :content, :_destroy])
 

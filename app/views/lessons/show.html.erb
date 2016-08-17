@@ -5,7 +5,7 @@
 <div class="row">
 	<div class="col-md-8 show-left">
 
-	  <h1><%= @lesson.name %></h1>
+	  <h1>Lesson:<%= @lesson.name %></h1>
 
 	  <h3>Week:
 	  <%= @lesson.week %></h3>
@@ -49,8 +49,12 @@
 	<% else %>
 	  <h3>No Document(s) Attached!</h3>
 	<% end %>
-	
-	</div>
+	<h1>Relevent Project(s)</h1>
+	 <% for project in @lesson.projects %>
+      	<ul><li><%= link_to project.name, project_url(project) %></li></ul>
+               
+     <% end %>
+</div>
 </div><!--row-->
 
 

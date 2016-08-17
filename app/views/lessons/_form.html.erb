@@ -16,8 +16,13 @@
       <%= f.text_field :course_id, class: "form-control" %>
     </div>
      <div class="form-group">
-      <%= f.label :project_id, name="Project" %><br>
-     <%= f.select :project_id, Project.all.collect {|m| [m.name, m.id]} %>
+        <%= hidden_field_tag "lesson[project_ids][]", nil %>
+        <% Project.all.each do |project| %>
+          <%= check_box_tag "lesson[project_ids][]", project.id, @lesson.project_ids.include?(project.id), id: dom_id(project) %>
+          <%= label_tag dom_id(project), project.name %>
+          <br />
+
+        <% end %>
     </div>
     <div class="form-group">
       <%= f.label :name %>
