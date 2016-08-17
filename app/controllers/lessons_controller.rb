@@ -9,6 +9,7 @@ class LessonsController < ApplicationController
   @search = Lesson.search(params[:q])
   @search.sorts = 'date' if @search.sorts.empty?
   @lessons = @search.result.paginate(:page => params[:page])
+
 end
 
 
@@ -16,6 +17,7 @@ end
   # GET /lessons/1.json
   def show
     commontator_thread_show(@lesson)
+
 
   end
 
@@ -91,7 +93,7 @@ end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def lesson_params
-      params.require(:lesson).permit(:thread, :course_id, :name, :week, :date, :image, :document, :attachment,
+      params.require(:lesson).permit(:project_id, :thread, :course_id, :name, :week, :date, :image, :document, :attachment,
       objectives_attributes: [:id, :content, :_destroy],  readings_attributes: [:id, :content, :_destroy],  homeworks_attributes: [:id, :content, :_destroy],
       classactivitys_attributes: [:id, :content, :_destroy])
 
