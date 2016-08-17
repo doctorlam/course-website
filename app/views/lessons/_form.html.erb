@@ -18,8 +18,6 @@
      <div class="form-group">
       <%= f.label :project_id, name="Project" %><br>
      <%= f.select :project_id, Project.all.collect {|m| [m.name, m.id]} %>
-
-    
     </div>
     <div class="form-group">
       <%= f.label :name %>
