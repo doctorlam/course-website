@@ -11,7 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160817204541) do
+ActiveRecord::Schema.define(version: 20160818181414) do
+
+  create_table "abouts", force: :cascade do |t|
+    t.text     "name"
+    t.text     "description"
+    t.text     "materials"
+    t.text     "vital"
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+    t.string   "document_file_name"
+    t.string   "document_content_type"
+    t.integer  "document_file_size"
+    t.datetime "document_updated_at"
+    t.integer  "user_id"
+  end
 
   create_table "add_attachment_to_lessons", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -72,6 +86,13 @@ ActiveRecord::Schema.define(version: 20160817204541) do
   end
 
   add_index "commontator_threads", ["commontable_id", "commontable_type"], name: "index_commontator_threads_on_c_id_and_c_type", unique: true
+
+  create_table "course_infos", force: :cascade do |t|
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "about_id"
+  end
 
   create_table "courses", force: :cascade do |t|
     t.string   "name"
@@ -144,11 +165,19 @@ ActiveRecord::Schema.define(version: 20160817204541) do
     t.datetime "document2_updated_at"
   end
 
+  create_table "materials", force: :cascade do |t|
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "about_id"
+  end
+
   create_table "objectives", force: :cascade do |t|
     t.integer  "lesson_id"
     t.text     "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "about_id"
   end
 
   create_table "projects", force: :cascade do |t|
@@ -208,6 +237,13 @@ ActiveRecord::Schema.define(version: 20160817204541) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+
+  create_table "vitals", force: :cascade do |t|
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "about_id"
+  end
 
   create_table "votes", force: :cascade do |t|
     t.integer  "votable_id"

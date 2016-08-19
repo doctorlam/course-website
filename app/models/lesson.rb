@@ -8,10 +8,7 @@ class Lesson < ActiveRecord::Base
 	has_many :projects, :through => :learnings
 	
 	has_attached_file :image
-	has_attached_file :document2, :attachment_presence => true
-  	attr_accessor :document2_file_name
-  	validates_attachment_file_name :document2, :matches => [/pdf\Z/, /pptx\Z/, /docx\Z/]
-
+  	validates_attachment_file_name :image, :matches => [/pdf\Z/, /pptx\Z/, /docx\Z/]
 
   	has_attached_file :document
   	validates_attachment_file_name :document, :matches => [/pdf\Z/, /pptx\Z/, /docx\Z/]
@@ -26,4 +23,6 @@ class Lesson < ActiveRecord::Base
 	acts_as_commontable
 	acts_as_votable
   	default_scope { order('date') } 
+
+  	 
 end
