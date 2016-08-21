@@ -88,7 +88,7 @@ config.paperclip_defaults = {
     access_key_id: ENV.fetch('AKIAJENRKEXHHUIUZN5Q'),
     secret_access_key: ENV.fetch('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
 '),
-    s3_region: ENV.fetch('US_standard'),
+    s3_region: ENV.fetch('US-east-1'),
   }
 }
 end
