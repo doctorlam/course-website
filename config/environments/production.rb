@@ -2,6 +2,7 @@ Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Code is not reloaded between requests.
+
   config.cache_classes = true
 
   # Eager load code on boot. This eager loads most of Rails and
@@ -80,4 +81,15 @@ Rails.application.configure do
   #Required for devise. Remember to change localhost:3000 to application host
   config.action_mailer.default_url_options = { host: 'http://course-website.herokuapp.com' }
 
+config.paperclip_defaults = {
+  storage: :s3,
+  s3_credentials: {
+    bucket: ENV.fetch('tecm4400'),
+    access_key_id: ENV.fetch('AKIAJENRKEXHHUIUZN5Q'),
+    secret_access_key: ENV.fetch('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
+'),
+    s3_region: ENV.fetch('US_standard'),
+  }
+}
 end
+
