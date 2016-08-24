@@ -14,6 +14,7 @@
            
                 <h2><%= project.name %></h2>
                 <h3>DUE: <%= project.due %></h3>
+
                 <td><%= link_to 'Show', project %></td>
       <% if current_user.try(:admin?) %>
          <td><%= link_to 'Edit', edit_project_path(project) %></td>
@@ -22,17 +23,17 @@
 
         <br /><br />
 
-                <p><%= project.description %></p>
+                <p><%= project.description.html_safe %></p>
 
                 <h3>Deliverables</h3>
                 <% for deliverable in project.deliverables %>
-                <ul><li><%= deliverable.description %></li></ul>
+                <ul><li><%= deliverable.description.html_safe %></li></ul>
                 <% end %>
                 
 
                 <h3>Grading Criteria</h3>
                 <% for rubric in project.rubrics %>
-                <ul><li><%= rubric.description %></li></ul>
+                <ul><li><%= rubric.description.html_safe %></li></ul>
                 <% end %>
         </div>
         <div class="col-md-4 projects-right">
