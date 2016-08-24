@@ -15,7 +15,7 @@
         <% end %>
   
         <h2>Submission Content:</h2>
-        <p><%= @submission.description %></p>
+        <p><%= simple_format @submission.description.html_safe %></p>
 
         <h2>Attached Submitted Document</h2>
       <% if @submission.document? %>
