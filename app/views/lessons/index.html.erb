@@ -3,7 +3,7 @@
   <div class = "alert alert-success"><%= flash[:notice] %></div>
 <% end %>
 <% if current_user.try(:admin?) %>
-<%= link_to 'New Lesson', new_lesson_path, class: "btn btn-primary" %>
+<%= link_to 'New Lesson', new_lesson_path, class: "btn btn-default" %>
 <% end %>
 <h1>Course Schedule</h1>
 
@@ -12,7 +12,7 @@
   <%= f.label :name_cont, "Search Lessons" %>
   <%= f.text_field :name_cont, class: "form-control" %>
   </div>
-  <div class="actions"><%= f.submit "Search", class: "btn-primary btn" %></div>
+  <div class="actions"><%= f.submit "Search", class: "btn-default btn" %></div>
 
 
 <% end %>
