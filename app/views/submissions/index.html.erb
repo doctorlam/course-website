@@ -35,7 +35,7 @@
       <% for assignment in submission.assignments %>
         <td><%= assignment.name %></td>
       <% end %>
-        <td><%= submission.created_at %>, <%= submission.created_at %></td>
+        <td><%= submission.created_at.to_date %>, <%= submission.created_at %></td>
       <% for assignment in submission.assignments %>
         <td><%= assignment.deadline %></td>
       <% end %>
