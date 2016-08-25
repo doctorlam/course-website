@@ -12,7 +12,7 @@
           <p><%= assignment.deadline %></p>
       <% end %>
       <h2>Date Submitted</h2>
-      <p><%= @submission.created_at %> at <%= @submission.created_at %> </p>
+      <p><%= @submission.created_at.to_date %> at <%= @submission.created_at %> </p>
         <h2>Submission Content:</h2>
         <p><%= simple_format @submission.description.html_safe %></p>
 
