@@ -42,9 +42,17 @@
 </li></ul>
       <%end%></td>
 
-      <td><% for homework in lesson.homeworks %>
-        <ul><li><%= homework.content.html_safe %></li></ul>
-      <%end%></td>
+      <td>
+        <ul>
+            <% for homework in lesson.homeworks %>
+                <li><%= homework.content.html_safe %></li>
+            <% end %>
+            <% for assignment in lesson.assignments %>  
+                <li>[Turn In] <%= link_to assignment.name, assignment_url(assignment) %></li>  
+            <% end %>
+
+        </ul>
+      </td>
 
 
         <td><%= link_to 'View Lesson', lesson %></td>
