@@ -5,7 +5,7 @@ class AssignmentsController < ApplicationController
   # GET /assignments.json
   def index
 
-    @assignments = Assignment.order(deadline: :desc)
+    @assignments = Assignment.order(created_at: :desc)
   end
 
 

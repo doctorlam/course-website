@@ -26,30 +26,10 @@
     <%= f.file_field :image, :class => "form-control-file", class: "form-control" %>
     </div>
   <% end %>
-<div class="second-form-group">
-    <h2>Choose the assignment you're turning in.</h2>
-       <%= hidden_field_tag "submission[assignment_ids][]", nil %>
-        <% Assignment.all.each do |assignment| %>
-          <%= radio_button_tag "submission[assignment_ids][]", assignment.id, @submission.assignment_ids.include?(assignment.id), id: dom_id(assignment)%>
-          <%= label_tag dom_id(assignment), assignment.name %> | due <%= assignment.deadline %>
-          <br />
-        <% end %>
-    </div>
+
+<%= render "#{@submission.current_step}_step", :f => f %>
+<%= f.submit "Back", class: "btn btn-primary", :name => "back_button" unless @submission.first_step? %>
+<%= f.submit "Continue", class: "btn btn-primary" %> 
 
 
-  <div class="third-form-group">
-    <%= f.label :description, 'Write your brilliant answer here. Feel free to use line breaks and write as if a WYSIWYG.' %><br>
-    <%= f.text_area :description, class: "form-control", rows: "10" %>
-  </div>
-  <div class="second-form-group">
-  <h2>Upload your assignment</h2>
-    <%= f.label :document %>
-    <%= f.file_field :document, :class => "form-control-file", class: "form-control" %>
-
-  </div>
-  
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
 <% end %>
