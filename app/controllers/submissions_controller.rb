@@ -2,7 +2,7 @@ class SubmissionsController < ApplicationController
       before_action :set_submission, only: [:show, :edit, :update, :destroy]
       before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
       before_filter :check_user, only: [:edit, :update, :destroy]
-      before_filter :authorize_admin, only: [:index, :destroy]
+      before_filter :authorize_admin, only: [:index, :destroy, :edit]
 
 
   # GET /submissions
@@ -52,7 +52,7 @@ def create
     render "new"
   else
     session[:submission_step] = session[:submission_params] = nil
-    flash[:notice] = "Submission saved!"
+    flash[:notice] = "Assignment Submitted!"
     redirect_to @submission
   end
 

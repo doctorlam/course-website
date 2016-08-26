@@ -18,7 +18,7 @@ class Submission < ActiveRecord::Base
 		end
 
 		def steps
-		  %w[assignment content confirmation]
+		  %w[assignment content]
 		end
 
 		def next_step
