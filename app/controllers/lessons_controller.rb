@@ -33,9 +33,9 @@ end
 
   # GET /lessons/1/edit
   def edit
-  
+    
   end
-
+  
   # POST /lessons
   # POST /lessons.json
   def create
@@ -45,8 +45,6 @@ end
 
     respond_to do |format|
       if @lesson.save
-         
-      
         format.html { redirect_to @lesson, notice: 'Lesson was successfully created.' }
         format.json { render :show, status: :created, location: @lesson }
       else
@@ -91,7 +89,7 @@ end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def lesson_params
-      params.require(:lesson).permit({project_ids: []},{assignment_ids: []}, :remove_document, :project_id, :thread, :course_id, :name, :week, :date, :image, :document, :document2, :attachment,
+      params.require(:lesson).permit({project_ids: []},{assignment_ids: []}, :delete_document, :delete_image, :project_id, :thread, :course_id, :name, :week, :date, :image, :document, :document2, :attachment,
       objectives_attributes: [:id, :content, :_destroy],  readings_attributes: [:id, :content, :_destroy],  homeworks_attributes: [:id, :content, :_destroy, :assignment_id,{assignment_ids: []}],
       classactivitys_attributes: [:id, :content, :_destroy])
 
