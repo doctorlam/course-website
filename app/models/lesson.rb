@@ -12,7 +12,9 @@ class Lesson < ActiveRecord::Base
   	validates_attachment_file_name :image, :matches => [/pdf\Z/, /pptx\Z/, /docx\Z/]
 
   	has_attached_file :document
-  	validates_attachment_file_name :document, :matches => [/pdf\Z/, /pptx\Z/, /docx\Z/]
+  	
+	attr_accessor :delete_document
+    before_validation { document.clear if delete_document == '1' }
 
 	accepts_nested_attributes_for :objectives, :reject_if => lambda { |a| a[:content].blank? }, :allow_destroy => true
 	accepts_nested_attributes_for :readings, :reject_if => lambda { |a| a[:content].blank? }, :allow_destroy => true
@@ -25,5 +27,4 @@ class Lesson < ActiveRecord::Base
 	acts_as_votable
   	default_scope { order('date') } 
 
-  	 
 end

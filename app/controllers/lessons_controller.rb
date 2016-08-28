@@ -3,7 +3,6 @@ class LessonsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
   before_filter :check_user, only: [:edit, :update, :destroy]
   before_filter :authorize_admin, only: [:new, :create, :destroy, :edit]
-
   # GET /lessons
   # GET /lessons.json
   def index
@@ -92,7 +91,7 @@ end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def lesson_params
-      params.require(:lesson).permit({project_ids: []},{assignment_ids: []}, :project_id, :thread, :course_id, :name, :week, :date, :image, :document, :document2, :attachment,
+      params.require(:lesson).permit({project_ids: []},{assignment_ids: []}, :remove_document, :project_id, :thread, :course_id, :name, :week, :date, :image, :document, :document2, :attachment,
       objectives_attributes: [:id, :content, :_destroy],  readings_attributes: [:id, :content, :_destroy],  homeworks_attributes: [:id, :content, :_destroy, :assignment_id,{assignment_ids: []}],
       classactivitys_attributes: [:id, :content, :_destroy])
 
@@ -101,5 +100,6 @@ end
       if current_user == authorize_admin
         redirect_to root_url, alert: "You don't have permission to do that!"
       end 
+
     end
 end
