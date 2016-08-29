@@ -81,7 +81,7 @@
 				<label for="op"></label>
 					<div class="overlay-container">
 						<h1 class="overlay-heading">Cliffs for "<%=@lesson.name %>" on <%= @lesson.date %></h1>
-						<ul><% for takeaway in @lesson.takeaways %><li><%= takeaway.content %></li><% end %></ul>
+						<ol type= "1"><% for takeaway in @lesson.takeaways %><li><%= takeaway.content %></li><% end %></ol>
 					</div>
 			</div>
 
