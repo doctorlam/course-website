@@ -32,7 +32,7 @@
 
        <tbody>
         <% @submissions.each do |submission| %>
-          <td><%= link_to submission.user, submission %></td>
+          <td><%= link_to submission.user.name, submission %></td>
           <% for assignment in submission.assignments %>
             <td><%= assignment.name %></td>
           <% end %>
