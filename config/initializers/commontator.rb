@@ -191,7 +191,7 @@ config.user_name_proc = lambda { |user| user.name }
   # Not yet implemented:
   #   :n (link to the form; opens in a new window)
   # Default: :l
-  config.new_comment_style = :t
+  config.new_comment_style = :l
 
   # comments_per_page
   # Type: Fixnum or nil
@@ -254,7 +254,7 @@ config.user_name_proc = lambda { |user| user.name }
   #   false (no mentions)
   #   true  (mentions enabled)
   # Default: false
-  config.mentions_enabled = false
+  config.mentions_enabled = true
 
   # user_mentions_proc
   # Type: Proc
