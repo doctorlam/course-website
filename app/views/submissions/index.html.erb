@@ -32,7 +32,7 @@
 
        <tbody>
         <% @submissions.each do |submission| %>
-          <% if submission.user.name? %>
+          <% if submission.user? %>
              <td><%= link_to submission.user.name, submission %></td>
           <% else %>
               <td>No users have submitted yet</td>
