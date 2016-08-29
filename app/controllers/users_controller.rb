@@ -4,10 +4,9 @@ class UsersController < ApplicationController
 
 	def index
 		if user_signed_in?
-			@users = User.all
+			@users = User.order('name ASC')
 			@submissions = Submission.all
-			@grade = Submission.average(:score)/Submission.average(:totalscore)
-			@assignments = Assignment.all
+	
 	else
         redirect_to root_url, alert: "You don't have permission to do that!"
 	end
