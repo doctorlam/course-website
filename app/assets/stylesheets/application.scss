@@ -474,8 +474,10 @@ h1.overlay-heading {
 		width: 95%;
 		font-size: 3.5rem !important;
 	}
-	.overlay {
+	.overlay, .overlay label {
 		position: static;
+		text-align: right;
+		padding: 10px;
 	}
 
 	h1.overlay-heading {
