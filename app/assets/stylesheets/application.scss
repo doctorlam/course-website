@@ -347,11 +347,10 @@ input.takeaway {
 .overlay .overlay-container {
 	text-align: center;
 	position: relative;
-	top: 50%;
-	height: 60%;
-	font-size: 3rem !important;
-	-webkit-transform: translateY(-50%);
-	transform: translateY(-50%);
+	top: 10%;
+	height: 10%;
+	-webkit-transform: translateY(-10%);
+	transform: translateY(-10%);
 }
 
 .overlay ol {
@@ -363,9 +362,7 @@ input.takeaway {
 }
 
 .overlay ol li {
-	height: 20%;
-	height: calc(100% / 5);
-	min-height: 54px;
+	padding-bottom: 20px;
 	text-align: left;
 	margin-left: 40px;
 
@@ -378,12 +375,12 @@ input.takeaway {
 	-webkit-transition: color 0.2s;
 	transition: color 0.2s;
   	font-family: 'Open sans condensed' !important;
-  	font-size: 2.25rem !important;
- 	 line-height: 2.7rem !important;
+  	font-size: 1.7rem !important;
+ 	 line-height: 2rem !important;
 
 }
 h1.overlay-heading {
-	font-size: 3.5rem !important;
+	font-size: 3rem;
 	color: #99b3ab !important;
 	padding-bottom: 20px !important;
 	margin-bottom: 40px;
