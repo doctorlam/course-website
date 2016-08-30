@@ -34,7 +34,7 @@ class SubmissionsController < ApplicationController
   # POST /submissions
   # POST /submissions.json
 def create
-  @assignments = Assignment.all.sort_by &:deadline
+  @assignments = Assignment.all.sort_by &:name
   session[:submission_params].deep_merge!(params[:submission]) if params[:submission]
   @submission = Submission.new(session[:submission_params])
   @submission.user_id = current_user.id
