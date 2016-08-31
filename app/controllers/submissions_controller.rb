@@ -9,7 +9,7 @@ class SubmissionsController < ApplicationController
   # GET /submissions.json
   def index
     @search = Submission.search(params[:q])
-    @search.sorts = 'date' if @search.sorts.empty?
+    @search.sorts = 'created_at' if @search.sorts.empty?
     @submissions = @search.result.paginate(:page => params[:page])
   end
 
