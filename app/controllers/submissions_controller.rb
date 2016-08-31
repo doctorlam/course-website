@@ -10,6 +10,8 @@ class SubmissionsController < ApplicationController
   def index
     @search = Submission.search(params[:q])
     @search.sorts = 'created_at DESC' if @search.sorts.empty?
+    @submissions = @search.result.paginate(:page => params[:page])
+
   end
 
   # GET /submissions/1
