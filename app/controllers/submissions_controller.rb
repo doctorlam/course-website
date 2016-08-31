@@ -11,6 +11,7 @@ class SubmissionsController < ApplicationController
     @search = Submission.search(params[:q])
     @search.sorts = 'created_at DESC' if @search.sorts.empty?
     @submissions = @search.result.paginate(:page => params[:page])
+    @assignments = Assignment.all
 
   end
 
