@@ -20,7 +20,6 @@ class SubmissionsController < ApplicationController
 
   # GET /submissions/new
   def new
-    @Assignments = Assignment.order ('name ASC')
     @submission = Submission.new(:user => @current_user)
     session[:submission_params] ||= {}
     @subbmission = Submission.new(session[:submission_params])
