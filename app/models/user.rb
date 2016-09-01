@@ -13,6 +13,7 @@ class User < ActiveRecord::Base
   validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
   acts_as_commontator
   has_many :posts
+  has_many :responses
 
   
 end

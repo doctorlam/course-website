@@ -1,6 +1,10 @@
 <div class = "container">
 	<h1><%= @post.title %></h1>
 	<p><%= @post.content %></p>
+	<h3>Replies: <%= @post.responses.count %></h3>
+	<%= render @post.responses %>
+	<h3>Reply to thread</h3>
+	<%= render "responses/form" %>
 
 	<%= link_to "Edit", edit_post_path(@post) %>
 	<%= link_to "Delete Post", post_path(@post), method: :delete, data: {confirm: "Are you sure you want to do this?"} %>

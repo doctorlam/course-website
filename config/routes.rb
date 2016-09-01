@@ -5,7 +5,10 @@ Rails.application.routes.draw do
   resources :abouts
   resources :projects
   resources :courses
-  resources :posts
+  resources :posts do 
+    resources :responses
+  end
+
   get 'pages/gradebook'
   get 'pages/accounts'
  
