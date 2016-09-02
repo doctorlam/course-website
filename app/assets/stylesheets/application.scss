@@ -311,13 +311,13 @@ p.small-response {
 	text-align: right;
 
 }
-a.small-reply {
+.small-reply {
 	font-size: 0.65rem !important;
-	margin-top: -40px !important;
+	text-align:right;
 }
 .thread {
 	background: #FCFCFC;
-	padding: 20px;
+	padding: 10px;
 }
 .response-container {
 
@@ -328,8 +328,10 @@ a.small-reply {
 }
 .reply {
 	min-height: 150px;
+	padding-top: 0px;
+	padding-left: 20px;
+	padding-bottom: 20px;
 	padding-top: 10px;
-	padding-left: 30px;
 
 }
 .lower{
