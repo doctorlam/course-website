@@ -33,7 +33,7 @@
        <tbody>
         <% @submissions.each do |submission| %>
          
-             <td><%= link_to submission.user.name, submission %></td>
+             <td><%= link_to [submission.user.name, submission.user.last_name].join(" "), submission %></td>
           <% for assignment in submission.assignments %>
             <td><%= assignment.name %></td>
           <% end %>
@@ -54,8 +54,6 @@
             <td><%= link_to 'Grade', submission %></td>
                     <td><%= link_to 'Destroy', submission, method: :delete, data: { confirm: 'Are you sure?' } %></td>
 
-                  
-           
           </tr>
         <% end %>
 
@@ -64,11 +62,6 @@
     <%= will_paginate @submissions %>
 
   </div><!--responsive table close-->
-
-<h3>Total Score:</h3><h4 style= "color: #c0392b"><%= @submissions.sum(:score) %> / 
-<%= @submissions.sum(:totalscore) %>
-
-<h3>Percent:</h3><h4 style= "color: #c0392b"><%= number_to_percentage @submissions.sum(:score).to_f * 100 / @submissions.sum(:totalscore) %></h3>
 
 <h3><%= link_to "All users grades", pages_usergrades_path, class: "btn btn-primary form-control" %>
 

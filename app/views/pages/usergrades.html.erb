@@ -1,4 +1,5 @@
 <div class="container">
+
 	<% @users.each do |user| %>
 
 	<h1><%= user.name %> <%= user.last_name %>'s Grades</h1>
@@ -15,5 +16,7 @@
 		     </table>
 		    <h3 style = "color:red">Total Score: <%= user.submissions.sum(:score) %> out of <%= @assignments.sum(:score) %></h3>
 		 </div>
+
 	 <% end %>
+
 </div>
