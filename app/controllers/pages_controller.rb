@@ -8,12 +8,8 @@ class PagesController < ApplicationController
 
   def usergrades 
     if user_signed_in? && current_user.admin?
-        @usersgrades = User.order(last_name: :asc)
         @assignments = Assignment.all
-         @search = User.search(params[:q])
-        @search.sorts = 'last_name' if @search.sorts.empty?
-         @usergrades = @search.result.paginate(:page => params[:page])
-
+        @usergrades = User.paginate(:page => params[:page])
 
     else
       redirect_to lessons_url, alert: "You don't have permission to do that! Nice try though :)"
