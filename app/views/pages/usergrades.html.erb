@@ -1,6 +1,6 @@
 <div class="container">
 
-	<% @users.each do |user| %>
+	<% @usersgrades.each do |user| %>
 
 	<h1><%= user.name %> <%= user.last_name %>'s Grades</h1>
 		<div class="table-responsive">
@@ -18,5 +18,7 @@
 		 </div>
 
 	 <% end %>
+
+<%= will_paginate @usergrades %>
 
 </div>
