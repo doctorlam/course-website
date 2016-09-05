@@ -9,7 +9,7 @@ class PagesController < ApplicationController
   def usergrades 
     if user_signed_in? && current_user.admin?
         @assignments = Assignment.all
-        @usergrades = User.paginate(:page => params[:page])
+        @usergrades = User.order(last_name: :asc)
 
     else
       redirect_to lessons_url, alert: "You don't have permission to do that! Nice try though :)"
