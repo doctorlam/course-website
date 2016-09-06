@@ -29,9 +29,10 @@
           <th colspan="1"></th>
         </tr>
       </thead>
-
        <tbody>
         <% @submissions.each do |submission| %>
+
+        <% if submission.score == nil %>
          
              <td><%= link_to [submission.user.name, submission.user.last_name].join(" "), submission %></td>
           <% for assignment in submission.assignments %>
@@ -56,7 +57,7 @@
 
           </tr>
         <% end %>
-
+      <% end %>
       </tbody>
     </table>
     <%= will_paginate @submissions %>
