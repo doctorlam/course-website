@@ -17,3 +17,9 @@
 //= require_tree .
 //= require filterrific/filterrific-jquery
 
+jQuery(document).ready(function(){
+        jQuery('#hideshow').on('click', function(event) {        
+             jQuery('#all-grades').toggle('hide');
+        });
+    });
+

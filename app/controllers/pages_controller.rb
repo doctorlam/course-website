@@ -8,6 +8,7 @@ class PagesController < ApplicationController
 
   def usergrades 
     if user_signed_in? && current_user.admin?
+       
         @assignments = Assignment.all
         @usergrades = User.order(last_name: :asc)
 
