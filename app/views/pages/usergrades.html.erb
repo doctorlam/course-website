@@ -1,13 +1,35 @@
 <div class="container">
-<%= form_tag pages_usergrades_path, method: 'get' do %>
 
      <%= select_tag(:user_id, options_from_collection_for_select(User.all.order(:last_name), :id, :name), :prompt => "All Users") %>
-   <%= submit_tag 'Filter' %>
-<% end %>
-      
-<div id = "output">
+<ul class="alphabet">
+                    <li><a>A</a></li>
+                    <li><a>B</a></li>
+                    <li><a>C</a></li>
+                    <li><a>D</a></li>
+                    <li><a>E</a></li>
+                    <li><a>F</a></li>
+                    <li><a>G</a></li>
+                    <li><a>H</a></li>
+                    <li><a>I</a></li>
+                    <li><a>J</a></li>
+                    <li><a>K</a></li>
+                    <li><a>L</a></li>
+                    <li><a>M</a></li>
+                    <li><a>N</a></li>
+                    <li><a>O</a></li>
+                    <li><a>P</a></li>
+                    <li><a>R</a></li>
+                    <li><a>S</a></li>
+                    <li><a>T</a></li>
+                    <li><a>U</a></li>
+                    <li><a>V</a></li>
+                    <li><a>Y</a></li>
+                    <li><a>Z</a></li>
+                </ul>
+ 
+		<div class="username">
 			<% @usergrades.each do |user| %>
-			<h1 class="division-select"><%= user.name %> <%= user.last_name %>'s Grades</h1>
+			<h1><strong><%=user.last_name %>, <%= user.name %></strong></h1>
 				<div class="table-responsive usergrades">
 					<table class="table table-striped table-hover table-condensed">
 						<% for submission in user.submissions %>
@@ -22,6 +44,25 @@
 				          	 <td><strong><%= user.submissions.sum(:score) %> / <%= @assignments.sum(:score) %> or <%= number_to_percentage user.submissions.sum(:score).to_f * 100 / @assignments.sum(:score) %></strong></td>
 				     </table>
 				 </div>
+			</div>
+
 			 <% end %>
-	 </div>
-</div>
+<script>
+var triggers = $('ul.alphabet li a');
+var filters = $('div.username h1 strong');
+
+triggers.click(function() {
+    var takeLetter = $(this).text();
+    var found = false;
+    filters.parent().hide();
+
+    filters.each(function(i) {
+        var compareFirstLetter = $(this).text().substr(0,1);
+        if ( compareFirstLetter ==  takeLetter ) {
+            $(this).parent().fadeIn(222);
+            found = true;
+        }
+    });
+    if (!found) {console.log('There is no result.');}
+});
+</script>

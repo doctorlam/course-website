@@ -14,7 +14,9 @@
  *= require_self
 *= require commontator/application
 */
-
+ul.alphabet li{
+	display: inline;
+}
 .password {
 	border: 1px solid red;
 	padding:10px;
