@@ -30,6 +30,15 @@
 <%= yield %>
 
 </div>
+<script src="http://listjs.com/no-cdn/list.js"></script>
+<script>
+var options = {
+  valueNames: [ 'name' ]
+};
+
+var userList = new List('users', options);
+
+</script>
 <%= render 'layouts/footer' %>
 </body>
 </html>
