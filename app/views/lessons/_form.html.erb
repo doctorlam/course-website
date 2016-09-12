@@ -87,7 +87,7 @@
   <h2>Documents</h2>
   <% if @lesson.document.exists? %>
      
-      <%= f.check_box :delete_document, "Remove" %> <%= @lesson.document.original_filename %>
+      <%= f.check_box :delete_document %> Remove <%= @lesson.document.original_filename %>
   <% else %>
       <%= f.label :document %>
       <%= f.file_field :document, :class => "form-control-file", class: "form-control" %>
@@ -96,7 +96,7 @@
 
   <% if @lesson.image.exists? %>
 
-      <%= f.check_box :delete_image, "Remove" %> <%= @lesson.image.original_filename %>
+      <%= f.check_box :delete_image %> Remove <%= @lesson.image.original_filename %>
     <% else %>
     <%= f.label :image %>
     <%= f.file_field :image, :class => "form-control-file", class: "form-control" %>
