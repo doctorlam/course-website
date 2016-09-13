@@ -9,11 +9,11 @@ class Submission < ActiveRecord::Base
 	has_many :grades, :through => :gradecategorizations
 
 	has_attached_file :document
-  	validates_attachment_file_name :document, :matches => [/pdf\Z/, /pptx\Z/, /docx\Z/, /zip\Z/, /xlsx\Z/]
+  	validates_attachment_file_name :document, :matches => [/pdf\Z/, /pptx\Z/, /docx\Z/, /zip\Z/, /xlsx\Z/, /\Aimage\/.*\Z/]
   			
 
   	has_attached_file :image
-  	validates_attachment_file_name :image, :matches => [/pdf\Z/, /pptx\Z/, /docx\Z/, /zip\Z/, /xlsx\Z/]
+  	validates_attachment_file_name :image, :matches => [/pdf\Z/, /pptx\Z/, /docx\Z/, /zip\Z/, /xlsx\Z/, /\Aimage\/.*\Z/]
 
   			attr_accessor :delete_image
   			before_validation { image.clear if delete_image == '1' }
