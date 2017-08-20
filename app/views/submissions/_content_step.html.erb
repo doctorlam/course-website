@@ -21,7 +21,7 @@
                 <p>Due: <%= assignment.deadline %></p>
             <h2>Assignment Attachments?</h2>
               <% if assignment.document? %>
-        <a target=_blank href=" <%= assignment.document.url %>"><%= assignment.document.original_filename %>
+        <a target=_blank href=" <%= assignment.document.url %>"><%= assignment.document.original_filename %></a>
           
           <% else %>
           <p>No attachment for this assignment</p>

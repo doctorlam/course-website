@@ -21,10 +21,12 @@
 			 <p><%= simple_format @assignment.description.html_safe %></p>
 			  
 			<% if @assignment.document? %>
-			<li>Attachemnt: <a target=_blank href=" <%= @assignment.document.url %>"><%= @assignment.document.original_filename %></a></li>
+			<h3><%= image_tag 'attachments.png' %> Attachment: <br> <a target=_blank href=" <%= @assignment.document.url %>"><%= @assignment.document.original_filename %></a></h3>
+			<br>
+			<br>
 					
 				<% end %>
-			  <%= link_to 'Submit Your Homework', "/submissions/new?assignment=#{@assignment.id}", class: 'btn btn-primary form-control' %>
+			  <%= link_to 'Submit Your Homework', "/submissions/new?assignment=#{@assignment.id}", class: 'btn btn-success form-control' %>
 		<br />
 		</div>
 		<div class="col-md-4 projects-right">
