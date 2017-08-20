@@ -4,4 +4,7 @@ class Assignment < ActiveRecord::Base
 	has_many :homeworks, :through => :turnins
 	has_many :learnings
 	has_many :lessons, :through => :learnings
+		has_attached_file :document 
+		do_not_validate_attachment_file_type :document
+
 end
