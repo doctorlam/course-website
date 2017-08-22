@@ -14,7 +14,6 @@ theme_advanced_buttons3_add:
   - preview
   - view
   - code
-  - advcode
 
 plugins:
   - table
@@ -28,4 +27,4 @@ plugins:
   - hr
   - codesample
   - preview
-  - advcode
+  - code
