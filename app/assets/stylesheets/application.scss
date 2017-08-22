@@ -14,7 +14,9 @@
  *= require_self
 *= require commontator/application
 */
-
+code {
+	display:block;
+}
 .tutorial-content p {
 	line-height: 1.5rem !important;
 	margin-bottom: 5px !important;
