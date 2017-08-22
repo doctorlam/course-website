@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require bootstrap
 //= require turbolinks
+//= require tinymce
 //= require_tree .
 //= require filterrific/filterrific-jquery
 //= require bootstrap-datepicker
