@@ -56,6 +56,9 @@
   <% else %>
       <%= f.label :document %>
       <%= f.file_field :document, :class => "form-control-file", class: "form-control" %>
+      <% if @assignment.document? %>
+        <%= f.check_box :delete_document %> Remove <%= @assignment.document.original_filename %>
+      <% end %>
 
   <% end %>
   </div>
