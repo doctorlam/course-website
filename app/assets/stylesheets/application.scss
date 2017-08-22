@@ -14,7 +14,14 @@
  *= require_self
 *= require commontator/application
 */
+code {
+	display:block;
+	background: black;
+	color: white;
+	padding: 15px;
+	margin-top: 10px;
 
+}
 .tutorial-content p {
 	line-height: 1.5rem !important;
 	margin-bottom: 5px !important;
