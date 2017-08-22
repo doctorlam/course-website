@@ -15,6 +15,13 @@
 *= require commontator/application
 */
 
+.tutorial-content p {
+	line-height: 1.1rem !important;
+	margin-bottom: 5px !important;
+	margin-top: 5px;
+
+}
+
 .filter-box {
 	border: 1px solid black;
 	margin: 5px 0px 20px 0;
