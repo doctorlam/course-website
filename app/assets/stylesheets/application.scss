@@ -653,7 +653,7 @@ code {
 }
 @media only screen and (max-width: 1000px) {
 	body {
-    margin: 0 0 350px !important; /* bottom = footer height */
+    margin: 0 0 450px !important; /* bottom = footer height */
 }
 .tagline h1 {
 		width: 90%;
@@ -665,19 +665,16 @@ code {
 .padding-right {
 	padding: 0 0 0 0;
 }
+.note-box {
+		margin-bottom: 20px !important;
+	}
 
 }
 @media only screen and (max-width: 900px) {
 	html {
 	font-size: 15px !important;
 	}
-	
-	.navbar a {
-		float: left;
-	}
-	.navbar-fixed-top .navbar-collapse {
-		min-height: 100vh !important;
-	}
+
 	.projects-right {
 		margin-bottom: 10px;
 	}
@@ -687,19 +684,29 @@ code {
 		padding-top: 0px;
 
 	}
-	li.dropdown li a {
-	color: white !important;
-}
-
+	
 }
 @media only screen and (max-width: 768px) {
 	html {
 	font-size: 14px !important;
 	}
-
+.navbar-fixed-top .navbar-collapse {
+		min-height: 100vh !important;
+	}
 	footer {
 		text-align:center;
 	}
+	
+
+  .navbar-collapse li {
+    float: none !important;
+    display: block !important;
+    text-align:center;
+  }
+	li.dropdown li a {
+	color: white !important;
+}
+
 	.container {
 	width: 95%;
 	}
