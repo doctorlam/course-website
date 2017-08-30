@@ -14,6 +14,45 @@
  *= require_self
 *= require commontator/application
 */
+body {
+	background: #F0F0F0;
+}
+
+.notes {
+	background: #FFFFA5 !important;
+	padding: 20px;
+	width: 80%;
+	margin: 0 auto;
+}
+.notes h2 {
+	margin-bottom: 20px;
+	border-bottom: 1px dotted black;
+	padding-bottom: 20px;
+}
+.note-box a, .note-box a {
+	text-decoration: none;
+}
+.note-box {
+		background: #FFFFA5 !important;
+
+	height: 300px;
+	position: relative;
+	padding: 10px;
+}
+.note-box .links {
+	position: absolute;
+	bottom: 10px;
+}
+.note-box h2 {
+	border-bottom: 1px solid black;
+	text-decoration: none !important;
+}
+.note-box h3 {
+	font-size: 14px;
+}
+.notes h3 {
+	font-size: 16px;
+}
 code {
 	display:block;
 }
@@ -146,13 +185,17 @@ body {
 .container-fluid {
 	padding: 0;
 	background: #F0F0F0;
+
 }
 
 .container {
 	width: 90%;
 	margin: 0 auto;
+	height: 100%;
 	margin-top: -40px;
 	margin-bottom: 80px;
+		background: #F0F0F0;
+
 
 }
 
