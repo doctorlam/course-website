@@ -8,7 +8,7 @@
       <%= link_to note do %> 
         <div class="note-box">
         <h2><%= note.title %></h2>
-        <h3><%= note.created_at.strftime("%m-%d-%Y") %></h3>
+        <h3><%= note.created_at.strftime("%m-%d-%Y") %> taken at <%=note.created_at.strftime("%H:%M %p") %></h3>
       <div class="links">
         <%= link_to 'Show', note %>
         <%= link_to 'Edit', edit_note_path(note) %>

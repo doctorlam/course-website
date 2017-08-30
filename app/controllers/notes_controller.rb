@@ -7,7 +7,7 @@ class NotesController < ApplicationController
   # GET /notes.json
   def index
     if user_signed_in?
-      @notes = current_user.notes
+      @notes = current_user.notes.order(created_at: 'desc')
      
   else 
     redirect_to lessons_url, alert: "Please sign in to access notes"
