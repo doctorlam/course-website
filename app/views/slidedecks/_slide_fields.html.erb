@@ -1,0 +1,46 @@
+<div class="slide-form-inside">
+<fieldset>
+<table class="table table-striped">
+
+<tbody>
+<tr>
+	<td><h2><%= f.label :slide_order, "#" %><%= f.text_field :slide_order, class: "slide_order" %></h2>
+		<br>
+		<br>
+
+		<h2>
+			<%= f.input :bgcolor %>
+
+			<%= f.input :image, as: :file %></h2>
+	</td>
+	<td><div class="slide-form">
+
+
+		 <%= f.input :bgimage, as: :file %>
+
+
+	    <%= f.label :title, "Slide Title" %><br />
+	    <%= f.text_area :title, class: "form-control" %> 
+
+	     <%= f.text_area :content, rows: "15", class: 'form-control tinymce' %>
+	    <%= tinymce %>
+
+	      
+	      	<%= f.fields_for :contentmodules do |builder| %>
+	    		<%= render 'contentmodule_fields', f:builder %>
+	  		<% end %>
+	 <div class="row">
+	  <%= link_to_add_fields "Add Content Module", f, :contentmodules, class: "btn btn-primary" %>
+
+	    <%= f.hidden_field :_destroy %>
+
+	    <%= link_to "Remove Entire Slide", '#', class: "remove_fields" %>
+	</div>
+
+	</div> <!--/slideform-->
+	</td>
+</tbody>
+</table>
+</fieldset>
+
+</div>

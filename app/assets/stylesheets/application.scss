@@ -10,10 +10,78 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
+
  *= require_tree .
+  *= require slick
+
  *= require_self
 *= require commontator/application
 */
+
+.slide {
+	width: 80%;
+	margin: 0 auto;
+	border: 1px solid black;
+}
+.slide {
+  div {
+    
+    position: relative;
+  }
+}
+.slide-content-flex {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	align-self: center;
+	min-height: 450px;
+}
+.slide-content, .slide-image {
+	flex:1;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+.slide h1 {
+	text-align: center;
+}
+.slick-prev::before, .slick-next::before {
+  color: #000;
+}
+
+.slick-next {
+  right: 0;
+  position: absolute;
+  bottom: 0;
+}
+
+.slick-prev {
+  position: absolute;
+  bottom: 0;
+  left: 0px;
+  z-index: 100;
+}
+.slide li, .slide p {
+	font-size: 1.8rem !important;
+	line-height: 2rem
+}
+
+.slide img {
+	object-fit:cover;
+	width: 100%;
+}
+.slide-form {
+	background: #BDC3C7;
+	margin-bottom: 20px;
+	height: 100%;
+	margin-bottom: 20px;
+	padding: 20px;
+}
+
+input.numeric {
+	font-size: 24px !important;
+	font-weight: bold;
+}
 body {
 	background: #F0F0F0;
 }
@@ -333,9 +401,26 @@ p {
 
 a.add_fields, a.remove_fields {
 	float: right !important;
-	display: inline-block;
-}
+	display: block;
 
+}
+a.add_fields {
+	border: 1px red green;
+	background: green;
+	color: white;
+	text-decoration: none;
+	padding: 10px;
+	margin: 10px 0 10px 10px;
+
+}
+a.remove_fields {
+	border: 1px red solid;
+	background: red;
+	color: white;
+	text-decoration: none;
+	padding: 10px;
+	margin: 10px 0 10px 0;
+}
 .form-group h2, .form-group h3 {
 	text-align: center;
 }

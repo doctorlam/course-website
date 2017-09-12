@@ -1,0 +1,57 @@
+<div class="container">
+<p id="notice"><%= notice %></p>
+
+  <h1><%= @slidedeck.title %></h1>
+
+
+<div class="slide">
+<% for @slide in @slidedeck.slides %>
+		
+			<div style = "<%= show_slide_bg %>">
+				<h1><%= @slide.title %></h1>
+				<div class="slide-content-flex">
+
+				<% if @slide.content? %>
+					<div class="slide-content"><%= @slide.content.html_safe %>
+					</div>
+				<% if @slide.image.exists? %>
+					<div class="slide-image">
+						<%= image_tag @slide.image.url %>
+					</div>
+
+				<% end %>
+				<% for @contentmodule in @slide.contentmodules %>
+					<% if @contentmodule.modular_content? %>
+						<div class="slide-content">
+
+							<%= @contentmodule.modular_content.html_safe %>
+						</div>
+					<% end %>
+				<% end %>
+				<% else %>
+				
+					<div class="slide-image">
+
+						<%= image_tag @slide.image.url %>
+					</div>
+
+				
+
+				<% end %>
+				</div>
+			</div>
+
+		
+<% end %>
+</div>
+
+
+<%= link_to 'Edit', edit_slidedeck_path(@slidedeck) %> |
+<%= link_to 'Back', slidedecks_path %>
+</div>
+<script>
+$(document).ready(function(){
+  $('.slide').slick({
+  });
+});
+</script>
