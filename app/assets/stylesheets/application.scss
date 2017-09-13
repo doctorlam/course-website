@@ -39,6 +39,9 @@
 	align-self: center;
 	min-height: 550px;
 }
+.slide-content {
+	margin-top: -100px;
+}
 .slide-content, .slide-image {
 	flex:1;
 	margin-left: 10px;
@@ -68,9 +71,12 @@
   background: transparent;
 }
 .slide li, .slide p, .slide {
-	font-size: 1.6rem !important;
+	font-size: 1.5rem !important;
 	line-height: 2rem;
 	font-family: 'Dosis' !important;
+}
+.slide li {
+	margin-bottom: 10px;
 }
 
 .slide img {
