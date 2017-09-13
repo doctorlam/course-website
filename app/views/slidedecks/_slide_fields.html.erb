@@ -1,8 +1,4 @@
-<script>
-  $(document).ready(function(){
-     tinyMCE_init();
-  });
-</script>
+
 <div class="slide-form-inside">
 <fieldset>
 <table class="table table-striped">
@@ -14,7 +10,11 @@
 		<br>
 
 		<h2>
-			<%= f.input :bgcolor %><br>
+			<%= f.label :bgcolor, "BG Color" %>
+
+			<%= f.select :bgcolor, options_for_select([["White", "#ecf0f1"],["Blue", "#2980b9"], ["Green", "#16a085"], ["Purple", "#8e44ad"], ["Orange", "#e67e22"], ["Dark Blue", "#34495e"]]) %><br>
+
+
 		<%= f.label :color_scheme, "Text Color" %>
     	<%= f.select :color_scheme, ['black', 'white'] %>	
 	</td>
@@ -24,9 +24,9 @@
 
 		   <%= f.input :image, as: :file %></h2>
 
-	    <%= f.label :title, "Slide Title" %><br />
-	    <%= f.text_area :title, class: "form-control" %> 
-
+	
+	    <%= f.input :title, class: "form-control" %> 
+	    <br>
 	     <%= f.text_area :content, rows: "15", class: 'form-control tinymce' %>
 	    <%= tinymce %>
 

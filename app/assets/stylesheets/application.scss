@@ -13,10 +13,12 @@
 
  *= require_tree .
   *= require slick
-
+ *= require jquery.minicolors
  *= require_self
 *= require commontator/application
 */
+@import "bootstrap-colorpicker";
+
 .slide h1 {
 	border-bottom: 1px solid orange;
 	margin-top: 100px;

@@ -18,5 +18,8 @@
 //= require tinymce
 //= require filterrific/filterrific-jquery
 //= require bootstrap-datepicker
+//= require jquery.minicolors
+//= require jquery.minicolors.simple_form
+//= require bootstrap-colorpicker
 //= require_tree .
 

@@ -32,6 +32,9 @@ gem 'american_date'
 gem 'tinymce-rails', :git => 'git://github.com/spohlenz/tinymce-rails.git'
 gem 'bxslider-rails'
 gem "jquery-slick-rails"
+gem 'jquery-minicolors-rails'
+gem 'bootstrap_colorpicker_rails'
+
 
 group :production do 
 	gem 'pg'
