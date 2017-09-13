@@ -8,4 +8,7 @@ class Slide < ActiveRecord::Base
 
   has_attached_file :bgimage, :styles => { :medium => "150x150>", :thumb => "30x30" }
   validates_attachment_content_type :bgimage, :content_type => /\Aimage\/.*\Z/
+
+  validates_presence_of :slide_order
+
 end
