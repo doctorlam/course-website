@@ -74,4 +74,5 @@ class SlidedecksController < ApplicationController
     def slidedeck_params
       params.require(:slidedeck).permit(:image, :title, slides_attributes: [:id, :color_scheme, :image, :bgimage, :bgcolor, :title, :content, :slide_order, :_destroy, contentmodules_attributes: [:id, :_destroy, :modular_content]])
     end
+    
 end
