@@ -16,8 +16,10 @@
       <tr>
         <td><%= slidedeck.title %></td>
         <td><%= link_to 'View', slidedeck %></td>
+     <% if current_user.try(:admin?) %>
         <td><%= link_to 'Edit', edit_slidedeck_path(slidedeck) %></td>
         <td><%= link_to 'Destroy', slidedeck, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <% end %>
       </tr>
     <% end %>
   </tbody>
