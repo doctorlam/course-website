@@ -1,4 +1,4 @@
 class Contentmodule < ActiveRecord::Base
-  belongs_to :slides
+  belongs_to :slide
 
 end
