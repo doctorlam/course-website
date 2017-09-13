@@ -77,8 +77,9 @@
 }
 
 .slide img {
-	object-fit:cover;
+	object-fit:contain;
 	width: 100%;
+	height: 440px;
 }
 .slide-form {
 	background: #BDC3C7;
