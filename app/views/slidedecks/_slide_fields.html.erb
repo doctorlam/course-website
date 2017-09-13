@@ -10,6 +10,8 @@
 		<br>
 
 		<h2>
+			<%= f.input :bgimage, as: :file %><br>
+			
 			<%= f.label :bgcolor, "BG Color" %>
 
 			<%= f.select :bgcolor, options_for_select([["White", "#ecf0f1"],["Blue", "#2980b9"], ["Green", "#16a085"], ["Purple", "#8e44ad"], ["Orange", "#e67e22"], ["Dark Blue", "#34495e"]], :selected => f.object.bgcolor) %><br>

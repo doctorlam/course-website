@@ -1,6 +1,9 @@
 module SlidedecksHelper
 	def show_slide_bg
-    	  "background-color: #{@slide.bgcolor}; 
-    	  color: #{@slide.color_scheme};"
+    	  "background: url(#{@slide.bgimage}) no-repeat center center;
+    	  background-size: cover;
+    	  background-color: #{@slide.bgcolor}; 
+    	  color: #{@slide.color_scheme};
+    	  "
   	end
 end

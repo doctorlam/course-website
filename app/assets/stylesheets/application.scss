@@ -79,8 +79,8 @@
 	font-family: 'Dosis' !important;
 }
 .slide h3 {
-	font-size: 1.75rem !important;
-	line-height: 2.2rem;
+	font-size: 1.65rem !important;
+	line-height: 2rem;
 	font-family: 'Dosis' !important;
 }
 .slide li {
@@ -98,6 +98,13 @@
 	height: 100%;
 	margin-bottom: 20px;
 	padding: 20px;
+}
+.slide-overlay {
+	background: rgba(52, 73, 94,0.6);
+	  	height: 570px;
+	  	margin-top: -30px;
+	  	padding-botom: 30px;
+
 }
 
 input.numeric {

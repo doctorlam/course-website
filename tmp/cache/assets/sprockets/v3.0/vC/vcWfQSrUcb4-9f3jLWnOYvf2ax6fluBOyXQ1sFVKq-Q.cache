@@ -1,7 +1,0 @@
-I"p(function() {
-  $(document).ready(function() {
-    return $(".bxslider").bxSlider();
-  });
-
-}).call(this);
-:ET
