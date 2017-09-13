@@ -10,7 +10,6 @@ class SlidedecksController < ApplicationController
   # GET /slidedecks/1
   # GET /slidedecks/1.json
   def show
-    @slides = Slide.order(:slide_order)
         @note = Note.new
 
   end
