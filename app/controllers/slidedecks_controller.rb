@@ -11,6 +11,8 @@ class SlidedecksController < ApplicationController
   # GET /slidedecks/1.json
   def show
     @slides = Slide.order(:slide_order)
+        @note = Note.new
+
   end
 
   # GET /slidedecks/new
@@ -71,6 +73,6 @@ class SlidedecksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def slidedeck_params
-      params.require(:slidedeck).permit(:image, :title, slides_attributes: [:id, :image, :bgimage, :bgcolor, :title, :content, :slide_order, :_destroy, contentmodules_attributes: [:id, :_destroy, :modular_content]])
+      params.require(:slidedeck).permit(:image, :title, slides_attributes: [:id, :color_scheme, :image, :bgimage, :bgcolor, :title, :content, :slide_order, :_destroy, contentmodules_attributes: [:id, :_destroy, :modular_content]])
     end
 end

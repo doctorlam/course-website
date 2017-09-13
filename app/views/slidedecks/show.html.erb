@@ -3,7 +3,7 @@
 
   <h1><%= @slidedeck.title %></h1>
 
-
+<div class="col-md-9">
 <div class="slide">
 <% for @slide in @slidedeck.slides %>
 		
@@ -43,6 +43,23 @@
 
 		
 <% end %>
+</div>
+</div><!--/col-md-9-->
+<div class="col-md-3">
+     <div class="take-notes">
+      <h2>Take Notes</h2>
+      <%= simple_form_for(@note) do |f| %>
+      <%= f.error_notification %>
+
+      <div class="form-fields">
+        <%= f.input :title, class: 'form-control' %>
+      <%= f.text_area :content, rows: "15", class: 'form-control tinymce' %>
+        <%= tinymce %>  </div>
+    <br>
+      <div class="form-actions">
+        <%= f.button :submit, class: 'btn btn-primary' %>
+      </div>
+    <% end %>
 </div>
 
 

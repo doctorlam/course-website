@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170912220609) do
+ActiveRecord::Schema.define(version: 20170913022645) do
 
   create_table "abouts", force: :cascade do |t|
     t.text     "name"
@@ -323,6 +323,7 @@ ActiveRecord::Schema.define(version: 20170912220609) do
     t.datetime "bgimage_updated_at"
     t.integer  "slide_order"
     t.string   "bgcolor"
+    t.text     "color_scheme"
   end
 
   add_index "slides", ["slidedeck_id"], name: "index_slides_on_slidedeck_id"
