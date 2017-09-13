@@ -4,6 +4,7 @@ $(document).ready(function(){
   });
 });
 </script>
+
 <div class="container">
 <p id="notice"><%= notice %></p>
 
@@ -67,7 +68,11 @@ $(document).ready(function(){
     <% end %>
 </div>
 
+<% if current_user.try(:admin?) %>
+	<%= link_to 'Edit', edit_slidedeck_path(@slidedeck) %> |
+	<%= link_to 'Back', slidedecks_path %>
+<% end %>
 
-<%= link_to 'Edit', edit_slidedeck_path(@slidedeck) %> |
-<%= link_to 'Back', slidedecks_path %>
 </div>
+
+

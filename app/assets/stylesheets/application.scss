@@ -21,28 +21,34 @@
 
 .slide h1 {
 	border-bottom: 1px solid orange;
-	margin-top: 100px;
+	padding-top: 30px;
 	font-size: 3.5rem !important;
 }
 
 .slide-container {
-  	height: 650px;
+  	height: 550px;
 	border: 1px solid gray;
 
 }
 .slide-content-flex {
 	display: flex;
 	flex-direction: row;
-	justify-content: center;
-	align-items: center;
-	align-self: center;
-	height: 450px;
+	overflow: auto;
+	height: calc(520px - 2.5rem);
 }
 
 .slide-content, .slide-image {
 	flex:1;
 	margin-left: 10px;
 	margin-right: 10px;
+	align-self: center;
+}
+#fitin {
+	width: 300px;
+    height: 100px;
+    border: 1px solid black;
+    overflow: hidden;
+    font-size: 1em;
 }
 .slide h1 {
 	text-align: center;
@@ -68,8 +74,8 @@
   background: transparent;
 }
 .slide li, .slide p, .slide {
-	font-size: 1.5rem !important;
-	line-height: 2rem;
+	font-size: 1rem !important;
+	line-height: 1.5rem;
 	font-family: 'Dosis' !important;
 }
 .slide li {
@@ -777,7 +783,9 @@ code {
 .note-box {
 		margin-bottom: 20px !important;
 	}
-
+.take-notes {
+	margin-top: 70px;
+}
 }
 @media only screen and (max-width: 900px) {
 	html {
