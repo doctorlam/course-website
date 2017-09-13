@@ -5,7 +5,7 @@
 
 <div class="col-md-9">
 <div class="slide">
-<% for @slide in @slidedeck.slides %>
+<% for @slide in @slidedeck.slides.sort_by(&:slide_order) %>
 		
 			<div style = "<%= show_slide_bg %>">
 				<h1><%= @slide.title %></h1>

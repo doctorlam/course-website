@@ -6,7 +6,7 @@
   </div>
   	<h2>Slides</h2>
 
-  <%= f.fields_for :slides do |builder| %>
+  <%= f.fields_for :slides, @slidedeck.slides.sort_by(&:slide_order) do |builder| %>
     <%= render 'slide_fields', f:builder %>
   <% end %>
   <div class="row">
