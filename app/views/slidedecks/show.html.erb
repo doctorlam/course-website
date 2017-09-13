@@ -14,8 +14,10 @@ $(document).ready(function(){
 <div class="slide">
 <% for @slide in @slidedeck.slides.sort_by(&:slide_order) %>
 		
-			<div class="slide-container" style = "<%= show_slide_bg %>">
+		<div class="slide-container">
+		<div class="slide-bgimage" style ="<%= show_slide_bgimage %>">
 			<div class="slide-overlay">
+		<div class="slide-bgcolor" style = "<%= show_slide_bgcolor %>">
 				<h1><%= @slide.title %></h1>
 				<div class="slide-content-flex">
 
@@ -46,7 +48,9 @@ $(document).ready(function(){
 
 				<% end %>
 				</div><!--/slide-content-flex-->
+			</div>
 			</div><!--/slide overlay-->
+			</div><!--bgimage-->
 		</div><!--slide-container-->
 
 		

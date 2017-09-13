@@ -25,11 +25,7 @@
 	font-size: 2.4rem !important;
 }
 
-.slide-container {
-  	height: 550px;
-	border: 1px solid gray;
 
-}
 .slide-content-flex {
 	display: flex;
 	flex-direction: row;
@@ -100,11 +96,11 @@
 	padding: 20px;
 }
 .slide-overlay {
-	background: rgba(52, 73, 94,0.6);
+		background: rgba(52, 73, 94,0.6);
 	  	height: 570px;
-	  	margin-top: -30px;
-	  	padding-botom: 30px;
-
+}
+.slide-bgimage, .slide-bgcolor {
+	height: 550px;
 }
 
 input.numeric {
