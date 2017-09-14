@@ -21,13 +21,20 @@ $(document).ready(function(){
 				<h1><%= @slide.title %></h1>
 				<div class="slide-content-flex">
 
-			
+				<% if @slide.content? %>
+					<div class="slide-content">
+						<%= @slide.content.html_safe %>
+					</div>
+				<% end %>
+
+				<% end %>
 				<% if @slide.image.exists? %>
 					<div class="slide-image">
 						<%= image_tag @slide.image.url %>
 					</div>
 
 				<% end %>
+
 				<% for @contentmodule in @slide.contentmodules %>
 					<% if @contentmodule.modular_content? %>
 						<div class="slide-content">
