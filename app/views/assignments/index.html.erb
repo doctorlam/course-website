@@ -51,7 +51,7 @@
           <td><%= assignment.description %></td>
           <td><%= assignment.deadline %></td>
     <%= form_for(assignment) do |f| %>
-          <td>
+          <td class="wider">
             <%= f.number_field :score, class: "form-control" %> / <%= assignment.fake_score %></td>
           <td>
             <%= f.label :assignment_type, "Open", :value => "true"  %>
@@ -89,3 +89,8 @@
   <%= link_to 'New Assignment', new_assignment_path %>
 <% end %>
 </div>
+<style>
+.wider {
+  width: 200px;
+}
+</style>
