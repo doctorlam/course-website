@@ -13,7 +13,7 @@
 &nbsp
   
  <label>
-  <%= f.radio_button :assignment_type_cont, "Upcoming" %>
+  <%= f.radio_button :assignment_type_cont, "Closed" %>
   Upcoming Assignments
 </label>
     &nbsp
@@ -56,13 +56,11 @@
           <td>
             <%= f.label :assignment_type, "Open", :value => "true"  %>
           <%= f.radio_button :assignment_type, "Open", checked: "checked" %>
-            &nbsp
-            &nbsp
+          <br>
 
             <%= f.label :assignment_type, "Upcoming", :value => "true"  %>
             <%= f.radio_button :assignment_type, "Closed" %>
-            &nbsp
-             &nbsp
+            <br>
            <%= f.label :assignment_type, "Graded", :value => "true"  %>
             <%= f.radio_button :assignment_type, "Graded" %>
              </td>
