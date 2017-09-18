@@ -1,5 +1,5 @@
 module AssignmentsHelper
 	def options_for_assignment_type 
-		['Open', 'Upcoming', 'Graded']
+		['Open', 'Closed', 'Graded']
 	end
 end
