@@ -55,7 +55,7 @@
             <%= f.number_field :score, class: "form-control" %> / <%= assignment.fake_score %></td>
           <td>
             <%= f.label :assignment_type, "Open", :value => "true"  %>
-          <%= f.radio_button :assignment_type, "Open", checked: "checked" %>
+          <%= f.radio_button :assignment_type, "Open" %>
           <br>
 
             <%= f.label :assignment_type, "Upcoming", :value => "true"  %>
