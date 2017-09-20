@@ -37,7 +37,7 @@ $(document).ready(function(){
 
 				<% end %>
 
-				<% for @contentmodule in @slide.contentmodules %>
+				<% for @contentmodule in @slide.contentmodules.sort_by(&:created_at) %>
 					<% if @contentmodule.modular_content? %>
 						<div class="slide-content">
 
