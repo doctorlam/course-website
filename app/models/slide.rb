@@ -1,6 +1,6 @@
 class Slide < ActiveRecord::Base
   belongs_to :slidedeck
-  has_many :contentmodules, :dependent => :destroy
+  has_many :contentmodules, -> { order("created_at ASC") }, :dependent => :destroy
   	accepts_nested_attributes_for :contentmodules, :reject_if => lambda { |a| a[:modular_content].blank? }, :allow_destroy => true
 
   has_many :bulleted_lists, :dependent => :destroy
