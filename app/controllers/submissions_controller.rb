@@ -1,11 +1,9 @@
 class SubmissionsController < ApplicationController
       before_action :set_submission, only: [:show, :edit, :update, :destroy]
       before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
-      
-      before_filter :user_is_current_user, only: [:show, :edit, :update, :destroy]
-
       before_filter :check_user, only: [:edit, :update, :destroy]
       before_filter :authorize_admin, only: [:index, :destroy, :edit]
+      before_filter :user_is_current_user, only: [:show, :edit, :update, :destroy]
 
 
   # GET /submissions
