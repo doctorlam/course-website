@@ -117,7 +117,7 @@ end
       end 
     end
   def user_is_current_user
-    unless current_user == @submission.user
+    unless current_user == @submission.user or authorize_admin
       redirect_to(root_url, alert: "You cannot edit this Submission") and return
     end
   end
