@@ -3,6 +3,7 @@ class SlidedecksController < ApplicationController
 before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
   before_filter :check_user, only: [:edit, :update, :destroy]
   before_filter :authorize_admin, only: [:new, :create, :destroy, :edit]
+before_filter :set_cache_headers
 
   # GET /slidedecks
   # GET /slidedecks.json
@@ -83,6 +84,10 @@ before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destro
         redirect_to root_url, alert: "You don't have permission to do that!"
       end 
     end
-    
+    def set_cache_headers
+      response.headers["Cache-Control"] = "no-cache, no-store"
+      response.headers["Pragma"] = "no-cache"
+      response.headers["Expires"] = "Fri, 01 Jan 1990 00:00:00 GMT"
+    end
   end
 
