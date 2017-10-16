@@ -2,11 +2,8 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
-ready = ->
-// functions
+$(document).on 'turbolinks:load', ->
 
-$(document).ready(ready)
-$(document).on('page:load', ready)
   $('.slide').slick({
     dots: true
   });
