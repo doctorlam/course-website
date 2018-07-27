@@ -6,7 +6,8 @@ class PagesController < ApplicationController
   def policies
   end
   def graded 
-   @submissions = Submission.order(created_at: :desc)
+   @submissions = Submission.order(created_at: :desc).where(:archive => false)
+
   end 
 
 

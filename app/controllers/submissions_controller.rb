@@ -12,7 +12,7 @@ class SubmissionsController < ApplicationController
     if user_signed_in? && current_user.admin?
        
         @assignments = Assignment.all
-        @usergrades = User.order(last_name: :asc)
+        @usergrades = User.order(last_name: :asc).where(:archive => false)
     else
       redirect_to lessons_url, alert: "You don't have permission to do that! Nice try though :)"
     end
@@ -21,7 +21,9 @@ class SubmissionsController < ApplicationController
   def index
     @search = Submission.search(params[:q])
     @search.sorts = 'created_at DESC' if @search.sorts.empty?
-    @submissions = @search.result
+     @results = @search.result
+    @results = @results.where(:archive => false) unless params[:q]
+    @submissions = @results  
     @assignments = Assignment.all
 
   end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171009175500) do
+ActiveRecord::Schema.define(version: 20180727174403) do
 
   create_table "abouts", force: :cascade do |t|
     t.text     "name"
@@ -359,8 +359,8 @@ ActiveRecord::Schema.define(version: 20171009175500) do
     t.integer  "user_id"
     t.integer  "assignment_id"
     t.text     "description"
-    t.datetime "created_at",            null: false
-    t.datetime "updated_at",            null: false
+    t.datetime "created_at",                            null: false
+    t.datetime "updated_at",                            null: false
     t.string   "document_file_name"
     t.string   "document_content_type"
     t.integer  "document_file_size"
@@ -375,6 +375,7 @@ ActiveRecord::Schema.define(version: 20171009175500) do
     t.string   "total"
     t.string   "assignment_name"
     t.string   "assignment_type"
+    t.boolean  "archive",               default: false
   end
 
   create_table "takeaways", force: :cascade do |t|
@@ -406,18 +407,18 @@ ActiveRecord::Schema.define(version: 20171009175500) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
+    t.string   "email",                  default: "",    null: false
+    t.string   "encrypted_password",     default: "",    null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
+    t.integer  "sign_in_count",          default: 0,     null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
+    t.datetime "created_at",                             null: false
+    t.datetime "updated_at",                             null: false
     t.string   "name"
     t.boolean  "admin"
     t.string   "avatar_file_name"
@@ -427,6 +428,7 @@ ActiveRecord::Schema.define(version: 20171009175500) do
     t.string   "phonenumber"
     t.string   "last_name"
     t.integer  "note_id"
+    t.boolean  "archive",                default: false
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
