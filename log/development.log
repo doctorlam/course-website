@@ -13129,3 +13129,171 @@ Completed 200 OK in 374ms (Views: 367.0ms | ActiveRecord: 0.3ms)
 
 
 Started GET "/assets/attachments-e41e6f6fb7b4735fafb14ef777088dd3738ae0c1ea3e1938d8a172db38b261d8.png" for ::1 at 2018-07-27 11:46:49 -0500
+
+
+Started GET "/lessons" for ::1 at 2018-07-27 11:53:07 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by LessonsController#index as HTML
+  [1m[35mLesson Load (0.8ms)[0m  SELECT "lessons".* FROM "lessons" WHERE "lessons"."lesson_type" = ?  ORDER BY "lessons"."date" ASC  [["lesson_type", "Main"]]
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered lessons/index.html.erb within layouts/application (23.3ms)
+  Rendered layouts/_header.html.erb (4.9ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 1586ms (Views: 1548.9ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/lessons/new" for ::1 at 2018-07-27 11:53:12 -0500
+Processing by LessonsController#new as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered lessons/_objective_fields.html.erb (4.2ms)
+  Rendered lessons/_objective_fields.html.erb (0.3ms)
+  Rendered lessons/_classactivity_fields.html.erb (1.0ms)
+  Rendered lessons/_classactivity_fields.html.erb (0.3ms)
+  Rendered lessons/_reading_fields.html.erb (1.1ms)
+  Rendered lessons/_reading_fields.html.erb (0.4ms)
+  [1m[36mAssignment Load (0.5ms)[0m  [1mSELECT "assignments".* FROM "assignments"[0m
+  Rendered lessons/_homework_fields.html.erb (0.8ms)
+  Rendered lessons/_homework_fields.html.erb (0.4ms)
+  Rendered lessons/_takeaway_fields.html.erb (1.1ms)
+  [1m[35mPresentation Load (0.7ms)[0m  SELECT "presentations".* FROM "presentations"
+  [1m[36mProject Load (0.6ms)[0m  [1mSELECT "projects".* FROM "projects"  ORDER BY name[0m
+  Rendered lessons/_form.html.erb (135.0ms)
+  Rendered lessons/new.html.erb within layouts/application (137.2ms)
+  Rendered layouts/_header.html.erb (3.6ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 494ms (Views: 421.3ms | ActiveRecord: 4.4ms)
+
+
+Started POST "/lessons" for ::1 at 2018-07-27 11:53:20 -0500
+Processing by LessonsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"RrOMmnOViAXJphjZFJ0OYsr/xW8dKiCTcjWbrOhpAztJh92E7dvdH4FKUrzynXq5QvHWoBrGZNjWuZ7aImJZrg==", "lesson"=>{"name"=>"xZ", "week"=>"3", "date"=>"08/01/2018", "objectives_attributes"=>{"0"=>{"content"=>"", "_destroy"=>"false"}}, "classactivitys_attributes"=>{"0"=>{"content"=>"", "_destroy"=>"false"}}, "readings_attributes"=>{"0"=>{"content"=>"", "_destroy"=>"false"}}, "assignment_ids"=>[""], "homeworks_attributes"=>{"0"=>{"content"=>"", "_destroy"=>"false"}}, "slidedeck_link"=>"", "project_ids"=>[""]}, "commit"=>"Create Lesson"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "lessons" ("slidedeck_link", "name", "week", "date", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["slidedeck_link", ""], ["name", "xZ"], ["week", 3], ["date", "2018-08-01"], ["user_id", 1], ["created_at", "2018-07-27 16:53:20.746533"], ["updated_at", "2018-07-27 16:53:20.746533"]]
+  [1m[36mLesson Load (0.1ms)[0m  [1mSELECT  "lessons".* FROM "lessons" WHERE "lessons"."id" = ?  ORDER BY date LIMIT 1[0m  [["id", 1]]
+  [1m[35mCommontator::Thread Exists (0.5ms)[0m  SELECT  1 AS one FROM "commontator_threads" WHERE ("commontator_threads"."commontable_id" = 1 AND "commontator_threads"."commontable_type" = 'Lesson') LIMIT 1
+  [1m[36mSQL (1.1ms)[0m  [1mINSERT INTO "commontator_threads" ("commontable_type", "commontable_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["commontable_type", "Lesson"], ["commontable_id", 1], ["created_at", "2018-07-27 16:53:20.759737"], ["updated_at", "2018-07-27 16:53:20.759737"]]
+  [1m[35m (2.7ms)[0m  commit transaction
+Redirected to http://localhost:3000/lessons/1
+Completed 302 Found in 44ms (ActiveRecord: 6.1ms)
+
+
+Started GET "/lessons/1" for ::1 at 2018-07-27 11:53:20 -0500
+Processing by LessonsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mLesson Load (0.1ms)[0m  [1mSELECT  "lessons".* FROM "lessons" WHERE "lessons"."id" = ?  ORDER BY date LIMIT 1[0m  [["id", 1]]
+  [1m[35mObjective Load (0.5ms)[0m  SELECT "objectives".* FROM "objectives" WHERE "objectives"."lesson_id" = ?  [["lesson_id", 1]]
+  [1m[36mClassactivity Load (0.6ms)[0m  [1mSELECT "classactivities".* FROM "classactivities" WHERE "classactivities"."lesson_id" = ?  ORDER BY "classactivities"."created_at" ASC[0m  [["lesson_id", 1]]
+  [1m[35mReading Load (0.5ms)[0m  SELECT "readings".* FROM "readings" WHERE "readings"."lesson_id" = ?  [["lesson_id", 1]]
+  [1m[36mHomework Load (0.5ms)[0m  [1mSELECT "homeworks".* FROM "homeworks" WHERE "homeworks"."lesson_id" = ?[0m  [["lesson_id", 1]]
+  [1m[35mAssignment Load (0.7ms)[0m  SELECT "assignments".* FROM "assignments" INNER JOIN "learnings" ON "assignments"."id" = "learnings"."assignment_id" WHERE "learnings"."lesson_id" = ?  [["lesson_id", 1]]
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT "projects".* FROM "projects" INNER JOIN "learnings" ON "projects"."id" = "learnings"."project_id" WHERE "learnings"."lesson_id" = ?  ORDER BY name[0m  [["lesson_id", 1]]
+  [1m[35mTakeaway Load (0.7ms)[0m  SELECT "takeaways".* FROM "takeaways" WHERE "takeaways"."lesson_id" = ?  [["lesson_id", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered lessons/show.html.erb within layouts/application (27.2ms)
+  Rendered layouts/_header.html.erb (6.1ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 338ms (Views: 332.8ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/assets/calendar-show-36325371ad2dc4892b022adc0f4c702c4acc53a9d6c39198b1a7831e83112821.png" for ::1 at 2018-07-27 11:53:21 -0500
+
+
+Started GET "/assets/bullets-40a9d3851a311ee2ba5c0cf87b521780af38ba89e8855fe0bf95b5199b19274c.png" for ::1 at 2018-07-27 11:53:21 -0500
+
+
+Started GET "/assets/checks-f6d39150ae9bd7d03d7a5c1f3c7b11c51d7ca9da885ad1967446869d56d1067a.png" for ::1 at 2018-07-27 11:53:21 -0500
+
+
+Started GET "/assets/book-3519fef4a9106d5c4e6c3967909e85adf4c9e37786e292c18937fdef46f462c0.png" for ::1 at 2018-07-27 11:53:21 -0500
+
+
+Started GET "/assets/assignment-5b002d4a8989511b0113dae7dcaa3401ee293764e6e967d46f658cf129c48a76.png" for ::1 at 2018-07-27 11:53:21 -0500
+
+
+Started GET "/assets/arrow-2b551e9978f37d2d404366a6c2f958bc1d541aa3082dccd300c5434409f3e69c.png" for ::1 at 2018-07-27 11:53:21 -0500
+
+
+Started GET "/lessons" for ::1 at 2018-07-27 11:53:23 -0500
+Processing by LessonsController#index as HTML
+  [1m[35mLesson Load (0.1ms)[0m  SELECT "lessons".* FROM "lessons" WHERE "lessons"."lesson_type" = ?  ORDER BY "lessons"."date" ASC  [["lesson_type", "Main"]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered lessons/index.html.erb within layouts/application (2.1ms)
+  Rendered layouts/_header.html.erb (2.9ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 279ms (Views: 278.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/lessons" for ::1 at 2018-07-27 11:53:57 -0500
+Processing by LessonsController#index as HTML
+  [1m[35mLesson Load (0.2ms)[0m  SELECT "lessons".* FROM "lessons"  ORDER BY "lessons"."date" ASC
+  [1m[36mReading Load (0.1ms)[0m  [1mSELECT "readings".* FROM "readings" WHERE "readings"."lesson_id" = ?[0m  [["lesson_id", 1]]
+  [1m[35mHomework Load (0.2ms)[0m  SELECT "homeworks".* FROM "homeworks" WHERE "homeworks"."lesson_id" = ?  [["lesson_id", 1]]
+  [1m[36mAssignment Load (0.1ms)[0m  [1mSELECT "assignments".* FROM "assignments" INNER JOIN "learnings" ON "assignments"."id" = "learnings"."assignment_id" WHERE "learnings"."lesson_id" = ?[0m  [["lesson_id", 1]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered lessons/index.html.erb within layouts/application (49.8ms)
+  Rendered layouts/_header.html.erb (2.9ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 343ms (Views: 321.3ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/assignments" for ::1 at 2018-07-27 11:54:11 -0500
+Processing by AssignmentsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mAssignment Load (0.5ms)[0m  SELECT "assignments".* FROM "assignments" WHERE "assignments"."status" = ?  ORDER BY "assignments"."deadline" ASC  [["status", "Open"]]
+  Rendered assignments/index.html.erb within layouts/application (16.4ms)
+  Rendered layouts/_header2.html.erb (5.4ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 304ms (Views: 300.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assignments/1/edit" for ::1 at 2018-07-27 11:54:14 -0500
+Processing by AssignmentsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAssignment Load (0.2ms)[0m  [1mSELECT  "assignments".* FROM "assignments" WHERE "assignments"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mLesson Load (0.2ms)[0m  [1mSELECT "lessons".* FROM "lessons"  ORDER BY date[0m
+  [1m[35m (0.2ms)[0m  SELECT "lessons".id FROM "lessons" INNER JOIN "learnings" ON "lessons"."id" = "learnings"."lesson_id" WHERE "learnings"."assignment_id" = ?  ORDER BY date  [["assignment_id", 1]]
+  Rendered assignments/_form.html.erb (8.1ms)
+  Rendered assignments/edit.html.erb within layouts/application (10.0ms)
+  Rendered layouts/_header.html.erb (3.9ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 290ms (Views: 287.3ms | ActiveRecord: 0.7ms)
+
+
+Started PATCH "/assignments/1" for ::1 at 2018-07-27 11:54:18 -0500
+Processing by AssignmentsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Weom0/Aa6XGbeKL69f8gOlS3EX946WJH6orLQ8UO3DpW3nfNblS8a9OU6J8T/1Th3LkCsH8FJgxOBs41DwWGrw==", "assignment"=>{"status"=>"Open", "name"=>"asdfa", "description"=>"def", "deadline"=>"May  2, 2018", "fake_score"=>"11", "score"=>"11", "attachment"=>#<ActionDispatch::Http::UploadedFile:0x007fc0f1401f28 @tempfile=#<Tempfile:/var/folders/tv/kc07j7lj6pl5_lyd_cr1r5x40000gn/T/RackMultipart20180727-58539-md711h.png>, @original_filename="3d-modeling.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"assignment[attachment]\"; filename=\"3d-modeling.png\"\r\nContent-Type: image/png\r\n">, "lesson_ids"=>[""]}, "commit"=>"Create Assignment", "id"=>"1"}
+  [1m[36mAssignment Load (0.3ms)[0m  [1mSELECT  "assignments".* FROM "assignments" WHERE "assignments"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mLesson Load (0.2ms)[0m  SELECT "lessons".* FROM "lessons" INNER JOIN "learnings" ON "lessons"."id" = "learnings"."lesson_id" WHERE "learnings"."assignment_id" = ?  ORDER BY date  [["assignment_id", 1]]
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "assignments" SET "attachment_file_name" = ?, "attachment_content_type" = ?, "attachment_file_size" = ?, "attachment_updated_at" = ?, "updated_at" = ? WHERE "assignments"."id" = ?[0m  [["attachment_file_name", "3d-modeling.png"], ["attachment_content_type", "image/png"], ["attachment_file_size", 2755], ["attachment_updated_at", "2018-07-27 16:54:18.521051"], ["updated_at", "2018-07-27 16:54:18.522531"], ["id", 1]]
+  [1m[35m (1.3ms)[0m  commit transaction
+Redirected to http://localhost:3000/assignments
+Completed 302 Found in 21ms (ActiveRecord: 2.2ms)
+
+
+Started GET "/assignments" for ::1 at 2018-07-27 11:54:18 -0500
+Processing by AssignmentsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mAssignment Load (0.1ms)[0m  SELECT "assignments".* FROM "assignments" WHERE "assignments"."status" = ?  ORDER BY "assignments"."deadline" ASC  [["status", "Open"]]
+  Rendered assignments/index.html.erb within layouts/application (2.4ms)
+  Rendered layouts/_header2.html.erb (4.0ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 309ms (Views: 307.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assignments/1" for ::1 at 2018-07-27 11:54:21 -0500
+Processing by AssignmentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAssignment Load (0.1ms)[0m  [1mSELECT  "assignments".* FROM "assignments" WHERE "assignments"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mLesson Load (0.1ms)[0m  SELECT "lessons".* FROM "lessons" INNER JOIN "learnings" ON "lessons"."id" = "learnings"."lesson_id" WHERE "learnings"."assignment_id" = ?  ORDER BY date  [["assignment_id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered assignments/show.html.erb within layouts/application (19.9ms)
+  Rendered layouts/_header.html.erb (4.3ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 305ms (Views: 303.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/point-3f70c25c2c53ae128880b7ed3f194652eb05c2f6806d00d3b3e26bddc5ecf0eb.png" for ::1 at 2018-07-27 11:54:22 -0500
