@@ -13297,3 +13297,296 @@ Completed 200 OK in 305ms (Views: 303.8ms | ActiveRecord: 0.3ms)
 
 
 Started GET "/assets/point-3f70c25c2c53ae128880b7ed3f194652eb05c2f6806d00d3b3e26bddc5ecf0eb.png" for ::1 at 2018-07-27 11:54:22 -0500
+
+
+Started GET "/assignments/1" for ::1 at 2018-07-27 12:15:50 -0500
+  [1m[35mActiveRecord::SchemaMigration Load (1.9ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+	bin/rake db:migrate RAILS_ENV=development
+
+):
+  activerecord (4.2.4) lib/active_record/migration.rb:392:in `check_pending!'
+  activerecord (4.2.4) lib/active_record/migration.rb:373:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.4) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.10) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.10) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.10) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.10) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.10) lib/rack/lock.rb:17:in `call'
+  rack (1.6.10) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.10) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/chrislam/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /Users/chrislam/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /Users/chrislam/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.0ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.3ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.6ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (91.2ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (1.0ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.7ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (83.0ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (168.4ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddAttachmentAttachmentToAssignments (20180727170307)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (1.1ms)[0m  [1mALTER TABLE "assignments" ADD "attachment_file_name" varchar[0m
+SQLite3::SQLException: duplicate column name: attachment_file_name: ALTER TABLE "assignments" ADD "attachment_file_name" varchar
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_bulleted_lists_on_slide_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_bulleted_lists_on_slide_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_bullets_on_bulleted_list_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_bullets_on_bulleted_list_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_commontator_comments_on_cached_votes_down' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_commontator_comments_on_cached_votes_down' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_commontator_comments_on_cached_votes_up' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_commontator_comments_on_cached_votes_up' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_commontator_comments_on_thread_id_and_created_at' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_commontator_comments_on_thread_id_and_created_at' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_commontator_comments_on_c_id_and_c_type_and_t_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_commontator_comments_on_c_id_and_c_type_and_t_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_commontator_subscriptions_on_thread_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_commontator_subscriptions_on_thread_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_commontator_subscriptions_on_s_id_and_s_type_and_t_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_commontator_subscriptions_on_s_id_and_s_type_and_t_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_commontator_threads_on_c_id_and_c_type' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_commontator_threads_on_c_id_and_c_type' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_contentmodules_on_slide_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_contentmodules_on_slide_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_responses_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_responses_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_responses_on_post_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_responses_on_post_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_slides_on_slidedeck_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_slides_on_slidedeck_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_votes_on_votable_id_and_votable_type_and_vote_scope' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_votes_on_votable_id_and_votable_type_and_vote_scope' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_votes_on_voter_id_and_voter_type_and_vote_scope' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_votes_on_voter_id_and_voter_type_and_vote_scope' AND type='index'
+[0m
+
+
+Started GET "/assignments/1" for ::1 at 2018-07-27 12:16:28 -0500
+Processing by AssignmentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAssignment Load (0.6ms)[0m  [1mSELECT  "assignments".* FROM "assignments" WHERE "assignments"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mLesson Load (0.2ms)[0m  SELECT "lessons".* FROM "lessons" INNER JOIN "learnings" ON "lessons"."id" = "learnings"."lesson_id" WHERE "learnings"."assignment_id" = ?  ORDER BY date  [["assignment_id", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered assignments/show.html.erb within layouts/application (71.8ms)
+  Rendered layouts/_header.html.erb (10.3ms)
+  Rendered layouts/_footer.html.erb (0.8ms)
+Completed 200 OK in 704ms (Views: 673.0ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/assignments" for ::1 at 2018-07-27 12:16:32 -0500
+Processing by AssignmentsController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mAssignment Load (0.2ms)[0m  [1mSELECT "assignments".* FROM "assignments" WHERE "assignments"."status" = ?  ORDER BY "assignments"."deadline" ASC[0m  [["status", "Open"]]
+  Rendered assignments/index.html.erb within layouts/application (5.2ms)
+  Rendered layouts/_header2.html.erb (3.2ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 354ms (Views: 351.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assignments" for ::1 at 2018-07-27 12:16:48 -0500
+Processing by AssignmentsController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mAssignment Load (0.1ms)[0m  [1mSELECT "assignments".* FROM "assignments" WHERE "assignments"."status" = ?  ORDER BY "assignments"."deadline" ASC[0m  [["status", "Open"]]
+  Rendered assignments/index.html.erb within layouts/application (3.5ms)
+  Rendered layouts/_header2.html.erb (3.2ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 365ms (Views: 363.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assignments" for ::1 at 2018-07-27 12:16:57 -0500
+Processing by AssignmentsController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mAssignment Load (0.1ms)[0m  [1mSELECT "assignments".* FROM "assignments" WHERE "assignments"."status" = ?  ORDER BY "assignments"."deadline" ASC[0m  [["status", "Open"]]
+  Rendered assignments/index.html.erb within layouts/application (3.5ms)
+  Rendered layouts/_header2.html.erb (3.4ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 340ms (Views: 337.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assignments?utf8=%E2%9C%93&q%5Bstatus_cont%5D=Upcoming" for ::1 at 2018-07-27 12:17:23 -0500
+Processing by AssignmentsController#index as HTML
+  Parameters: {"utf8"=>"✓", "q"=>{"status_cont"=>"Upcoming"}}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mAssignment Load (0.2ms)[0m  [1mSELECT "assignments".* FROM "assignments" WHERE ("assignments"."status" LIKE '%Upcoming%')  ORDER BY "assignments"."deadline" ASC[0m
+  Rendered assignments/index.html.erb within layouts/application (1.5ms)
+  Rendered layouts/_header2.html.erb (3.2ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 364ms (Views: 361.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assignments?utf8=%E2%9C%93&q%5Bstatus_cont%5D=Closed" for ::1 at 2018-07-27 12:17:24 -0500
+Processing by AssignmentsController#index as HTML
+  Parameters: {"utf8"=>"✓", "q"=>{"status_cont"=>"Closed"}}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mAssignment Load (0.2ms)[0m  [1mSELECT "assignments".* FROM "assignments" WHERE ("assignments"."status" LIKE '%Closed%')  ORDER BY "assignments"."deadline" ASC[0m
+  Rendered assignments/index.html.erb within layouts/application (1.4ms)
+  Rendered layouts/_header2.html.erb (4.3ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 369ms (Views: 366.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assignments?utf8=%E2%9C%93&q%5Bstatus_cont%5D=Open" for ::1 at 2018-07-27 12:17:27 -0500
+Processing by AssignmentsController#index as HTML
+  Parameters: {"utf8"=>"✓", "q"=>{"status_cont"=>"Open"}}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mAssignment Load (0.3ms)[0m  [1mSELECT "assignments".* FROM "assignments" WHERE ("assignments"."status" LIKE '%Open%')  ORDER BY "assignments"."deadline" ASC[0m
+  Rendered assignments/index.html.erb within layouts/application (3.1ms)
+  Rendered layouts/_header2.html.erb (3.2ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 294ms (Views: 292.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/projects" for ::1 at 2018-07-27 12:17:28 -0500
+Processing by ProjectsController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mProject Load (0.4ms)[0m  [1mSELECT "projects".* FROM "projects"  ORDER BY "projects"."due" ASC[0m
+  [1m[35mDeliverable Load (0.4ms)[0m  SELECT "deliverables".* FROM "deliverables" WHERE "deliverables"."project_id" = ?  [["project_id", 1]]
+  [1m[36mRubric Load (0.5ms)[0m  [1mSELECT "rubrics".* FROM "rubrics" WHERE "rubrics"."project_id" = ?[0m  [["project_id", "1"]]
+  [1m[35mLesson Load (0.3ms)[0m  SELECT "lessons".* FROM "lessons" INNER JOIN "learnings" ON "lessons"."id" = "learnings"."lesson_id" WHERE "learnings"."project_id" = ?  ORDER BY date  [["project_id", 1]]
+  Rendered projects/index.html.erb within layouts/application (23.3ms)
+  Rendered layouts/_header.html.erb (3.5ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 323ms (Views: 314.3ms | ActiveRecord: 2.3ms)

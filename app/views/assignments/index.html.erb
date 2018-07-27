@@ -30,7 +30,11 @@
 
 <% end %>
 <div class="col-md-8">
-  <h1>Homework Assignments</h1>
+
+  <h1>Homework Assignments &nbsp;   <% if current_user.try(:admin?) %>
+
+  <%= link_to 'New Assignment', new_assignment_path, class: 'btn btn-green' %>
+<% end %></h1>
 
 <div class="table-responsive">
   <table class="table table-striped">
@@ -95,8 +99,5 @@
   </div><!--/col-md-8-->
 </div><!--/row-->
   <br>
-  <% if current_user.try(:admin?) %>
 
-  <%= link_to 'New Assignment', new_assignment_path, class: 'btn btn-green' %>
-<% end %>
 </div>
