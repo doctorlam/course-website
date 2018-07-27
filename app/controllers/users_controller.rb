@@ -4,7 +4,7 @@ class UsersController < ApplicationController
 
 	def index
 		if user_signed_in?
-			@users = User.order('last_name ASC')
+			@users = User.order('last_name ASC').where(:archive => false)
 			@submissions = Submission.all
 	
 	else
