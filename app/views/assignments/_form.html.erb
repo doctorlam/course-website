@@ -10,31 +10,23 @@
       </ul>
     </div>
   <% end %>
-    <div class="form-group">
-        <%= hidden_field_tag "assignment[lesson_ids][]", nil %>
-        <% Lesson.all.each do |lesson| %>
-          <%= check_box_tag "assignment[lesson_ids][]", lesson.id, @assignment.lesson_ids.include?(lesson.id), id: dom_id(lesson) %>
-          <%= label_tag dom_id(lesson), lesson.name %>
-          [<%= label_tag dom_id(lesson), lesson.date %>]
-          <br />
-        <% end %>
-    </div>
-     <div class="second-form-group">
-    <h2>Choose Assignment Type</h2>
-     <%= f.label :assignment_type, "Open", :value => "true"  %>
-      <%= f.radio_button :assignment_type, "Open", checked: "checked" %>
+   
+  <div class="third-form-group">
+    <h2>Select Status</h2>
+      <%= f.label :status, "Open", :value => "true"  %>
+      <%= f.radio_button :status, "Open", checked: "checked"%>
         &nbsp
        &nbsp
 
-     <%= f.label :assignment_type, "Upcoming", :value => "true"  %>
-      <%= f.radio_button :assignment_type, "Closed" %>
-
-      &nbsp
+      <%= f.label :status, "Upcoming", :value => "false"  %>
+      <%= f.radio_button :status, "Upcoming" %>
+       &nbsp
        &nbsp
 
-     <%= f.label :assignment_type, "Graded", :value => "true"  %>
-      <%= f.radio_button :assignment_type, "Graded" %>
-</div>
+      <%= f.label :status, "Closed", :value => "true"  %>
+      <%= f.radio_button :status, "Closed" %>
+       
+  </div>
   <div class="field">
     <%= f.label :name %><br>
     <%= f.text_area :name, class: "form-control" %>
@@ -45,30 +37,44 @@
   </div>
   <div class="field">
     <%= f.label :deadline %><br>
-    <%= f.text_field :deadline, class: "form-control", :data => {:provide => "datepicker"} %>
+     <%= f.text_field :deadline, class: "form-control", :data => {:provide => "datepicker"} %>
   </div>
-   <div class="field">
-    <%= f.label :fake_score, 'Points (pre-graded)' %><br>
+  <div class="field">
+    <%= f.label :fake_score, 'Points (not graded)' %><br>
     <%= f.number_field :fake_score, class: "form-control" %>
   </div>
    <div class="field">
-    <%= f.label :score, 'Points' %><br>
+    <%= f.label :score, 'Points (graded)' %><br>
     <%= f.number_field :score, class: "form-control" %>
   </div>
+
+
   <div class="field">
-   <% if @assignment.document.exists? %>
+   <% if @assignment.attachment.exists? %>
      
-      <%= f.check_box :delete_document %> Remove <%= @assignment.document.original_filename %>
+      <%= f.check_box :delete_document %> Remove <%= @assignment.attachment.original_filename %>
   <% else %>
-      <%= f.label :document %>
-      <%= f.file_field :document, :class => "form-control-file", class: "form-control" %>
-      <% if @assignment.document? %>
-        <%= f.check_box :delete_document %> Remove <%= @assignment.document.original_filename %>
-      <% end %>
+      <h2>Add Attachment (if applicable)</h2>
+      <%= f.label :attachment %>
+      <%= f.file_field :attachment, :class => "form-control-file", class: "form-control" %>
+      <br>
+     
 
   <% end %>
   </div>
+   <div class="second-form-group">
+    <h2>Create a turn-in assignment</h2>
+        <%= hidden_field_tag "assignment[lesson_ids][]", nil %>
+        <% Lesson.all.each do |lesson| %>
+          <%= check_box_tag "assignment[lesson_ids][]", lesson.id, @assignment.lesson_ids.include?(lesson.id), id: dom_id(lesson) %>
+          <%= label_tag dom_id(lesson), lesson.name %>
+          [<%= label_tag dom_id(lesson), lesson.date %>]
+          <br />
+        <% end %>
+    </div>
+  
+
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Create Assignment", class: "btn btn-primary" %>
   </div>
 <% end %>

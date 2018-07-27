@@ -31,17 +31,18 @@ ActiveRecord::Schema.define(version: 20171009175500) do
     t.text     "name"
     t.text     "description"
     t.date     "deadline"
-    t.datetime "created_at",            null: false
-    t.datetime "updated_at",            null: false
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
     t.integer  "submission_id"
     t.integer  "homework_id"
     t.integer  "score"
     t.integer  "fake_score"
+    t.string   "attachment_file_name"
+    t.string   "attachment_content_type"
+    t.integer  "attachment_file_size"
+    t.datetime "attachment_updated_at"
     t.string   "assignment_type"
-    t.string   "document_file_name"
-    t.string   "document_content_type"
-    t.integer  "document_file_size"
-    t.datetime "document_updated_at"
+    t.string   "status"
   end
 
   create_table "bulleted_lists", force: :cascade do |t|
@@ -66,8 +67,9 @@ ActiveRecord::Schema.define(version: 20171009175500) do
   create_table "classactivities", force: :cascade do |t|
     t.integer  "lesson_id"
     t.text     "content"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "tutorial_id"
   end
 
   create_table "commontator_comments", force: :cascade do |t|
@@ -114,17 +116,16 @@ ActiveRecord::Schema.define(version: 20171009175500) do
 
   create_table "contentmodules", force: :cascade do |t|
     t.text     "modular_content"
-    t.integer  "slides_id"
+    t.integer  "slide_id"
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
-    t.integer  "slide_id"
     t.string   "modularimage_file_name"
     t.string   "modularimage_content_type"
     t.integer  "modularimage_file_size"
     t.datetime "modularimage_updated_at"
   end
 
-  add_index "contentmodules", ["slides_id"], name: "index_contentmodules_on_slides_id"
+  add_index "contentmodules", ["slide_id"], name: "index_contentmodules_on_slide_id"
 
   create_table "course_infos", force: :cascade do |t|
     t.text     "description"
@@ -215,6 +216,7 @@ ActiveRecord::Schema.define(version: 20171009175500) do
     t.datetime "document2_updated_at"
     t.integer  "presentation_id"
     t.integer  "tutorial_id"
+    t.string   "lesson_type"
     t.string   "slidedeck_link"
   end
 
@@ -237,9 +239,10 @@ ActiveRecord::Schema.define(version: 20171009175500) do
   create_table "objectives", force: :cascade do |t|
     t.integer  "lesson_id"
     t.text     "content"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
     t.integer  "about_id"
+    t.integer  "tutorial_id"
   end
 
   create_table "portals", force: :cascade do |t|
@@ -371,6 +374,7 @@ ActiveRecord::Schema.define(version: 20171009175500) do
     t.text     "feedback"
     t.string   "total"
     t.string   "assignment_name"
+    t.string   "assignment_type"
   end
 
   create_table "takeaways", force: :cascade do |t|

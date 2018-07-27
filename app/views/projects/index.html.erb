@@ -27,7 +27,7 @@
 
                 <h3>Deliverables</h3>
                 <% for deliverable in project.deliverables %>
-                <ul><li><%= deliverable.description.html_safe %></li></ul>
+                <ul><li><%= simple_format deliverable.description.html_safe %></li></ul>
                 <% end %>
                 
 

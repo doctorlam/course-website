@@ -4,11 +4,12 @@ class Assignment < ActiveRecord::Base
 	has_many :homeworks, :through => :turnins
 	has_many :learnings
 	has_many :lessons, :through => :learnings
-		has_attached_file :document 
-		do_not_validate_attachment_file_type :document
-		  	attr_accessor :delete_document
+	has_attached_file :attachment
+		do_not_validate_attachment_file_type :attachment
 
-		    before_validation { document.clear if delete_document == '1' }
+		attr_accessor :delete_document
+
+		    before_validation { attachment.clear if delete_document == '1' }
 		 module DeletableAttachment
 		  extend ActiveSupport::Concern
 
@@ -29,5 +30,4 @@ class Assignment < ActiveRecord::Base
 		  end
 
 		end
- 
 end

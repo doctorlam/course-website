@@ -1,8 +1,7 @@
 <%= simple_form_for @post do |f|%>
 	<%= f.input :title %>
 	<p>Wrap code with the &lt;code&gt; tag</p>
-	<%= f.text_area :content, rows: 15, class: "form-control tinymce" %>
-	<%= tinymce %>
+	<%= f.text_area :content, rows: 15, class: "form-control" %>
 	<br>
 	<% if @post.document.exists? %>
       			<br>

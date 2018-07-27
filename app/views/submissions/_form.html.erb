@@ -13,14 +13,8 @@
 
 
 <%= render "#{@submission.current_step}_step", :f => f %>
-
-<%= f.submit "Continue to Submission Page", class: "btn btn-success" unless @submission.last_step? %> 
-<br>
-<div class="col-md-6 col-md-offset-6">
-<%= f.submit "Submit Assignment", class: "btn btn-success form-control" unless @submission.first_step? %> 
-<br>
-<br>
-<%= f.submit "Go Back to choose a different assignment", class: "btn btn-danger", :name => "back_button" unless @submission.first_step? %>
-</div>
-<br>
+<%= f.submit "Back", class: "btn btn-primary", :name => "back_button" unless @submission.first_step? %> &nbsp; &nbsp;
+<%= f.submit "Continue", class: "btn btn-primary form-control" unless @submission.last_step? %> 
+<%= f.submit "Submit Assignment", class: "btn btn-green" unless @submission.first_step? %> 
 <% end %>
+

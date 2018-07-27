@@ -1,5 +1,4 @@
 class ResponsesController < ApplicationController
-
 	def create
 		@post = Post.find(params[:post_id])
 		@response = @post.responses.create(params[:response].permit(:document, :delete_document, :comment, :user_id, :name))
@@ -34,4 +33,5 @@ class ResponsesController < ApplicationController
 	end
 
 end
+
 

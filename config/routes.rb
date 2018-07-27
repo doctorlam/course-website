@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :slidedecks
+    resources :slidedecks
   resources :notes
   resources :tutorials
   resources :presentations
@@ -14,6 +14,8 @@ Rails.application.routes.draw do
   end
 
   get 'pages/gradebook'
+    get 'pages/graded'
+
   get 'pages/accounts'
   get 'usergrades' => "submissions#usergrades"
  
@@ -28,4 +30,7 @@ root :to => 'abouts#index'
 resources :lessons
   get 'pages/policies'
 
+if Rails.env.development?
+    mount LetterOpenerWeb::Engine, at: "/letter_opener"
+  end
 end

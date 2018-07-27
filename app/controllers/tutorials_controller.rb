@@ -1,12 +1,13 @@
 class TutorialsController < ApplicationController
   before_action :set_tutorial, only: [:show, :edit, :update, :destroy]
-  before_filter :check_user, only: [:edit, :update, :destroy]
+    before_filter :check_user, only: [:edit, :update, :destroy]
+
   before_filter :authorize_admin, only: [:new, :create, :destroy, :edit]
 
   # GET /tutorials
   # GET /tutorials.json
   def index
-    @tutorials = Tutorial.includes(:lessons).order('created_at')
+    @tutorials = Tutorial.includes(:lessons).order('lessons.week ASC')
   end
 
   # GET /tutorials/1
@@ -17,6 +18,8 @@ class TutorialsController < ApplicationController
   # GET /tutorials/new
   def new
     @tutorial = Tutorial.new
+    @tutorial.objectives.build
+
   end
 
   # GET /tutorials/1/edit
@@ -71,12 +74,11 @@ class TutorialsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def tutorial_params
-      params.require(:tutorial).permit(:attachment, :name, :content, :video, {lesson_ids: []}, :lesson, :lesson_id)
+      params.require(:tutorial).permit(:name, :content, :video, {lesson_ids: []}, :lesson, :lesson_id, :attachment, objectives_attributes: [:id, :content, :_destroy], classactivitys_attributes: [:id, :content, :_destroy])
     end
-     def check_user
+    def check_user
       if current_user == authorize_admin
         redirect_to root_url, alert: "You don't have permission to do that!"
       end 
-
     end
 end

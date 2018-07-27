@@ -7,12 +7,12 @@ class AssignmentsController < ApplicationController
   # GET /assignments
   # GET /assignments.json
   def index
-    @search = Assignment.search(params[:q])
+  @search = Assignment.search(params[:q])
   @search.sorts = 'deadline' if @search.sorts.empty?
   @results = @search.result
-  @results = @results.where(:assignment_type => "Open") unless params[:q]
+  @results = @results.where(:status => "Open") unless params[:q]
   @assignments = @results  
-  end
+end
 
 
   # GET /assignments/1
@@ -78,7 +78,7 @@ class AssignmentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def assignment_params
-      params.require(:assignment).permit(:document, :delete_document, :assignment_type, {lesson_ids: []}, {submission_ids: []}, :lesson, :score, :fake_score, :lesson_id, :submission, :submission_id, :name, :description, :deadline)
+      params.require(:assignment).permit({lesson_ids: []}, {submission_ids: []}, :lesson, :score, :fake_score, :lesson_id, :submission, :submission_id, :name, :description, :deadline, :attachment, :delete_document, :assignment_type, :status)
     end
     def check_user
       if current_user == authorize_admin

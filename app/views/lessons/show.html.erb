@@ -6,10 +6,12 @@
 	
 <div class="row">
 	<div class="col-md-8 show-left">
-
-	  <h1>Lesson:<%= @lesson.name %></h1>
-
-	   <h3><%= image_tag 'calendar-show.png' %> Week:
+	<% if @lesson.lesson_type == "Lab" %>
+	  <h1 style="color: #ecf0f1 !important; background: #F2784B !important; padding: 10px;">Lesson: <%= @lesson.name %> (<%= @lesson.lesson_type %>)</h1>
+	<% else %>
+		<h1 style="color: #ecf0f1 !important; background: #6FA59F !important; padding: 10px;">Lesson: <%= @lesson.name %> (<%= @lesson.lesson_type %>)</h1>
+	<% end %>
+	  <h3><%= image_tag 'calendar-show.png' %> Week:
 	  <%= @lesson.week %> | <%= @lesson.date %></h3>
 
 		<h3><%= image_tag 'bullets.png' %> Objectives:</h3>
@@ -27,8 +29,7 @@
 		</ul>
 		<h3><%= image_tag 'attachments.png' %> Lesson Attachments:</h3>
 				<ul>
-
-			      		<li>Presentation file: <% if @lesson.slidedeck_link? %><%= link_to "Presentation Slides", @lesson.slidedeck_link %>
+				 	<li>Presentation file: <% if @lesson.slidedeck_link? %><%= link_to "Presentation Slides", @lesson.slidedeck_link %>
 			      			<% else %>
 			      				No Presentation slides for this lesson.
 			      			<% end %></li>
@@ -48,7 +49,7 @@
 				<h3><%= image_tag 'book.png' %> Readings:</h3>
 				<ul>
 				<% for reading in @lesson.readings %>
-					<li><%= reading.content.html_safe %></li>
+				<li><%= simple_format reading.content.html_safe %></li>
 				<% end %>
 				</ul>
 				<h3><%= image_tag 'assignment.png' %> Homework:</h3>
@@ -70,6 +71,7 @@
 		</div>
 	</div>
 </div><!--row-->
+<!--
 <div class="row">
 <input type="checkbox" id="op" class="takeaway"></input>
 		<div class="lower">
@@ -83,12 +85,12 @@
 					</div>
 			</div>
 
-</div>
+</div> -->
 
 <% if current_user.try(:admin?) %>
 	<%= link_to 'Edit', edit_lesson_path(@lesson) %> |
-	<%= link_to 'Back', lessons_path %>
 <% end %>
-<%= link_to('Back to all lessons', :back) %>
+	<%= link_to 'Back to all lessons', lessons_path %>
+
 
 </div>

@@ -5,12 +5,14 @@ class PagesController < ApplicationController
 
   def policies
   end
-
+  def graded 
+   @submissions = Submission.order(created_at: :desc)
+  end 
 
 
   def gradebook
     if user_signed_in?
-  	    @submissions = current_user.submissions.order(created_at: :desc)
+  	   @submissions = current_user.submissions.order(created_at: :desc)
         @assignments = Assignment.all
      
   	else 

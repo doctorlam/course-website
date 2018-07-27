@@ -12,27 +12,41 @@
   	<%= @tutorial.video.html_safe %>
  </div>
  <% end %>
-	<div class="tutorial-content"><%= @tutorial.content.html_safe %></div>
-  <h3><%= image_tag 'attachments.png' %> Relevant Attachments</h3>
+ <h3><%= image_tag 'bullets.png' %> Tutorial Objectives:</h3>
+		<ul>
+			<% for objective in @tutorial.objectives %>
+			<li><%= objective.content %></li>
+		<% end %>
+		</ul>
+	<div class="tutorial-content">
+		<%= simple_format @tutorial.content.html_safe %>
+	</div>
+ 
+		<h3><%= image_tag 'checks.png' %> To Do:</h3>
+		<ol>
+		<% for classactivity in @tutorial.classactivitys.order(:created_at) %>
+		<li><%= classactivity.content.html_safe %></li>
+		<% end %>
+		</ol>
+<h3><%= image_tag 'attachments.png' %> Tutorial Attachments</h3>
             <% if @tutorial.attachment? %>
                 <ul><li><a target=_blank href=" <%= @tutorial.attachment.url %>"><strong><%= @tutorial.attachment.original_filename %></strong></a></li></ul>
                 <% else %>
                 <li>No Document(s) Attached!</li>
               <% end %>
               <br>
-       
-  
-</div>
+         <%= link_to "Submit Assignment", new_submission_path, class: "btn btn-green" %>
+ </div>
 
   <div class="col-md-4 projects-right">
   	
 		<div class="padding-right">
 
 			<h1>What is this tutorial related to?</h1>
-			<p style = "font-size: 1.3rem !important; line-height: 2rem !important">This tutorial or resource is pertinent to:</p>
+			<p style = "font-size: 1.2rem !important; line-height: 2rem !important">This tutorial or resource is pertinent to:</p>
 			<% for @lesson in @tutorial.lessons %>
 			<ul>
-				<li style = "font-size: 1.3rem !important; line-height: 2rem !important"><%= link_to @lesson.name, @lesson %>", which was discussed on <%= @lesson.date %> in week <%= @lesson.week %> of the semester.</li>
+				<li style = "font-size: 1.2rem !important; line-height: 2rem !important"><%= link_to @lesson.name, @lesson %>", which was discussed on <%= @lesson.date %> in week <%= @lesson.week %> of the semester.</li>
 		     </ul>
       <% end %>
 		</div>

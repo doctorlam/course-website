@@ -1,4 +1,5 @@
 <header class="hero-image">
+  <div class="hero-overlay">
 	<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
 	<div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -12,25 +13,29 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 		<ul class="nav navbar-nav">
 			
-<li><%= link_to root_path do %>
-<%= image_tag 'home.png' %> 
-<p>Home</p>   
-<% end %></li>
-<li><%= link_to lessons_path do %>
-<%= image_tag 'calendar.png' %>    
-	<p>Schedule</p>
-<% end %></li>
-<li><%= link_to projects_path do %>
-<%= image_tag 'projects2.png' %>    
+		<li><%= link_to root_path do %>
+		<%= image_tag 'home.png' %> 
+		<p>Home</p>   
+		<% end %></li>
+		<li><%= link_to lessons_path do %>
+            
+              <%= image_tag 'calendar.png' %>
+                <p>Schedule</p>
+                            
+                      <% end %>    
+              </li>
 
-	<p>Projects</p>
-<% end %></li>
-<li class="dropdown">
+		<li><%= link_to projects_path do %>
+		<%= image_tag 'projects2.png' %>    
+
+			<p>Projects</p>
+		<% end %></li>
+			<li class="dropdown">
                           <a href="#" class="dropdown-toggle" data-toggle="dropdown">
 							<%= image_tag 'projects.png' %>                          	<p>Resources</p>
                             </a>
-                          <ul class="dropdown-menu">
-                            <li><%= link_to "My Notes (New!)", notes_path %></li>
+                             <ul class="dropdown-menu">
+                            <li><%= link_to "My Notes", notes_path %></li>
                             <li><%= link_to "Tutorials", tutorials_path %></li>
                             <li><%= link_to "Presentations", slidedecks_path %></li>
                             <li><%= link_to "Discussion Board", posts_path %></li>
@@ -91,7 +96,7 @@
 			<% else %>
 			<li class="dropdown">
 			<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-							<%= image_tag 'missing.png' %>                            	<p>Account</p>
+							<%= image_tag 'missing.png' %>                          	<p>Account</p>
                             </a>
              <ul class="dropdown-menu">
 				<li><%= link_to "Register", new_user_registration_path %></li>
@@ -100,11 +105,13 @@
 			</li>
 			<% end %>
 		</ul>
-		</div><!--navbar collapse div-->
+	</div><!--navbar collapse div-->
 	</nav>
+
 	<div class="tagline animated slideInUp">	
-				<h1><%= link_to "tecm4400", root_path %></h1>
-				<h2>Advanced Information Design for Technical Communicators</h2>
+				<h1><%= link_to "tecm4400", lessons_path %></h1>
+				<h2>Advanced Information Design for Electronic Media</h2>
 			
 		</div>
+  </div><!--hero-overlay-->
 </header>

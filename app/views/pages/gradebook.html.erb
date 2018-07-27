@@ -14,7 +14,7 @@
                 <th>Assignment</th>
                 <th>Date Submitted</th>
                 <th>Due Date</th>
-                <th>Score</th> 
+                <th>Score</th>
                 <th>Comments</th>
                 <th>Attached file</th>
               </tr>
@@ -26,7 +26,9 @@
                 <td><%= (i+1) %>.</td>
 
                 <% for assignment in submission.assignments %>
-                  <td><%= link_to assignment.name, submission %></td>
+               
+                  <td style ="background: #16a085 !important; font-size: 1.1rem !important; text-align: center; color: white !important; text-transform: uppercase" class="lesson_type"><%= link_to assignment.name, submission %></td>
+                 
                 <% end %>
                   <td><%= submission.created_at.to_date %>, <%= submission.created_at %></td>
                 <% for assignment in submission.assignments %>
@@ -34,11 +36,13 @@
                 <% end %>
                   <% if submission.score? %>
                     <td style = "color: green"><%= submission.score %>/<%= assignment.score %></td>
-                     <td><%= link_to "View Comments", submission %></td>
+                    <td><%= link_to "View Comments", submission %></td>
+
                   <% else %>
-                    <td style = "color:red">Not graded yet (<%= assignment.fake_score %> points)</td>
+                    <td style = "color:red">Submitted (worth <%= assignment.fake_score %> points)</td>
                     <td></td>
                   <% end %>
+               
                   
                   <% if submission.document? %>
                 <td><a target=_blank href=" <%= submission.document.url %>"><%= submission.document.original_filename %></a></td>

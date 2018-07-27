@@ -1,4 +1,4 @@
-  
+	
 <div class="table-responsive">
           <table class="table table-striped table-hover">
             <thead>
@@ -7,25 +7,33 @@
                 <th></th>
                 <th>Name</th>
                 <th>Email</th>
-                <th>Phone Number</th>            
+                <th>Phone Number</th>
+              <% if current_user.admin? %>
+                <th>Last Signed in?</th>   
+              <% end %>         
+            
               </tr>
             </thead>
 
              <tbody>
-        <% @users.each_with_index do |user, i| %>
+				<% @users.each_with_index do |user, i| %>
 
-                  <tr>
+                	<tr>
                     <td><%= (i+1) %>.</td>
                   <td><div class="img-container">
                     <%= image_tag user.avatar %>
                   </div></td>
-                    <td><%= user.name %> <%=user.last_name %></td>
-                    <td><%= user.email %></td>
-                    <td><%= number_to_phone(user.phonenumber) %></td>
-                  
-                  </tr>
+                		<td><%= user.name %> <%=user.last_name %></td>
+                		<td><%= user.email %></td>
+                		<td><%= number_to_phone(user.phonenumber) %></td>
+                  <% if current_user.admin? %>
 
-          <% end %>
+                    <td><%= user.last_sign_in_at.strftime("%B %d, %Y") %></td>
+                  <% end %>
+                  
+                	</tr>
+
+  				<% end %>
             </tbody>
           </table>
  </div>
