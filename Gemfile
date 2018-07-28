@@ -46,6 +46,7 @@ gem 'bxslider-rails'
 gem "jquery-slick-rails"
 gem 'material_icons'
 gem 'flex-slider-rails'
+gem 'activesupport-json_encoder'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

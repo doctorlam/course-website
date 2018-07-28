@@ -54,6 +54,8 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
+    activesupport-json_encoder (1.1.0)
+      activesupport (>= 4.1.0, < 5.0)
     acts_as_votable (0.10.0)
     addressable (2.5.2)
       public_suffix (>= 2.0.2, < 4.0)
@@ -250,6 +252,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  activesupport-json_encoder
   acts_as_votable
   american_date
   ancestry
