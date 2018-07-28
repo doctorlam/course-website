@@ -9,11 +9,11 @@ class Submission < ActiveRecord::Base
 	has_many :grades, :through => :gradecategorizations
 
 	has_attached_file :document
-		do_not_validate_attachment_file_type :document
+		  validates_attachment :document, size: { in: 0..10.megabytes }
+
 
   	has_attached_file :image
   		do_not_validate_attachment_file_type :image
-
 
 
   			attr_accessor :delete_image

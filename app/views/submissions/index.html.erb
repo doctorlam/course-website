@@ -4,67 +4,6 @@
 
 <div id= "all-grades">
 
- 
-<!-- <div class="row">
-<div class="col-md-4">
- <div class="filter-box">
-<h3>Filter by Student:</h3>
-<%= search_form_for @search do |f| %>
-   <%= f.select :user_name_cont, options_from_collection_for_select(User.all.order(:last_name), :name, :last_name), :prompt => 'All Students', class: "form-control" %>
-
-    &nbsp<%= link_to(submissions_path) do %>
-    <i class="material-icons">cancel</i>
-   <% end %>
-   <br><br>
-<div class="actions">
-  <%= f.submit "Filter", class: " btn btn-green" %><br>
-
-</div>
-
-  <% end %>
-</div>
-</div>
-
-<div class="col-md-4"> 
-<div class="filter-box">
-<h3>Filter by Main:</h3>
-<%= search_form_for @search do |f| %>
-
-   <%= f.select :assignments_name_cont, options_from_collection_for_select(Assignment.all.where(:assignment_type => "Main").order(:deadline), :name, :name), :prompt => 'Main Assignments', class: "form-control" %>
-
-    &nbsp<%= link_to(submissions_path) do %>
-    <i class="material-icons">cancel</i>
-   <% end %>
-   <br><br>
-<div class="actions">
-  <%= f.submit "Filter", class: " btn btn-green" %><br>
-
-</div>
-
-  <% end %>
-</div>
-</div>
-<div class="col-md-4">
-  <div class="filter-box">
-<h3>Filter by Lab:</h3>
-<%= search_form_for @search do |f| %>
-
-    <%= f.select :assignments_name_cont, options_from_collection_for_select(Assignment.all.where(:assignment_type => "Lab").order(:deadline), :name, :name), :prompt => 'Lab Assignments', class: "form-control" %>
-
-    &nbsp<%= link_to(submissions_path) do %>
-    <i class="material-icons">cancel</i>
-   <% end %>
-   <br><br>
-<div class="actions">
-  <%= f.submit "Filter", class: " btn btn-green" %><br>
-
-</div>
-
-  <% end %>
-</div>
-</div>
-<br >
-</div><!--/row--> 
 <div class="row">
   <div class="col-md-4">
 

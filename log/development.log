@@ -15610,3 +15610,938 @@ Processing by UsersController#index as HTML
   Rendered layouts/_header.html.erb (3.2ms)
   Rendered layouts/_footer.html.erb (0.2ms)
 Completed 200 OK in 391ms (Views: 373.3ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for ::1 at 2018-07-27 19:48:03 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by AboutsController#index as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mAbout Load (0.5ms)[0m  [1mSELECT "abouts".* FROM "abouts"[0m
+  Rendered abouts/index.html.erb within layouts/application (25.5ms)
+  Rendered layouts/_header.html.erb (5.1ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 1711ms (Views: 1689.5ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/submissions" for ::1 at 2018-07-27 19:48:09 -0500
+Processing by SubmissionsController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mSubmission Load (0.6ms)[0m  [1mSELECT "submissions".* FROM "submissions" WHERE "submissions"."archive" = ?  ORDER BY "submissions"."created_at" DESC[0m  [["archive", "f"]]
+  Rendered submissions/index.html.erb within layouts/application (13.2ms)
+  Rendered layouts/_header2.html.erb (6.0ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 357ms (Views: 338.9ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/submissions/new" for ::1 at 2018-07-27 19:48:11 -0500
+Processing by SubmissionsController#new as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mAssignment Load (0.7ms)[0m  [1mSELECT "assignments".* FROM "assignments"  ORDER BY "assignments"."deadline" ASC[0m
+  Rendered submissions/_assignment_step.html.erb (48.4ms)
+  Rendered submissions/_form.html.erb (55.3ms)
+  Rendered submissions/new.html.erb within layouts/application (58.8ms)
+  Rendered layouts/_header.html.erb (3.3ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 411ms (Views: 401.8ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/submissions/new" for ::1 at 2018-07-27 19:48:11 -0500
+Processing by SubmissionsController#new as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mAssignment Load (0.2ms)[0m  [1mSELECT "assignments".* FROM "assignments"  ORDER BY "assignments"."deadline" ASC[0m
+  Rendered submissions/_assignment_step.html.erb (1.1ms)
+  Rendered submissions/_form.html.erb (2.6ms)
+  Rendered submissions/new.html.erb within layouts/application (3.7ms)
+  Rendered layouts/_header.html.erb (3.6ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 292ms (Views: 289.9ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/submissions" for ::1 at 2018-07-27 19:48:14 -0500
+Processing by SubmissionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XJWgAh6SOOkFGhCDumhntQbsxl48X7H7+xxY7AkIDvxTofEcgNxt8032WuZcaBNujuLVkTuz9bBfkF2awwNUaQ==", "submission"=>{"assignment_ids"=>["", "1"]}, "commit"=>"Continue"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mAssignment Load (0.2ms)[0m  [1mSELECT  "assignments".* FROM "assignments" WHERE "assignments"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 0.4ms)
+
+NameError (undefined local variable or method `file_file_size' for #<Submission:0x007f814c8ea588>):
+  app/models/submission.rb:20:in `document_limit'
+  app/controllers/submissions_controller.rb:58:in `create'
+
+
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.1ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (83.9ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (106.9ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (190.2ms)
+
+
+Started POST "/submissions" for ::1 at 2018-07-27 19:48:37 -0500
+Processing by SubmissionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XJWgAh6SOOkFGhCDumhntQbsxl48X7H7+xxY7AkIDvxTofEcgNxt8032WuZcaBNujuLVkTuz9bBfkF2awwNUaQ==", "submission"=>{"assignment_ids"=>["", "1"]}, "commit"=>"Continue"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mAssignment Load (0.2ms)[0m  [1mSELECT  "assignments".* FROM "assignments" WHERE "assignments"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 500 Internal Server Error in 51ms (ActiveRecord: 2.4ms)
+
+NoMethodError (undefined method `>' for nil:NilClass):
+  app/models/submission.rb:20:in `document_limit'
+  app/controllers/submissions_controller.rb:58:in `create'
+
+
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.2ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (66.1ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (56.0ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (125.3ms)
+
+
+Started POST "/submissions" for ::1 at 2018-07-27 19:50:44 -0500
+Processing by SubmissionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XJWgAh6SOOkFGhCDumhntQbsxl48X7H7+xxY7AkIDvxTofEcgNxt8032WuZcaBNujuLVkTuz9bBfkF2awwNUaQ==", "submission"=>{"assignment_ids"=>["", "1"]}, "commit"=>"Continue"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mAssignment Load (0.2ms)[0m  [1mSELECT  "assignments".* FROM "assignments" WHERE "assignments"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered submissions/_content_step.html.erb (31.4ms)
+  Rendered submissions/_form.html.erb (35.6ms)
+  Rendered submissions/new.html.erb within layouts/application (36.8ms)
+  Rendered layouts/_header.html.erb (3.3ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 407ms (Views: 357.5ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/assets/attachments-e41e6f6fb7b4735fafb14ef777088dd3738ae0c1ea3e1938d8a172db38b261d8.png" for ::1 at 2018-07-27 19:50:45 -0500
+
+
+Started POST "/submissions" for ::1 at 2018-07-27 19:51:14 -0500
+Processing by SubmissionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VtT2b5pA4o1DVIJ9txXf+g/HKr5zTQhxoQlm8HwUdCVZ4KdxBA63lwu4yBhRFashh8k5cXShTDoFhWOGth8usA==", "submission"=>{"assignment_name"=>"asdfa", "description"=>"", "document"=>#<ActionDispatch::Http::UploadedFile:0x007f814f301da8 @tempfile=#<Tempfile:/var/folders/tv/kc07j7lj6pl5_lyd_cr1r5x40000gn/T/RackMultipart20180727-60742-7wuehv.psd>, @original_filename="BCC-full-Site_05.psd", @content_type="application/x-photoshop", @headers="Content-Disposition: form-data; name=\"submission[document]\"; filename=\"BCC-full-Site_05.psd\"\r\nContent-Type: application/x-photoshop\r\n">}, "commit"=>"Submit Assignment"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mAssignment Load (0.1ms)[0m  [1mSELECT  "assignments".* FROM "assignments" WHERE "assignments"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered submissions/_content_step.html.erb (4.0ms)
+  Rendered submissions/_form.html.erb (8.4ms)
+  Rendered submissions/new.html.erb within layouts/application (10.9ms)
+  Rendered layouts/_header.html.erb (9.7ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 1397ms (Views: 408.3ms | ActiveRecord: 0.2ms)
+
+Encoding::UndefinedConversionError ("\xB2" from ASCII-8BIT to UTF-8):
+  activesupport (4.2.4) lib/active_support/core_ext/object/json.rb:34:in `encode'
+  activesupport (4.2.4) lib/active_support/core_ext/object/json.rb:34:in `to_json'
+  activesupport (4.2.4) lib/active_support/core_ext/object/json.rb:34:in `to_json_with_active_support_encoder'
+  activesupport (4.2.4) lib/active_support/json/encoding.rb:57:in `to_json'
+  /Users/chrislam/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/json/common.rb:224:in `generate'
+  /Users/chrislam/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/json/common.rb:224:in `generate'
+  activesupport (4.2.4) lib/active_support/json/encoding.rb:101:in `stringify'
+  activesupport (4.2.4) lib/active_support/json/encoding.rb:35:in `encode'
+  activesupport (4.2.4) lib/active_support/json/encoding.rb:22:in `encode'
+  actionpack (4.2.4) lib/action_dispatch/middleware/cookies.rb:401:in `dump'
+  actionpack (4.2.4) lib/action_dispatch/middleware/cookies.rb:414:in `serialize'
+  actionpack (4.2.4) lib/action_dispatch/middleware/cookies.rb:527:in `[]='
+  actionpack (4.2.4) lib/action_dispatch/middleware/session/cookie_store.rb:110:in `set_cookie'
+  rack (1.6.10) lib/rack/session/abstract/id.rb:351:in `commit_session'
+  rack (1.6.10) lib/rack/session/abstract/id.rb:226:in `context'
+  rack (1.6.10) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.4) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  activerecord (4.2.4) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.4) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.10) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.10) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.10) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.10) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.10) lib/rack/lock.rb:17:in `call'
+  rack (1.6.10) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.10) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/chrislam/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /Users/chrislam/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /Users/chrislam/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (2.1ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (62.2ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (56.4ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (132.0ms)
+
+
+Started GET "/submissions" for ::1 at 2018-07-27 19:51:22 -0500
+Processing by SubmissionsController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mSubmission Load (0.7ms)[0m  [1mSELECT "submissions".* FROM "submissions" WHERE "submissions"."archive" = ?  ORDER BY "submissions"."created_at" DESC[0m  [["archive", "f"]]
+  Rendered submissions/index.html.erb within layouts/application (4.9ms)
+  Rendered layouts/_header2.html.erb (4.0ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 354ms (Views: 350.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/submissions/new" for ::1 at 2018-07-27 19:51:26 -0500
+Processing by SubmissionsController#new as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mAssignment Load (0.1ms)[0m  [1mSELECT  "assignments".* FROM "assignments" WHERE "assignments"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered submissions/_content_step.html.erb (2.5ms)
+  Rendered submissions/_form.html.erb (3.9ms)
+  Rendered submissions/new.html.erb within layouts/application (5.0ms)
+  Rendered layouts/_header.html.erb (2.9ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 356ms (Views: 352.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/submissions/new" for ::1 at 2018-07-27 19:51:27 -0500
+Processing by SubmissionsController#new as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mAssignment Load (0.1ms)[0m  [1mSELECT  "assignments".* FROM "assignments" WHERE "assignments"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered submissions/_content_step.html.erb (4.3ms)
+  Rendered submissions/_form.html.erb (7.1ms)
+  Rendered submissions/new.html.erb within layouts/application (10.2ms)
+  Rendered layouts/_header.html.erb (3.6ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 368ms (Views: 364.8ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/submissions" for ::1 at 2018-07-27 19:52:42 -0500
+Processing by SubmissionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wXh/PpyVnSmjuFjcwDwxL8vMZx8YIGjzqvYFsOEC1BvOTC4gAtvIM+tUErkmPEX0Q8J00B/MLLgOegDGKwmOjg==", "submission"=>{"assignment_name"=>"asdfa", "description"=>"", "document"=>#<ActionDispatch::Http::UploadedFile:0x007f81389d6708 @tempfile=#<Tempfile:/var/folders/tv/kc07j7lj6pl5_lyd_cr1r5x40000gn/T/RackMultipart20180727-60742-fkcxzh.JPG>, @original_filename="IMG_7307.JPG", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"submission[document]\"; filename=\"IMG_7307.JPG\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Submit Assignment"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mAssignment Load (0.2ms)[0m  [1mSELECT  "assignments".* FROM "assignments" WHERE "assignments"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered submissions/_content_step.html.erb (4.4ms)
+  Rendered submissions/_form.html.erb (8.5ms)
+  Rendered submissions/new.html.erb within layouts/application (10.6ms)
+  Rendered layouts/_header.html.erb (8.5ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 584ms (Views: 503.9ms | ActiveRecord: 2.1ms)
+
+Encoding::UndefinedConversionError ("\xFF" from ASCII-8BIT to UTF-8):
+  activesupport (4.2.4) lib/active_support/core_ext/object/json.rb:34:in `encode'
+  activesupport (4.2.4) lib/active_support/core_ext/object/json.rb:34:in `to_json'
+  activesupport (4.2.4) lib/active_support/core_ext/object/json.rb:34:in `to_json_with_active_support_encoder'
+  activesupport (4.2.4) lib/active_support/json/encoding.rb:57:in `to_json'
+  /Users/chrislam/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/json/common.rb:224:in `generate'
+  /Users/chrislam/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/json/common.rb:224:in `generate'
+  activesupport (4.2.4) lib/active_support/json/encoding.rb:101:in `stringify'
+  activesupport (4.2.4) lib/active_support/json/encoding.rb:35:in `encode'
+  activesupport (4.2.4) lib/active_support/json/encoding.rb:22:in `encode'
+  actionpack (4.2.4) lib/action_dispatch/middleware/cookies.rb:401:in `dump'
+  actionpack (4.2.4) lib/action_dispatch/middleware/cookies.rb:414:in `serialize'
+  actionpack (4.2.4) lib/action_dispatch/middleware/cookies.rb:527:in `[]='
+  actionpack (4.2.4) lib/action_dispatch/middleware/session/cookie_store.rb:110:in `set_cookie'
+  rack (1.6.10) lib/rack/session/abstract/id.rb:351:in `commit_session'
+  rack (1.6.10) lib/rack/session/abstract/id.rb:226:in `context'
+  rack (1.6.10) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.4) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  activerecord (4.2.4) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.4) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.10) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.10) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.10) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.10) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.10) lib/rack/lock.rb:17:in `call'
+  rack (1.6.10) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.10) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/chrislam/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /Users/chrislam/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /Users/chrislam/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.1ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (76.1ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (63.5ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (138.7ms)
+
+
+Started GET "/submissions/new" for ::1 at 2018-07-27 19:52:52 -0500
+Processing by SubmissionsController#new as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mAssignment Load (0.1ms)[0m  [1mSELECT  "assignments".* FROM "assignments" WHERE "assignments"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered submissions/_content_step.html.erb (5.7ms)
+  Rendered submissions/_form.html.erb (12.1ms)
+  Rendered submissions/new.html.erb within layouts/application (14.6ms)
+  Rendered layouts/_header.html.erb (3.1ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 344ms (Views: 338.8ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/submissions" for ::1 at 2018-07-27 19:53:04 -0500
+Processing by SubmissionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"H+C9d1Z6FVXAW8qoJHv7pHpCAkavqEhJhVO1v1la0ZcQ1OxpyDRAT4i3gM3Ce49/8kwRiahEDAIh37DJk1GLAg==", "submission"=>{"assignment_name"=>"asdfa", "description"=>"", "document"=>#<ActionDispatch::Http::UploadedFile:0x007f813b6ed930 @tempfile=#<Tempfile:/var/folders/tv/kc07j7lj6pl5_lyd_cr1r5x40000gn/T/RackMultipart20180727-60742-zuf7f5.jpg>, @original_filename="IMG_4827-2.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"submission[document]\"; filename=\"IMG_4827-2.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Submit Assignment"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mAssignment Load (0.1ms)[0m  [1mSELECT  "assignments".* FROM "assignments" WHERE "assignments"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (1.1ms)[0m  [1mINSERT INTO "submissions" ("assignment_name", "description", "document_file_name", "document_content_type", "document_file_size", "document_updated_at", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["assignment_name", "asdfa"], ["description", ""], ["document_file_name", "IMG_4827-2.jpg"], ["document_content_type", "image/jpeg"], ["document_file_size", 2450363], ["document_updated_at", "2018-07-28 00:53:04.714783"], ["user_id", 1], ["created_at", "2018-07-28 00:53:04.740364"], ["updated_at", "2018-07-28 00:53:04.740364"]]
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "portals" ("assignment_id", "submission_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["assignment_id", 1], ["submission_id", 8], ["created_at", "2018-07-28 00:53:04.743098"], ["updated_at", "2018-07-28 00:53:04.743098"]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/submissions/8
+Completed 302 Found in 96ms (ActiveRecord: 4.7ms)
+
+
+Started GET "/submissions/8" for ::1 at 2018-07-27 19:53:04 -0500
+Processing by SubmissionsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[35mSubmission Load (0.2ms)[0m  SELECT  "submissions".* FROM "submissions" WHERE "submissions"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mAssignment Load (0.3ms)[0m  [1mSELECT "assignments".* FROM "assignments" INNER JOIN "portals" ON "assignments"."id" = "portals"."assignment_id" WHERE "portals"."submission_id" = ?[0m  [["submission_id", 8]]
+  Rendered submissions/_grade.html.erb (59.9ms)
+  Rendered submissions/show.html.erb within layouts/application (69.1ms)
+  Rendered layouts/_header.html.erb (7.1ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 509ms (Views: 491.4ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/submissions" for ::1 at 2018-07-27 19:54:45 -0500
+Processing by SubmissionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wXh/PpyVnSmjuFjcwDwxL8vMZx8YIGjzqvYFsOEC1BvOTC4gAtvIM+tUErkmPEX0Q8J00B/MLLgOegDGKwmOjg==", "submission"=>{"assignment_name"=>"asdfa", "description"=>"", "document"=>#<ActionDispatch::Http::UploadedFile:0x007f8140aaa1e0 @tempfile=#<Tempfile:/var/folders/tv/kc07j7lj6pl5_lyd_cr1r5x40000gn/T/RackMultipart20180727-60742-84y8mu.JPG>, @original_filename="IMG_2681.JPG", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"submission[document]\"; filename=\"IMG_2681.JPG\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Submit Assignment"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 1.2ms)
+
+NoMethodError (undefined method `deep_merge!' for nil:NilClass):
+  app/controllers/submissions_controller.rb:54:in `create'
+
+
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.4ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (73.6ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.7ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (60.4ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (133.8ms)
+
+
+Started POST "/submissions" for ::1 at 2018-07-27 19:55:07 -0500
+Processing by SubmissionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"H+C9d1Z6FVXAW8qoJHv7pHpCAkavqEhJhVO1v1la0ZcQ1OxpyDRAT4i3gM3Ce49/8kwRiahEDAIh37DJk1GLAg==", "submission"=>{"assignment_name"=>"asdfa", "description"=>"", "document"=>#<ActionDispatch::Http::UploadedFile:0x007f813b2346f0 @tempfile=#<Tempfile:/var/folders/tv/kc07j7lj6pl5_lyd_cr1r5x40000gn/T/RackMultipart20180727-60742-1hlrfic.JPG>, @original_filename="IMG_2681.JPG", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"submission[document]\"; filename=\"IMG_2681.JPG\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Submit Assignment"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 1.0ms)
+
+NoMethodError (undefined method `deep_merge!' for nil:NilClass):
+  app/controllers/submissions_controller.rb:54:in `create'
+
+
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.4ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.9ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (68.5ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (56.5ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (126.6ms)
+
+
+Started POST "/submissions" for ::1 at 2018-07-27 19:56:21 -0500
+Processing by SubmissionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wXh/PpyVnSmjuFjcwDwxL8vMZx8YIGjzqvYFsOEC1BvOTC4gAtvIM+tUErkmPEX0Q8J00B/MLLgOegDGKwmOjg==", "submission"=>{"assignment_name"=>"asdfa", "description"=>"", "document"=>#<ActionDispatch::Http::UploadedFile:0x007f81385b4030 @tempfile=#<Tempfile:/var/folders/tv/kc07j7lj6pl5_lyd_cr1r5x40000gn/T/RackMultipart20180727-60742-151euzd.JPG>, @original_filename="IMG_2681.JPG", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"submission[document]\"; filename=\"IMG_2681.JPG\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Submit Assignment"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.9ms)
+
+NoMethodError (undefined method `deep_merge!' for nil:NilClass):
+  app/controllers/submissions_controller.rb:54:in `create'
+
+
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.7ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (73.0ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (60.5ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (135.8ms)
+
+
+Started POST "/submissions" for ::1 at 2018-07-27 19:56:39 -0500
+Processing by SubmissionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"H+C9d1Z6FVXAW8qoJHv7pHpCAkavqEhJhVO1v1la0ZcQ1OxpyDRAT4i3gM3Ce49/8kwRiahEDAIh37DJk1GLAg==", "submission"=>{"assignment_name"=>"asdfa", "description"=>"", "document"=>#<ActionDispatch::Http::UploadedFile:0x007f81535047f0 @tempfile=#<Tempfile:/var/folders/tv/kc07j7lj6pl5_lyd_cr1r5x40000gn/T/RackMultipart20180727-60742-1vcu7z6.jpg>, @original_filename="AdobeInkSlideApps.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"submission[document]\"; filename=\"AdobeInkSlideApps.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Submit Assignment"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.8ms)
+
+NoMethodError (undefined method `deep_merge!' for nil:NilClass):
+  app/controllers/submissions_controller.rb:54:in `create'
+
+
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.0ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (69.3ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (57.6ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (128.4ms)
+
+
+Started GET "/submissions/new" for ::1 at 2018-07-27 19:58:39 -0500
+Processing by SubmissionsController#new as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 1.0ms)
+
+ArgumentError (You must pass either :less_than, :greater_than, or :in to the validator):
+  app/models/submission.rb:12:in `<class:Submission>'
+  app/models/submission.rb:1:in `<top (required)>'
+  app/controllers/submissions_controller.rb:39:in `new'
+
+
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.7ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (75.7ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (58.5ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (138.7ms)
+
+
+Started GET "/submissions/new" for ::1 at 2018-07-27 19:58:44 -0500
+Processing by SubmissionsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.1ms)
+
+ArgumentError (You must pass either :less_than, :greater_than, or :in to the validator):
+  app/models/submission.rb:12:in `<class:Submission>'
+  app/models/submission.rb:1:in `<top (required)>'
+  app/controllers/submissions_controller.rb:39:in `new'
+
+
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.2ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (66.1ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (56.9ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (126.3ms)
+
+
+Started GET "/submissions/new" for ::1 at 2018-07-27 19:59:03 -0500
+Processing by SubmissionsController#new as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.8ms)
+
+SyntaxError (/Users/chrislam/tecm4400/app/models/submission.rb:12: syntax error, unexpected '<'
+		validates_attachment_size :document,  size: { in: < 10.kilobytes }
+		                                                   ^
+/Users/chrislam/tecm4400/app/models/submission.rb:12: syntax error, unexpected '}', expecting keyword_end):
+  app/models/submission.rb:12: syntax error, unexpected '<'
+  app/models/submission.rb:12: syntax error, unexpected '}', expecting keyword_end
+  app/controllers/submissions_controller.rb:39:in `new'
+
+
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.5ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (63.1ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (54.2ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (122.9ms)
+
+
+Started GET "/submissions/new" for ::1 at 2018-07-27 19:59:11 -0500
+Processing by SubmissionsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.8ms)
+
+SyntaxError (/Users/chrislam/tecm4400/app/models/submission.rb:12: syntax error, unexpected tINTEGER, expecting keyword_do or '{' or '('
+...ment,  size: { in: less_than 10.kilobytes }
+...                               ^
+/Users/chrislam/tecm4400/app/models/submission.rb:12: syntax error, unexpected '}', expecting keyword_end):
+  app/models/submission.rb:12: syntax error, unexpected tINTEGER, expecting keyword_do or '{' or '('
+  app/models/submission.rb:12: syntax error, unexpected '}', expecting keyword_end
+  app/controllers/submissions_controller.rb:39:in `new'
+
+
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.4ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (63.6ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (55.2ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (123.5ms)
+
+
+Started GET "/submissions/new" for ::1 at 2018-07-27 19:59:23 -0500
+Processing by SubmissionsController#new as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.9ms)
+
+SyntaxError (/Users/chrislam/tecm4400/app/models/submission.rb:12: syntax error, unexpected '<', expecting '}'
+		validates_attachment_size :document,  size: { < 10.kilobytes }
+		                                               ^
+/Users/chrislam/tecm4400/app/models/submission.rb:12: syntax error, unexpected '}', expecting keyword_end):
+  app/models/submission.rb:12: syntax error, unexpected '<', expecting '}'
+  app/models/submission.rb:12: syntax error, unexpected '}', expecting keyword_end
+  app/controllers/submissions_controller.rb:39:in `new'
+
+
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.6ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.8ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (68.5ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (58.8ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (131.4ms)
+
+
+Started GET "/submissions/new" for ::1 at 2018-07-27 20:00:45 -0500
+Processing by SubmissionsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mAssignment Load (0.2ms)[0m  SELECT "assignments".* FROM "assignments"  ORDER BY "assignments"."deadline" ASC
+  Rendered submissions/_assignment_step.html.erb (18.0ms)
+  Rendered submissions/_form.html.erb (20.8ms)
+  Rendered submissions/new.html.erb within layouts/application (22.7ms)
+  Rendered layouts/_header.html.erb (5.6ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 466ms (Views: 438.6ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/submissions" for ::1 at 2018-07-27 20:00:48 -0500
+Processing by SubmissionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"B1o8ZAgzR0Gf+MbXeHVIZPQy/N0qXi2HV5BOs3Dj204Ibm16ln0SW9cUjLKedTy/fDzvEi2yaczzHEvFuuiB2w==", "submission"=>{"assignment_ids"=>["", "1"]}, "commit"=>"Continue"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mAssignment Load (0.1ms)[0m  SELECT  "assignments".* FROM "assignments" WHERE "assignments"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered submissions/_content_step.html.erb (3.6ms)
+  Rendered submissions/_form.html.erb (7.3ms)
+  Rendered submissions/new.html.erb within layouts/application (8.5ms)
+  Rendered layouts/_header.html.erb (3.3ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 355ms (Views: 348.2ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/submissions" for ::1 at 2018-07-27 20:00:59 -0500
+Processing by SubmissionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"R3seQd5bQOsh/QaHvCGfTSXcQxihz6RvgOwxrt2JN/tIT09fQBUV8WkRTOJaIeuWrdJQ16Yj4CQkYDTYF4Jtbg==", "submission"=>{"assignment_name"=>"asdfa", "description"=>"", "document"=>#<ActionDispatch::Http::UploadedFile:0x007f813e6f5a10 @tempfile=#<Tempfile:/var/folders/tv/kc07j7lj6pl5_lyd_cr1r5x40000gn/T/RackMultipart20180727-60742-pnpbgh.JPG>, @original_filename="IMG_2688 2.JPG", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"submission[document]\"; filename=\"IMG_2688 2.JPG\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Submit Assignment"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mAssignment Load (0.1ms)[0m  SELECT  "assignments".* FROM "assignments" WHERE "assignments"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "submissions" ("assignment_name", "description", "document_file_name", "document_content_type", "document_file_size", "document_updated_at", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["assignment_name", "asdfa"], ["description", ""], ["document_file_name", "IMG_2688_2.JPG"], ["document_content_type", "image/jpeg"], ["document_file_size", 694481], ["document_updated_at", "2018-07-28 01:00:59.752024"], ["user_id", 1], ["created_at", "2018-07-28 01:00:59.760822"], ["updated_at", "2018-07-28 01:00:59.760822"]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "portals" ("assignment_id", "submission_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["assignment_id", 1], ["submission_id", 9], ["created_at", "2018-07-28 01:00:59.762880"], ["updated_at", "2018-07-28 01:00:59.762880"]]
+  [1m[35m (1.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/submissions/9
+Completed 302 Found in 74ms (ActiveRecord: 3.7ms)
+
+
+Started GET "/submissions/9" for ::1 at 2018-07-27 20:00:59 -0500
+Processing by SubmissionsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mSubmission Load (0.2ms)[0m  [1mSELECT  "submissions".* FROM "submissions" WHERE "submissions"."id" = ? LIMIT 1[0m  [["id", 9]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mAssignment Load (0.2ms)[0m  SELECT "assignments".* FROM "assignments" INNER JOIN "portals" ON "assignments"."id" = "portals"."assignment_id" WHERE "portals"."submission_id" = ?  [["submission_id", 9]]
+  Rendered submissions/_grade.html.erb (1.6ms)
+  Rendered submissions/show.html.erb within layouts/application (5.8ms)
+  Rendered layouts/_header.html.erb (4.5ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 348ms (Views: 343.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/submissions" for ::1 at 2018-07-27 20:01:09 -0500
+Processing by SubmissionsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mSubmission Load (0.2ms)[0m  SELECT "submissions".* FROM "submissions" WHERE "submissions"."archive" = ?  ORDER BY "submissions"."created_at" DESC  [["archive", "f"]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mAssignment Load (0.1ms)[0m  SELECT "assignments".* FROM "assignments" INNER JOIN "portals" ON "assignments"."id" = "portals"."assignment_id" WHERE "portals"."submission_id" = ?  [["submission_id", 9]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mAssignment Load (0.1ms)[0m  SELECT "assignments".* FROM "assignments" INNER JOIN "portals" ON "assignments"."id" = "portals"."assignment_id" WHERE "portals"."submission_id" = ?  [["submission_id", 8]]
+  Rendered submissions/index.html.erb within layouts/application (7.5ms)
+  Rendered layouts/_header2.html.erb (6.8ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 342ms (Views: 340.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/submissions/new" for ::1 at 2018-07-27 20:01:12 -0500
+Processing by SubmissionsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mAssignment Load (0.3ms)[0m  SELECT "assignments".* FROM "assignments"  ORDER BY "assignments"."deadline" ASC
+  Rendered submissions/_assignment_step.html.erb (2.7ms)
+  Rendered submissions/_form.html.erb (5.3ms)
+  Rendered submissions/new.html.erb within layouts/application (6.5ms)
+  Rendered layouts/_header.html.erb (3.7ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 299ms (Views: 297.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/assignments.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2018-07-27 20:01:13 -0500
+
+
+Started GET "/assets/commontator/application.self-d2fefe18a71da57eee2141bce760e3400d33f26242847bd68d9762dbdc4b21de.css?body=1" for ::1 at 2018-07-27 20:01:13 -0500
+
+
+Started GET "/assets/mentionsInput/jquery.mentionsInput.self-2511aab67df639ee93060a073a72bbfa0078d834f18fed2673a7b21c844addef.css?body=1" for ::1 at 2018-07-27 20:01:13 -0500
+
+
+Started GET "/assets/abouts.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2018-07-27 20:01:13 -0500
+
+
+Started GET "/assets/commontator/comments.self-2bfcb1b73d3151235b936138553dc40d8a800940c2fdcad6d0444118bdaf7da5.css?body=1" for ::1 at 2018-07-27 20:01:13 -0500
+
+
+Started GET "/assets/commontator/threads.self-c7e0631c7859f441a94c179f2a67d5f0b99dedd507ad266f11d167bc0e1fafd7.css?body=1" for ::1 at 2018-07-27 20:01:13 -0500
+
+
+Started GET "/assets/ct-navbar.self-e3d798a5404db206b3395261bbf61ccc27ed686ff6bafe476ae6953640056e6f.css?body=1" for ::1 at 2018-07-27 20:01:13 -0500
+
+
+Started GET "/assets/custom.self-098bef8e87647e8e43cd640dc7294004c375fbc71828bd4598e84549595525ef.css?body=1" for ::1 at 2018-07-27 20:01:13 -0500
+
+
+Started GET "/assets/grades.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2018-07-27 20:01:13 -0500
+
+
+Started GET "/assets/courses.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2018-07-27 20:01:13 -0500
+
+
+Started GET "/assets/pages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2018-07-27 20:01:13 -0500
+
+
+Started GET "/assets/pe-icon-7-stroke.self-dc81a269a0dfa8e51f2aefa000e973b13c4df13cbc9000d3da994167b57931b4.css?body=1" for ::1 at 2018-07-27 20:01:13 -0500
+
+
+Started GET "/assets/posts.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2018-07-27 20:01:13 -0500
+
+
+Started GET "/assets/lessons.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2018-07-27 20:01:13 -0500
+
+
+Started GET "/assets/presentations.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2018-07-27 20:01:13 -0500
+
+
+Started GET "/assets/projects.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2018-07-27 20:01:13 -0500
+
+
+Started GET "/assets/responses.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2018-07-27 20:01:13 -0500
+
+
+Started GET "/assets/submissions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2018-07-27 20:01:13 -0500
+
+
+Started GET "/assets/tutorials.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2018-07-27 20:01:13 -0500
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2018-07-27 20:01:13 -0500
+
+
+Started GET "/assets/slick.self-95cc8c19e018da880d66494c460b0a4f2b99b2ce340f86847568f15ebe460d07.css?body=1" for ::1 at 2018-07-27 20:01:13 -0500
+
+
+Started GET "/assets/slick-theme.self-452d6d375ac2071bbf02db6525231d5d8a96105a88bf119d8aa440c18b6c5b26.css?body=1" for ::1 at 2018-07-27 20:01:13 -0500
+
+
+Started GET "/submissions/new" for ::1 at 2018-07-27 20:01:13 -0500
+Processing by SubmissionsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mAssignment Load (0.2ms)[0m  SELECT "assignments".* FROM "assignments"  ORDER BY "assignments"."deadline" ASC
+  Rendered submissions/_assignment_step.html.erb (1.0ms)
+  Rendered submissions/_form.html.erb (2.4ms)
+  Rendered submissions/new.html.erb within layouts/application (3.4ms)
+  Rendered layouts/_header.html.erb (3.6ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 282ms (Views: 280.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/scaffolds.self-6ce8b11bacb6f8180afb84205ffef7d814861f8ea48b004961b634d580aae192.css?body=1" for ::1 at 2018-07-27 20:01:13 -0500
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2018-07-27 20:01:13 -0500
+
+
+Started GET "/assets/application.self-f2fc363b378f1bd5edb8acec2b4cad586e69af6c9a542b80d58ade8d7e29ca39.css?body=1" for ::1 at 2018-07-27 20:01:13 -0500
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2018-07-27 20:01:13 -0500
+
+
+Started GET "/assets/jquery.slick.self-c2e40b73745bcea0772529bad3cc6abb86e6d9b2658e1847ec527de380035675.js?body=1" for ::1 at 2018-07-27 20:01:13 -0500
+
+
+Started GET "/assets/list.min.self-ec5d1df05bc8ece89c3224cd18265819e5884e973a5f351864734d3beceb38c9.js?body=1" for ::1 at 2018-07-27 20:01:13 -0500
+
+
+Started POST "/submissions" for ::1 at 2018-07-27 20:01:21 -0500
+Processing by SubmissionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0UhhcPV3k6nZdeer1IfTuyiaIHNFytX5fRIPQml1X9zefDBuaznGs5GZrc4yh6dgoJQzvEImkbLZngo0o34FSQ==", "submission"=>{"assignment_ids"=>["", "1"]}, "commit"=>"Continue"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mAssignment Load (0.2ms)[0m  SELECT  "assignments".* FROM "assignments" WHERE "assignments"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered submissions/_content_step.html.erb (2.7ms)
+  Rendered submissions/_form.html.erb (5.2ms)
+  Rendered submissions/new.html.erb within layouts/application (6.4ms)
+  Rendered layouts/_header.html.erb (3.2ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 331ms (Views: 285.0ms | ActiveRecord: 1.9ms)
+
+
+Started POST "/submissions" for ::1 at 2018-07-27 20:01:45 -0500
+Processing by SubmissionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"J9Tna8rqwSWAYmuTlIbhC70CO7ol4twIdPTkl07uABEo4LZ1VKSUP8iOIfZyhpXQNQwodSIOmEPQeOHhhOVahA==", "submission"=>{"assignment_name"=>"asdfa", "description"=>"", "document"=>#<ActionDispatch::Http::UploadedFile:0x007f8138f0c628 @tempfile=#<Tempfile:/var/folders/tv/kc07j7lj6pl5_lyd_cr1r5x40000gn/T/RackMultipart20180727-60742-qkwnja.JPG>, @original_filename="IMG_7307.JPG", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"submission[document]\"; filename=\"IMG_7307.JPG\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Submit Assignment"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mAssignment Load (0.1ms)[0m  SELECT  "assignments".* FROM "assignments" WHERE "assignments"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered submissions/_content_step.html.erb (2.5ms)
+  Rendered submissions/_form.html.erb (5.2ms)
+  Rendered submissions/new.html.erb within layouts/application (6.3ms)
+  Rendered layouts/_header.html.erb (3.2ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 314ms (Views: 288.9ms | ActiveRecord: 0.2ms)
+
+Encoding::UndefinedConversionError ("\xFF" from ASCII-8BIT to UTF-8):
+  activesupport (4.2.4) lib/active_support/core_ext/object/json.rb:34:in `encode'
+  activesupport (4.2.4) lib/active_support/core_ext/object/json.rb:34:in `to_json'
+  activesupport (4.2.4) lib/active_support/core_ext/object/json.rb:34:in `to_json_with_active_support_encoder'
+  activesupport (4.2.4) lib/active_support/json/encoding.rb:57:in `to_json'
+  /Users/chrislam/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/json/common.rb:224:in `generate'
+  /Users/chrislam/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/json/common.rb:224:in `generate'
+  activesupport (4.2.4) lib/active_support/json/encoding.rb:101:in `stringify'
+  activesupport (4.2.4) lib/active_support/json/encoding.rb:35:in `encode'
+  activesupport (4.2.4) lib/active_support/json/encoding.rb:22:in `encode'
+  actionpack (4.2.4) lib/action_dispatch/middleware/cookies.rb:401:in `dump'
+  actionpack (4.2.4) lib/action_dispatch/middleware/cookies.rb:414:in `serialize'
+  actionpack (4.2.4) lib/action_dispatch/middleware/cookies.rb:527:in `[]='
+  actionpack (4.2.4) lib/action_dispatch/middleware/session/cookie_store.rb:110:in `set_cookie'
+  rack (1.6.10) lib/rack/session/abstract/id.rb:351:in `commit_session'
+  rack (1.6.10) lib/rack/session/abstract/id.rb:226:in `context'
+  rack (1.6.10) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.4) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  activerecord (4.2.4) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.4) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.10) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.10) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.10) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.10) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.10) lib/rack/lock.rb:17:in `call'
+  rack (1.6.10) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.10) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/chrislam/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /Users/chrislam/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /Users/chrislam/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.5ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (88.1ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (64.1ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (144.9ms)
+
+
+Started GET "/submissions" for ::1 at 2018-07-27 20:01:53 -0500
+Processing by SubmissionsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mSubmission Load (0.3ms)[0m  SELECT "submissions".* FROM "submissions" WHERE "submissions"."archive" = ?  ORDER BY "submissions"."created_at" DESC  [["archive", "f"]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mAssignment Load (0.3ms)[0m  SELECT "assignments".* FROM "assignments" INNER JOIN "portals" ON "assignments"."id" = "portals"."assignment_id" WHERE "portals"."submission_id" = ?  [["submission_id", 9]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mAssignment Load (0.6ms)[0m  SELECT "assignments".* FROM "assignments" INNER JOIN "portals" ON "assignments"."id" = "portals"."assignment_id" WHERE "portals"."submission_id" = ?  [["submission_id", 8]]
+  Rendered submissions/index.html.erb within layouts/application (16.3ms)
+  Rendered layouts/_header2.html.erb (4.7ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 334ms (Views: 330.5ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/submissions/new" for ::1 at 2018-07-27 20:02:00 -0500
+Processing by SubmissionsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mAssignment Load (0.2ms)[0m  SELECT  "assignments".* FROM "assignments" WHERE "assignments"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered submissions/_content_step.html.erb (2.9ms)
+  Rendered submissions/_form.html.erb (4.7ms)
+  Rendered submissions/new.html.erb within layouts/application (5.8ms)
+  Rendered layouts/_header.html.erb (6.5ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 379ms (Views: 332.6ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/assets/scaffolds.self-6ce8b11bacb6f8180afb84205ffef7d814861f8ea48b004961b634d580aae192.css?body=1" for ::1 at 2018-07-27 20:02:01 -0500
+
+
+Started GET "/submissions/new" for ::1 at 2018-07-27 20:02:01 -0500
+Processing by SubmissionsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mAssignment Load (0.1ms)[0m  SELECT  "assignments".* FROM "assignments" WHERE "assignments"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered submissions/_content_step.html.erb (3.0ms)
+  Rendered submissions/_form.html.erb (4.6ms)
+  Rendered submissions/new.html.erb within layouts/application (5.7ms)
+  Rendered layouts/_header.html.erb (3.1ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 330ms (Views: 324.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2018-07-27 20:02:01 -0500
+
+
+Started GET "/assets/application.self-f2fc363b378f1bd5edb8acec2b4cad586e69af6c9a542b80d58ade8d7e29ca39.css?body=1" for ::1 at 2018-07-27 20:02:01 -0500
+
+
+Started GET "/assets/list.min.self-ec5d1df05bc8ece89c3224cd18265819e5884e973a5f351864734d3beceb38c9.js?body=1" for ::1 at 2018-07-27 20:02:01 -0500
+
+
+Started GET "/assets/jquery.slick.self-c2e40b73745bcea0772529bad3cc6abb86e6d9b2658e1847ec527de380035675.js?body=1" for ::1 at 2018-07-27 20:02:01 -0500
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2018-07-27 20:02:01 -0500
+
+
+Started GET "/assets/bootstrap.self-d0e973a52d36a01036265aeefaf2d1ae3499d2cb231a9be3bd846432daf231de.js?body=1" for ::1 at 2018-07-27 20:02:01 -0500
+
+
+Started POST "/submissions" for ::1 at 2018-07-27 20:02:08 -0500
+Processing by SubmissionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pj1j9EnNt3Y7UnwwYyRsAX3Qchqf3AHMYJDHxbpkeJWpCTLq14PibHO+NlWFJBja9d5h1ZgwRYfEHMKzcG8iAA==", "submission"=>{"assignment_name"=>"asdfa", "description"=>"", "document"=>#<ActionDispatch::Http::UploadedFile:0x007f813da89c90 @tempfile=#<Tempfile:/var/folders/tv/kc07j7lj6pl5_lyd_cr1r5x40000gn/T/RackMultipart20180727-60742-1j2qai2.jpg>, @original_filename="IMG_4827-2.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"submission[document]\"; filename=\"IMG_4827-2.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Submit Assignment"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mAssignment Load (0.1ms)[0m  SELECT  "assignments".* FROM "assignments" WHERE "assignments"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "submissions" ("assignment_name", "description", "document_file_name", "document_content_type", "document_file_size", "document_updated_at", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["assignment_name", "asdfa"], ["description", ""], ["document_file_name", "IMG_4827-2.jpg"], ["document_content_type", "image/jpeg"], ["document_file_size", 2450363], ["document_updated_at", "2018-07-28 01:02:08.361957"], ["user_id", 1], ["created_at", "2018-07-28 01:02:08.382939"], ["updated_at", "2018-07-28 01:02:08.382939"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "portals" ("assignment_id", "submission_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["assignment_id", 1], ["submission_id", 10], ["created_at", "2018-07-28 01:02:08.384392"], ["updated_at", "2018-07-28 01:02:08.384392"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+Redirected to http://localhost:3000/submissions/10
+Completed 302 Found in 40ms (ActiveRecord: 1.6ms)
+
+
+Started GET "/submissions/10" for ::1 at 2018-07-27 20:02:08 -0500
+Processing by SubmissionsController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mSubmission Load (0.2ms)[0m  [1mSELECT  "submissions".* FROM "submissions" WHERE "submissions"."id" = ? LIMIT 1[0m  [["id", 10]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mAssignment Load (0.2ms)[0m  SELECT "assignments".* FROM "assignments" INNER JOIN "portals" ON "assignments"."id" = "portals"."assignment_id" WHERE "portals"."submission_id" = ?  [["submission_id", 10]]
+  Rendered submissions/_grade.html.erb (2.2ms)
+  Rendered submissions/show.html.erb within layouts/application (6.1ms)
+  Rendered layouts/_header.html.erb (3.0ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 249ms (Views: 246.1ms | ActiveRecord: 0.7ms)
