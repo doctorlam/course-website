@@ -17138,3 +17138,266 @@ Processing by LessonsController#index as HTML
   Rendered layouts/_header.html.erb (3.1ms)
   Rendered layouts/_footer.html.erb (0.2ms)
 Completed 200 OK in 338ms (Views: 336.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2018-07-30 11:16:44 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by AboutsController#index as HTML
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mAbout Load (0.6ms)[0m  [1mSELECT "abouts".* FROM "abouts"[0m
+  Rendered abouts/index.html.erb within layouts/application (26.3ms)
+  Rendered layouts/_header.html.erb (4.8ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 1892ms (Views: 1855.3ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/lessons/1/edit" for ::1 at 2018-07-30 11:16:46 -0500
+Processing by LessonsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mLesson Load (0.6ms)[0m  SELECT  "lessons".* FROM "lessons" WHERE "lessons"."id" = ?  ORDER BY date LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mObjective Load (0.7ms)[0m  SELECT "objectives".* FROM "objectives" WHERE "objectives"."lesson_id" = ?  [["lesson_id", 1]]
+  Rendered lessons/_objective_fields.html.erb (4.3ms)
+  [1m[36mClassactivity Load (0.6ms)[0m  [1mSELECT "classactivities".* FROM "classactivities" WHERE "classactivities"."lesson_id" = ?[0m  [["lesson_id", 1]]
+  Rendered lessons/_classactivity_fields.html.erb (1.4ms)
+  [1m[35mReading Load (0.6ms)[0m  SELECT "readings".* FROM "readings" WHERE "readings"."lesson_id" = ?  [["lesson_id", 1]]
+  Rendered lessons/_reading_fields.html.erb (0.9ms)
+  Rendered lessons/_reading_fields.html.erb (0.6ms)
+  [1m[36mAssignment Load (0.6ms)[0m  [1mSELECT "assignments".* FROM "assignments"[0m
+  [1m[35m (0.6ms)[0m  SELECT "assignments".id FROM "assignments" INNER JOIN "learnings" ON "assignments"."id" = "learnings"."assignment_id" WHERE "learnings"."lesson_id" = ?  [["lesson_id", 1]]
+  [1m[36mHomework Load (0.5ms)[0m  [1mSELECT "homeworks".* FROM "homeworks" WHERE "homeworks"."lesson_id" = ?[0m  [["lesson_id", 1]]
+  Rendered lessons/_homework_fields.html.erb (0.9ms)
+  [1m[35mTakeaway Load (0.5ms)[0m  SELECT "takeaways".* FROM "takeaways" WHERE "takeaways"."lesson_id" = ?  [["lesson_id", 1]]
+  Rendered lessons/_takeaway_fields.html.erb (1.4ms)
+  [1m[36mPresentation Load (0.7ms)[0m  [1mSELECT "presentations".* FROM "presentations"[0m
+  [1m[35mProject Load (0.5ms)[0m  SELECT "projects".* FROM "projects"  ORDER BY name
+  [1m[36m (0.2ms)[0m  [1mSELECT "projects".id FROM "projects" INNER JOIN "learnings" ON "projects"."id" = "learnings"."project_id" WHERE "learnings"."lesson_id" = ?  ORDER BY name[0m  [["lesson_id", 1]]
+  Rendered lessons/_form.html.erb (196.3ms)
+  Rendered lessons/edit.html.erb within layouts/application (198.6ms)
+  Rendered layouts/_header.html.erb (3.3ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 616ms (Views: 533.3ms | ActiveRecord: 9.2ms)
+
+
+Started GET "/assets/grades.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2018-07-30 11:16:46 -0500
+
+
+Started GET "/assets/commontator/threads.self-c7e0631c7859f441a94c179f2a67d5f0b99dedd507ad266f11d167bc0e1fafd7.css?body=1" for ::1 at 2018-07-30 11:16:46 -0500
+
+
+Started GET "/assets/slick-theme.self-452d6d375ac2071bbf02db6525231d5d8a96105a88bf119d8aa440c18b6c5b26.css?body=1" for ::1 at 2018-07-30 11:16:46 -0500
+
+
+Started GET "/assets/presentations.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2018-07-30 11:16:46 -0500
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2018-07-30 11:16:46 -0500
+
+
+Started GET "/assets/jquery.slick.self-c2e40b73745bcea0772529bad3cc6abb86e6d9b2658e1847ec527de380035675.js?body=1" for ::1 at 2018-07-30 11:16:46 -0500
+
+
+Started GET "/assets/bootstrap-datepicker/locales/bootstrap-datepicker.ar.self-3b6d7157be553c75fb586e9bbcb1caf9ffb68b3e52621ce7a0b4d80b3816a41e.js?body=1" for ::1 at 2018-07-30 11:16:46 -0500
+
+
+Started GET "/assets/bootstrap-datepicker/locales/bootstrap-datepicker.br.self-a5688a644e52da4b08865ee27390f8863538bea1e91e9a92a8f5fc0441b69a8a.js?body=1" for ::1 at 2018-07-30 11:16:46 -0500
+
+
+Started GET "/assets/bootstrap-datepicker/locales/bootstrap-datepicker.ca.self-9a18332afeed3b5d913f701e3a5359a3906fac9f8fe0d8271bfa59b17bef3843.js?body=1" for ::1 at 2018-07-30 11:16:46 -0500
+
+
+Started GET "/assets/bootstrap-datepicker/locales/bootstrap-datepicker.cy.self-6269279f98dbec07d08be043c80d3698c8db6da6098298b06c7e9eaca989db3a.js?body=1" for ::1 at 2018-07-30 11:16:47 -0500
+
+
+Started GET "/assets/bootstrap-datepicker/locales/bootstrap-datepicker.da.self-ef1d1c456416d2ca63599c8885225bf37d5540b377089b25ef1e8bdd1c2dd9bf.js?body=1" for ::1 at 2018-07-30 11:16:47 -0500
+
+
+Started GET "/assets/bootstrap-datepicker/locales/bootstrap-datepicker.en-GB.self-e822658c28f996dd9184e78b590ee770da01e479bc73fdb235b694232278bb4c.js?body=1" for ::1 at 2018-07-30 11:16:47 -0500
+
+
+Started GET "/assets/bootstrap-datepicker/locales/bootstrap-datepicker.et.self-8d6af09ae9e4558db67ad818cac5de0451f7a10dc31a6e2987a715562524c44b.js?body=1" for ::1 at 2018-07-30 11:16:47 -0500
+
+
+Started GET "/assets/bootstrap-datepicker/locales/bootstrap-datepicker.fo.self-fd8c0c500526cb16dd180ba9d832a4e5e0d40c3a570318a73ee2076b32cbbd1a.js?body=1" for ::1 at 2018-07-30 11:16:47 -0500
+
+
+Started GET "/assets/bootstrap-datepicker/locales/bootstrap-datepicker.fr.self-fc22f4a24fd9c64106ee1ffdd8167f9bcbb8544093f9acfd3e78cc79acaaa8ab.js?body=1" for ::1 at 2018-07-30 11:16:47 -0500
+
+
+Started GET "/assets/bootstrap-datepicker/locales/bootstrap-datepicker.hu.self-f49dd94a82276c26c3441a8f5834842aaff8e1015d2ee90af3a842482685b1b3.js?body=1" for ::1 at 2018-07-30 11:16:47 -0500
+
+
+Started GET "/assets/bootstrap-datepicker/locales/bootstrap-datepicker.hi.self-ee309099bb304ebd522110354528306f2dac4d926fd59889a616b2c9897b5ff6.js?body=1" for ::1 at 2018-07-30 11:16:47 -0500
+
+
+Started GET "/assets/bootstrap-datepicker/locales/bootstrap-datepicker.it-CH.self-717fdb47d5142b72e9e7f64eec844ae20deacf76e64b484fc6c52139ea64e607.js?body=1" for ::1 at 2018-07-30 11:16:47 -0500
+
+
+Started GET "/assets/bootstrap-datepicker/locales/bootstrap-datepicker.it.self-71bbf2309e2ea365c4b4e21bcf5fa9e79bd1fb6aee0a2f097a0439645a79dbf7.js?body=1" for ::1 at 2018-07-30 11:16:47 -0500
+
+
+Started GET "/assets/bootstrap-datepicker/locales/bootstrap-datepicker.kh.self-6562a5a87f529e9a3121f8b49f20a6f7d3651340738f7d747a2418d721d01eae.js?body=1" for ::1 at 2018-07-30 11:16:47 -0500
+
+
+Started GET "/assets/bootstrap-datepicker/locales/bootstrap-datepicker.lv.self-02466e87ecbfa926362519668f92ab8a87681a24daad873b3bc91aa1d7d31623.js?body=1" for ::1 at 2018-07-30 11:16:47 -0500
+
+
+Started GET "/assets/bootstrap-datepicker/locales/bootstrap-datepicker.mk.self-2879e14c87c2ed072afa02e973d28c25eccda71604f545f325f5ccb7f9566d9a.js?body=1" for ::1 at 2018-07-30 11:16:47 -0500
+
+
+Started GET "/assets/bootstrap-datepicker/locales/bootstrap-datepicker.mn.self-9bde9683a01be40a036bf1d3df9376fc1855a9df29248e5604ab8c1926bafe4f.js?body=1" for ::1 at 2018-07-30 11:16:47 -0500
+
+
+Started GET "/assets/bootstrap-datepicker/locales/bootstrap-datepicker.sk.self-508e59df5ae2738367e9ee26ceb1984620c7d3365d89c500a2f654c73e41c4cc.js?body=1" for ::1 at 2018-07-30 11:16:47 -0500
+
+
+Started GET "/assets/bootstrap-datepicker/locales/bootstrap-datepicker.oc.self-473856c2eb30a34f3784c0b128f0e3a7808718789e5670d10a4efac75656cde3.js?body=1" for ::1 at 2018-07-30 11:16:47 -0500
+
+
+Started GET "/assets/bootstrap-datepicker/locales/bootstrap-datepicker.sl.self-7f8b31b2067824ef4ed30a8bc9b892e4de22b635b675e732d8cf0f63f35f8f77.js?body=1" for ::1 at 2018-07-30 11:16:47 -0500
+
+
+Started GET "/assets/bootstrap-datepicker/locales/bootstrap-datepicker.sr.self-0fdd9f114cd83480c0d41f6c4cd9ff5d41984d64f6d7944bd4739f2b9a8b0559.js?body=1" for ::1 at 2018-07-30 11:16:47 -0500
+
+
+Started GET "/assets/bootstrap-datepicker/locales/bootstrap-datepicker.sv.self-59511a9cf8697e071e3e45937a4ffa74ce67edf099d767fcfcd43544833b639f.js?body=1" for ::1 at 2018-07-30 11:16:47 -0500
+
+
+Started GET "/assets/bootstrap-datepicker/locales/bootstrap-datepicker.th.self-38ccaf19cff8c13178de6efb294156266bbb5ce6652531d4b53f7f869986ce71.js?body=1" for ::1 at 2018-07-30 11:16:47 -0500
+
+
+Started GET "/assets/bootstrap-datepicker/locales/bootstrap-datepicker.tr.self-32d4dcbd80fec4c33ced2cc50217d1cdfe9b351815a939878dedd504f0f29eec.js?body=1" for ::1 at 2018-07-30 11:16:47 -0500
+
+
+Started GET "/assets/bootstrap-datepicker/locales/bootstrap-datepicker.uk.self-ba78379f87a0202998faa6e7c5b20476712eb0431e243819807b20ef110db58f.js?body=1" for ::1 at 2018-07-30 11:16:47 -0500
+
+
+Started GET "/assets/bootstrap-datepicker/locales/bootstrap-datepicker.uz-latn.self-a281f925edd80c328667f2908c551002377c210d343395a997f8c18d14ba5ea0.js?body=1" for ::1 at 2018-07-30 11:16:47 -0500
+
+
+Started GET "/assets/bootstrap-datepicker/locales/bootstrap-datepicker.vi.self-36dc3fbbffa4afffa02f84c934c42cc69a7b8bf9637967f9d510c3a595c06bfd.js?body=1" for ::1 at 2018-07-30 11:16:47 -0500
+
+
+Started GET "/assets/bootstrap-datepicker/locales/bootstrap-datepicker.zh-CN.self-ea1ea635099f9e93b2f5903108a2f939897810d090fa5959545f9cd4ecfaef14.js?body=1" for ::1 at 2018-07-30 11:16:47 -0500
+
+
+Started GET "/assets/bootstrap-datepicker/index.self-75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070.js?body=1" for ::1 at 2018-07-30 11:16:47 -0500
+
+
+Started GET "/assets/abouts.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2018-07-30 11:16:47 -0500
+
+
+Started GET "/assets/courses.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2018-07-30 11:16:47 -0500
+
+
+Started GET "/assets/grades.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2018-07-30 11:16:47 -0500
+
+
+Started GET "/assets/responses.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2018-07-30 11:16:47 -0500
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2018-07-30 11:16:47 -0500
+
+
+Started GET "/assets/application.self-16c207b3ca1b52afcfc7f4b662487caf1bbe084a6656bb15f693ab9de2d11be7.js?body=1" for ::1 at 2018-07-30 11:16:47 -0500
+
+
+Started GET "/assets/projects-5bc5ea17f898463dd2e17fd0c8f965565ff103de1bec485cbbf821e955b24dde.png" for ::1 at 2018-07-30 11:16:47 -0500
+
+
+Started GET "/assets/homework-e2a4de63b64cd125d476612bbc4a96262a38c1899151f6d3db8d55dd9cce8749.png" for ::1 at 2018-07-30 11:16:47 -0500
+
+
+Started GET "/assets/missing-91969aaf62f8232bd427f34d6aaba93288e21bfd3a690d8775295ec8ef417140.png" for ::1 at 2018-07-30 11:16:47 -0500
+
+
+Started GET "/tutorials" for ::1 at 2018-07-30 11:16:51 -0500
+Processing by TutorialsController#index as HTML
+  [1m[35mSQL (0.7ms)[0m  SELECT "tutorials"."id" AS t0_r0, "tutorials"."name" AS t0_r1, "tutorials"."content" AS t0_r2, "tutorials"."video" AS t0_r3, "tutorials"."created_at" AS t0_r4, "tutorials"."updated_at" AS t0_r5, "tutorials"."lesson_id" AS t0_r6, "tutorials"."user_id" AS t0_r7, "tutorials"."attachment_file_name" AS t0_r8, "tutorials"."attachment_content_type" AS t0_r9, "tutorials"."attachment_file_size" AS t0_r10, "tutorials"."attachment_updated_at" AS t0_r11, "lessons"."id" AS t1_r0, "lessons"."name" AS t1_r1, "lessons"."week" AS t1_r2, "lessons"."date" AS t1_r3, "lessons"."created_at" AS t1_r4, "lessons"."updated_at" AS t1_r5, "lessons"."image_file_name" AS t1_r6, "lessons"."image_content_type" AS t1_r7, "lessons"."image_file_size" AS t1_r8, "lessons"."image_updated_at" AS t1_r9, "lessons"."document_file_name" AS t1_r10, "lessons"."document_content_type" AS t1_r11, "lessons"."document_file_size" AS t1_r12, "lessons"."document_updated_at" AS t1_r13, "lessons"."user_id" AS t1_r14, "lessons"."course_id" AS t1_r15, "lessons"."project_id" AS t1_r16, "lessons"."anotherdocument_file_name" AS t1_r17, "lessons"."anotherdocument_content_type" AS t1_r18, "lessons"."anotherdocument_file_size" AS t1_r19, "lessons"."anotherdocument_updated_at" AS t1_r20, "lessons"."document2_file_name" AS t1_r21, "lessons"."document2_content_type" AS t1_r22, "lessons"."document2_file_size" AS t1_r23, "lessons"."document2_updated_at" AS t1_r24, "lessons"."presentation_id" AS t1_r25, "lessons"."tutorial_id" AS t1_r26, "lessons"."lesson_type" AS t1_r27, "lessons"."slidedeck_link" AS t1_r28 FROM "tutorials" LEFT OUTER JOIN "learnings" ON "learnings"."tutorial_id" = "tutorials"."id" LEFT OUTER JOIN "lessons" ON "lessons"."id" = "learnings"."lesson_id"  ORDER BY lessons.week ASC
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered tutorials/index.html.erb within layouts/application (13.6ms)
+  Rendered layouts/_header.html.erb (3.3ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 345ms (Views: 337.8ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/assets/tutorial-899221fe96faa95cc40169986127d2f50af8d07e605543c08678f9690a83c9f7.png" for ::1 at 2018-07-30 11:16:51 -0500
+
+
+Started GET "/tutorials/new" for ::1 at 2018-07-30 11:16:53 -0500
+Processing by TutorialsController#new as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered tutorials/_objective_fields.html.erb (1.4ms)
+  Rendered tutorials/_objective_fields.html.erb (0.3ms)
+  Rendered tutorials/_classactivity_fields.html.erb (0.9ms)
+  [1m[36mLesson Load (0.2ms)[0m  [1mSELECT "lessons".* FROM "lessons"  ORDER BY date[0m
+  Rendered tutorials/_form.html.erb (97.0ms)
+  Rendered tutorials/new.html.erb within layouts/application (100.3ms)
+  Rendered layouts/_header.html.erb (4.2ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 394ms (Views: 382.1ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/tutorials" for ::1 at 2018-07-30 11:17:23 -0500
+Processing by TutorialsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"szOVxAGllK+Wh6xMN7jtAWkNkHcvrDk3eXToU85G0Sa8B8Tan+vBtd5r5inRuJna4QODuChAfXzd+O0lBE2Lsw==", "tutorial"=>{"name"=>"Test", "video"=>"", "objectives_attributes"=>{"0"=>{"content"=>"objective 1", "_destroy"=>"false"}, "1532967425579"=>{"content"=>"2", "_destroy"=>"false"}, "1532967427105"=>{"content"=>"4", "_destroy"=>"false"}}, "classactivitys_attributes"=>{"1532967431531"=>{"content"=>"12", "_destroy"=>"false"}, "1532967433266"=>{"content"=>"12121", "_destroy"=>"false"}, "1532967436571"=>{"content"=>"14141", "_destroy"=>"false"}}, "content"=>"adfsafsdfa", "lesson_ids"=>[""]}, "commit"=>"Create Tutorial"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "tutorials" ("name", "content", "video", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Test"], ["content", "adfsafsdfa"], ["video", ""], ["created_at", "2018-07-30 16:17:23.859190"], ["updated_at", "2018-07-30 16:17:23.859190"]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "objectives" ("content", "tutorial_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "objective 1"], ["tutorial_id", 1], ["created_at", "2018-07-30 16:17:23.861160"], ["updated_at", "2018-07-30 16:17:23.861160"]]
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "objectives" ("content", "tutorial_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["content", "2"], ["tutorial_id", 1], ["created_at", "2018-07-30 16:17:23.862360"], ["updated_at", "2018-07-30 16:17:23.862360"]]
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "objectives" ("content", "tutorial_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "4"], ["tutorial_id", 1], ["created_at", "2018-07-30 16:17:23.863270"], ["updated_at", "2018-07-30 16:17:23.863270"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "classactivities" ("content", "tutorial_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["content", "12"], ["tutorial_id", 1], ["created_at", "2018-07-30 16:17:23.864128"], ["updated_at", "2018-07-30 16:17:23.864128"]]
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "classactivities" ("content", "tutorial_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "12121"], ["tutorial_id", 1], ["created_at", "2018-07-30 16:17:23.865029"], ["updated_at", "2018-07-30 16:17:23.865029"]]
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "classactivities" ("content", "tutorial_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["content", "14141"], ["tutorial_id", 1], ["created_at", "2018-07-30 16:17:23.865736"], ["updated_at", "2018-07-30 16:17:23.865736"]]
+  [1m[36m (3.8ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/tutorials/1
+Completed 302 Found in 17ms (ActiveRecord: 5.2ms)
+
+
+Started GET "/tutorials/1" for ::1 at 2018-07-30 11:17:23 -0500
+Processing by TutorialsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mTutorial Load (0.2ms)[0m  SELECT  "tutorials".* FROM "tutorials" WHERE "tutorials"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mObjective Load (0.2ms)[0m  SELECT "objectives".* FROM "objectives" WHERE "objectives"."tutorial_id" = ?  [["tutorial_id", 1]]
+  [1m[36mClassactivity Load (0.3ms)[0m  [1mSELECT "classactivities".* FROM "classactivities" WHERE "classactivities"."tutorial_id" = ?  ORDER BY "classactivities"."created_at" ASC[0m  [["tutorial_id", 1]]
+  [1m[35mLesson Load (0.3ms)[0m  SELECT "lessons".* FROM "lessons" INNER JOIN "learnings" ON "lessons"."id" = "learnings"."lesson_id" WHERE "learnings"."tutorial_id" = ?  ORDER BY date  [["tutorial_id", 1]]
+  Rendered tutorials/show.html.erb within layouts/application (51.0ms)
+  Rendered layouts/_header.html.erb (3.2ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 361ms (Views: 355.6ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/tutorials" for ::1 at 2018-07-30 11:17:45 -0500
+Processing by TutorialsController#index as HTML
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT "tutorials"."id" AS t0_r0, "tutorials"."name" AS t0_r1, "tutorials"."content" AS t0_r2, "tutorials"."video" AS t0_r3, "tutorials"."created_at" AS t0_r4, "tutorials"."updated_at" AS t0_r5, "tutorials"."lesson_id" AS t0_r6, "tutorials"."user_id" AS t0_r7, "tutorials"."attachment_file_name" AS t0_r8, "tutorials"."attachment_content_type" AS t0_r9, "tutorials"."attachment_file_size" AS t0_r10, "tutorials"."attachment_updated_at" AS t0_r11, "lessons"."id" AS t1_r0, "lessons"."name" AS t1_r1, "lessons"."week" AS t1_r2, "lessons"."date" AS t1_r3, "lessons"."created_at" AS t1_r4, "lessons"."updated_at" AS t1_r5, "lessons"."image_file_name" AS t1_r6, "lessons"."image_content_type" AS t1_r7, "lessons"."image_file_size" AS t1_r8, "lessons"."image_updated_at" AS t1_r9, "lessons"."document_file_name" AS t1_r10, "lessons"."document_content_type" AS t1_r11, "lessons"."document_file_size" AS t1_r12, "lessons"."document_updated_at" AS t1_r13, "lessons"."user_id" AS t1_r14, "lessons"."course_id" AS t1_r15, "lessons"."project_id" AS t1_r16, "lessons"."anotherdocument_file_name" AS t1_r17, "lessons"."anotherdocument_content_type" AS t1_r18, "lessons"."anotherdocument_file_size" AS t1_r19, "lessons"."anotherdocument_updated_at" AS t1_r20, "lessons"."document2_file_name" AS t1_r21, "lessons"."document2_content_type" AS t1_r22, "lessons"."document2_file_size" AS t1_r23, "lessons"."document2_updated_at" AS t1_r24, "lessons"."presentation_id" AS t1_r25, "lessons"."tutorial_id" AS t1_r26, "lessons"."lesson_type" AS t1_r27, "lessons"."slidedeck_link" AS t1_r28 FROM "tutorials" LEFT OUTER JOIN "learnings" ON "learnings"."tutorial_id" = "tutorials"."id" LEFT OUTER JOIN "lessons" ON "lessons"."id" = "learnings"."lesson_id"  ORDER BY lessons.week ASC[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered tutorials/index.html.erb within layouts/application (5.8ms)
+  Rendered layouts/_header.html.erb (3.3ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 296ms (Views: 294.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/tutorials/1/edit" for ::1 at 2018-07-30 11:17:49 -0500
+Processing by TutorialsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTutorial Load (0.2ms)[0m  [1mSELECT  "tutorials".* FROM "tutorials" WHERE "tutorials"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mObjective Load (0.1ms)[0m  [1mSELECT "objectives".* FROM "objectives" WHERE "objectives"."tutorial_id" = ?[0m  [["tutorial_id", 1]]
+  Rendered tutorials/_objective_fields.html.erb (0.6ms)
+  Rendered tutorials/_objective_fields.html.erb (0.5ms)
+  Rendered tutorials/_objective_fields.html.erb (0.5ms)
+  Rendered tutorials/_objective_fields.html.erb (0.5ms)
+  [1m[35mClassactivity Load (0.2ms)[0m  SELECT "classactivities".* FROM "classactivities" WHERE "classactivities"."tutorial_id" = ?  [["tutorial_id", 1]]
+  Rendered tutorials/_classactivity_fields.html.erb (0.4ms)
+  Rendered tutorials/_classactivity_fields.html.erb (0.4ms)
+  Rendered tutorials/_classactivity_fields.html.erb (0.4ms)
+  Rendered tutorials/_classactivity_fields.html.erb (0.4ms)
+  [1m[36mLesson Load (0.2ms)[0m  [1mSELECT "lessons".* FROM "lessons"  ORDER BY date[0m
+  [1m[35m (0.1ms)[0m  SELECT "lessons".id FROM "lessons" INNER JOIN "learnings" ON "lessons"."id" = "learnings"."lesson_id" WHERE "learnings"."tutorial_id" = ?  ORDER BY date  [["tutorial_id", 1]]
+  Rendered tutorials/_form.html.erb (33.4ms)
+  Rendered tutorials/edit.html.erb within layouts/application (38.3ms)
+  Rendered layouts/_header.html.erb (3.6ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 342ms (Views: 338.8ms | ActiveRecord: 1.1ms)
