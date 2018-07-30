@@ -1,6 +1,6 @@
 class Lesson < ActiveRecord::Base
 	include RailsSortable::Model
-  set_sortable :sort 
+  			set_sortable :sort, without_updating_timestamps: true
 	has_many :presentations
 	has_many :objectives, :dependent => :destroy
 	has_many :takeaways, :dependent => :destroy

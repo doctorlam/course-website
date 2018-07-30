@@ -21100,3 +21100,30 @@ Processing by LessonsController#new as HTML
   Rendered layouts/_header.html.erb (3.4ms)
   Rendered layouts/_footer.html.erb (0.3ms)
 Completed 200 OK in 387ms (Views: 379.0ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/slidedecks" for ::1 at 2018-07-30 13:23:01 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SlidedecksController#index as HTML
+  [1m[35mSlidedeck Load (0.6ms)[0m  SELECT "slidedecks".* FROM "slidedecks"  ORDER BY "slidedecks"."created_at" ASC
+  Rendered slidedecks/index.html.erb within layouts/application (886.7ms)
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (27.2ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 1690ms (Views: 1670.4ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/assets/present-1b74a4ddf51eddced74517873d095c6f9ea780e77056b522537fd46847c18581.png" for ::1 at 2018-07-30 13:23:02 -0500
+
+
+Started GET "/slidedecks/new" for ::1 at 2018-07-30 13:23:06 -0500
+Processing by SlidedecksController#new as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered slidedecks/_contentmodule_fields.html.erb (3.0ms)
+  Rendered slidedecks/_bulleted_list_fields.html.erb (1.4ms)
+  Rendered slidedecks/_slide_fields.html.erb (38.4ms)
+  Rendered slidedecks/_form.html.erb (224.7ms)
+  Rendered slidedecks/new.html.erb within layouts/application (230.0ms)
+  Rendered layouts/_header.html.erb (3.9ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 583ms (Views: 577.5ms | ActiveRecord: 1.1ms)

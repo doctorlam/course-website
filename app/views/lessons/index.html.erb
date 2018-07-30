@@ -5,7 +5,6 @@
 <table class="table table-bordered table-lessons table-striped">
   <thead>
     <tr>
-      <th>Order</th>
       <th>Week</th>
       <th>Date</th>
       <th>Title</th>
@@ -18,7 +17,6 @@
   <tbody class="sortable">
     <% @lessons.each_with_sortable_id do |lesson, sortable_id| %>
       <tr id="<%= sortable_id %>">
-        <td><%= lesson.sort %></td>
         <td class="week"><%= link_to lesson.week, lesson %></td>
         <td class="date"><%= link_to lesson.date, lesson %></td>
         <td class="name"><%= link_to [lesson.name].join(" "), lesson %></td>
