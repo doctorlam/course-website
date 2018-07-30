@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180730164249) do
+ActiveRecord::Schema.define(version: 20180730181549) do
 
   create_table "abouts", force: :cascade do |t|
     t.text     "name"
@@ -218,6 +218,7 @@ ActiveRecord::Schema.define(version: 20180730164249) do
     t.integer  "tutorial_id"
     t.string   "lesson_type"
     t.string   "slidedeck_link"
+    t.integer  "sort"
   end
 
   create_table "materials", force: :cascade do |t|

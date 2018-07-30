@@ -6,10 +6,8 @@ class LessonsController < ApplicationController
   # GET /lessons
   # GET /lessons.json
   def index
-  @search = Lesson.search(params[:q])
-  @search.sorts = 'date' if @search.sorts.empty?
-  @results = @search.result
-  @lessons = @results
+
+  @lessons = Lesson.order(:sort).all
   
 end
 

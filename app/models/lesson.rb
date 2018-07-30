@@ -1,4 +1,6 @@
 class Lesson < ActiveRecord::Base
+	include RailsSortable::Model
+  set_sortable :sort 
 	has_many :presentations
 	has_many :objectives, :dependent => :destroy
 	has_many :takeaways, :dependent => :destroy
