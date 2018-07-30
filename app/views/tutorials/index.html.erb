@@ -19,10 +19,9 @@ $(function() {
   <tbody class="sortable">
     <% @tutorials.each_with_sortable_id do |tutorial, sortable_id| %>
       <tr id="<%= sortable_id %>"> 
+        <td><%= tutorial.sort %></td>
         <td><%= tutorial.name %></td>
-              <td><%= tutorial.sort %></td>
-
-        <td><%= link_to tutorial do %>
+      <td><%= link_to tutorial do %>
               <i class="material-icons">pageview</i>
           <% end %></td>
       <% if current_user.try(:admin?) %>
