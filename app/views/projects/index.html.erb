@@ -1,3 +1,8 @@
+<script type="text/javascript">
+$(function() {
+  $('.sortable').railsSortable();
+});
+</script>
 <div class="container">
 
 <% if current_user.try(:admin?) %>
@@ -7,11 +12,11 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Course Projects</h1>
-<% @projects.each do |project| %>
+<div class="sortable"">
 
-<div class="row">
+<% @projects.each_with_sortable_id do |project, sortable_id| %>
+    <div class="row" id="<%= sortable_id %>">
         <div class="col-md-8">
-           
                 <h2><%= project.name %></h2>
                 <h3>Due: <%= project.due %></h3>
 
@@ -35,7 +40,9 @@
                 <% for rubric in project.rubrics %>
                 <ul><li><%= rubric.description.html_safe %></li></ul>
                 <% end %>
-        </div>
+                            <hr style ="border-bottom: 1px dotted gray">
+
+        </div><!--/col-md-8-->
         <div class="col-md-4 projects-right">
             <div class="padding-right">
             <h1>Related Lessons</h1>
@@ -46,14 +53,13 @@
                 </ul>
                 <% end %>
             </div>
-        </div>
-</div>
-<br>
-<br>
-      <%= link_to 'Submit Project', new_submission_path, class: 'btn btn-green' %>
+        </div><!--/col-md-4-->
 
-        <hr style ="border-bottom: dotted 1px gray" />
-     
+<br>
+<br>
+    
+</div><!--/row-->
+
     <% end %>
-
+</div><!--/sortable-->
 </div>
