@@ -1,8 +1,3 @@
-<script type="text/javascript">
-$(function() {
-  $('.sortable').railsSortable();
-});
-</script>
 <div class="container">
 <p id="notice"><%= notice %></p>
 
@@ -16,10 +11,9 @@ $(function() {
     </tr>
   </thead>
 
-  <tbody class="sortable">
-    <% @slidedecks.each_with_sortable_id do |slidedeck, sortable_id| %>
-      <tr id="<%= sortable_id %>"> 
-        <td><%= tutorial.sort %></td>
+  <tbody>
+    <% @slidedecks.each do |slidedeck| %>
+      <tr>
         <td><%= slidedeck.title %></td>
         <td><%= link_to slidedeck do %>
               <i class="material-icons">pageview</i>

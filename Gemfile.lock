@@ -276,7 +276,7 @@ DEPENDENCIES
   acts_as_votable
   american_date
   ancestry
-  aws-sdk (~> 2.3)
+  aws-sdk
   bootstrap-datepicker-rails
   bootstrap-sass (~> 3.3.6)
   bxslider-rails

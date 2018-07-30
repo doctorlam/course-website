@@ -18,7 +18,7 @@ gem "cocoon"
 gem 'ransack'
 gem 'rinku'
 gem 'will_paginate', '~> 3.1.0'
-gem 'aws-sdk', '~> 2.3'
+gem 'aws-sdk'
 gem "cancan"
 gem 'sendgrid'
 gem 'simple_form'
@@ -36,6 +36,7 @@ gem 'activesupport-json_encoder'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'rails_sortable', '~> 1.2', '>= 1.2.1'
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
