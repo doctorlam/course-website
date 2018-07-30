@@ -1,8 +1,11 @@
+<% if current_user.try(:admin?) %>
+
 <script type="text/javascript">
 $(function() {
   $('.sortable').railsSortable();
 });
 </script>
+<% end %>
 <div class="container">
 <div class="table-responsive">
 <table class="table table-bordered table-lessons table-striped">

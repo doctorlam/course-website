@@ -23809,3 +23809,169 @@ Processing by ProjectsController#index as HTML
   Rendered layouts/_header.html.erb (3.8ms)
   Rendered layouts/_footer.html.erb (0.2ms)
 Completed 200 OK in 343ms (Views: 341.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2018-07-30 16:46:23 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by AboutsController#index as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mAbout Load (0.4ms)[0m  [1mSELECT "abouts".* FROM "abouts"[0m
+  Rendered abouts/index.html.erb within layouts/application (27.2ms)
+  Rendered layouts/_header.html.erb (9.7ms)
+  Rendered layouts/_footer.html.erb (0.9ms)
+Completed 200 OK in 1698ms (Views: 1672.7ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/projects" for ::1 at 2018-07-30 16:46:32 -0500
+Processing by ProjectsController#index as HTML
+  Rendered projects/index.html.erb within layouts/application (1.5ms)
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/Users/chrislam/tecm4400/app/views/projects/index.html.erb:1: syntax error, unexpected ')', expecting keyword_then or ';' or '\n'
+...( if current_user.try(admin?) );@output_buffer.safe_append='
+...                               ^
+/Users/chrislam/tecm4400/app/views/projects/index.html.erb:7: syntax error, unexpected keyword_end, expecting ')'
+'.freeze; end 
+             ^
+/Users/chrislam/tecm4400/app/views/projects/index.html.erb:69: syntax error, unexpected keyword_ensure, expecting ')'
+/Users/chrislam/tecm4400/app/views/projects/index.html.erb:71: syntax error, unexpected keyword_end, expecting ')'):
+  app/views/projects/index.html.erb:1: syntax error, unexpected ')', expecting keyword_then or ';' or '\n'
+  app/views/projects/index.html.erb:7: syntax error, unexpected keyword_end, expecting ')'
+  app/views/projects/index.html.erb:69: syntax error, unexpected keyword_ensure, expecting ')'
+  app/views/projects/index.html.erb:71: syntax error, unexpected keyword_end, expecting ')'
+
+
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.3ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.1ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (82.9ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (119.6ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (214.1ms)
+
+
+Started GET "/projects" for ::1 at 2018-07-30 16:46:40 -0500
+Processing by ProjectsController#index as HTML
+  Rendered projects/index.html.erb within layouts/application (1.0ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/Users/chrislam/tecm4400/app/views/projects/index.html.erb:1: syntax error, unexpected ')', expecting keyword_then or ';' or '\n'
+... if @current_user.try(admin?) );@output_buffer.safe_append='
+...                               ^
+/Users/chrislam/tecm4400/app/views/projects/index.html.erb:7: syntax error, unexpected keyword_end, expecting ')'
+'.freeze; end 
+             ^
+/Users/chrislam/tecm4400/app/views/projects/index.html.erb:69: syntax error, unexpected keyword_ensure, expecting ')'
+/Users/chrislam/tecm4400/app/views/projects/index.html.erb:71: syntax error, unexpected keyword_end, expecting ')'):
+  app/views/projects/index.html.erb:1: syntax error, unexpected ')', expecting keyword_then or ';' or '\n'
+  app/views/projects/index.html.erb:7: syntax error, unexpected keyword_end, expecting ')'
+  app/views/projects/index.html.erb:69: syntax error, unexpected keyword_ensure, expecting ')'
+  app/views/projects/index.html.erb:71: syntax error, unexpected keyword_end, expecting ')'
+
+
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.0ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.4ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (80.7ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.9ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (68.8ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (153.3ms)
+
+
+Started GET "/projects" for ::1 at 2018-07-30 16:46:49 -0500
+Processing by ProjectsController#index as HTML
+  Rendered projects/index.html.erb within layouts/application (1.4ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/Users/chrislam/tecm4400/app/views/projects/index.html.erb:1: syntax error, unexpected ')', expecting keyword_then or ';' or '\n'
+... if current_user.try(:admin?) );@output_buffer.safe_append='
+...                               ^
+/Users/chrislam/tecm4400/app/views/projects/index.html.erb:7: syntax error, unexpected keyword_end, expecting ')'
+'.freeze; end 
+             ^
+/Users/chrislam/tecm4400/app/views/projects/index.html.erb:69: syntax error, unexpected keyword_ensure, expecting ')'
+/Users/chrislam/tecm4400/app/views/projects/index.html.erb:71: syntax error, unexpected keyword_end, expecting ')'):
+  app/views/projects/index.html.erb:1: syntax error, unexpected ')', expecting keyword_then or ';' or '\n'
+  app/views/projects/index.html.erb:7: syntax error, unexpected keyword_end, expecting ')'
+  app/views/projects/index.html.erb:69: syntax error, unexpected keyword_ensure, expecting ')'
+  app/views/projects/index.html.erb:71: syntax error, unexpected keyword_end, expecting ')'
+
+
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.1ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (66.5ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (65.3ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (142.2ms)
+
+
+Started GET "/projects" for ::1 at 2018-07-30 16:47:01 -0500
+Processing by ProjectsController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mProject Load (0.7ms)[0m  [1mSELECT "projects".* FROM "projects"  ORDER BY "projects"."sort" ASC[0m
+  [1m[35mDeliverable Load (0.7ms)[0m  SELECT "deliverables".* FROM "deliverables" WHERE "deliverables"."project_id" = ?  [["project_id", 1]]
+  [1m[36mRubric Load (0.5ms)[0m  [1mSELECT "rubrics".* FROM "rubrics" WHERE "rubrics"."project_id" = ?[0m  [["project_id", "1"]]
+  [1m[35mLesson Load (0.6ms)[0m  SELECT "lessons".* FROM "lessons" INNER JOIN "learnings" ON "lessons"."id" = "learnings"."lesson_id" WHERE "learnings"."project_id" = ?  [["project_id", 1]]
+  [1m[36mDeliverable Load (0.1ms)[0m  [1mSELECT "deliverables".* FROM "deliverables" WHERE "deliverables"."project_id" = ?[0m  [["project_id", 3]]
+  [1m[35mRubric Load (0.2ms)[0m  SELECT "rubrics".* FROM "rubrics" WHERE "rubrics"."project_id" = ?  [["project_id", "3"]]
+  [1m[36mLesson Load (0.1ms)[0m  [1mSELECT "lessons".* FROM "lessons" INNER JOIN "learnings" ON "lessons"."id" = "learnings"."lesson_id" WHERE "learnings"."project_id" = ?[0m  [["project_id", 3]]
+  [1m[35mDeliverable Load (0.1ms)[0m  SELECT "deliverables".* FROM "deliverables" WHERE "deliverables"."project_id" = ?  [["project_id", 2]]
+  [1m[36mRubric Load (0.1ms)[0m  [1mSELECT "rubrics".* FROM "rubrics" WHERE "rubrics"."project_id" = ?[0m  [["project_id", "2"]]
+  [1m[35mLesson Load (0.2ms)[0m  SELECT "lessons".* FROM "lessons" INNER JOIN "learnings" ON "lessons"."id" = "learnings"."lesson_id" WHERE "learnings"."project_id" = ?  [["project_id", 2]]
+  Rendered projects/index.html.erb within layouts/application (123.3ms)
+  Rendered layouts/_header.html.erb (4.0ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 574ms (Views: 569.3ms | ActiveRecord: 4.6ms)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2018-07-30 16:47:11 -0500
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"xAwd4Yxpj2/0ZSRsox5wihLi2dr3DHq9eQBW5TnL95nLOEz/EifadbyJbglFHgRRmuzKFfDgPvbdjFOT88CtDA=="}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 8ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2018-07-30 16:47:11 -0500
+Processing by AboutsController#index as HTML
+  [1m[35mAbout Load (0.1ms)[0m  SELECT "abouts".* FROM "abouts"
+  Rendered abouts/index.html.erb within layouts/application (3.3ms)
+  Rendered layouts/_header.html.erb (3.0ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 441ms (Views: 439.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/projects" for ::1 at 2018-07-30 16:47:14 -0500
+Processing by ProjectsController#index as HTML
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT "projects".* FROM "projects"  ORDER BY "projects"."sort" ASC[0m
+  [1m[35mDeliverable Load (0.1ms)[0m  SELECT "deliverables".* FROM "deliverables" WHERE "deliverables"."project_id" = ?  [["project_id", 1]]
+  [1m[36mRubric Load (0.1ms)[0m  [1mSELECT "rubrics".* FROM "rubrics" WHERE "rubrics"."project_id" = ?[0m  [["project_id", "1"]]
+  [1m[35mLesson Load (0.1ms)[0m  SELECT "lessons".* FROM "lessons" INNER JOIN "learnings" ON "lessons"."id" = "learnings"."lesson_id" WHERE "learnings"."project_id" = ?  [["project_id", 1]]
+  [1m[36mDeliverable Load (0.1ms)[0m  [1mSELECT "deliverables".* FROM "deliverables" WHERE "deliverables"."project_id" = ?[0m  [["project_id", 3]]
+  [1m[35mRubric Load (0.1ms)[0m  SELECT "rubrics".* FROM "rubrics" WHERE "rubrics"."project_id" = ?  [["project_id", "3"]]
+  [1m[36mLesson Load (0.0ms)[0m  [1mSELECT "lessons".* FROM "lessons" INNER JOIN "learnings" ON "lessons"."id" = "learnings"."lesson_id" WHERE "learnings"."project_id" = ?[0m  [["project_id", 3]]
+  [1m[35mDeliverable Load (0.1ms)[0m  SELECT "deliverables".* FROM "deliverables" WHERE "deliverables"."project_id" = ?  [["project_id", 2]]
+  [1m[36mRubric Load (0.1ms)[0m  [1mSELECT "rubrics".* FROM "rubrics" WHERE "rubrics"."project_id" = ?[0m  [["project_id", "2"]]
+  [1m[35mLesson Load (0.1ms)[0m  SELECT "lessons".* FROM "lessons" INNER JOIN "learnings" ON "lessons"."id" = "learnings"."lesson_id" WHERE "learnings"."project_id" = ?  [["project_id", 2]]
+  Rendered projects/index.html.erb within layouts/application (6.8ms)
+  Rendered layouts/_header.html.erb (3.0ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 371ms (Views: 369.4ms | ActiveRecord: 0.7ms)
