@@ -13,7 +13,8 @@
 
 //= require jquery
 //= require jquery_ujs
-//= require jquery-ui/widgets/sortable
+//= require jquery-ui/widget
+//= require jquery-ui/sortable
 //= require rails_sortable
 //= require bootstrap
 //= require list.min.js

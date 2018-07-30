@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180730181549) do
+ActiveRecord::Schema.define(version: 20180730190043) do
 
   create_table "abouts", force: :cascade do |t|
     t.text     "name"
@@ -352,6 +352,7 @@ ActiveRecord::Schema.define(version: 20180730181549) do
     t.integer  "contentmodule_id"
     t.integer  "bulleted_list_id"
     t.text     "caption"
+    t.integer  "position"
   end
 
   add_index "slides", ["slidedeck_id"], name: "index_slides_on_slidedeck_id"

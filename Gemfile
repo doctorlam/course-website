@@ -33,9 +33,10 @@ gem 'material_icons'
 gem 'flex-slider-rails'
 gem 'activesupport-json_encoder'
 gem 'jquery-rails'
-gem 'jquery-ui-rails'
 gem 'rails_sortable', '~> 1.2', '>= 1.2.1'
 gem 'aws-sdk-s3'
+gem 'jquery-ui-rails', '~> 5.0', '>= 5.0.5'
+gem 'acts_as_list'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

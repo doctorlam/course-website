@@ -1,6 +1,6 @@
 class Lesson < ActiveRecord::Base
 	include RailsSortable::Model
-  			set_sortable :sort, without_updating_timestamps: true
+  			set_sortable :sort
 	has_many :presentations
 	has_many :objectives, :dependent => :destroy
 	has_many :takeaways, :dependent => :destroy
@@ -12,7 +12,6 @@ class Lesson < ActiveRecord::Base
 	has_many :presentations, :through => :learnings
 	has_many :presentations, :through => :learnings
 	has_many :assignments, :through => :learnings
-	acts_as_commontable
 	
 	has_attached_file :document 
 		do_not_validate_attachment_file_type :document
@@ -56,14 +55,6 @@ class Lesson < ActiveRecord::Base
 
 	belongs_to :user
 	belongs_to :course
-	acts_as_votable
-  	default_scope { order('date') } 
   	  self.per_page = 14
-
-private
-
-  ransacker :week do
-    Arel.sql("to_char(\"#{table_name}\".\"id\", '99999')")
-  end
 
 end

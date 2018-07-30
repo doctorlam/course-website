@@ -6,9 +6,7 @@ class LessonsController < ApplicationController
   # GET /lessons
   # GET /lessons.json
   def index
-
   @lessons = Lesson.order(:sort).all
-  
 end
 
 
