@@ -49,13 +49,14 @@
 				<h3><%= image_tag 'book.png' %> Readings:</h3>
 				<ul>
 				<% for reading in @lesson.readings %>
-				<li><%= simple_format reading.content.html_safe %></li>
+				<li><%= reading.content.html_safe %></li>
 				<% end %>
 				</ul>
 				<h3><%= image_tag 'assignment.png' %> Homework:</h3>
 				<ul>
 				<% for homework in @lesson.homeworks %>
-				<li><%= simple_format homework.content.html_safe %></li>
+
+				<li><%= homework.content.html_safe %></li>
 				<% end %>
 				 <% for assignment in @lesson.assignments %>  
 		              <li><span style="color: #F9690E; font-weight: bold">[Turn In]</span> <%= link_to assignment.name, assignment_url(assignment) %></li>
