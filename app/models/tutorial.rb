@@ -1,4 +1,6 @@
 class Tutorial < ActiveRecord::Base
+	  include RailsSortable::Model
+  			set_sortable :sort, without_updating_timestamps: true
 	has_many :learnings
 	has_many :lessons, :through => :learnings
 	belongs_to :user

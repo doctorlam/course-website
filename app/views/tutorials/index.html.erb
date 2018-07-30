@@ -1,3 +1,8 @@
+<script type="text/javascript">
+$(function() {
+  $('.sortable').railsSortable();
+});
+</script>
 <div class="container">
 <p id="notice"><%= notice %></p>
 
@@ -6,18 +11,17 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th></th>
+      <th>Sort</th>
       <th>Tutorial Topic</th>
       <th colspan="3"></th>
     </tr>
   </thead>
+  <tbody class="sortable">
+    <% @tutorials.each_with_sortable_id do |tutorial, sortable_id| %>
+      <tr id="<%= sortable_id %>"> 
+        <td><%= tutorial.name %></td>
+              <td><%= tutorial.sort %></td>
 
-  <tbody>
-    <% @tutorials.each_with_index do |tutorial, i| %>
-      <tr>
-        <td><%= (i+1) %>.</td>
-        <td><%= link_to tutorial.name, tutorial %></td>
-      
         <td><%= link_to tutorial do %>
               <i class="material-icons">pageview</i>
           <% end %></td>
