@@ -26054,3 +26054,429 @@ Started GET "/assets/tinymce/skins/lightgray/content.min.css" for ::1 at 2018-08
 
 
 Started GET "/assets/tinymce/skins/lightgray/fonts/tinymce.woff" for ::1 at 2018-08-03 10:03:30 -0500
+
+
+Started GET "/" for ::1 at 2018-08-03 10:11:18 -0500
+Processing by AboutsController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mAbout Load (0.9ms)[0m  SELECT "abouts".* FROM "abouts"
+  Rendered abouts/index.html.erb within layouts/application (16.8ms)
+  Rendered layouts/_header.html.erb (9.5ms)
+  Rendered layouts/_footer.html.erb (0.8ms)
+Completed 200 OK in 934ms (Views: 918.2ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/slidedecks" for ::1 at 2018-08-03 10:11:22 -0500
+Processing by SlidedecksController#index as HTML
+  [1m[36mSlidedeck Load (0.2ms)[0m  [1mSELECT "slidedecks".* FROM "slidedecks"  ORDER BY "slidedecks"."created_at" ASC[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered slidedecks/index.html.erb within layouts/application (4.0ms)
+  Rendered layouts/_header.html.erb (3.5ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 408ms (Views: 407.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/slidedecks/1" for ::1 at 2018-08-03 10:11:25 -0500
+Processing by SlidedecksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSlidedeck Load (0.1ms)[0m  [1mSELECT  "slidedecks".* FROM "slidedecks" WHERE "slidedecks"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mSlidedeck Load (0.2ms)[0m  [1mSELECT "slidedecks".* FROM "slidedecks"  ORDER BY created_at ASC[0m
+  [1m[35mNote Load (0.1ms)[0m  SELECT "notes".* FROM "notes" WHERE "notes"."slidedeck_id" = ?  [["slidedeck_id", 1]]
+  Rendered slidedecks/show.html.erb within layouts/application (13.6ms)
+  Rendered layouts/_header.html.erb (3.6ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 412ms (Views: 410.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/tinymce/themes/modern/theme.js" for ::1 at 2018-08-03 10:11:25 -0500
+
+
+Started GET "/assets/tinymce/skins/lightgray/skin.min.css" for ::1 at 2018-08-03 10:11:25 -0500
+
+
+Started GET "/assets/tinymce/skins/lightgray/content.min.css" for ::1 at 2018-08-03 10:11:25 -0500
+
+
+Started GET "/assets/tinymce/skins/lightgray/fonts/tinymce.woff" for ::1 at 2018-08-03 10:11:25 -0500
+
+
+Started GET "/slidedecks/1" for ::1 at 2018-08-03 10:12:00 -0500
+Processing by SlidedecksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSlidedeck Load (0.1ms)[0m  [1mSELECT  "slidedecks".* FROM "slidedecks" WHERE "slidedecks"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mSlide Load (0.1ms)[0m  [1mSELECT "slides".* FROM "slides" WHERE "slides"."slidedeck_id" = ?[0m  [["slidedeck_id", 1]]
+  [1m[35mContentmodule Load (0.1ms)[0m  SELECT "contentmodules".* FROM "contentmodules" WHERE "contentmodules"."slide_id" = ?  ORDER BY created_at ASC  [["slide_id", 1]]
+  [1m[36mBulletedList Load (0.1ms)[0m  [1mSELECT "bulleted_lists".* FROM "bulleted_lists" WHERE "bulleted_lists"."slide_id" = ?[0m  [["slide_id", 1]]
+  [1m[35mSlidedeck Load (0.1ms)[0m  SELECT "slidedecks".* FROM "slidedecks"  ORDER BY created_at ASC
+  [1m[36mNote Load (0.1ms)[0m  [1mSELECT "notes".* FROM "notes" WHERE "notes"."slidedeck_id" = ?[0m  [["slidedeck_id", 1]]
+  Rendered slidedecks/show.html.erb within layouts/application (10.8ms)
+  Rendered layouts/_header.html.erb (3.6ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 407ms (Views: 405.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/bgimages/original/missing.png" for ::1 at 2018-08-03 10:12:00 -0500
+
+ActionController::RoutingError (No route matches [GET] "/bgimages/original/missing.png"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.10) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.10) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.10) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.10) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.10) lib/rack/lock.rb:17:in `call'
+  rack (1.6.10) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.10) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/chrislam/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /Users/chrislam/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /Users/chrislam/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb (4.9ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.2ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.4ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (134.2ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (70.5ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (157.0ms)
+
+
+Started GET "/assets/tinymce/themes/modern/theme.js" for ::1 at 2018-08-03 10:12:01 -0500
+
+
+Started GET "/assets/tinymce/skins/lightgray/skin.min.css" for ::1 at 2018-08-03 10:12:01 -0500
+
+
+Started GET "/assets/tinymce/skins/lightgray/content.min.css" for ::1 at 2018-08-03 10:12:01 -0500
+
+
+Started GET "/assets/tinymce/skins/lightgray/fonts/tinymce.woff" for ::1 at 2018-08-03 10:12:01 -0500
+
+
+Started DELETE "/users/sign_out" for ::1 at 2018-08-03 10:12:07 -0500
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"XCaEZUpJFvxs2Boni/yjNGh4yZUCxipCrPMK1qMLTpm7+txPqNqnmv1dhcvlYuPzf/ncpEHN4uZIZ/rQyR1mgA=="}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 40ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2018-08-03 10:12:07 -0500
+Processing by AboutsController#index as HTML
+  [1m[36mAbout Load (0.2ms)[0m  [1mSELECT "abouts".* FROM "abouts"[0m
+  Rendered abouts/index.html.erb within layouts/application (6.3ms)
+  Rendered layouts/_header.html.erb (4.2ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 360ms (Views: 359.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/slidedecks" for ::1 at 2018-08-03 10:12:09 -0500
+Processing by SlidedecksController#index as HTML
+  [1m[35mSlidedeck Load (0.2ms)[0m  SELECT "slidedecks".* FROM "slidedecks"  ORDER BY "slidedecks"."created_at" ASC
+  Rendered slidedecks/index.html.erb within layouts/application (5.1ms)
+  Rendered layouts/_header.html.erb (2.9ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 359ms (Views: 358.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/slidedecks/1" for ::1 at 2018-08-03 10:12:11 -0500
+Processing by SlidedecksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSlidedeck Load (0.1ms)[0m  [1mSELECT  "slidedecks".* FROM "slidedecks" WHERE "slidedecks"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered slidedecks/show.html.erb within layouts/application (0.5ms)
+  Rendered layouts/_header.html.erb (3.6ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 365ms (Views: 363.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2018-08-03 10:12:53 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (1.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (24.9ms)
+  Rendered layouts/_header.html.erb (8.7ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 529ms (Views: 528.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2018-08-03 10:12:59 -0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ULSQ5+zHmHRrLPYP3ztXanNWjzAqkIDSX3W2AdhYnj86CeZcHYCkpUGm3J9bqQvJKm6xmxfje1XPnB2DmcS7Pg==", "user"=>{"email"=>"admin@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[35mUser Load (0.8ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["email", "admin@gmail.com"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "users" SET "last_sign_in_at" = ?, "current_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["last_sign_in_at", "2018-08-03 14:08:53.202320"], ["current_sign_in_at", "2018-08-03 15:12:59.574076"], ["sign_in_count", 10], ["updated_at", "2018-08-03 15:12:59.574806"], ["id", 1]]
+  [1m[36m (3.3ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 207ms (ActiveRecord: 4.5ms)
+
+
+Started GET "/" for ::1 at 2018-08-03 10:12:59 -0500
+Processing by AboutsController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mAbout Load (0.1ms)[0m  [1mSELECT "abouts".* FROM "abouts"[0m
+  Rendered abouts/index.html.erb within layouts/application (1.4ms)
+  Rendered layouts/_header.html.erb (7.8ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 483ms (Views: 482.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/tutorials" for ::1 at 2018-08-03 10:13:01 -0500
+Processing by TutorialsController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mTutorial Load (0.6ms)[0m  [1mSELECT "tutorials".* FROM "tutorials"  ORDER BY "tutorials"."sort" ASC[0m
+  Rendered tutorials/index.html.erb within layouts/application (18.2ms)
+  Rendered layouts/_header.html.erb (3.8ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 465ms (Views: 451.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/tutorial-899221fe96faa95cc40169986127d2f50af8d07e605543c08678f9690a83c9f7.png" for ::1 at 2018-08-03 10:13:02 -0500
+
+
+Started GET "/slidedecks" for ::1 at 2018-08-03 10:13:04 -0500
+Processing by SlidedecksController#index as HTML
+  [1m[35mSlidedeck Load (0.5ms)[0m  SELECT "slidedecks".* FROM "slidedecks"  ORDER BY "slidedecks"."created_at" ASC
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered slidedecks/index.html.erb within layouts/application (4.4ms)
+  Rendered layouts/_header.html.erb (3.3ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 366ms (Views: 364.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/slidedecks/new" for ::1 at 2018-08-03 10:13:07 -0500
+Processing by SlidedecksController#new as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered slidedecks/_contentmodule_fields.html.erb (0.5ms)
+  Rendered slidedecks/_bulleted_list_fields.html.erb (0.6ms)
+  Rendered slidedecks/_slide_fields.html.erb (13.7ms)
+  Rendered slidedecks/_form.html.erb (23.3ms)
+  Rendered slidedecks/new.html.erb within layouts/application (25.9ms)
+  Rendered layouts/_header.html.erb (3.5ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 351ms (Views: 349.7ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/slidedecks" for ::1 at 2018-08-03 10:13:11 -0500
+Processing by SlidedecksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vBfX6c5UBldLBrutY54YAY5nlmWaOJH2vuAmHew3ryCu+TpHfQpWc75fGvZbqzV/GoooHz7I2XZz+f1L+CkMdQ==", "slidedeck"=>{"google"=>"", "title"=>"test"}, "commit"=>"Create Slidedeck"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "slidedecks" ("google", "title", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["google", ""], ["title", "test"], ["created_at", "2018-08-03 15:13:11.582702"], ["updated_at", "2018-08-03 15:13:11.582702"]]
+  [1m[35m (5.5ms)[0m  commit transaction
+Redirected to http://localhost:3000/slidedecks/2
+Completed 302 Found in 10ms (ActiveRecord: 6.0ms)
+
+
+Started GET "/slidedecks/2" for ::1 at 2018-08-03 10:13:11 -0500
+Processing by SlidedecksController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mSlidedeck Load (0.1ms)[0m  [1mSELECT  "slidedecks".* FROM "slidedecks" WHERE "slidedecks"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mSlide Load (0.1ms)[0m  [1mSELECT "slides".* FROM "slides" WHERE "slides"."slidedeck_id" = ?[0m  [["slidedeck_id", 2]]
+  [1m[35mSlidedeck Load (0.2ms)[0m  SELECT "slidedecks".* FROM "slidedecks"  ORDER BY created_at ASC
+  [1m[36mNote Load (0.1ms)[0m  [1mSELECT "notes".* FROM "notes" WHERE "notes"."slidedeck_id" = ?[0m  [["slidedeck_id", 2]]
+  Rendered slidedecks/show.html.erb within layouts/application (9.4ms)
+  Rendered layouts/_header.html.erb (3.4ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 365ms (Views: 363.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/tinymce/themes/modern/theme.js" for ::1 at 2018-08-03 10:13:12 -0500
+
+
+Started GET "/assets/tinymce/skins/lightgray/skin.min.css" for ::1 at 2018-08-03 10:13:12 -0500
+
+
+Started GET "/assets/tinymce/skins/lightgray/content.min.css" for ::1 at 2018-08-03 10:13:12 -0500
+
+
+Started GET "/assets/tinymce/skins/lightgray/fonts/tinymce.woff" for ::1 at 2018-08-03 10:13:12 -0500
+
+
+Started GET "/slidedecks" for ::1 at 2018-08-03 10:13:15 -0500
+Processing by SlidedecksController#index as HTML
+  [1m[35mSlidedeck Load (0.2ms)[0m  SELECT "slidedecks".* FROM "slidedecks"  ORDER BY "slidedecks"."created_at" ASC
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered slidedecks/index.html.erb within layouts/application (4.2ms)
+  Rendered layouts/_header.html.erb (3.4ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 334ms (Views: 333.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/slidedecks/2" for ::1 at 2018-08-03 10:13:18 -0500
+Processing by SlidedecksController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mSlidedeck Load (1.5ms)[0m  SELECT  "slidedecks".* FROM "slidedecks" WHERE "slidedecks"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mSlide Load (0.2ms)[0m  SELECT "slides".* FROM "slides" WHERE "slides"."slidedeck_id" = ?  [["slidedeck_id", 2]]
+  [1m[36mSlidedeck Load (0.2ms)[0m  [1mSELECT "slidedecks".* FROM "slidedecks"  ORDER BY created_at ASC[0m
+  [1m[35mNote Load (0.1ms)[0m  SELECT "notes".* FROM "notes" WHERE "notes"."slidedeck_id" = ?  [["slidedeck_id", 2]]
+  Rendered slidedecks/show.html.erb within layouts/application (7.6ms)
+  Rendered layouts/_header.html.erb (4.5ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 367ms (Views: 363.1ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/assets/tinymce/skins/lightgray/content.min.css" for ::1 at 2018-08-03 10:13:18 -0500
+
+
+Started GET "/assets/tinymce/skins/lightgray/content.min.css" for ::1 at 2018-08-03 10:13:18 -0500
+
+
+Started GET "/slidedecks/2/edit" for ::1 at 2018-08-03 10:13:53 -0500
+Processing by SlidedecksController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mSlidedeck Load (0.1ms)[0m  [1mSELECT  "slidedecks".* FROM "slidedecks" WHERE "slidedecks"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mSlide Load (0.1ms)[0m  [1mSELECT "slides".* FROM "slides" WHERE "slides"."slidedeck_id" = ?[0m  [["slidedeck_id", 2]]
+  Rendered slidedecks/_contentmodule_fields.html.erb (0.3ms)
+  Rendered slidedecks/_bulleted_list_fields.html.erb (0.4ms)
+  Rendered slidedecks/_slide_fields.html.erb (10.4ms)
+  Rendered slidedecks/_form.html.erb (17.0ms)
+  Rendered slidedecks/edit.html.erb within layouts/application (18.4ms)
+  Rendered layouts/_header.html.erb (6.8ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 354ms (Views: 352.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/slidedecks/2/edit" for ::1 at 2018-08-03 10:14:13 -0500
+Processing by SlidedecksController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mSlidedeck Load (0.1ms)[0m  SELECT  "slidedecks".* FROM "slidedecks" WHERE "slidedecks"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mSlide Load (0.1ms)[0m  SELECT "slides".* FROM "slides" WHERE "slides"."slidedeck_id" = ?  [["slidedeck_id", 2]]
+  Rendered slidedecks/_contentmodule_fields.html.erb (0.6ms)
+  Rendered slidedecks/_bulleted_list_fields.html.erb (0.3ms)
+  Rendered slidedecks/_slide_fields.html.erb (10.8ms)
+  Rendered slidedecks/_form.html.erb (17.8ms)
+  Rendered slidedecks/edit.html.erb within layouts/application (19.2ms)
+  Rendered layouts/_header.html.erb (3.9ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 355ms (Views: 353.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/slidedecks/2/edit" for ::1 at 2018-08-03 10:14:21 -0500
+Processing by SlidedecksController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mSlidedeck Load (0.1ms)[0m  [1mSELECT  "slidedecks".* FROM "slidedecks" WHERE "slidedecks"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mSlide Load (0.1ms)[0m  [1mSELECT "slides".* FROM "slides" WHERE "slides"."slidedeck_id" = ?[0m  [["slidedeck_id", 2]]
+  Rendered slidedecks/_contentmodule_fields.html.erb (0.3ms)
+  Rendered slidedecks/_bulleted_list_fields.html.erb (0.2ms)
+  Rendered slidedecks/_slide_fields.html.erb (7.6ms)
+  Rendered slidedecks/_form.html.erb (13.9ms)
+  Rendered slidedecks/edit.html.erb within layouts/application (15.2ms)
+  Rendered layouts/_header.html.erb (3.6ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 363ms (Views: 360.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/slidedecks/2/edit" for ::1 at 2018-08-03 10:14:29 -0500
+Processing by SlidedecksController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mSlidedeck Load (0.1ms)[0m  SELECT  "slidedecks".* FROM "slidedecks" WHERE "slidedecks"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mSlide Load (0.1ms)[0m  SELECT "slides".* FROM "slides" WHERE "slides"."slidedeck_id" = ?  [["slidedeck_id", 2]]
+  Rendered slidedecks/_contentmodule_fields.html.erb (0.4ms)
+  Rendered slidedecks/_bulleted_list_fields.html.erb (0.5ms)
+  Rendered slidedecks/_slide_fields.html.erb (8.4ms)
+  Rendered slidedecks/_form.html.erb (15.1ms)
+  Rendered slidedecks/edit.html.erb within layouts/application (16.8ms)
+  Rendered layouts/_header.html.erb (5.2ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 363ms (Views: 360.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/slidedecks/2/edit" for ::1 at 2018-08-03 10:14:34 -0500
+Processing by SlidedecksController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mSlidedeck Load (0.2ms)[0m  [1mSELECT  "slidedecks".* FROM "slidedecks" WHERE "slidedecks"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mSlide Load (0.1ms)[0m  [1mSELECT "slides".* FROM "slides" WHERE "slides"."slidedeck_id" = ?[0m  [["slidedeck_id", 2]]
+  Rendered slidedecks/_contentmodule_fields.html.erb (0.2ms)
+  Rendered slidedecks/_bulleted_list_fields.html.erb (0.3ms)
+  Rendered slidedecks/_slide_fields.html.erb (7.8ms)
+  Rendered slidedecks/_form.html.erb (15.2ms)
+  Rendered slidedecks/edit.html.erb within layouts/application (16.4ms)
+  Rendered layouts/_header.html.erb (3.6ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 371ms (Views: 369.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/slidedecks/2/edit" for ::1 at 2018-08-03 10:15:00 -0500
+Processing by SlidedecksController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mSlidedeck Load (0.2ms)[0m  SELECT  "slidedecks".* FROM "slidedecks" WHERE "slidedecks"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mSlide Load (0.2ms)[0m  SELECT "slides".* FROM "slides" WHERE "slides"."slidedeck_id" = ?  [["slidedeck_id", 2]]
+  Rendered slidedecks/_contentmodule_fields.html.erb (0.2ms)
+  Rendered slidedecks/_bulleted_list_fields.html.erb (0.2ms)
+  Rendered slidedecks/_slide_fields.html.erb (7.5ms)
+  Rendered slidedecks/_form.html.erb (13.6ms)
+  Rendered slidedecks/edit.html.erb within layouts/application (14.8ms)
+  Rendered layouts/_header.html.erb (3.7ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 369ms (Views: 365.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/slidedecks/2/edit" for ::1 at 2018-08-03 10:15:07 -0500
+Processing by SlidedecksController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mSlidedeck Load (0.1ms)[0m  [1mSELECT  "slidedecks".* FROM "slidedecks" WHERE "slidedecks"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mSlide Load (0.1ms)[0m  [1mSELECT "slides".* FROM "slides" WHERE "slides"."slidedeck_id" = ?[0m  [["slidedeck_id", 2]]
+  Rendered slidedecks/_contentmodule_fields.html.erb (0.3ms)
+  Rendered slidedecks/_bulleted_list_fields.html.erb (0.3ms)
+  Rendered slidedecks/_slide_fields.html.erb (7.4ms)
+  Rendered slidedecks/_form.html.erb (13.5ms)
+  Rendered slidedecks/edit.html.erb within layouts/application (14.9ms)
+  Rendered layouts/_header.html.erb (5.3ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 369ms (Views: 367.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/slidedecks" for ::1 at 2018-08-03 10:15:13 -0500
+Processing by SlidedecksController#index as HTML
+  [1m[35mSlidedeck Load (0.2ms)[0m  SELECT "slidedecks".* FROM "slidedecks"  ORDER BY "slidedecks"."created_at" ASC
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered slidedecks/index.html.erb within layouts/application (4.3ms)
+  Rendered layouts/_header.html.erb (3.6ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 339ms (Views: 337.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/slidedecks/new" for ::1 at 2018-08-03 10:15:15 -0500
+Processing by SlidedecksController#new as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered slidedecks/_contentmodule_fields.html.erb (0.3ms)
+  Rendered slidedecks/_bulleted_list_fields.html.erb (0.3ms)
+  Rendered slidedecks/_slide_fields.html.erb (7.8ms)
+  Rendered slidedecks/_form.html.erb (13.3ms)
+  Rendered slidedecks/new.html.erb within layouts/application (14.5ms)
+  Rendered layouts/_header.html.erb (3.6ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 359ms (Views: 357.9ms | ActiveRecord: 0.1ms)
