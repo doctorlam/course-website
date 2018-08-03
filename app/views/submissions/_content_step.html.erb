@@ -1,9 +1,34 @@
   
 <% for assignment in @submission.assignments %>
-  <h1>STEP 2 - Complete "<%= assignment.name %>"</h1>
+  <h1>STEP 2 - You are turning in: <span style="background: #e74c3c; color: white; padding-left: 5px; padding-right: 5px">"<%= assignment.name %>"</span></h1>
 
 <% end %>
 <div class="row">
+    <div class= "col-md-6">
+        
+          <% for assignment in @submission.assignments %>
+            <h2 style="background: #e74c3c; color: white; padding:5px">Instructions for "<%= assignment.name %>"</h2>
+              <p><%= simple_format assignment.description.html_safe %></p>
+
+            <h3><%= image_tag 'attachments.png' %> Attachments</h3>
+            <% if assignment.attachment? %>
+                <ul><li><a target=_blank href=" <%= assignment.attachment.url %>"><strong><%= assignment.attachment.original_filename %></strong></a></li></ul>
+                <% else %>
+                <li>No Document(s) Attached!</li>
+              <% end %>
+          <% end %>
+
+
+          <% for assignment in @submission.assignments %>
+
+            <h2><i class="fas fa-calendar-alt"></i> Deadline</h2>
+                    
+                <p>Due: <%= assignment.deadline %></p>
+            <% end %>
+
+
+                    
+  </div><!--/col-md-6-->
   <div class="col-md-6">
     <div class="third-form-group">
   <%= f.hidden_field :assignment_name, :value => assignment.name %>
@@ -18,33 +43,5 @@
       <%= f.file_field :document, :class => "form-control-file", class: "form-control" %>
 
     </div>
-  </div>
-
-  <div class= "col-md-6 projects-right">
-    <div class="padding-right">
-        
-          <% for assignment in @submission.assignments %>
-            <h2>Instructions for "<%= assignment.name %>"</h2>
-              <p><%= simple_format assignment.description.html_safe %></p>
-
-            <h3><%= image_tag 'attachments.png' %> Attachments</h3>
-            <% if assignment.attachment? %>
-                <ul><li><a target=_blank href=" <%= assignment.attachment.url %>"><strong><%= assignment.attachment.original_filename %></strong></a></li></ul>
-                <% else %>
-                <li>No Document(s) Attached!</li>
-              <% end %>
-          <% end %>
-
-
-          <% for assignment in @submission.assignments %>
-
-            <h2>Deadline</h2>
-                    
-                <p>Due: <%= assignment.deadline %></p>
-            <% end %>
-
-
-                    
-      </div>
   </div>
 </div>

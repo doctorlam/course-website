@@ -494,6 +494,18 @@ ul.alphabet li{
 .padding-right li, .padding-right p, .padding-right h4, .padding-right a {
 		color: #D1D1D1 !important;
 }
+.submission-container {
+	position: relative;
+}
+.buttons {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+}
+.due {
+	font-size: 1.2rem;
+}
+
 html {
     position: relative;
     min-height: 100%;

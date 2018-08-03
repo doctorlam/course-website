@@ -26480,3 +26480,1710 @@ Processing by SlidedecksController#new as HTML
   Rendered layouts/_header.html.erb (3.6ms)
   Rendered layouts/_footer.html.erb (0.3ms)
 Completed 200 OK in 359ms (Views: 357.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for ::1 at 2018-08-03 13:06:32 -0500
+Processing by AboutsController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mAbout Load (0.6ms)[0m  SELECT "abouts".* FROM "abouts"
+  Rendered abouts/index.html.erb within layouts/application (34.2ms)
+  Rendered layouts/_header.html.erb (9.7ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 977ms (Views: 958.0ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/assets/tinymce/skins/lightgray/skin.min.css" for ::1 at 2018-08-03 13:06:33 -0500
+
+
+Started GET "/assets/tinymce/themes/modern/theme.js" for ::1 at 2018-08-03 13:06:33 -0500
+
+
+Started GET "/assets/tinymce/skins/lightgray/fonts/tinymce.woff" for ::1 at 2018-08-03 13:06:33 -0500
+
+
+Started GET "/" for ::1 at 2018-08-03 13:06:51 -0500
+Processing by AboutsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mAbout Load (0.2ms)[0m  SELECT "abouts".* FROM "abouts"
+  Rendered abouts/index.html.erb within layouts/application (4.8ms)
+  Rendered layouts/_header.html.erb (3.6ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 396ms (Views: 394.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/lessons" for ::1 at 2018-08-03 13:07:14 -0500
+Processing by LessonsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mLesson Load (0.8ms)[0m  SELECT "lessons".* FROM "lessons"  ORDER BY "lessons"."sort" ASC
+  [1m[36mReading Load (0.5ms)[0m  [1mSELECT "readings".* FROM "readings" WHERE "readings"."lesson_id" = ?[0m  [["lesson_id", 3]]
+  [1m[35mHomework Load (0.5ms)[0m  SELECT "homeworks".* FROM "homeworks" WHERE "homeworks"."lesson_id" = ?  [["lesson_id", 3]]
+  [1m[36mAssignment Load (0.7ms)[0m  [1mSELECT "assignments".* FROM "assignments" INNER JOIN "learnings" ON "assignments"."id" = "learnings"."assignment_id" WHERE "learnings"."lesson_id" = ?[0m  [["lesson_id", 3]]
+  [1m[35mReading Load (0.1ms)[0m  SELECT "readings".* FROM "readings" WHERE "readings"."lesson_id" = ?  [["lesson_id", 1]]
+  [1m[36mHomework Load (0.1ms)[0m  [1mSELECT "homeworks".* FROM "homeworks" WHERE "homeworks"."lesson_id" = ?[0m  [["lesson_id", 1]]
+  [1m[35mAssignment Load (0.1ms)[0m  SELECT "assignments".* FROM "assignments" INNER JOIN "learnings" ON "assignments"."id" = "learnings"."assignment_id" WHERE "learnings"."lesson_id" = ?  [["lesson_id", 1]]
+  [1m[36mReading Load (0.1ms)[0m  [1mSELECT "readings".* FROM "readings" WHERE "readings"."lesson_id" = ?[0m  [["lesson_id", 2]]
+  [1m[35mHomework Load (0.1ms)[0m  SELECT "homeworks".* FROM "homeworks" WHERE "homeworks"."lesson_id" = ?  [["lesson_id", 2]]
+  [1m[36mAssignment Load (0.1ms)[0m  [1mSELECT "assignments".* FROM "assignments" INNER JOIN "learnings" ON "assignments"."id" = "learnings"."assignment_id" WHERE "learnings"."lesson_id" = ?[0m  [["lesson_id", 2]]
+  Rendered lessons/index.html.erb within layouts/application (89.5ms)
+  Rendered layouts/_header.html.erb (3.8ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 489ms (Views: 465.8ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/" for ::1 at 2018-08-03 13:07:19 -0500
+Processing by AboutsController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mAbout Load (0.1ms)[0m  [1mSELECT "abouts".* FROM "abouts"[0m
+  Rendered abouts/index.html.erb within layouts/application (1.7ms)
+  Rendered layouts/_header.html.erb (4.2ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 400ms (Views: 399.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/lessons" for ::1 at 2018-08-03 13:08:49 -0500
+Processing by LessonsController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mLesson Load (0.2ms)[0m  [1mSELECT "lessons".* FROM "lessons"  ORDER BY "lessons"."sort" ASC[0m
+  [1m[35mReading Load (0.2ms)[0m  SELECT "readings".* FROM "readings" WHERE "readings"."lesson_id" = ?  [["lesson_id", 3]]
+  [1m[36mHomework Load (0.1ms)[0m  [1mSELECT "homeworks".* FROM "homeworks" WHERE "homeworks"."lesson_id" = ?[0m  [["lesson_id", 3]]
+  [1m[35mAssignment Load (0.1ms)[0m  SELECT "assignments".* FROM "assignments" INNER JOIN "learnings" ON "assignments"."id" = "learnings"."assignment_id" WHERE "learnings"."lesson_id" = ?  [["lesson_id", 3]]
+  [1m[36mReading Load (0.2ms)[0m  [1mSELECT "readings".* FROM "readings" WHERE "readings"."lesson_id" = ?[0m  [["lesson_id", 1]]
+  [1m[35mHomework Load (0.1ms)[0m  SELECT "homeworks".* FROM "homeworks" WHERE "homeworks"."lesson_id" = ?  [["lesson_id", 1]]
+  [1m[36mAssignment Load (0.1ms)[0m  [1mSELECT "assignments".* FROM "assignments" INNER JOIN "learnings" ON "assignments"."id" = "learnings"."assignment_id" WHERE "learnings"."lesson_id" = ?[0m  [["lesson_id", 1]]
+  [1m[35mReading Load (0.2ms)[0m  SELECT "readings".* FROM "readings" WHERE "readings"."lesson_id" = ?  [["lesson_id", 2]]
+  [1m[36mHomework Load (0.1ms)[0m  [1mSELECT "homeworks".* FROM "homeworks" WHERE "homeworks"."lesson_id" = ?[0m  [["lesson_id", 2]]
+  [1m[35mAssignment Load (0.1ms)[0m  SELECT "assignments".* FROM "assignments" INNER JOIN "learnings" ON "assignments"."id" = "learnings"."assignment_id" WHERE "learnings"."lesson_id" = ?  [["lesson_id", 2]]
+  Rendered lessons/index.html.erb within layouts/application (13.4ms)
+  Rendered layouts/_header.html.erb (7.7ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 491ms (Views: 488.5ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/projects" for ::1 at 2018-08-03 13:08:51 -0500
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mProject Load (3.9ms)[0m  SELECT "projects".* FROM "projects"  ORDER BY "projects"."sort" ASC
+  [1m[36mDeliverable Load (0.5ms)[0m  [1mSELECT "deliverables".* FROM "deliverables" WHERE "deliverables"."project_id" = ?[0m  [["project_id", 1]]
+  [1m[35mRubric Load (0.5ms)[0m  SELECT "rubrics".* FROM "rubrics" WHERE "rubrics"."project_id" = ?  [["project_id", "1"]]
+  [1m[36mLesson Load (0.3ms)[0m  [1mSELECT "lessons".* FROM "lessons" INNER JOIN "learnings" ON "lessons"."id" = "learnings"."lesson_id" WHERE "learnings"."project_id" = ?[0m  [["project_id", 1]]
+  [1m[35mDeliverable Load (0.1ms)[0m  SELECT "deliverables".* FROM "deliverables" WHERE "deliverables"."project_id" = ?  [["project_id", 3]]
+  [1m[36mRubric Load (0.1ms)[0m  [1mSELECT "rubrics".* FROM "rubrics" WHERE "rubrics"."project_id" = ?[0m  [["project_id", "3"]]
+  [1m[35mLesson Load (0.1ms)[0m  SELECT "lessons".* FROM "lessons" INNER JOIN "learnings" ON "lessons"."id" = "learnings"."lesson_id" WHERE "learnings"."project_id" = ?  [["project_id", 3]]
+  [1m[36mDeliverable Load (0.1ms)[0m  [1mSELECT "deliverables".* FROM "deliverables" WHERE "deliverables"."project_id" = ?[0m  [["project_id", 2]]
+  [1m[35mRubric Load (0.1ms)[0m  SELECT "rubrics".* FROM "rubrics" WHERE "rubrics"."project_id" = ?  [["project_id", "2"]]
+  [1m[36mLesson Load (0.1ms)[0m  [1mSELECT "lessons".* FROM "lessons" INNER JOIN "learnings" ON "lessons"."id" = "learnings"."lesson_id" WHERE "learnings"."project_id" = ?[0m  [["project_id", 2]]
+  Rendered projects/index.html.erb within layouts/application (76.6ms)
+  Rendered layouts/_header.html.erb (4.2ms)
+  Rendered layouts/_footer.html.erb (0.8ms)
+Completed 200 OK in 498ms (Views: 480.9ms | ActiveRecord: 6.6ms)
+
+
+Started GET "/projects" for ::1 at 2018-08-03 13:09:25 -0500
+Processing by ProjectsController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT "projects".* FROM "projects"  ORDER BY "projects"."sort" ASC[0m
+  [1m[35mDeliverable Load (0.1ms)[0m  SELECT "deliverables".* FROM "deliverables" WHERE "deliverables"."project_id" = ?  [["project_id", 1]]
+  [1m[36mRubric Load (0.1ms)[0m  [1mSELECT "rubrics".* FROM "rubrics" WHERE "rubrics"."project_id" = ?[0m  [["project_id", "1"]]
+  [1m[35mLesson Load (0.1ms)[0m  SELECT "lessons".* FROM "lessons" INNER JOIN "learnings" ON "lessons"."id" = "learnings"."lesson_id" WHERE "learnings"."project_id" = ?  [["project_id", 1]]
+  [1m[36mDeliverable Load (0.1ms)[0m  [1mSELECT "deliverables".* FROM "deliverables" WHERE "deliverables"."project_id" = ?[0m  [["project_id", 3]]
+  [1m[35mRubric Load (0.1ms)[0m  SELECT "rubrics".* FROM "rubrics" WHERE "rubrics"."project_id" = ?  [["project_id", "3"]]
+  [1m[36mLesson Load (0.1ms)[0m  [1mSELECT "lessons".* FROM "lessons" INNER JOIN "learnings" ON "lessons"."id" = "learnings"."lesson_id" WHERE "learnings"."project_id" = ?[0m  [["project_id", 3]]
+  [1m[35mDeliverable Load (0.1ms)[0m  SELECT "deliverables".* FROM "deliverables" WHERE "deliverables"."project_id" = ?  [["project_id", 2]]
+  [1m[36mRubric Load (0.1ms)[0m  [1mSELECT "rubrics".* FROM "rubrics" WHERE "rubrics"."project_id" = ?[0m  [["project_id", "2"]]
+  [1m[35mLesson Load (0.1ms)[0m  SELECT "lessons".* FROM "lessons" INNER JOIN "learnings" ON "lessons"."id" = "learnings"."lesson_id" WHERE "learnings"."project_id" = ?  [["project_id", 2]]
+  Rendered projects/index.html.erb within layouts/application (11.3ms)
+  Rendered layouts/_header.html.erb (3.7ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 386ms (Views: 384.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/projects" for ::1 at 2018-08-03 13:10:20 -0500
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mProject Load (0.2ms)[0m  SELECT "projects".* FROM "projects"  ORDER BY "projects"."sort" ASC
+  [1m[36mDeliverable Load (0.1ms)[0m  [1mSELECT "deliverables".* FROM "deliverables" WHERE "deliverables"."project_id" = ?[0m  [["project_id", 1]]
+  [1m[35mRubric Load (0.1ms)[0m  SELECT "rubrics".* FROM "rubrics" WHERE "rubrics"."project_id" = ?  [["project_id", "1"]]
+  [1m[36mLesson Load (0.1ms)[0m  [1mSELECT "lessons".* FROM "lessons" INNER JOIN "learnings" ON "lessons"."id" = "learnings"."lesson_id" WHERE "learnings"."project_id" = ?[0m  [["project_id", 1]]
+  [1m[35mDeliverable Load (0.1ms)[0m  SELECT "deliverables".* FROM "deliverables" WHERE "deliverables"."project_id" = ?  [["project_id", 3]]
+  [1m[36mRubric Load (0.1ms)[0m  [1mSELECT "rubrics".* FROM "rubrics" WHERE "rubrics"."project_id" = ?[0m  [["project_id", "3"]]
+  [1m[35mLesson Load (0.1ms)[0m  SELECT "lessons".* FROM "lessons" INNER JOIN "learnings" ON "lessons"."id" = "learnings"."lesson_id" WHERE "learnings"."project_id" = ?  [["project_id", 3]]
+  [1m[36mDeliverable Load (0.1ms)[0m  [1mSELECT "deliverables".* FROM "deliverables" WHERE "deliverables"."project_id" = ?[0m  [["project_id", 2]]
+  [1m[35mRubric Load (0.1ms)[0m  SELECT "rubrics".* FROM "rubrics" WHERE "rubrics"."project_id" = ?  [["project_id", "2"]]
+  [1m[36mLesson Load (0.1ms)[0m  [1mSELECT "lessons".* FROM "lessons" INNER JOIN "learnings" ON "lessons"."id" = "learnings"."lesson_id" WHERE "learnings"."project_id" = ?[0m  [["project_id", 2]]
+  Rendered projects/index.html.erb within layouts/application (11.3ms)
+  Rendered layouts/_header.html.erb (5.0ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 480ms (Views: 477.9ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/projects/1" for ::1 at 2018-08-03 13:10:38 -0500
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mProject Load (0.3ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mDeliverable Load (0.1ms)[0m  SELECT "deliverables".* FROM "deliverables" WHERE "deliverables"."project_id" = ?  [["project_id", 1]]
+  [1m[36mRubric Load (0.1ms)[0m  [1mSELECT "rubrics".* FROM "rubrics" WHERE "rubrics"."project_id" = ?[0m  [["project_id", "1"]]
+  [1m[35mLesson Load (0.1ms)[0m  SELECT "lessons".* FROM "lessons" INNER JOIN "learnings" ON "lessons"."id" = "learnings"."lesson_id" WHERE "learnings"."project_id" = ?  [["project_id", 1]]
+  Rendered projects/show.html.erb within layouts/application (6.7ms)
+  Rendered layouts/_header.html.erb (3.7ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 416ms (Views: 411.2ms | ActiveRecord: 0.8ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddAttachmentLinkToProject (20180803181255)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "projects" ADD "attachment_link" varchar[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20180803181255"]]
+  [1m[36m (5.8ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_bulleted_lists_on_slide_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_bulleted_lists_on_slide_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_bullets_on_bulleted_list_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_bullets_on_bulleted_list_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_commontator_comments_on_cached_votes_down' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_commontator_comments_on_cached_votes_down' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_commontator_comments_on_cached_votes_up' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_commontator_comments_on_cached_votes_up' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_commontator_comments_on_thread_id_and_created_at' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_commontator_comments_on_thread_id_and_created_at' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_commontator_comments_on_c_id_and_c_type_and_t_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_commontator_comments_on_c_id_and_c_type_and_t_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_commontator_subscriptions_on_thread_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_commontator_subscriptions_on_thread_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_commontator_subscriptions_on_s_id_and_s_type_and_t_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_commontator_subscriptions_on_s_id_and_s_type_and_t_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_commontator_threads_on_c_id_and_c_type' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_commontator_threads_on_c_id_and_c_type' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_contentmodules_on_slide_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_contentmodules_on_slide_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_responses_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_responses_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_responses_on_post_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_responses_on_post_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_slides_on_slidedeck_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_slides_on_slidedeck_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_votes_on_votable_id_and_votable_type_and_vote_scope' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_votes_on_votable_id_and_votable_type_and_vote_scope' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_votes_on_voter_id_and_voter_type_and_vote_scope' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_votes_on_voter_id_and_voter_type_and_vote_scope' AND type='index'
+[0m
+
+
+Started GET "/" for ::1 at 2018-08-03 13:17:07 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by AboutsController#index as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mAbout Load (0.6ms)[0m  [1mSELECT "abouts".* FROM "abouts"[0m
+  Rendered abouts/index.html.erb within layouts/application (12.8ms)
+  Rendered layouts/_header.html.erb (10.8ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 560ms (Views: 550.2ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/projects" for ::1 at 2018-08-03 13:17:12 -0500
+Processing by ProjectsController#index as HTML
+  Rendered projects/index.html.erb within layouts/application (3.2ms)
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/Users/chrislam/tecm4400/app/views/projects/index.html.erb:47: syntax error, unexpected ')', expecting keyword_then or ';' or '\n'
+...( if project.attachment_link? );@output_buffer.safe_append='
+...                               ^
+/Users/chrislam/tecm4400/app/views/projects/index.html.erb:49: syntax error, unexpected keyword_end, expecting ')'
+'.freeze;                 end 
+                             ^
+/Users/chrislam/tecm4400/app/views/projects/index.html.erb:70: syntax error, unexpected keyword_end, expecting ')'
+'.freeze;     end 
+                 ^
+/Users/chrislam/tecm4400/app/views/projects/index.html.erb:74: syntax error, unexpected keyword_ensure, expecting ')'
+/Users/chrislam/tecm4400/app/views/projects/index.html.erb:76: syntax error, unexpected keyword_end, expecting ')'):
+  app/views/projects/index.html.erb:47: syntax error, unexpected ')', expecting keyword_then or ';' or '\n'
+  app/views/projects/index.html.erb:49: syntax error, unexpected keyword_end, expecting ')'
+  app/views/projects/index.html.erb:70: syntax error, unexpected keyword_end, expecting ')'
+  app/views/projects/index.html.erb:74: syntax error, unexpected keyword_ensure, expecting ')'
+  app/views/projects/index.html.erb:76: syntax error, unexpected keyword_end, expecting ')'
+
+
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.3ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.8ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (87.6ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.9ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (75.6ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (171.9ms)
+
+
+Started GET "/projects" for ::1 at 2018-08-03 13:17:27 -0500
+Processing by ProjectsController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mProject Load (0.6ms)[0m  [1mSELECT "projects".* FROM "projects"  ORDER BY "projects"."sort" ASC[0m
+  [1m[35mDeliverable Load (0.6ms)[0m  SELECT "deliverables".* FROM "deliverables" WHERE "deliverables"."project_id" = ?  [["project_id", 1]]
+  [1m[36mRubric Load (0.3ms)[0m  [1mSELECT "rubrics".* FROM "rubrics" WHERE "rubrics"."project_id" = ?[0m  [["project_id", "1"]]
+  [1m[35mLesson Load (0.6ms)[0m  SELECT "lessons".* FROM "lessons" INNER JOIN "learnings" ON "lessons"."id" = "learnings"."lesson_id" WHERE "learnings"."project_id" = ?  [["project_id", 1]]
+  [1m[36mDeliverable Load (0.1ms)[0m  [1mSELECT "deliverables".* FROM "deliverables" WHERE "deliverables"."project_id" = ?[0m  [["project_id", 3]]
+  [1m[35mRubric Load (0.1ms)[0m  SELECT "rubrics".* FROM "rubrics" WHERE "rubrics"."project_id" = ?  [["project_id", "3"]]
+  [1m[36mLesson Load (0.1ms)[0m  [1mSELECT "lessons".* FROM "lessons" INNER JOIN "learnings" ON "lessons"."id" = "learnings"."lesson_id" WHERE "learnings"."project_id" = ?[0m  [["project_id", 3]]
+  [1m[35mDeliverable Load (0.2ms)[0m  SELECT "deliverables".* FROM "deliverables" WHERE "deliverables"."project_id" = ?  [["project_id", 2]]
+  [1m[36mRubric Load (0.1ms)[0m  [1mSELECT "rubrics".* FROM "rubrics" WHERE "rubrics"."project_id" = ?[0m  [["project_id", "2"]]
+  [1m[35mLesson Load (0.1ms)[0m  SELECT "lessons".* FROM "lessons" INNER JOIN "learnings" ON "lessons"."id" = "learnings"."lesson_id" WHERE "learnings"."project_id" = ?  [["project_id", 2]]
+  Rendered projects/index.html.erb within layouts/application (60.9ms)
+  Rendered layouts/_header.html.erb (3.7ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 478ms (Views: 473.1ms | ActiveRecord: 4.4ms)
+
+
+Started GET "/projects/1/edit" for ::1 at 2018-08-03 13:17:35 -0500
+Processing by ProjectsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mDeliverable Load (0.1ms)[0m  [1mSELECT "deliverables".* FROM "deliverables" WHERE "deliverables"."project_id" = ?[0m  [["project_id", 1]]
+  Rendered projects/_deliverable_fields.html.erb (1.1ms)
+  Rendered projects/_deliverable_fields.html.erb (0.3ms)
+  Rendered projects/_deliverable_fields.html.erb (0.2ms)
+  Rendered projects/_deliverable_fields.html.erb (0.2ms)
+  [1m[35mRubric Load (0.1ms)[0m  SELECT "rubrics".* FROM "rubrics" WHERE "rubrics"."project_id" = ?  [["project_id", "1"]]
+  Rendered projects/_rubric_fields.html.erb (1.6ms)
+  [1m[36mLesson Load (0.6ms)[0m  [1mSELECT "lessons".* FROM "lessons"[0m
+  [1m[35m (0.1ms)[0m  SELECT "lessons".id FROM "lessons" INNER JOIN "learnings" ON "lessons"."id" = "learnings"."lesson_id" WHERE "learnings"."project_id" = ?  [["project_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "lessons".id FROM "lessons" INNER JOIN "learnings" ON "lessons"."id" = "learnings"."lesson_id" WHERE "learnings"."project_id" = ?[0m  [["project_id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "lessons".id FROM "lessons" INNER JOIN "learnings" ON "lessons"."id" = "learnings"."lesson_id" WHERE "learnings"."project_id" = ?  [["project_id", 1]]
+  Rendered projects/_form.html.erb (43.3ms)
+  Rendered projects/edit.html.erb within layouts/application (48.6ms)
+  Rendered layouts/_header.html.erb (3.6ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 426ms (Views: 420.4ms | ActiveRecord: 1.5ms)
+
+
+Started PATCH "/projects/1" for ::1 at 2018-08-03 13:17:45 -0500
+Processing by ProjectsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yn7NaQs/EX1IPNYHxfzJ1HdLAqR1DCjJKbYpOwV/f8vYkCDHuGFBWb1ld1z9yeSq46a83tH8YEnkr/JtEWHcng==", "project"=>{"name"=>"add", "due(1i)"=>"2018", "due(2i)"=>"3", "due(3i)"=>"21", "description"=>"", "deliverables_attributes"=>{"0"=>{"description"=>"a", "_destroy"=>"false", "id"=>"1"}, "1"=>{"description"=>"f", "_destroy"=>"false", "id"=>"2"}, "2"=>{"description"=>"d", "_destroy"=>"false", "id"=>"3"}}, "lesson_ids"=>[""], "attachment_link"=>"https://google.com"}, "commit"=>"Update Project", "id"=>"1"}
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mLesson Load (0.1ms)[0m  SELECT "lessons".* FROM "lessons" INNER JOIN "learnings" ON "lessons"."id" = "learnings"."lesson_id" WHERE "learnings"."project_id" = ?  [["project_id", 1]]
+  [1m[36mDeliverable Load (0.3ms)[0m  [1mSELECT "deliverables".* FROM "deliverables" WHERE "deliverables"."project_id" = ? AND "deliverables"."id" IN (1, 2, 3)[0m  [["project_id", 1]]
+  [1m[35mSQL (0.3ms)[0m  UPDATE "projects" SET "attachment_link" = ?, "updated_at" = ? WHERE "projects"."id" = ?  [["attachment_link", "https://google.com"], ["updated_at", "2018-08-03 18:17:45.052891"], ["id", 1]]
+  [1m[36m (1.2ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/projects/1
+Completed 302 Found in 17ms (ActiveRecord: 2.2ms)
+
+
+Started GET "/projects/1" for ::1 at 2018-08-03 13:17:45 -0500
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mProject Load (0.1ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mDeliverable Load (0.1ms)[0m  SELECT "deliverables".* FROM "deliverables" WHERE "deliverables"."project_id" = ?  [["project_id", 1]]
+  [1m[36mRubric Load (0.1ms)[0m  [1mSELECT "rubrics".* FROM "rubrics" WHERE "rubrics"."project_id" = ?[0m  [["project_id", "1"]]
+  [1m[35mLesson Load (0.2ms)[0m  SELECT "lessons".* FROM "lessons" INNER JOIN "learnings" ON "lessons"."id" = "learnings"."lesson_id" WHERE "learnings"."project_id" = ?  [["project_id", 1]]
+  Rendered projects/show.html.erb within layouts/application (5.0ms)
+  Rendered layouts/_header.html.erb (4.2ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 412ms (Views: 410.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/projects" for ::1 at 2018-08-03 13:17:48 -0500
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mProject Load (0.2ms)[0m  SELECT "projects".* FROM "projects"  ORDER BY "projects"."sort" ASC
+  [1m[36mDeliverable Load (0.1ms)[0m  [1mSELECT "deliverables".* FROM "deliverables" WHERE "deliverables"."project_id" = ?[0m  [["project_id", 1]]
+  [1m[35mRubric Load (0.1ms)[0m  SELECT "rubrics".* FROM "rubrics" WHERE "rubrics"."project_id" = ?  [["project_id", "1"]]
+  [1m[36mLesson Load (0.1ms)[0m  [1mSELECT "lessons".* FROM "lessons" INNER JOIN "learnings" ON "lessons"."id" = "learnings"."lesson_id" WHERE "learnings"."project_id" = ?[0m  [["project_id", 1]]
+  [1m[35mDeliverable Load (0.1ms)[0m  SELECT "deliverables".* FROM "deliverables" WHERE "deliverables"."project_id" = ?  [["project_id", 3]]
+  [1m[36mRubric Load (0.1ms)[0m  [1mSELECT "rubrics".* FROM "rubrics" WHERE "rubrics"."project_id" = ?[0m  [["project_id", "3"]]
+  [1m[35mLesson Load (0.1ms)[0m  SELECT "lessons".* FROM "lessons" INNER JOIN "learnings" ON "lessons"."id" = "learnings"."lesson_id" WHERE "learnings"."project_id" = ?  [["project_id", 3]]
+  [1m[36mDeliverable Load (0.1ms)[0m  [1mSELECT "deliverables".* FROM "deliverables" WHERE "deliverables"."project_id" = ?[0m  [["project_id", 2]]
+  [1m[35mRubric Load (0.1ms)[0m  SELECT "rubrics".* FROM "rubrics" WHERE "rubrics"."project_id" = ?  [["project_id", "2"]]
+  [1m[36mLesson Load (0.1ms)[0m  [1mSELECT "lessons".* FROM "lessons" INNER JOIN "learnings" ON "lessons"."id" = "learnings"."lesson_id" WHERE "learnings"."project_id" = ?[0m  [["project_id", 2]]
+  Rendered projects/index.html.erb within layouts/application (8.6ms)
+  Rendered layouts/_header.html.erb (4.5ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 344ms (Views: 341.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/projects" for ::1 at 2018-08-03 13:21:20 -0500
+Processing by ProjectsController#index as HTML
+  [1m[35mUser Load (0.9ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mProject Load (1.0ms)[0m  [1mSELECT "projects".* FROM "projects"  ORDER BY "projects"."sort" ASC[0m
+  [1m[35mDeliverable Load (0.2ms)[0m  SELECT "deliverables".* FROM "deliverables" WHERE "deliverables"."project_id" = ?  [["project_id", 1]]
+  [1m[36mRubric Load (0.1ms)[0m  [1mSELECT "rubrics".* FROM "rubrics" WHERE "rubrics"."project_id" = ?[0m  [["project_id", "1"]]
+  [1m[35mLesson Load (0.1ms)[0m  SELECT "lessons".* FROM "lessons" INNER JOIN "learnings" ON "lessons"."id" = "learnings"."lesson_id" WHERE "learnings"."project_id" = ?  [["project_id", 1]]
+  [1m[36mDeliverable Load (0.1ms)[0m  [1mSELECT "deliverables".* FROM "deliverables" WHERE "deliverables"."project_id" = ?[0m  [["project_id", 3]]
+  [1m[35mRubric Load (0.1ms)[0m  SELECT "rubrics".* FROM "rubrics" WHERE "rubrics"."project_id" = ?  [["project_id", "3"]]
+  [1m[36mLesson Load (0.1ms)[0m  [1mSELECT "lessons".* FROM "lessons" INNER JOIN "learnings" ON "lessons"."id" = "learnings"."lesson_id" WHERE "learnings"."project_id" = ?[0m  [["project_id", 3]]
+  [1m[35mDeliverable Load (0.1ms)[0m  SELECT "deliverables".* FROM "deliverables" WHERE "deliverables"."project_id" = ?  [["project_id", 2]]
+  [1m[36mRubric Load (0.1ms)[0m  [1mSELECT "rubrics".* FROM "rubrics" WHERE "rubrics"."project_id" = ?[0m  [["project_id", "2"]]
+  [1m[35mLesson Load (0.1ms)[0m  SELECT "lessons".* FROM "lessons" INNER JOIN "learnings" ON "lessons"."id" = "learnings"."lesson_id" WHERE "learnings"."project_id" = ?  [["project_id", 2]]
+  Rendered projects/index.html.erb within layouts/application (57.1ms)
+  Rendered layouts/_header.html.erb (10.6ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 833ms (Views: 821.9ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/projects" for ::1 at 2018-08-03 13:21:36 -0500
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mProject Load (0.2ms)[0m  SELECT "projects".* FROM "projects"  ORDER BY "projects"."sort" ASC
+  [1m[36mDeliverable Load (0.1ms)[0m  [1mSELECT "deliverables".* FROM "deliverables" WHERE "deliverables"."project_id" = ?[0m  [["project_id", 1]]
+  [1m[35mRubric Load (0.1ms)[0m  SELECT "rubrics".* FROM "rubrics" WHERE "rubrics"."project_id" = ?  [["project_id", "1"]]
+  [1m[36mLesson Load (0.1ms)[0m  [1mSELECT "lessons".* FROM "lessons" INNER JOIN "learnings" ON "lessons"."id" = "learnings"."lesson_id" WHERE "learnings"."project_id" = ?[0m  [["project_id", 1]]
+  [1m[35mDeliverable Load (0.1ms)[0m  SELECT "deliverables".* FROM "deliverables" WHERE "deliverables"."project_id" = ?  [["project_id", 3]]
+  [1m[36mRubric Load (0.1ms)[0m  [1mSELECT "rubrics".* FROM "rubrics" WHERE "rubrics"."project_id" = ?[0m  [["project_id", "3"]]
+  [1m[35mLesson Load (0.1ms)[0m  SELECT "lessons".* FROM "lessons" INNER JOIN "learnings" ON "lessons"."id" = "learnings"."lesson_id" WHERE "learnings"."project_id" = ?  [["project_id", 3]]
+  [1m[36mDeliverable Load (0.1ms)[0m  [1mSELECT "deliverables".* FROM "deliverables" WHERE "deliverables"."project_id" = ?[0m  [["project_id", 2]]
+  [1m[35mRubric Load (0.1ms)[0m  SELECT "rubrics".* FROM "rubrics" WHERE "rubrics"."project_id" = ?  [["project_id", "2"]]
+  [1m[36mLesson Load (0.1ms)[0m  [1mSELECT "lessons".* FROM "lessons" INNER JOIN "learnings" ON "lessons"."id" = "learnings"."lesson_id" WHERE "learnings"."project_id" = ?[0m  [["project_id", 2]]
+  Rendered projects/index.html.erb within layouts/application (11.9ms)
+  Rendered layouts/_header.html.erb (3.5ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 446ms (Views: 444.0ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/projects" for ::1 at 2018-08-03 13:22:18 -0500
+Processing by ProjectsController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT "projects".* FROM "projects"  ORDER BY "projects"."sort" ASC[0m
+  [1m[35mDeliverable Load (0.1ms)[0m  SELECT "deliverables".* FROM "deliverables" WHERE "deliverables"."project_id" = ?  [["project_id", 1]]
+  [1m[36mRubric Load (0.1ms)[0m  [1mSELECT "rubrics".* FROM "rubrics" WHERE "rubrics"."project_id" = ?[0m  [["project_id", "1"]]
+  [1m[35mLesson Load (0.1ms)[0m  SELECT "lessons".* FROM "lessons" INNER JOIN "learnings" ON "lessons"."id" = "learnings"."lesson_id" WHERE "learnings"."project_id" = ?  [["project_id", 1]]
+  [1m[36mDeliverable Load (0.1ms)[0m  [1mSELECT "deliverables".* FROM "deliverables" WHERE "deliverables"."project_id" = ?[0m  [["project_id", 3]]
+  [1m[35mRubric Load (0.1ms)[0m  SELECT "rubrics".* FROM "rubrics" WHERE "rubrics"."project_id" = ?  [["project_id", "3"]]
+  [1m[36mLesson Load (0.1ms)[0m  [1mSELECT "lessons".* FROM "lessons" INNER JOIN "learnings" ON "lessons"."id" = "learnings"."lesson_id" WHERE "learnings"."project_id" = ?[0m  [["project_id", 3]]
+  [1m[35mDeliverable Load (0.1ms)[0m  SELECT "deliverables".* FROM "deliverables" WHERE "deliverables"."project_id" = ?  [["project_id", 2]]
+  [1m[36mRubric Load (0.1ms)[0m  [1mSELECT "rubrics".* FROM "rubrics" WHERE "rubrics"."project_id" = ?[0m  [["project_id", "2"]]
+  [1m[35mLesson Load (0.1ms)[0m  SELECT "lessons".* FROM "lessons" INNER JOIN "learnings" ON "lessons"."id" = "learnings"."lesson_id" WHERE "learnings"."project_id" = ?  [["project_id", 2]]
+  Rendered projects/index.html.erb within layouts/application (11.7ms)
+  Rendered layouts/_header.html.erb (6.7ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 470ms (Views: 468.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/projects" for ::1 at 2018-08-03 13:22:27 -0500
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mProject Load (0.1ms)[0m  SELECT "projects".* FROM "projects"  ORDER BY "projects"."sort" ASC
+  [1m[36mDeliverable Load (0.1ms)[0m  [1mSELECT "deliverables".* FROM "deliverables" WHERE "deliverables"."project_id" = ?[0m  [["project_id", 1]]
+  [1m[35mRubric Load (0.1ms)[0m  SELECT "rubrics".* FROM "rubrics" WHERE "rubrics"."project_id" = ?  [["project_id", "1"]]
+  [1m[36mLesson Load (0.1ms)[0m  [1mSELECT "lessons".* FROM "lessons" INNER JOIN "learnings" ON "lessons"."id" = "learnings"."lesson_id" WHERE "learnings"."project_id" = ?[0m  [["project_id", 1]]
+  [1m[35mDeliverable Load (0.1ms)[0m  SELECT "deliverables".* FROM "deliverables" WHERE "deliverables"."project_id" = ?  [["project_id", 3]]
+  [1m[36mRubric Load (0.1ms)[0m  [1mSELECT "rubrics".* FROM "rubrics" WHERE "rubrics"."project_id" = ?[0m  [["project_id", "3"]]
+  [1m[35mLesson Load (0.1ms)[0m  SELECT "lessons".* FROM "lessons" INNER JOIN "learnings" ON "lessons"."id" = "learnings"."lesson_id" WHERE "learnings"."project_id" = ?  [["project_id", 3]]
+  [1m[36mDeliverable Load (0.1ms)[0m  [1mSELECT "deliverables".* FROM "deliverables" WHERE "deliverables"."project_id" = ?[0m  [["project_id", 2]]
+  [1m[35mRubric Load (0.1ms)[0m  SELECT "rubrics".* FROM "rubrics" WHERE "rubrics"."project_id" = ?  [["project_id", "2"]]
+  [1m[36mLesson Load (0.1ms)[0m  [1mSELECT "lessons".* FROM "lessons" INNER JOIN "learnings" ON "lessons"."id" = "learnings"."lesson_id" WHERE "learnings"."project_id" = ?[0m  [["project_id", 2]]
+  Rendered projects/index.html.erb within layouts/application (10.1ms)
+  Rendered layouts/_header.html.erb (3.4ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 393ms (Views: 392.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/projects" for ::1 at 2018-08-03 13:22:46 -0500
+Processing by ProjectsController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT "projects".* FROM "projects"  ORDER BY "projects"."sort" ASC[0m
+  [1m[35mDeliverable Load (0.1ms)[0m  SELECT "deliverables".* FROM "deliverables" WHERE "deliverables"."project_id" = ?  [["project_id", 1]]
+  [1m[36mRubric Load (0.1ms)[0m  [1mSELECT "rubrics".* FROM "rubrics" WHERE "rubrics"."project_id" = ?[0m  [["project_id", "1"]]
+  [1m[35mLesson Load (0.1ms)[0m  SELECT "lessons".* FROM "lessons" INNER JOIN "learnings" ON "lessons"."id" = "learnings"."lesson_id" WHERE "learnings"."project_id" = ?  [["project_id", 1]]
+  [1m[36mDeliverable Load (0.1ms)[0m  [1mSELECT "deliverables".* FROM "deliverables" WHERE "deliverables"."project_id" = ?[0m  [["project_id", 3]]
+  [1m[35mRubric Load (0.1ms)[0m  SELECT "rubrics".* FROM "rubrics" WHERE "rubrics"."project_id" = ?  [["project_id", "3"]]
+  [1m[36mLesson Load (0.1ms)[0m  [1mSELECT "lessons".* FROM "lessons" INNER JOIN "learnings" ON "lessons"."id" = "learnings"."lesson_id" WHERE "learnings"."project_id" = ?[0m  [["project_id", 3]]
+  [1m[35mDeliverable Load (0.1ms)[0m  SELECT "deliverables".* FROM "deliverables" WHERE "deliverables"."project_id" = ?  [["project_id", 2]]
+  [1m[36mRubric Load (0.1ms)[0m  [1mSELECT "rubrics".* FROM "rubrics" WHERE "rubrics"."project_id" = ?[0m  [["project_id", "2"]]
+  [1m[35mLesson Load (0.5ms)[0m  SELECT "lessons".* FROM "lessons" INNER JOIN "learnings" ON "lessons"."id" = "learnings"."lesson_id" WHERE "learnings"."project_id" = ?  [["project_id", 2]]
+  Rendered projects/index.html.erb within layouts/application (13.4ms)
+  Rendered layouts/_header.html.erb (3.9ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 484ms (Views: 482.1ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/projects" for ::1 at 2018-08-03 13:22:56 -0500
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mProject Load (0.2ms)[0m  SELECT "projects".* FROM "projects"  ORDER BY "projects"."sort" ASC
+  [1m[36mDeliverable Load (0.1ms)[0m  [1mSELECT "deliverables".* FROM "deliverables" WHERE "deliverables"."project_id" = ?[0m  [["project_id", 1]]
+  [1m[35mRubric Load (0.1ms)[0m  SELECT "rubrics".* FROM "rubrics" WHERE "rubrics"."project_id" = ?  [["project_id", "1"]]
+  [1m[36mLesson Load (0.1ms)[0m  [1mSELECT "lessons".* FROM "lessons" INNER JOIN "learnings" ON "lessons"."id" = "learnings"."lesson_id" WHERE "learnings"."project_id" = ?[0m  [["project_id", 1]]
+  [1m[35mDeliverable Load (0.1ms)[0m  SELECT "deliverables".* FROM "deliverables" WHERE "deliverables"."project_id" = ?  [["project_id", 3]]
+  [1m[36mRubric Load (0.1ms)[0m  [1mSELECT "rubrics".* FROM "rubrics" WHERE "rubrics"."project_id" = ?[0m  [["project_id", "3"]]
+  [1m[35mLesson Load (0.0ms)[0m  SELECT "lessons".* FROM "lessons" INNER JOIN "learnings" ON "lessons"."id" = "learnings"."lesson_id" WHERE "learnings"."project_id" = ?  [["project_id", 3]]
+  [1m[36mDeliverable Load (0.1ms)[0m  [1mSELECT "deliverables".* FROM "deliverables" WHERE "deliverables"."project_id" = ?[0m  [["project_id", 2]]
+  [1m[35mRubric Load (0.1ms)[0m  SELECT "rubrics".* FROM "rubrics" WHERE "rubrics"."project_id" = ?  [["project_id", "2"]]
+  [1m[36mLesson Load (0.1ms)[0m  [1mSELECT "lessons".* FROM "lessons" INNER JOIN "learnings" ON "lessons"."id" = "learnings"."lesson_id" WHERE "learnings"."project_id" = ?[0m  [["project_id", 2]]
+  Rendered projects/index.html.erb within layouts/application (8.2ms)
+  Rendered layouts/_header.html.erb (6.1ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 768ms (Views: 767.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/projects" for ::1 at 2018-08-03 13:24:34 -0500
+Processing by ProjectsController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT "projects".* FROM "projects"  ORDER BY "projects"."sort" ASC[0m
+  [1m[35mDeliverable Load (0.1ms)[0m  SELECT "deliverables".* FROM "deliverables" WHERE "deliverables"."project_id" = ?  [["project_id", 1]]
+  [1m[36mRubric Load (0.1ms)[0m  [1mSELECT "rubrics".* FROM "rubrics" WHERE "rubrics"."project_id" = ?[0m  [["project_id", "1"]]
+  [1m[35mLesson Load (0.1ms)[0m  SELECT "lessons".* FROM "lessons" INNER JOIN "learnings" ON "lessons"."id" = "learnings"."lesson_id" WHERE "learnings"."project_id" = ?  [["project_id", 1]]
+  [1m[36mDeliverable Load (0.2ms)[0m  [1mSELECT "deliverables".* FROM "deliverables" WHERE "deliverables"."project_id" = ?[0m  [["project_id", 3]]
+  [1m[35mRubric Load (0.1ms)[0m  SELECT "rubrics".* FROM "rubrics" WHERE "rubrics"."project_id" = ?  [["project_id", "3"]]
+  [1m[36mLesson Load (0.1ms)[0m  [1mSELECT "lessons".* FROM "lessons" INNER JOIN "learnings" ON "lessons"."id" = "learnings"."lesson_id" WHERE "learnings"."project_id" = ?[0m  [["project_id", 3]]
+  [1m[35mDeliverable Load (0.1ms)[0m  SELECT "deliverables".* FROM "deliverables" WHERE "deliverables"."project_id" = ?  [["project_id", 2]]
+  [1m[36mRubric Load (0.1ms)[0m  [1mSELECT "rubrics".* FROM "rubrics" WHERE "rubrics"."project_id" = ?[0m  [["project_id", "2"]]
+  [1m[35mLesson Load (0.1ms)[0m  SELECT "lessons".* FROM "lessons" INNER JOIN "learnings" ON "lessons"."id" = "learnings"."lesson_id" WHERE "learnings"."project_id" = ?  [["project_id", 2]]
+  Rendered projects/index.html.erb within layouts/application (14.5ms)
+  Rendered layouts/_header.html.erb (12.7ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 690ms (Views: 687.6ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/lessons" for ::1 at 2018-08-03 13:25:39 -0500
+Processing by LessonsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mLesson Load (0.3ms)[0m  SELECT "lessons".* FROM "lessons"  ORDER BY "lessons"."sort" ASC
+  [1m[36mReading Load (1.0ms)[0m  [1mSELECT "readings".* FROM "readings" WHERE "readings"."lesson_id" = ?[0m  [["lesson_id", 3]]
+  [1m[35mHomework Load (0.4ms)[0m  SELECT "homeworks".* FROM "homeworks" WHERE "homeworks"."lesson_id" = ?  [["lesson_id", 3]]
+  [1m[36mAssignment Load (0.2ms)[0m  [1mSELECT "assignments".* FROM "assignments" INNER JOIN "learnings" ON "assignments"."id" = "learnings"."assignment_id" WHERE "learnings"."lesson_id" = ?[0m  [["lesson_id", 3]]
+  [1m[35mReading Load (0.1ms)[0m  SELECT "readings".* FROM "readings" WHERE "readings"."lesson_id" = ?  [["lesson_id", 1]]
+  [1m[36mHomework Load (0.1ms)[0m  [1mSELECT "homeworks".* FROM "homeworks" WHERE "homeworks"."lesson_id" = ?[0m  [["lesson_id", 1]]
+  [1m[35mAssignment Load (0.1ms)[0m  SELECT "assignments".* FROM "assignments" INNER JOIN "learnings" ON "assignments"."id" = "learnings"."assignment_id" WHERE "learnings"."lesson_id" = ?  [["lesson_id", 1]]
+  [1m[36mReading Load (0.1ms)[0m  [1mSELECT "readings".* FROM "readings" WHERE "readings"."lesson_id" = ?[0m  [["lesson_id", 2]]
+  [1m[35mHomework Load (0.0ms)[0m  SELECT "homeworks".* FROM "homeworks" WHERE "homeworks"."lesson_id" = ?  [["lesson_id", 2]]
+  [1m[36mAssignment Load (0.1ms)[0m  [1mSELECT "assignments".* FROM "assignments" INNER JOIN "learnings" ON "assignments"."id" = "learnings"."assignment_id" WHERE "learnings"."lesson_id" = ?[0m  [["lesson_id", 2]]
+  Rendered lessons/index.html.erb within layouts/application (45.9ms)
+  Rendered layouts/_header.html.erb (8.0ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 596ms (Views: 591.9ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/lessons" for ::1 at 2018-08-03 13:28:19 -0500
+Processing by LessonsController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mLesson Load (0.7ms)[0m  [1mSELECT "lessons".* FROM "lessons"  ORDER BY "lessons"."sort" ASC[0m
+  [1m[35mReading Load (0.1ms)[0m  SELECT "readings".* FROM "readings" WHERE "readings"."lesson_id" = ?  [["lesson_id", 3]]
+  [1m[36mHomework Load (0.1ms)[0m  [1mSELECT "homeworks".* FROM "homeworks" WHERE "homeworks"."lesson_id" = ?[0m  [["lesson_id", 3]]
+  [1m[35mAssignment Load (0.1ms)[0m  SELECT "assignments".* FROM "assignments" INNER JOIN "learnings" ON "assignments"."id" = "learnings"."assignment_id" WHERE "learnings"."lesson_id" = ?  [["lesson_id", 3]]
+  [1m[36mReading Load (0.1ms)[0m  [1mSELECT "readings".* FROM "readings" WHERE "readings"."lesson_id" = ?[0m  [["lesson_id", 1]]
+  [1m[35mHomework Load (0.1ms)[0m  SELECT "homeworks".* FROM "homeworks" WHERE "homeworks"."lesson_id" = ?  [["lesson_id", 1]]
+  [1m[36mAssignment Load (0.1ms)[0m  [1mSELECT "assignments".* FROM "assignments" INNER JOIN "learnings" ON "assignments"."id" = "learnings"."assignment_id" WHERE "learnings"."lesson_id" = ?[0m  [["lesson_id", 1]]
+  [1m[35mReading Load (0.1ms)[0m  SELECT "readings".* FROM "readings" WHERE "readings"."lesson_id" = ?  [["lesson_id", 2]]
+  [1m[36mHomework Load (0.1ms)[0m  [1mSELECT "homeworks".* FROM "homeworks" WHERE "homeworks"."lesson_id" = ?[0m  [["lesson_id", 2]]
+  [1m[35mAssignment Load (0.1ms)[0m  SELECT "assignments".* FROM "assignments" INNER JOIN "learnings" ON "assignments"."id" = "learnings"."assignment_id" WHERE "learnings"."lesson_id" = ?  [["lesson_id", 2]]
+  Rendered lessons/index.html.erb within layouts/application (17.6ms)
+  Rendered layouts/_header.html.erb (9.9ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 650ms (Views: 642.3ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/lessons" for ::1 at 2018-08-03 13:29:02 -0500
+Processing by LessonsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mLesson Load (0.3ms)[0m  SELECT "lessons".* FROM "lessons"  ORDER BY "lessons"."sort" ASC
+  [1m[36mReading Load (0.1ms)[0m  [1mSELECT "readings".* FROM "readings" WHERE "readings"."lesson_id" = ?[0m  [["lesson_id", 3]]
+  [1m[35mHomework Load (0.1ms)[0m  SELECT "homeworks".* FROM "homeworks" WHERE "homeworks"."lesson_id" = ?  [["lesson_id", 3]]
+  [1m[36mAssignment Load (0.1ms)[0m  [1mSELECT "assignments".* FROM "assignments" INNER JOIN "learnings" ON "assignments"."id" = "learnings"."assignment_id" WHERE "learnings"."lesson_id" = ?[0m  [["lesson_id", 3]]
+  [1m[35mReading Load (0.1ms)[0m  SELECT "readings".* FROM "readings" WHERE "readings"."lesson_id" = ?  [["lesson_id", 1]]
+  [1m[36mHomework Load (0.1ms)[0m  [1mSELECT "homeworks".* FROM "homeworks" WHERE "homeworks"."lesson_id" = ?[0m  [["lesson_id", 1]]
+  [1m[35mAssignment Load (0.1ms)[0m  SELECT "assignments".* FROM "assignments" INNER JOIN "learnings" ON "assignments"."id" = "learnings"."assignment_id" WHERE "learnings"."lesson_id" = ?  [["lesson_id", 1]]
+  [1m[36mReading Load (0.1ms)[0m  [1mSELECT "readings".* FROM "readings" WHERE "readings"."lesson_id" = ?[0m  [["lesson_id", 2]]
+  [1m[35mHomework Load (0.1ms)[0m  SELECT "homeworks".* FROM "homeworks" WHERE "homeworks"."lesson_id" = ?  [["lesson_id", 2]]
+  [1m[36mAssignment Load (0.1ms)[0m  [1mSELECT "assignments".* FROM "assignments" INNER JOIN "learnings" ON "assignments"."id" = "learnings"."assignment_id" WHERE "learnings"."lesson_id" = ?[0m  [["lesson_id", 2]]
+  Rendered lessons/index.html.erb within layouts/application (11.7ms)
+  Rendered layouts/_header.html.erb (8.3ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 503ms (Views: 501.3ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/lessons" for ::1 at 2018-08-03 13:29:22 -0500
+Processing by LessonsController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mLesson Load (0.2ms)[0m  [1mSELECT "lessons".* FROM "lessons"  ORDER BY "lessons"."sort" ASC[0m
+  [1m[35mReading Load (0.1ms)[0m  SELECT "readings".* FROM "readings" WHERE "readings"."lesson_id" = ?  [["lesson_id", 3]]
+  [1m[36mHomework Load (0.1ms)[0m  [1mSELECT "homeworks".* FROM "homeworks" WHERE "homeworks"."lesson_id" = ?[0m  [["lesson_id", 3]]
+  [1m[35mAssignment Load (0.1ms)[0m  SELECT "assignments".* FROM "assignments" INNER JOIN "learnings" ON "assignments"."id" = "learnings"."assignment_id" WHERE "learnings"."lesson_id" = ?  [["lesson_id", 3]]
+  [1m[36mReading Load (0.1ms)[0m  [1mSELECT "readings".* FROM "readings" WHERE "readings"."lesson_id" = ?[0m  [["lesson_id", 1]]
+  [1m[35mHomework Load (0.1ms)[0m  SELECT "homeworks".* FROM "homeworks" WHERE "homeworks"."lesson_id" = ?  [["lesson_id", 1]]
+  [1m[36mAssignment Load (0.0ms)[0m  [1mSELECT "assignments".* FROM "assignments" INNER JOIN "learnings" ON "assignments"."id" = "learnings"."assignment_id" WHERE "learnings"."lesson_id" = ?[0m  [["lesson_id", 1]]
+  [1m[35mReading Load (0.1ms)[0m  SELECT "readings".* FROM "readings" WHERE "readings"."lesson_id" = ?  [["lesson_id", 2]]
+  [1m[36mHomework Load (0.1ms)[0m  [1mSELECT "homeworks".* FROM "homeworks" WHERE "homeworks"."lesson_id" = ?[0m  [["lesson_id", 2]]
+  [1m[35mAssignment Load (0.1ms)[0m  SELECT "assignments".* FROM "assignments" INNER JOIN "learnings" ON "assignments"."id" = "learnings"."assignment_id" WHERE "learnings"."lesson_id" = ?  [["lesson_id", 2]]
+  Rendered lessons/index.html.erb within layouts/application (7.8ms)
+  Rendered layouts/_header.html.erb (6.6ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 413ms (Views: 411.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/projects" for ::1 at 2018-08-03 13:29:23 -0500
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mProject Load (0.2ms)[0m  SELECT "projects".* FROM "projects"  ORDER BY "projects"."sort" ASC
+  [1m[36mDeliverable Load (0.1ms)[0m  [1mSELECT "deliverables".* FROM "deliverables" WHERE "deliverables"."project_id" = ?[0m  [["project_id", 1]]
+  [1m[35mRubric Load (0.1ms)[0m  SELECT "rubrics".* FROM "rubrics" WHERE "rubrics"."project_id" = ?  [["project_id", "1"]]
+  [1m[36mLesson Load (0.1ms)[0m  [1mSELECT "lessons".* FROM "lessons" INNER JOIN "learnings" ON "lessons"."id" = "learnings"."lesson_id" WHERE "learnings"."project_id" = ?[0m  [["project_id", 1]]
+  [1m[35mDeliverable Load (0.1ms)[0m  SELECT "deliverables".* FROM "deliverables" WHERE "deliverables"."project_id" = ?  [["project_id", 3]]
+  [1m[36mRubric Load (0.1ms)[0m  [1mSELECT "rubrics".* FROM "rubrics" WHERE "rubrics"."project_id" = ?[0m  [["project_id", "3"]]
+  [1m[35mLesson Load (0.1ms)[0m  SELECT "lessons".* FROM "lessons" INNER JOIN "learnings" ON "lessons"."id" = "learnings"."lesson_id" WHERE "learnings"."project_id" = ?  [["project_id", 3]]
+  [1m[36mDeliverable Load (0.1ms)[0m  [1mSELECT "deliverables".* FROM "deliverables" WHERE "deliverables"."project_id" = ?[0m  [["project_id", 2]]
+  [1m[35mRubric Load (0.1ms)[0m  SELECT "rubrics".* FROM "rubrics" WHERE "rubrics"."project_id" = ?  [["project_id", "2"]]
+  [1m[36mLesson Load (0.1ms)[0m  [1mSELECT "lessons".* FROM "lessons" INNER JOIN "learnings" ON "lessons"."id" = "learnings"."lesson_id" WHERE "learnings"."project_id" = ?[0m  [["project_id", 2]]
+  Rendered projects/index.html.erb within layouts/application (10.4ms)
+  Rendered layouts/_header.html.erb (3.7ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 403ms (Views: 401.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/submissions" for ::1 at 2018-08-03 13:29:31 -0500
+Processing by SubmissionsController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mSubmission Load (13.9ms)[0m  [1mSELECT "submissions".* FROM "submissions" WHERE "submissions"."archive" = ?  ORDER BY "submissions"."created_at" DESC[0m  [["archive", "f"]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mAssignment Load (6.4ms)[0m  [1mSELECT "assignments".* FROM "assignments" INNER JOIN "portals" ON "assignments"."id" = "portals"."assignment_id" WHERE "portals"."submission_id" = ?[0m  [["submission_id", 10]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mAssignment Load (0.1ms)[0m  [1mSELECT "assignments".* FROM "assignments" INNER JOIN "portals" ON "assignments"."id" = "portals"."assignment_id" WHERE "portals"."submission_id" = ?[0m  [["submission_id", 9]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mAssignment Load (0.1ms)[0m  [1mSELECT "assignments".* FROM "assignments" INNER JOIN "portals" ON "assignments"."id" = "portals"."assignment_id" WHERE "portals"."submission_id" = ?[0m  [["submission_id", 8]]
+  Rendered submissions/index.html.erb within layouts/application (101.2ms)
+  Rendered layouts/_header2.html.erb (5.5ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 545ms (Views: 507.2ms | ActiveRecord: 21.5ms)
+
+
+Started GET "/lessons" for ::1 at 2018-08-03 13:29:33 -0500
+Processing by LessonsController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mLesson Load (0.3ms)[0m  [1mSELECT "lessons".* FROM "lessons"  ORDER BY "lessons"."sort" ASC[0m
+  [1m[35mReading Load (0.1ms)[0m  SELECT "readings".* FROM "readings" WHERE "readings"."lesson_id" = ?  [["lesson_id", 3]]
+  [1m[36mHomework Load (0.1ms)[0m  [1mSELECT "homeworks".* FROM "homeworks" WHERE "homeworks"."lesson_id" = ?[0m  [["lesson_id", 3]]
+  [1m[35mAssignment Load (0.1ms)[0m  SELECT "assignments".* FROM "assignments" INNER JOIN "learnings" ON "assignments"."id" = "learnings"."assignment_id" WHERE "learnings"."lesson_id" = ?  [["lesson_id", 3]]
+  [1m[36mReading Load (0.1ms)[0m  [1mSELECT "readings".* FROM "readings" WHERE "readings"."lesson_id" = ?[0m  [["lesson_id", 1]]
+  [1m[35mHomework Load (0.1ms)[0m  SELECT "homeworks".* FROM "homeworks" WHERE "homeworks"."lesson_id" = ?  [["lesson_id", 1]]
+  [1m[36mAssignment Load (0.1ms)[0m  [1mSELECT "assignments".* FROM "assignments" INNER JOIN "learnings" ON "assignments"."id" = "learnings"."assignment_id" WHERE "learnings"."lesson_id" = ?[0m  [["lesson_id", 1]]
+  [1m[35mReading Load (0.1ms)[0m  SELECT "readings".* FROM "readings" WHERE "readings"."lesson_id" = ?  [["lesson_id", 2]]
+  [1m[36mHomework Load (0.1ms)[0m  [1mSELECT "homeworks".* FROM "homeworks" WHERE "homeworks"."lesson_id" = ?[0m  [["lesson_id", 2]]
+  [1m[35mAssignment Load (0.1ms)[0m  SELECT "assignments".* FROM "assignments" INNER JOIN "learnings" ON "assignments"."id" = "learnings"."assignment_id" WHERE "learnings"."lesson_id" = ?  [["lesson_id", 2]]
+  Rendered lessons/index.html.erb within layouts/application (13.2ms)
+  Rendered layouts/_header.html.erb (4.1ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 357ms (Views: 355.1ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/submissions" for ::1 at 2018-08-03 13:29:35 -0500
+Processing by SubmissionsController#index as HTML
+  [1m[36mUser Load (3.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mSubmission Load (0.3ms)[0m  SELECT "submissions".* FROM "submissions" WHERE "submissions"."archive" = ?  ORDER BY "submissions"."created_at" DESC  [["archive", "f"]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mAssignment Load (0.4ms)[0m  SELECT "assignments".* FROM "assignments" INNER JOIN "portals" ON "assignments"."id" = "portals"."assignment_id" WHERE "portals"."submission_id" = ?  [["submission_id", 10]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mAssignment Load (0.3ms)[0m  SELECT "assignments".* FROM "assignments" INNER JOIN "portals" ON "assignments"."id" = "portals"."assignment_id" WHERE "portals"."submission_id" = ?  [["submission_id", 9]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mAssignment Load (0.4ms)[0m  SELECT "assignments".* FROM "assignments" INNER JOIN "portals" ON "assignments"."id" = "portals"."assignment_id" WHERE "portals"."submission_id" = ?  [["submission_id", 8]]
+  Rendered submissions/index.html.erb within layouts/application (14.7ms)
+  Rendered layouts/_header2.html.erb (3.4ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 384ms (Views: 372.5ms | ActiveRecord: 5.3ms)
+
+
+Started GET "/gradebook" for ::1 at 2018-08-03 13:29:39 -0500
+
+ActionController::RoutingError (No route matches [GET] "/gradebook"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.10) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.10) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.10) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.10) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.10) lib/rack/lock.rb:17:in `call'
+  rack (1.6.10) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.10) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/chrislam/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /Users/chrislam/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /Users/chrislam/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb (5.3ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.2ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.6ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (141.4ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (63.0ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (138.9ms)
+
+
+Started GET "/pages/graded" for ::1 at 2018-08-03 13:29:44 -0500
+Processing by PagesController#graded as HTML
+  [1m[36mSubmission Load (0.2ms)[0m  [1mSELECT "submissions".* FROM "submissions" WHERE "submissions"."archive" = ?  ORDER BY "submissions"."created_at" DESC[0m  [["archive", "f"]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mAssignment Load (0.1ms)[0m  [1mSELECT "assignments".* FROM "assignments" INNER JOIN "portals" ON "assignments"."id" = "portals"."assignment_id" WHERE "portals"."submission_id" = ?[0m  [["submission_id", 7]]
+  Rendered pages/graded.html.erb within layouts/application (3.6ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered layouts/_header2.html.erb (4.2ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 323ms (Views: 321.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/pages/gradebook" for ::1 at 2018-08-03 13:29:45 -0500
+Processing by PagesController#gradebook as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mSubmission Load (0.2ms)[0m  SELECT "submissions".* FROM "submissions" WHERE "submissions"."user_id" = ?  ORDER BY "submissions"."created_at" DESC  [["user_id", 1]]
+  [1m[36mAssignment Load (0.2ms)[0m  [1mSELECT "assignments".* FROM "assignments" INNER JOIN "portals" ON "assignments"."id" = "portals"."assignment_id" WHERE "portals"."submission_id" = ?[0m  [["submission_id", 10]]
+  [1m[35mAssignment Load (0.1ms)[0m  SELECT "assignments".* FROM "assignments" INNER JOIN "portals" ON "assignments"."id" = "portals"."assignment_id" WHERE "portals"."submission_id" = ?  [["submission_id", 9]]
+  [1m[36mAssignment Load (0.1ms)[0m  [1mSELECT "assignments".* FROM "assignments" INNER JOIN "portals" ON "assignments"."id" = "portals"."assignment_id" WHERE "portals"."submission_id" = ?[0m  [["submission_id", 8]]
+  [1m[35mAssignment Load (0.1ms)[0m  SELECT "assignments".* FROM "assignments" INNER JOIN "portals" ON "assignments"."id" = "portals"."assignment_id" WHERE "portals"."submission_id" = ?  [["submission_id", 7]]
+  [1m[36mAssignment Load (0.1ms)[0m  [1mSELECT "assignments".* FROM "assignments" INNER JOIN "portals" ON "assignments"."id" = "portals"."assignment_id" WHERE "portals"."submission_id" = ?[0m  [["submission_id", 6]]
+  [1m[35mAssignment Load (0.1ms)[0m  SELECT "assignments".* FROM "assignments" INNER JOIN "portals" ON "assignments"."id" = "portals"."assignment_id" WHERE "portals"."submission_id" = ?  [["submission_id", 2]]
+  [1m[36mAssignment Load (0.1ms)[0m  [1mSELECT "assignments".* FROM "assignments" INNER JOIN "portals" ON "assignments"."id" = "portals"."assignment_id" WHERE "portals"."submission_id" = ?[0m  [["submission_id", 1]]
+  [1m[35m (0.2ms)[0m  SELECT SUM("submissions"."score") FROM "submissions" WHERE "submissions"."user_id" = ?  [["user_id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT SUM("assignments"."score") FROM "assignments"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("submissions"."score") FROM "submissions" WHERE "submissions"."user_id" = ?  [["user_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT SUM("assignments"."score") FROM "assignments"[0m
+  [1m[35mAssignment Load (0.2ms)[0m  SELECT "assignments".* FROM "assignments"
+  Rendered pages/gradebook.html.erb within layouts/application (193.6ms)
+  Rendered layouts/_header.html.erb (4.4ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 545ms (Views: 539.6ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/pages/gradebook" for ::1 at 2018-08-03 13:29:46 -0500
+Processing by PagesController#gradebook as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mSubmission Load (0.1ms)[0m  SELECT "submissions".* FROM "submissions" WHERE "submissions"."user_id" = ?  ORDER BY "submissions"."created_at" DESC  [["user_id", 1]]
+  [1m[36mAssignment Load (0.1ms)[0m  [1mSELECT "assignments".* FROM "assignments" INNER JOIN "portals" ON "assignments"."id" = "portals"."assignment_id" WHERE "portals"."submission_id" = ?[0m  [["submission_id", 10]]
+  [1m[35mAssignment Load (0.1ms)[0m  SELECT "assignments".* FROM "assignments" INNER JOIN "portals" ON "assignments"."id" = "portals"."assignment_id" WHERE "portals"."submission_id" = ?  [["submission_id", 9]]
+  [1m[36mAssignment Load (0.2ms)[0m  [1mSELECT "assignments".* FROM "assignments" INNER JOIN "portals" ON "assignments"."id" = "portals"."assignment_id" WHERE "portals"."submission_id" = ?[0m  [["submission_id", 8]]
+  [1m[35mAssignment Load (0.1ms)[0m  SELECT "assignments".* FROM "assignments" INNER JOIN "portals" ON "assignments"."id" = "portals"."assignment_id" WHERE "portals"."submission_id" = ?  [["submission_id", 7]]
+  [1m[36mAssignment Load (0.1ms)[0m  [1mSELECT "assignments".* FROM "assignments" INNER JOIN "portals" ON "assignments"."id" = "portals"."assignment_id" WHERE "portals"."submission_id" = ?[0m  [["submission_id", 6]]
+  [1m[35mAssignment Load (0.1ms)[0m  SELECT "assignments".* FROM "assignments" INNER JOIN "portals" ON "assignments"."id" = "portals"."assignment_id" WHERE "portals"."submission_id" = ?  [["submission_id", 2]]
+  [1m[36mAssignment Load (0.1ms)[0m  [1mSELECT "assignments".* FROM "assignments" INNER JOIN "portals" ON "assignments"."id" = "portals"."assignment_id" WHERE "portals"."submission_id" = ?[0m  [["submission_id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT SUM("submissions"."score") FROM "submissions" WHERE "submissions"."user_id" = ?  [["user_id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT SUM("assignments"."score") FROM "assignments"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("submissions"."score") FROM "submissions" WHERE "submissions"."user_id" = ?  [["user_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT SUM("assignments"."score") FROM "assignments"[0m
+  [1m[35mAssignment Load (0.1ms)[0m  SELECT "assignments".* FROM "assignments"
+  Rendered pages/gradebook.html.erb within layouts/application (12.1ms)
+  Rendered layouts/_header.html.erb (3.9ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 347ms (Views: 344.5ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/assets/hw-53b9c2ecc18592642595bf6127abffcfed424e73d55561c7485d1ac3cd32d0c9.png" for ::1 at 2018-08-03 13:29:46 -0500
+
+
+Started GET "/submissions/new" for ::1 at 2018-08-03 13:30:25 -0500
+Processing by SubmissionsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mAssignment Load (0.2ms)[0m  SELECT "assignments".* FROM "assignments"  ORDER BY "assignments"."deadline" ASC
+  Rendered submissions/_assignment_step.html.erb (2.4ms)
+  Rendered submissions/_form.html.erb (6.0ms)
+  Rendered submissions/new.html.erb within layouts/application (8.3ms)
+  Rendered layouts/_header.html.erb (3.8ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 362ms (Views: 357.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/submissions/new" for ::1 at 2018-08-03 13:31:19 -0500
+Processing by SubmissionsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mAssignment Load (0.2ms)[0m  SELECT "assignments".* FROM "assignments"  ORDER BY "assignments"."deadline" ASC
+  Rendered submissions/_assignment_step.html.erb (1.4ms)
+  Rendered submissions/_form.html.erb (4.4ms)
+  Rendered submissions/new.html.erb within layouts/application (5.7ms)
+  Rendered layouts/_header.html.erb (7.6ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 491ms (Views: 489.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/submissions/new" for ::1 at 2018-08-03 13:31:41 -0500
+Processing by SubmissionsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mAssignment Load (0.4ms)[0m  SELECT "assignments".* FROM "assignments"  ORDER BY "assignments"."deadline" ASC
+  Rendered submissions/_assignment_step.html.erb (2.6ms)
+  Rendered submissions/_form.html.erb (4.6ms)
+  Rendered submissions/new.html.erb within layouts/application (6.4ms)
+  Rendered layouts/_header.html.erb (7.9ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 563ms (Views: 561.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/submissions/new" for ::1 at 2018-08-03 13:31:54 -0500
+Processing by SubmissionsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mAssignment Load (0.2ms)[0m  SELECT "assignments".* FROM "assignments"  ORDER BY "assignments"."deadline" ASC
+  Rendered submissions/_assignment_step.html.erb (1.7ms)
+  Rendered submissions/_form.html.erb (3.6ms)
+  Rendered submissions/new.html.erb within layouts/application (5.3ms)
+  Rendered layouts/_header.html.erb (6.7ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 529ms (Views: 526.2ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/submissions" for ::1 at 2018-08-03 13:32:07 -0500
+Processing by SubmissionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"P4A6X2yyuRmk48kvdtYrJdwJ7ke+7wJYe2xhAi7serEtbtfx3+zpPVG6aHRO4wZbSORQPRofSti2dbpUOvLZ5A==", "submission"=>{"assignment_ids"=>["", "1"]}, "commit"=>"Continue"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mAssignment Load (0.2ms)[0m  SELECT  "assignments".* FROM "assignments" WHERE "assignments"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered submissions/_content_step.html.erb (5.7ms)
+  Rendered submissions/_form.html.erb (8.8ms)
+  Rendered submissions/new.html.erb within layouts/application (10.1ms)
+  Rendered layouts/_header.html.erb (4.1ms)
+  Rendered layouts/_footer.html.erb (10.3ms)
+Completed 200 OK in 437ms (Views: 428.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/attachments-e41e6f6fb7b4735fafb14ef777088dd3738ae0c1ea3e1938d8a172db38b261d8.png" for ::1 at 2018-08-03 13:32:07 -0500
+
+
+Started GET "/submissions/new" for ::1 at 2018-08-03 13:32:13 -0500
+Processing by SubmissionsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mAssignment Load (0.2ms)[0m  SELECT  "assignments".* FROM "assignments" WHERE "assignments"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered submissions/_content_step.html.erb (4.4ms)
+  Rendered submissions/_form.html.erb (7.9ms)
+  Rendered submissions/new.html.erb within layouts/application (14.4ms)
+  Rendered layouts/_header.html.erb (4.0ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 425ms (Views: 419.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/submissions/new" for ::1 at 2018-08-03 13:32:29 -0500
+Processing by SubmissionsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mAssignment Load (0.1ms)[0m  SELECT  "assignments".* FROM "assignments" WHERE "assignments"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered submissions/_content_step.html.erb (3.2ms)
+  Rendered submissions/_form.html.erb (4.7ms)
+  Rendered submissions/new.html.erb within layouts/application (5.9ms)
+  Rendered layouts/_header.html.erb (8.2ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 469ms (Views: 465.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/submissions/new" for ::1 at 2018-08-03 13:32:58 -0500
+Processing by SubmissionsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mAssignment Load (0.1ms)[0m  SELECT  "assignments".* FROM "assignments" WHERE "assignments"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered submissions/_content_step.html.erb (4.0ms)
+  Rendered submissions/_form.html.erb (5.8ms)
+  Rendered submissions/new.html.erb within layouts/application (8.1ms)
+  Rendered layouts/_header.html.erb (8.1ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 498ms (Views: 494.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/submissions/new" for ::1 at 2018-08-03 13:33:23 -0500
+Processing by SubmissionsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mAssignment Load (0.1ms)[0m  SELECT  "assignments".* FROM "assignments" WHERE "assignments"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered submissions/_content_step.html.erb (3.4ms)
+  Rendered submissions/_form.html.erb (5.0ms)
+  Rendered submissions/new.html.erb within layouts/application (6.3ms)
+  Rendered layouts/_header.html.erb (3.6ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 381ms (Views: 377.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/submissions/new" for ::1 at 2018-08-03 13:33:42 -0500
+Processing by SubmissionsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mAssignment Load (0.2ms)[0m  SELECT  "assignments".* FROM "assignments" WHERE "assignments"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered submissions/_content_step.html.erb (4.9ms)
+  Rendered submissions/_form.html.erb (7.5ms)
+  Rendered submissions/new.html.erb within layouts/application (9.7ms)
+  Rendered layouts/_header.html.erb (3.5ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 426ms (Views: 422.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/submissions/new" for ::1 at 2018-08-03 13:34:13 -0500
+Processing by SubmissionsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mAssignment Load (0.1ms)[0m  SELECT  "assignments".* FROM "assignments" WHERE "assignments"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered submissions/_content_step.html.erb (4.9ms)
+  Rendered submissions/_form.html.erb (6.9ms)
+  Rendered submissions/new.html.erb within layouts/application (8.8ms)
+  Rendered layouts/_header.html.erb (7.4ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 518ms (Views: 514.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/submissions/new" for ::1 at 2018-08-03 13:34:59 -0500
+Processing by SubmissionsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mAssignment Load (0.2ms)[0m  SELECT  "assignments".* FROM "assignments" WHERE "assignments"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered submissions/_content_step.html.erb (4.9ms)
+  Rendered submissions/_form.html.erb (7.2ms)
+  Rendered submissions/new.html.erb within layouts/application (8.3ms)
+  Rendered layouts/_header.html.erb (3.7ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 425ms (Views: 420.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/submissions/new" for ::1 at 2018-08-03 13:35:26 -0500
+Processing by SubmissionsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mAssignment Load (0.1ms)[0m  SELECT  "assignments".* FROM "assignments" WHERE "assignments"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered submissions/_content_step.html.erb (3.9ms)
+  Rendered submissions/_form.html.erb (5.7ms)
+  Rendered submissions/new.html.erb within layouts/application (7.2ms)
+  Rendered layouts/_header.html.erb (3.5ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 387ms (Views: 383.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/submissions/new" for ::1 at 2018-08-03 13:35:50 -0500
+Processing by SubmissionsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mAssignment Load (0.1ms)[0m  SELECT  "assignments".* FROM "assignments" WHERE "assignments"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered submissions/_content_step.html.erb (5.0ms)
+  Rendered submissions/_form.html.erb (7.6ms)
+  Rendered submissions/new.html.erb within layouts/application (9.1ms)
+  Rendered layouts/_header.html.erb (3.4ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 1076ms (Views: 1072.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.self-9cc953de49ce0acd95826305937a15eb80a9505e82645baf08ed8a3b60643680.css?body=1" for ::1 at 2018-08-03 13:35:51 -0500
+
+
+Started GET "/submissions/new" for ::1 at 2018-08-03 13:36:17 -0500
+Processing by SubmissionsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mAssignment Load (0.1ms)[0m  SELECT  "assignments".* FROM "assignments" WHERE "assignments"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered submissions/_content_step.html.erb (4.5ms)
+  Rendered submissions/_form.html.erb (6.4ms)
+  Rendered submissions/new.html.erb within layouts/application (9.1ms)
+  Rendered layouts/_header.html.erb (8.5ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 498ms (Views: 495.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/submissions/new" for ::1 at 2018-08-03 13:36:55 -0500
+Processing by SubmissionsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mAssignment Load (0.1ms)[0m  SELECT  "assignments".* FROM "assignments" WHERE "assignments"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered submissions/_content_step.html.erb (3.4ms)
+  Rendered submissions/_form.html.erb (5.0ms)
+  Rendered submissions/new.html.erb within layouts/application (6.1ms)
+  Rendered layouts/_header.html.erb (4.6ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 415ms (Views: 412.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/submissions/new" for ::1 at 2018-08-03 13:37:23 -0500
+Processing by SubmissionsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mAssignment Load (0.1ms)[0m  SELECT  "assignments".* FROM "assignments" WHERE "assignments"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered submissions/_content_step.html.erb (5.4ms)
+  Rendered submissions/_form.html.erb (7.5ms)
+  Rendered submissions/new.html.erb within layouts/application (9.3ms)
+  Rendered layouts/_header.html.erb (20.3ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 499ms (Views: 495.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/submissions/new" for ::1 at 2018-08-03 13:38:17 -0500
+Processing by SubmissionsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mAssignment Load (0.1ms)[0m  SELECT  "assignments".* FROM "assignments" WHERE "assignments"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered submissions/_content_step.html.erb (3.5ms)
+  Rendered submissions/_form.html.erb (5.0ms)
+  Rendered submissions/new.html.erb within layouts/application (6.6ms)
+  Rendered layouts/_header.html.erb (3.9ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 494ms (Views: 491.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/submissions/new" for ::1 at 2018-08-03 13:40:37 -0500
+Processing by SubmissionsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mAssignment Load (0.1ms)[0m  SELECT  "assignments".* FROM "assignments" WHERE "assignments"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered submissions/_content_step.html.erb (7.7ms)
+  Rendered submissions/_form.html.erb (11.9ms)
+  Rendered submissions/new.html.erb within layouts/application (13.7ms)
+  Rendered layouts/_header.html.erb (8.4ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 1055ms (Views: 1051.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.self-47381e2979d7f763f02e462e348c28a103d0442d3f2978ca36939e99e697d8b2.css?body=1" for ::1 at 2018-08-03 13:40:38 -0500
+
+
+Started GET "/submissions/new" for ::1 at 2018-08-03 13:41:31 -0500
+Processing by SubmissionsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mAssignment Load (0.1ms)[0m  SELECT  "assignments".* FROM "assignments" WHERE "assignments"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered submissions/_content_step.html.erb (4.0ms)
+  Rendered submissions/_form.html.erb (7.3ms)
+  Rendered submissions/new.html.erb within layouts/application (9.3ms)
+  Rendered layouts/_header.html.erb (8.5ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 910ms (Views: 904.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.self-c2f724ce0dae719fe4b32b5d9461d7293a0dfddc0d9cec9bcf64f4b724873226.css?body=1" for ::1 at 2018-08-03 13:41:32 -0500
+
+
+Started POST "/submissions" for ::1 at 2018-08-03 13:41:38 -0500
+Processing by SubmissionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Ay6IoherZHtYPotLVS+gibn8qgbrAFLbEtvmW6DIaA0RwGUMpPU0X61nKhBtGo33LREUfE/wGlvfwj0NtNbLWA==", "submission"=>{"assignment_name"=>"asdfa", "description"=>""}, "back_button"=>"Back"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mAssignment Load (0.1ms)[0m  SELECT  "assignments".* FROM "assignments" WHERE "assignments"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mAssignment Load (0.3ms)[0m  [1mSELECT "assignments".* FROM "assignments"  ORDER BY "assignments"."deadline" ASC[0m
+  Rendered submissions/_assignment_step.html.erb (1.1ms)
+  Rendered submissions/_form.html.erb (3.8ms)
+  Rendered submissions/new.html.erb within layouts/application (4.9ms)
+  Rendered layouts/_header.html.erb (3.6ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 390ms (Views: 385.8ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/submissions" for ::1 at 2018-08-03 13:41:43 -0500
+Processing by SubmissionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yLQ/SmFjJ/lVJ0VwXpyN13T54bpGE/RrxbPBAXrl81/aWtLk0j133aB+5CtmqaCp4BRfwOLjvOsIqhpXbvtQCg==", "submission"=>{"assignment_ids"=>["", "1"]}, "commit"=>"Continue"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mAssignment Load (0.1ms)[0m  [1mSELECT  "assignments".* FROM "assignments" WHERE "assignments"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered submissions/_content_step.html.erb (3.9ms)
+  Rendered submissions/_form.html.erb (6.6ms)
+  Rendered submissions/new.html.erb within layouts/application (7.9ms)
+  Rendered layouts/_header.html.erb (3.3ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 407ms (Views: 403.6ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/submissions" for ::1 at 2018-08-03 13:41:47 -0500
+Processing by SubmissionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3HAEFS4LbDQPEVvxF4M5GzsDc2QgDLT8/0yv45l1WSLOnum7nVU8EPpI+qovthRlr+7NHoT8/HwyVXS1jWv6dw==", "submission"=>{"assignment_name"=>"asdfa", "description"=>""}, "back_button"=>"Back"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mAssignment Load (0.1ms)[0m  [1mSELECT  "assignments".* FROM "assignments" WHERE "assignments"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mAssignment Load (0.2ms)[0m  SELECT "assignments".* FROM "assignments"  ORDER BY "assignments"."deadline" ASC
+  Rendered submissions/_assignment_step.html.erb (0.9ms)
+  Rendered submissions/_form.html.erb (2.5ms)
+  Rendered submissions/new.html.erb within layouts/application (3.6ms)
+  Rendered layouts/_header.html.erb (3.6ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 347ms (Views: 343.3ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/submissions" for ::1 at 2018-08-03 13:41:54 -0500
+Processing by SubmissionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VDtEtfoZpFS+9oRptK0hmR0qqaKD7QwcmfJcOdUdL7FG1akbSUf0cEuvJTKMmAzniccX2CcdRJxU64dvwQOM5A==", "submission"=>{"assignment_ids"=>["", "1"]}, "commit"=>"Continue"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mAssignment Load (0.1ms)[0m  SELECT  "assignments".* FROM "assignments" WHERE "assignments"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered submissions/_content_step.html.erb (3.6ms)
+  Rendered submissions/_form.html.erb (6.3ms)
+  Rendered submissions/new.html.erb within layouts/application (7.9ms)
+  Rendered layouts/_header.html.erb (3.7ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 354ms (Views: 351.2ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/submissions" for ::1 at 2018-08-03 13:42:15 -0500
+Processing by SubmissionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VDtEtfoZpFS+9oRptK0hmR0qqaKD7QwcmfJcOdUdL7FG1akbSUf0cEuvJTKMmAzniccX2CcdRJxU64dvwQOM5A==", "submission"=>{"assignment_ids"=>["", "1"]}, "commit"=>"Continue"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mAssignment Load (0.1ms)[0m  SELECT  "assignments".* FROM "assignments" WHERE "assignments"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.3ms)[0m  INSERT INTO "submissions" ("assignment_name", "description", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["assignment_name", "asdfa"], ["description", ""], ["user_id", 1], ["created_at", "2018-08-03 18:42:15.401581"], ["updated_at", "2018-08-03 18:42:15.401581"]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "portals" ("assignment_id", "submission_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["assignment_id", 1], ["submission_id", 11], ["created_at", "2018-08-03 18:42:15.406395"], ["updated_at", "2018-08-03 18:42:15.406395"]]
+  [1m[35m (2.6ms)[0m  commit transaction
+Redirected to http://localhost:3000/submissions/11
+Completed 302 Found in 16ms (ActiveRecord: 4.3ms)
+
+
+Started GET "/submissions/11" for ::1 at 2018-08-03 13:42:16 -0500
+Processing by SubmissionsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mSubmission Load (0.2ms)[0m  [1mSELECT  "submissions".* FROM "submissions" WHERE "submissions"."id" = ? LIMIT 1[0m  [["id", 11]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mAssignment Load (0.1ms)[0m  SELECT "assignments".* FROM "assignments" INNER JOIN "portals" ON "assignments"."id" = "portals"."assignment_id" WHERE "portals"."submission_id" = ?  [["submission_id", 11]]
+  Rendered submissions/_grade.html.erb (22.2ms)
+  Rendered submissions/show.html.erb within layouts/application (27.6ms)
+  Rendered layouts/_header.html.erb (8.9ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 517ms (Views: 514.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/submissions/new" for ::1 at 2018-08-03 13:42:24 -0500
+Processing by SubmissionsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mAssignment Load (0.2ms)[0m  SELECT "assignments".* FROM "assignments"  ORDER BY "assignments"."deadline" ASC
+  Rendered submissions/_assignment_step.html.erb (1.6ms)
+  Rendered submissions/_form.html.erb (11.4ms)
+  Rendered submissions/new.html.erb within layouts/application (13.3ms)
+  Rendered layouts/_header.html.erb (8.1ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 535ms (Views: 531.3ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/submissions" for ::1 at 2018-08-03 13:42:29 -0500
+Processing by SubmissionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5EsWmrr1mBnxJCu+nwYAPLXIXaQ/8An/EIZ+1Co/S/D2pfs0CavIPQR9iuWnMy1CISXj3psAQX/dn6WCPiHopQ==", "submission"=>{"assignment_ids"=>["", "1"]}, "commit"=>"Continue"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mAssignment Load (0.1ms)[0m  SELECT  "assignments".* FROM "assignments" WHERE "assignments"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered submissions/_content_step.html.erb (3.9ms)
+  Rendered submissions/_form.html.erb (7.3ms)
+  Rendered submissions/new.html.erb within layouts/application (8.7ms)
+  Rendered layouts/_header.html.erb (4.6ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 356ms (Views: 353.0ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/submissions" for ::1 at 2018-08-03 13:42:34 -0500
+Processing by SubmissionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"04GcBnmtyJL2rqaXwqweDSLKUfAJbouWDbcUiNVBr53Bb3GoyvOYtgP3B8z6mTNztifviq2ewxbArs/ewV8MyA==", "submission"=>{"assignment_name"=>"asdfa", "description"=>""}, "back_button"=>"Back"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mAssignment Load (0.1ms)[0m  SELECT  "assignments".* FROM "assignments" WHERE "assignments"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mAssignment Load (0.3ms)[0m  [1mSELECT "assignments".* FROM "assignments"  ORDER BY "assignments"."deadline" ASC[0m
+  Rendered submissions/_assignment_step.html.erb (1.3ms)
+  Rendered submissions/_form.html.erb (3.7ms)
+  Rendered submissions/new.html.erb within layouts/application (5.0ms)
+  Rendered layouts/_header.html.erb (3.7ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 363ms (Views: 358.8ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/submissions" for ::1 at 2018-08-03 13:42:36 -0500
+Processing by SubmissionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VaiyHIYvchdEJ5LDuqYfqXSJIFMVjdGP6HnCD1GsP5hHRl+yNXEiM7F+M5iCkzLX4GSeKbF9mQ8lYBlZRbKczQ==", "submission"=>{"assignment_ids"=>["", "1"]}, "commit"=>"Continue"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mAssignment Load (0.1ms)[0m  [1mSELECT  "assignments".* FROM "assignments" WHERE "assignments"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered submissions/_content_step.html.erb (2.4ms)
+  Rendered submissions/_form.html.erb (3.9ms)
+  Rendered submissions/new.html.erb within layouts/application (5.0ms)
+  Rendered layouts/_header.html.erb (4.1ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 356ms (Views: 352.0ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/submissions" for ::1 at 2018-08-03 13:43:00 -0500
+Processing by SubmissionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GI1I3hBVzcn9v7lEMJkQcWSQlf+LB0+zXyvg7IyHCbEKY6Vwowud7QjmGB8IrD0P8H0rhS/3BzOSMju6mJmq5A==", "submission"=>{"assignment_name"=>"asdfa", "description"=>""}, "back_button"=>"Back"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mAssignment Load (0.1ms)[0m  [1mSELECT  "assignments".* FROM "assignments" WHERE "assignments"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mAssignment Load (0.4ms)[0m  SELECT "assignments".* FROM "assignments"  ORDER BY "assignments"."deadline" ASC
+  Rendered submissions/_assignment_step.html.erb (1.6ms)
+  Rendered submissions/_form.html.erb (3.7ms)
+  Rendered submissions/new.html.erb within layouts/application (4.7ms)
+  Rendered layouts/_header.html.erb (5.1ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 345ms (Views: 340.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/submissions/new" for ::1 at 2018-08-03 13:44:25 -0500
+Processing by SubmissionsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mAssignment Load (0.2ms)[0m  SELECT  "assignments".* FROM "assignments" WHERE "assignments"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered submissions/_assignment_step.html.erb (1.1ms)
+  Rendered submissions/_form.html.erb (4.3ms)
+  Rendered submissions/new.html.erb within layouts/application (6.3ms)
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 0.3ms)
+
+SyntaxError (/Users/chrislam/tecm4400/app/views/submissions/_assignment_step.html.erb:11: syntax error, unexpected tLABEL, expecting '='
+...d=( assignment.deadline, class: 'due' );@output_buffer.safe_...
+...                               ^):
+  app/views/submissions/_assignment_step.html.erb:11: syntax error, unexpected tLABEL, expecting '='
+  app/views/submissions/_form.html.erb:15:in `block in _app_views_submissions__form_html_erb___1890720434689693412_70338615929660'
+  app/views/submissions/_form.html.erb:1:in `_app_views_submissions__form_html_erb___1890720434689693412_70338615929660'
+  app/views/submissions/new.html.erb:3:in `_app_views_submissions_new_html_erb___4128297962124008679_70338560672860'
+
+
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.3ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.8ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (82.2ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.8ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (68.0ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (157.8ms)
+
+
+Started GET "/submissions/new" for ::1 at 2018-08-03 13:44:26 -0500
+Processing by SubmissionsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mAssignment Load (0.6ms)[0m  SELECT  "assignments".* FROM "assignments" WHERE "assignments"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered submissions/_assignment_step.html.erb (2.6ms)
+  Rendered submissions/_form.html.erb (17.4ms)
+  Rendered submissions/new.html.erb within layouts/application (20.2ms)
+Completed 500 Internal Server Error in 49ms (ActiveRecord: 1.0ms)
+
+SyntaxError (/Users/chrislam/tecm4400/app/views/submissions/_assignment_step.html.erb:11: syntax error, unexpected tLABEL, expecting '='
+...d=( assignment.deadline, class: 'due' );@output_buffer.safe_...
+...                               ^):
+  app/views/submissions/_assignment_step.html.erb:11: syntax error, unexpected tLABEL, expecting '='
+  app/views/submissions/_form.html.erb:15:in `block in _app_views_submissions__form_html_erb___1890720434689693412_70338615929660'
+  app/views/submissions/_form.html.erb:1:in `_app_views_submissions__form_html_erb___1890720434689693412_70338615929660'
+  app/views/submissions/new.html.erb:3:in `_app_views_submissions_new_html_erb___4128297962124008679_70338560672860'
+
+
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.2ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (16.3ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (87.6ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (59.4ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (133.2ms)
+
+
+Started GET "/submissions/new" for ::1 at 2018-08-03 13:44:47 -0500
+Processing by SubmissionsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mAssignment Load (0.1ms)[0m  SELECT  "assignments".* FROM "assignments" WHERE "assignments"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mAssignment Load (0.2ms)[0m  [1mSELECT "assignments".* FROM "assignments"  ORDER BY "assignments"."deadline" ASC[0m
+  Rendered submissions/_assignment_step.html.erb (1.8ms)
+  Rendered submissions/_form.html.erb (3.8ms)
+  Rendered submissions/new.html.erb within layouts/application (5.0ms)
+  Rendered layouts/_header.html.erb (8.6ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 910ms (Views: 905.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.self-836b7e12d0d4b85ec3a871b0f9a4883fe03bcc91637d5805740a33a225eff36c.css?body=1" for ::1 at 2018-08-03 13:44:48 -0500
+
+
+Started GET "/assignments" for ::1 at 2018-08-03 13:45:02 -0500
+Processing by AssignmentsController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mAssignment Load (0.2ms)[0m  [1mSELECT "assignments".* FROM "assignments" WHERE "assignments"."status" = ?  ORDER BY "assignments"."deadline" ASC[0m  [["status", "Open"]]
+  Rendered assignments/index.html.erb within layouts/application (9.3ms)
+  Rendered layouts/_header2.html.erb (4.5ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 414ms (Views: 411.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assignments/1/edit" for ::1 at 2018-08-03 13:45:05 -0500
+Processing by AssignmentsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mAssignment Load (0.3ms)[0m  SELECT  "assignments".* FROM "assignments" WHERE "assignments"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mLesson Load (0.4ms)[0m  SELECT "lessons".* FROM "lessons"
+  [1m[36m (0.1ms)[0m  [1mSELECT "lessons".id FROM "lessons" INNER JOIN "learnings" ON "lessons"."id" = "learnings"."lesson_id" WHERE "learnings"."assignment_id" = ?[0m  [["assignment_id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "lessons".id FROM "lessons" INNER JOIN "learnings" ON "lessons"."id" = "learnings"."lesson_id" WHERE "learnings"."assignment_id" = ?  [["assignment_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "lessons".id FROM "lessons" INNER JOIN "learnings" ON "lessons"."id" = "learnings"."lesson_id" WHERE "learnings"."assignment_id" = ?[0m  [["assignment_id", 1]]
+  Rendered assignments/_form.html.erb (13.0ms)
+  Rendered assignments/edit.html.erb within layouts/application (15.3ms)
+  Rendered layouts/_header.html.erb (4.3ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 455ms (Views: 452.0ms | ActiveRecord: 1.0ms)
+
+
+Started PATCH "/assignments/1" for ::1 at 2018-08-03 13:45:15 -0500
+Processing by AssignmentsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bbYkRYBVDui8Tn+0LeRM3EZ8503dUiyIp/lAQAParS5/WMnrMwtezEkX3u8V0WGi0pFZN3miZAhq4JsWF8QOew==", "assignment"=>{"status"=>"Open", "name"=>"Lightening Round Presentations", "description"=>"def", "deadline"=>"May  2, 2018", "fake_score"=>"11", "score"=>"11", "delete_document"=>"0", "lesson_ids"=>[""]}, "commit"=>"Create Assignment", "id"=>"1"}
+  [1m[35mAssignment Load (0.4ms)[0m  SELECT  "assignments".* FROM "assignments" WHERE "assignments"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mLesson Load (0.2ms)[0m  [1mSELECT "lessons".* FROM "lessons" INNER JOIN "learnings" ON "lessons"."id" = "learnings"."lesson_id" WHERE "learnings"."assignment_id" = ?[0m  [["assignment_id", 1]]
+  [1m[35mSQL (0.4ms)[0m  UPDATE "assignments" SET "name" = ?, "updated_at" = ? WHERE "assignments"."id" = ?  [["name", "Lightening Round Presentations"], ["updated_at", "2018-08-03 18:45:15.532134"], ["id", 1]]
+  [1m[36m (3.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/assignments
+Completed 302 Found in 15ms (ActiveRecord: 4.3ms)
+
+
+Started GET "/assignments" for ::1 at 2018-08-03 13:45:15 -0500
+Processing by AssignmentsController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mAssignment Load (0.2ms)[0m  [1mSELECT "assignments".* FROM "assignments" WHERE "assignments"."status" = ?  ORDER BY "assignments"."deadline" ASC[0m  [["status", "Open"]]
+  Rendered assignments/index.html.erb within layouts/application (3.5ms)
+  Rendered layouts/_header2.html.erb (5.4ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 429ms (Views: 427.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/submissions" for ::1 at 2018-08-03 13:45:21 -0500
+Processing by SubmissionsController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mSubmission Load (0.2ms)[0m  [1mSELECT "submissions".* FROM "submissions" WHERE "submissions"."archive" = ?  ORDER BY "submissions"."created_at" DESC[0m  [["archive", "f"]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mAssignment Load (0.1ms)[0m  [1mSELECT "assignments".* FROM "assignments" INNER JOIN "portals" ON "assignments"."id" = "portals"."assignment_id" WHERE "portals"."submission_id" = ?[0m  [["submission_id", 11]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mAssignment Load (0.1ms)[0m  [1mSELECT "assignments".* FROM "assignments" INNER JOIN "portals" ON "assignments"."id" = "portals"."assignment_id" WHERE "portals"."submission_id" = ?[0m  [["submission_id", 10]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mAssignment Load (0.1ms)[0m  [1mSELECT "assignments".* FROM "assignments" INNER JOIN "portals" ON "assignments"."id" = "portals"."assignment_id" WHERE "portals"."submission_id" = ?[0m  [["submission_id", 9]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mAssignment Load (0.1ms)[0m  [1mSELECT "assignments".* FROM "assignments" INNER JOIN "portals" ON "assignments"."id" = "portals"."assignment_id" WHERE "portals"."submission_id" = ?[0m  [["submission_id", 8]]
+  Rendered submissions/index.html.erb within layouts/application (9.0ms)
+  Rendered layouts/_header2.html.erb (5.5ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 339ms (Views: 336.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/submissions/new" for ::1 at 2018-08-03 13:45:22 -0500
+Processing by SubmissionsController#new as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mAssignment Load (0.1ms)[0m  [1mSELECT  "assignments".* FROM "assignments" WHERE "assignments"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mAssignment Load (0.2ms)[0m  SELECT "assignments".* FROM "assignments"  ORDER BY "assignments"."deadline" ASC
+  Rendered submissions/_assignment_step.html.erb (0.8ms)
+  Rendered submissions/_form.html.erb (2.5ms)
+  Rendered submissions/new.html.erb within layouts/application (4.1ms)
+  Rendered layouts/_header.html.erb (4.9ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 351ms (Views: 347.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/submissions/new" for ::1 at 2018-08-03 13:45:22 -0500
+Processing by SubmissionsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mAssignment Load (0.1ms)[0m  SELECT  "assignments".* FROM "assignments" WHERE "assignments"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mAssignment Load (0.3ms)[0m  [1mSELECT "assignments".* FROM "assignments"  ORDER BY "assignments"."deadline" ASC[0m
+  Rendered submissions/_assignment_step.html.erb (1.5ms)
+  Rendered submissions/_form.html.erb (4.6ms)
+  Rendered submissions/new.html.erb within layouts/application (6.6ms)
+  Rendered layouts/_header.html.erb (3.6ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 434ms (Views: 428.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assignments" for ::1 at 2018-08-03 13:45:37 -0500
+Processing by AssignmentsController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mAssignment Load (0.1ms)[0m  [1mSELECT "assignments".* FROM "assignments" WHERE "assignments"."status" = ?  ORDER BY "assignments"."deadline" ASC[0m  [["status", "Open"]]
+  Rendered assignments/index.html.erb within layouts/application (2.4ms)
+  Rendered layouts/_header2.html.erb (3.5ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 330ms (Views: 327.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assignments/new" for ::1 at 2018-08-03 13:45:38 -0500
+Processing by AssignmentsController#new as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mLesson Load (0.3ms)[0m  [1mSELECT "lessons".* FROM "lessons"[0m
+  Rendered assignments/_form.html.erb (4.4ms)
+  Rendered assignments/new.html.erb within layouts/application (6.4ms)
+  Rendered layouts/_header.html.erb (3.4ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 336ms (Views: 334.2ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/assignments" for ::1 at 2018-08-03 13:45:47 -0500
+Processing by AssignmentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"oGO3GNRvoxK37Zg/mFqiUqiKh2J7Wm4c+Or0n55dyf6yjVq2ZzHzNkK0OWSgb48sPGc5GN+qJpw18y/JikNqqw==", "assignment"=>{"status"=>"Open", "name"=>"HERE IS another assignment thing ", "description"=>"", "deadline"=>"", "fake_score"=>"", "score"=>"", "lesson_ids"=>[""]}, "commit"=>"Create Assignment"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "assignments" ("name", "description", "status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "HERE IS another assignment thing "], ["description", ""], ["status", "Open"], ["created_at", "2018-08-03 18:45:47.891980"], ["updated_at", "2018-08-03 18:45:47.891980"]]
+  [1m[36m (2.4ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/assignments/2
+Completed 302 Found in 11ms (ActiveRecord: 3.3ms)
+
+
+Started GET "/assignments/2" for ::1 at 2018-08-03 13:45:47 -0500
+Processing by AssignmentsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mAssignment Load (0.1ms)[0m  SELECT  "assignments".* FROM "assignments" WHERE "assignments"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mLesson Load (0.1ms)[0m  [1mSELECT "lessons".* FROM "lessons" INNER JOIN "learnings" ON "lessons"."id" = "learnings"."lesson_id" WHERE "learnings"."assignment_id" = ?[0m  [["assignment_id", 2]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered assignments/show.html.erb within layouts/application (9.2ms)
+  Rendered layouts/_header.html.erb (3.4ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 368ms (Views: 366.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/calendar-show-36325371ad2dc4892b022adc0f4c702c4acc53a9d6c39198b1a7831e83112821.png" for ::1 at 2018-08-03 13:45:48 -0500
+
+
+Started GET "/assets/checks-f6d39150ae9bd7d03d7a5c1f3c7b11c51d7ca9da885ad1967446869d56d1067a.png" for ::1 at 2018-08-03 13:45:48 -0500
+
+
+Started GET "/assets/point-3f70c25c2c53ae128880b7ed3f194652eb05c2f6806d00d3b3e26bddc5ecf0eb.png" for ::1 at 2018-08-03 13:45:48 -0500
+
+
+Started GET "/assignments/2/edit" for ::1 at 2018-08-03 13:45:52 -0500
+Processing by AssignmentsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mAssignment Load (0.1ms)[0m  [1mSELECT  "assignments".* FROM "assignments" WHERE "assignments"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mLesson Load (0.2ms)[0m  [1mSELECT "lessons".* FROM "lessons"[0m
+  [1m[35m (0.1ms)[0m  SELECT "lessons".id FROM "lessons" INNER JOIN "learnings" ON "lessons"."id" = "learnings"."lesson_id" WHERE "learnings"."assignment_id" = ?  [["assignment_id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "lessons".id FROM "lessons" INNER JOIN "learnings" ON "lessons"."id" = "learnings"."lesson_id" WHERE "learnings"."assignment_id" = ?[0m  [["assignment_id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "lessons".id FROM "lessons" INNER JOIN "learnings" ON "lessons"."id" = "learnings"."lesson_id" WHERE "learnings"."assignment_id" = ?  [["assignment_id", 2]]
+  Rendered assignments/_form.html.erb (5.5ms)
+  Rendered assignments/edit.html.erb within layouts/application (7.8ms)
+  Rendered layouts/_header.html.erb (3.5ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 358ms (Views: 355.6ms | ActiveRecord: 0.5ms)
+
+
+Started PATCH "/assignments/2" for ::1 at 2018-08-03 13:45:57 -0500
+Processing by AssignmentsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4HhMAL4VliGDrz/o9VJCisWPQ8+cU39NQUBAQNkqfjPylqGuDUvGBXb2nrPNZ2/0UWL9tTijN82MWZsWzTTdZg==", "assignment"=>{"status"=>"Open", "name"=>"HERE IS another assignment thing ", "description"=>"", "deadline"=>"09/06/2018", "fake_score"=>"", "score"=>"", "lesson_ids"=>[""]}, "commit"=>"Create Assignment", "id"=>"2"}
+  [1m[36mAssignment Load (0.1ms)[0m  [1mSELECT  "assignments".* FROM "assignments" WHERE "assignments"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mLesson Load (0.1ms)[0m  SELECT "lessons".* FROM "lessons" INNER JOIN "learnings" ON "lessons"."id" = "learnings"."lesson_id" WHERE "learnings"."assignment_id" = ?  [["assignment_id", 2]]
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "assignments" SET "deadline" = ?, "updated_at" = ? WHERE "assignments"."id" = ?[0m  [["deadline", "2018-09-06"], ["updated_at", "2018-08-03 18:45:57.624380"], ["id", 2]]
+  [1m[35m (2.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/assignments
+Completed 302 Found in 8ms (ActiveRecord: 2.7ms)
+
+
+Started GET "/assignments" for ::1 at 2018-08-03 13:45:57 -0500
+Processing by AssignmentsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mAssignment Load (0.1ms)[0m  SELECT "assignments".* FROM "assignments" WHERE "assignments"."status" = ?  ORDER BY "assignments"."deadline" ASC  [["status", "Open"]]
+  Rendered assignments/index.html.erb within layouts/application (3.3ms)
+  Rendered layouts/_header2.html.erb (5.1ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 352ms (Views: 350.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/submissions" for ::1 at 2018-08-03 13:46:04 -0500
+Processing by SubmissionsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mSubmission Load (0.1ms)[0m  SELECT "submissions".* FROM "submissions" WHERE "submissions"."archive" = ?  ORDER BY "submissions"."created_at" DESC  [["archive", "f"]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mAssignment Load (0.1ms)[0m  SELECT "assignments".* FROM "assignments" INNER JOIN "portals" ON "assignments"."id" = "portals"."assignment_id" WHERE "portals"."submission_id" = ?  [["submission_id", 11]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mAssignment Load (0.1ms)[0m  SELECT "assignments".* FROM "assignments" INNER JOIN "portals" ON "assignments"."id" = "portals"."assignment_id" WHERE "portals"."submission_id" = ?  [["submission_id", 10]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mAssignment Load (0.1ms)[0m  SELECT "assignments".* FROM "assignments" INNER JOIN "portals" ON "assignments"."id" = "portals"."assignment_id" WHERE "portals"."submission_id" = ?  [["submission_id", 9]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mAssignment Load (0.1ms)[0m  SELECT "assignments".* FROM "assignments" INNER JOIN "portals" ON "assignments"."id" = "portals"."assignment_id" WHERE "portals"."submission_id" = ?  [["submission_id", 8]]
+  Rendered submissions/index.html.erb within layouts/application (9.9ms)
+  Rendered layouts/_header2.html.erb (4.7ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 357ms (Views: 353.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/submissions/new" for ::1 at 2018-08-03 13:46:06 -0500
+Processing by SubmissionsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mAssignment Load (0.1ms)[0m  SELECT  "assignments".* FROM "assignments" WHERE "assignments"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mAssignment Load (0.2ms)[0m  [1mSELECT "assignments".* FROM "assignments"  ORDER BY "assignments"."deadline" ASC[0m
+  Rendered submissions/_assignment_step.html.erb (1.3ms)
+  Rendered submissions/_form.html.erb (9.6ms)
+  Rendered submissions/new.html.erb within layouts/application (11.7ms)
+  Rendered layouts/_header.html.erb (4.1ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 365ms (Views: 361.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/submissions/new" for ::1 at 2018-08-03 13:46:06 -0500
+Processing by SubmissionsController#new as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mAssignment Load (0.1ms)[0m  [1mSELECT  "assignments".* FROM "assignments" WHERE "assignments"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mAssignment Load (0.6ms)[0m  SELECT "assignments".* FROM "assignments"  ORDER BY "assignments"."deadline" ASC
+  Rendered submissions/_assignment_step.html.erb (2.0ms)
+  Rendered submissions/_form.html.erb (4.9ms)
+  Rendered submissions/new.html.erb within layouts/application (7.1ms)
+  Rendered layouts/_header.html.erb (4.0ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 387ms (Views: 383.1ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/submissions" for ::1 at 2018-08-03 13:46:28 -0500
+Processing by SubmissionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Mp52cJ2YUddPCZ590CFcuuWNXQr8zioOWVgnk6k3bxYgcJveLsYB87pQPyboFHHEcWDjcFg+Yo6UQfzFvSnMQw==", "submission"=>{"assignment_ids"=>["", "2"]}, "commit"=>"Continue"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mAssignment Load (0.1ms)[0m  SELECT  "assignments".* FROM "assignments" WHERE "assignments"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered submissions/_content_step.html.erb (4.2ms)
+  Rendered submissions/_form.html.erb (8.0ms)
+  Rendered submissions/new.html.erb within layouts/application (9.8ms)
+  Rendered layouts/_header.html.erb (4.2ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 368ms (Views: 365.0ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/submissions" for ::1 at 2018-08-03 13:46:39 -0500
+Processing by SubmissionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ghWzROCELooA3c9aNyG52CmrjK2C0mZIfD8LUT3LxcGQ+17qU9p+rvWEbgEPFJSmvUYy1yYiLsixJtAHKdVmlA==", "submission"=>{"assignment_name"=>"HERE IS another assignment thing ", "description"=>""}, "back_button"=>"Back"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mAssignment Load (0.1ms)[0m  SELECT  "assignments".* FROM "assignments" WHERE "assignments"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mAssignment Load (0.2ms)[0m  [1mSELECT "assignments".* FROM "assignments"  ORDER BY "assignments"."deadline" ASC[0m
+  Rendered submissions/_assignment_step.html.erb (1.3ms)
+  Rendered submissions/_form.html.erb (3.4ms)
+  Rendered submissions/new.html.erb within layouts/application (4.5ms)
+  Rendered layouts/_header.html.erb (4.8ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 357ms (Views: 352.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/submissions/new" for ::1 at 2018-08-03 13:47:01 -0500
+Processing by SubmissionsController#new as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mAssignment Load (0.2ms)[0m  [1mSELECT  "assignments".* FROM "assignments" WHERE "assignments"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mAssignment Load (0.3ms)[0m  SELECT "assignments".* FROM "assignments"  ORDER BY "assignments"."deadline" ASC
+  Rendered submissions/_assignment_step.html.erb (2.6ms)
+  Rendered submissions/_form.html.erb (5.2ms)
+  Rendered submissions/new.html.erb within layouts/application (8.7ms)
+  Rendered layouts/_header.html.erb (8.3ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 511ms (Views: 505.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/submissions/new" for ::1 at 2018-08-03 13:48:37 -0500
+Processing by SubmissionsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mAssignment Load (0.1ms)[0m  SELECT  "assignments".* FROM "assignments" WHERE "assignments"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mAssignment Load (0.2ms)[0m  [1mSELECT "assignments".* FROM "assignments"  ORDER BY "assignments"."deadline" ASC[0m
+  Rendered submissions/_assignment_step.html.erb (2.2ms)
+  Rendered submissions/_form.html.erb (4.9ms)
+  Rendered submissions/new.html.erb within layouts/application (7.4ms)
+Completed 500 Internal Server Error in 384ms (ActiveRecord: 0.5ms)
+
+ActionView::Template::Error (Undefined variable: "$color1".):
+    3: <head>
+    4:   <title>TECM 4400 - Advanced Information Design for Electronic Media,  UNT, Lam, Fall 2018</title>
+    5: 
+    6:   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    7:   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    8:   <%= csrf_meta_tags %>
+    9:    <%= stylesheet_link_tag 'application', 'https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700' %>
+  app/assets/stylesheets/application.scss:517
+  app/views/layouts/application.html.erb:6:in `_app_views_layouts_application_html_erb__813610064352926848_70338604157940'
+
+
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (15.7ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.3ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (87.6ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (1.2ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (64.3ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (141.0ms)
+
+
+Started GET "/submissions/new" for ::1 at 2018-08-03 13:49:14 -0500
+Processing by SubmissionsController#new as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mAssignment Load (0.1ms)[0m  [1mSELECT  "assignments".* FROM "assignments" WHERE "assignments"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mAssignment Load (0.2ms)[0m  SELECT "assignments".* FROM "assignments"  ORDER BY "assignments"."deadline" ASC
+  Rendered submissions/_assignment_step.html.erb (1.2ms)
+  Rendered submissions/_form.html.erb (3.5ms)
+  Rendered submissions/new.html.erb within layouts/application (5.2ms)
+  Rendered layouts/_header.html.erb (10.0ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 936ms (Views: 930.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.self-6d443e9d50ec418222811a4c3903ae87bcc2a5729f4094f17a9ad84766927a29.css?body=1" for ::1 at 2018-08-03 13:49:15 -0500
+
+
+Started GET "/submissions/new" for ::1 at 2018-08-03 13:49:24 -0500
+Processing by SubmissionsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mAssignment Load (0.1ms)[0m  SELECT  "assignments".* FROM "assignments" WHERE "assignments"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mAssignment Load (0.3ms)[0m  [1mSELECT "assignments".* FROM "assignments"  ORDER BY "assignments"."deadline" ASC[0m
+  Rendered submissions/_assignment_step.html.erb (1.6ms)
+  Rendered submissions/_form.html.erb (4.2ms)
+  Rendered submissions/new.html.erb within layouts/application (6.0ms)
+  Rendered layouts/_header.html.erb (6.9ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 883ms (Views: 880.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.self-6bf34f0e311fa42bbfbcbb3962f3906459a2e2db9500e88905aec933d2832ec8.css?body=1" for ::1 at 2018-08-03 13:49:25 -0500
+
+
+Started GET "/submissions/new" for ::1 at 2018-08-03 13:49:27 -0500
+Processing by SubmissionsController#new as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mAssignment Load (0.1ms)[0m  [1mSELECT  "assignments".* FROM "assignments" WHERE "assignments"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mAssignment Load (0.2ms)[0m  SELECT "assignments".* FROM "assignments"  ORDER BY "assignments"."deadline" ASC
+  Rendered submissions/_assignment_step.html.erb (1.1ms)
+  Rendered submissions/_form.html.erb (2.8ms)
+  Rendered submissions/new.html.erb within layouts/application (4.7ms)
+  Rendered layouts/_header.html.erb (4.1ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 440ms (Views: 437.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/submissions/new" for ::1 at 2018-08-03 13:49:34 -0500
+Processing by SubmissionsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mAssignment Load (0.1ms)[0m  SELECT  "assignments".* FROM "assignments" WHERE "assignments"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mAssignment Load (0.2ms)[0m  [1mSELECT "assignments".* FROM "assignments"  ORDER BY "assignments"."deadline" ASC[0m
+  Rendered submissions/_assignment_step.html.erb (1.6ms)
+  Rendered submissions/_form.html.erb (3.1ms)
+  Rendered submissions/new.html.erb within layouts/application (4.5ms)
+  Rendered layouts/_header.html.erb (3.7ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 425ms (Views: 419.6ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/submissions" for ::1 at 2018-08-03 13:49:42 -0500
+Processing by SubmissionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ERg6XRirviMJ6hkSCjfsgB4gPPnWi/C7bT6uEvNAwtUD9tfzq/XuB/yzuEkyAsH+is2Cg3J7uDugJ3VE515hgA==", "submission"=>{"assignment_ids"=>["", "2"]}, "commit"=>"Continue"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mAssignment Load (0.1ms)[0m  [1mSELECT  "assignments".* FROM "assignments" WHERE "assignments"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered submissions/_content_step.html.erb (4.0ms)
+  Rendered submissions/_form.html.erb (7.4ms)
+  Rendered submissions/new.html.erb within layouts/application (8.8ms)
+  Rendered layouts/_header.html.erb (3.8ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 367ms (Views: 363.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/submissions/new" for ::1 at 2018-08-03 13:50:31 -0500
+Processing by SubmissionsController#new as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mAssignment Load (0.1ms)[0m  [1mSELECT  "assignments".* FROM "assignments" WHERE "assignments"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered submissions/_content_step.html.erb (4.3ms)
+  Rendered submissions/_form.html.erb (6.9ms)
+  Rendered submissions/new.html.erb within layouts/application (34.4ms)
+  Rendered layouts/_header.html.erb (6.1ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 536ms (Views: 531.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/submissions/new" for ::1 at 2018-08-03 13:50:32 -0500
+Processing by SubmissionsController#new as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mAssignment Load (0.1ms)[0m  [1mSELECT  "assignments".* FROM "assignments" WHERE "assignments"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered submissions/_content_step.html.erb (2.2ms)
+  Rendered submissions/_form.html.erb (3.9ms)
+  Rendered submissions/new.html.erb within layouts/application (6.0ms)
+  Rendered layouts/_header.html.erb (14.1ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 387ms (Views: 375.9ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/submissions" for ::1 at 2018-08-03 13:50:45 -0500
+Processing by SubmissionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Rms45gXO2tlLRzHR7Wn36eal8qE8lxtUEQu2BJiU00dUhdVItpCK/b4ekIrVXNqXckhM25hnU9TcEm1SjIpwEg==", "submission"=>{"assignment_name"=>"HERE IS another assignment thing ", "description"=>""}, "back_button"=>"Back"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mAssignment Load (0.1ms)[0m  [1mSELECT  "assignments".* FROM "assignments" WHERE "assignments"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mAssignment Load (0.3ms)[0m  SELECT "assignments".* FROM "assignments"  ORDER BY "assignments"."deadline" ASC
+  Rendered submissions/_assignment_step.html.erb (1.6ms)
+  Rendered submissions/_form.html.erb (3.9ms)
+  Rendered submissions/new.html.erb within layouts/application (5.1ms)
+  Rendered layouts/_header.html.erb (3.9ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 349ms (Views: 344.7ms | ActiveRecord: 0.5ms)

@@ -12,15 +12,17 @@ $(function() {
 <% end %>
 
 <p id="notice"><%= notice %></p>
-
+<img style="width:70%; height: auto;" src="https://s3.us-east-2.amazonaws.com/lam-fall/Screen+Shot+2018-08-03+at+1.01.55+PM.png">
 <h1>Course Projects</h1>
 <div class="sortable"">
 
 <% @projects.each_with_sortable_id do |project, sortable_id| %>
     <div class="row" id="<%= sortable_id %>">
         <div class="col-md-8">
+
                 <h2><%= project.name %></h2>
-                <h3>Due: <%= project.due %></h3>
+                <h3><i class="far fa-calendar-alt"></i>
+Due: <%= project.due %></h3>
 
                 <td><%= link_to 'Show', project %></td>
       <% if current_user.try(:admin?) %>
@@ -32,15 +34,27 @@ $(function() {
 
                 <p><%= simple_format project.description.html_safe %></p>
 
-                <h3>Deliverables</h3>
+                <h3><i class="far fa-file"></i> Deliverables</h3>
+            <ul>
                 <% for deliverable in project.deliverables %>
-                <ul><li><%= simple_format deliverable.description.html_safe %></li></ul>
+                <li><%= simple_format deliverable.description.html_safe %></li>
                 <% end %>
+            </ul>
                 
 
-                <h3>Grading Criteria</h3>
+                <h3><i class="fas fa-user-check"></i>
+ Grading Criteria</h3>
+                <ul>
                 <% for rubric in project.rubrics %>
-                <ul><li><%= rubric.description.html_safe %></li></ul>
+                <li><%= rubric.description.html_safe %></li>
+                <% end %>
+                </ul>
+
+                <h3><i class="fas fa-paperclip"></i> Attachments</h3>
+                <% if project.attachment_link? %>
+                    <a target="_blank" href="<%= project.attachment_link %>">View Project Attachments</a>
+                <% else %>
+                    No project attachments
                 <% end %>
                             <hr style ="border-bottom: 1px dotted gray">
 

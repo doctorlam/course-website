@@ -1,20 +1,21 @@
 
 	<h1>Step 1: Choose Assignment</h1>
        <%= hidden_field_tag "submission[assignment_ids][]", nil %>
-          <div class="col-md-6">
 
 	        
          <% Assignment.all.order(:deadline).each do |assignment| %>
         
           <% if assignment.status == "Open" %>
+	           <div class="due">
 
-	            <%= radio_button_tag "submission[assignment_ids][]", assignment.id, @submission.assignment_ids.include?(assignment.id), id: dom_id(assignment), required: 'required'%>
+	            <%= radio_button_tag "submission[assignment_ids][]", assignment.id, @submission.assignment_ids.include?(assignment.id), id: dom_id(assignment), required: 'required' %>
 	            <%= label_tag dom_id(assignment), assignment.name %> | due <%= assignment.deadline %>
+	           </div>
 	          <br />
 	        <% end %>
 	        <% end %>
-	       	 </div>
-	   
+				<br>
+				<br>	   
 
 
 
