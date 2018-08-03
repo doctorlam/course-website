@@ -23975,3 +23975,831 @@ Processing by ProjectsController#index as HTML
   Rendered layouts/_header.html.erb (3.0ms)
   Rendered layouts/_footer.html.erb (0.2ms)
 Completed 200 OK in 371ms (Views: 369.4ms | ActiveRecord: 0.7ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddGoogleToSlidedeck (20180803140712)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (1.0ms)[0m  [1mALTER TABLE "slidedecks" ADD "google" varchar[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20180803140712"]]
+  [1m[36m (3.7ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_bulleted_lists_on_slide_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_bulleted_lists_on_slide_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_bullets_on_bulleted_list_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_bullets_on_bulleted_list_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_commontator_comments_on_cached_votes_down' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_commontator_comments_on_cached_votes_down' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_commontator_comments_on_cached_votes_up' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_commontator_comments_on_cached_votes_up' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_commontator_comments_on_thread_id_and_created_at' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_commontator_comments_on_thread_id_and_created_at' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_commontator_comments_on_c_id_and_c_type_and_t_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_commontator_comments_on_c_id_and_c_type_and_t_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_commontator_subscriptions_on_thread_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_commontator_subscriptions_on_thread_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_commontator_subscriptions_on_s_id_and_s_type_and_t_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_commontator_subscriptions_on_s_id_and_s_type_and_t_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_commontator_threads_on_c_id_and_c_type' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_commontator_threads_on_c_id_and_c_type' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_contentmodules_on_slide_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_contentmodules_on_slide_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_responses_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_responses_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_responses_on_post_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_responses_on_post_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_slides_on_slidedeck_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_slides_on_slidedeck_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_votes_on_votable_id_and_votable_type_and_vote_scope' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_votes_on_votable_id_and_votable_type_and_vote_scope' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_votes_on_voter_id_and_voter_type_and_vote_scope' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_votes_on_voter_id_and_voter_type_and_vote_scope' AND type='index'
+[0m
+
+
+Started GET "/" for ::1 at 2018-08-03 09:08:26 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by AboutsController#index as HTML
+  [1m[35mAbout Load (0.6ms)[0m  SELECT "abouts".* FROM "abouts"
+  Rendered abouts/index.html.erb within layouts/application (7.5ms)
+  Rendered layouts/_header.html.erb (4.4ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 1886ms (Views: 1865.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/assignments.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2018-08-03 09:08:28 -0500
+
+
+Started GET "/assets/ct-navbar.self-e3d798a5404db206b3395261bbf61ccc27ed686ff6bafe476ae6953640056e6f.css?body=1" for ::1 at 2018-08-03 09:08:28 -0500
+
+
+Started GET "/assets/mentionsInput/jquery.mentionsInput.self-2511aab67df639ee93060a073a72bbfa0078d834f18fed2673a7b21c844addef.css?body=1" for ::1 at 2018-08-03 09:08:28 -0500
+
+
+Started GET "/assets/commontator/application.self-d2fefe18a71da57eee2141bce760e3400d33f26242847bd68d9762dbdc4b21de.css?body=1" for ::1 at 2018-08-03 09:08:28 -0500
+
+
+Started GET "/assets/commontator/threads.self-c7e0631c7859f441a94c179f2a67d5f0b99dedd507ad266f11d167bc0e1fafd7.css?body=1" for ::1 at 2018-08-03 09:08:28 -0500
+
+
+Started GET "/assets/commontator/comments.self-2bfcb1b73d3151235b936138553dc40d8a800940c2fdcad6d0444118bdaf7da5.css?body=1" for ::1 at 2018-08-03 09:08:28 -0500
+
+
+Started GET "/assets/courses.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2018-08-03 09:08:28 -0500
+
+
+Started GET "/assets/grades.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2018-08-03 09:08:28 -0500
+
+
+Started GET "/assets/custom.self-aa7b1d26be0d205e73eca4f4c274b715f32c4f0d73fc2fbed95b953deffcfffd.css?body=1" for ::1 at 2018-08-03 09:08:28 -0500
+
+
+Started GET "/assets/lessons.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2018-08-03 09:08:28 -0500
+
+
+Started GET "/assets/pe-icon-7-stroke.self-dc81a269a0dfa8e51f2aefa000e973b13c4df13cbc9000d3da994167b57931b4.css?body=1" for ::1 at 2018-08-03 09:08:28 -0500
+
+
+Started GET "/assets/posts.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2018-08-03 09:08:28 -0500
+
+
+Started GET "/assets/presentations.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2018-08-03 09:08:28 -0500
+
+
+Started GET "/assets/projects.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2018-08-03 09:08:28 -0500
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2018-08-03 09:08:28 -0500
+
+
+Started GET "/assets/submissions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2018-08-03 09:08:28 -0500
+
+
+Started GET "/assets/slick-theme.self-452d6d375ac2071bbf02db6525231d5d8a96105a88bf119d8aa440c18b6c5b26.css?body=1" for ::1 at 2018-08-03 09:08:28 -0500
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for ::1 at 2018-08-03 09:08:28 -0500
+
+
+Started GET "/assets/application.self-2b7e3310ebd53b8aae19c279e0b761d121c48e0102ac6ed5f74b30e84b0a972c.css?body=1" for ::1 at 2018-08-03 09:08:28 -0500
+
+
+Started GET "/assets/jquery-ui/core.self-93be4d22eda916787802a64d8f88b52db8a9027d4ccbbc0942625324a7d12d44.js?body=1" for ::1 at 2018-08-03 09:08:28 -0500
+
+
+Started GET "/assets/plugin.self-36f2ec2747dda8b53ef2782774bc987c34259b612a2b6bd7491a9efda17529a3.js?body=1" for ::1 at 2018-08-03 09:08:28 -0500
+
+
+Started GET "/assets/rails_sortable.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2018-08-03 09:08:28 -0500
+
+
+Started GET "/assets/list.min.self-ec5d1df05bc8ece89c3224cd18265819e5884e973a5f351864734d3beceb38c9.js?body=1" for ::1 at 2018-08-03 09:08:28 -0500
+
+
+Started GET "/assets/jquery.slick.self-d7649569c1d2fabc729e5e594fe12962859610d937af9a8d53815238ddf2ecd3.js?body=1" for ::1 at 2018-08-03 09:08:28 -0500
+
+
+Started GET "/assets/tinymce/rails.self-3613527f3026a4d681f74c6d9489c6835d4b28213c74bf168026b677aa801452.js?body=1" for ::1 at 2018-08-03 09:08:28 -0500
+
+
+Started GET "/assets/tinymce/preinit.self-84328a53e798df12f891eb49871773fd9f925439c8630e9e22423a82ef9e6f89.js?body=1" for ::1 at 2018-08-03 09:08:28 -0500
+
+
+Started GET "/assets/tinymce.self-6a3cf5192354f71615ac51034b3e97c20eda99643fcaf5bbe6d41ad59bd12167.js?body=1" for ::1 at 2018-08-03 09:08:28 -0500
+
+
+Started GET "/assets/bootstrap-datepicker/core.self-c808be6e04274a80c551034d8f8a677b7c3995aec044ea4e6edf9cbbc19ff750.js?body=1" for ::1 at 2018-08-03 09:08:28 -0500
+
+
+Started GET "/assets/bootstrap-datepicker/locales/bootstrap-datepicker-en-CA.self-fb416403a677f41efad9cfc05939c9fe3eeb04627845d85da10d9eee99ba96b2.js?body=1" for ::1 at 2018-08-03 09:08:28 -0500
+
+
+Started GET "/assets/bootstrap-datepicker/locales/bootstrap-datepicker.ar-tn.self-cd89e457cd24dc3422b04345bbd6fc5ac9488e2f62866aaf2d2a1af10e5a9b23.js?body=1" for ::1 at 2018-08-03 09:08:28 -0500
+
+
+Started GET "/assets/bootstrap-datepicker/locales/bootstrap-datepicker.az.self-e95a3ffa2c92ab9fd1c490585f0664f385a0c529f4b462c4e8f1fab196728f98.js?body=1" for ::1 at 2018-08-03 09:08:28 -0500
+
+
+Started GET "/assets/bootstrap-datepicker/locales/bootstrap-datepicker.ar.self-3b6d7157be553c75fb586e9bbcb1caf9ffb68b3e52621ce7a0b4d80b3816a41e.js?body=1" for ::1 at 2018-08-03 09:08:28 -0500
+
+
+Started GET "/assets/bootstrap-datepicker/locales/bootstrap-datepicker.bg.self-962a18198db67ac87d9079f67b2167072ca4588cb77341999c5d6a93334a9143.js?body=1" for ::1 at 2018-08-03 09:08:28 -0500
+
+
+Started GET "/assets/bootstrap-datepicker/locales/bootstrap-datepicker.bn.self-1721dd56eecad5ba2ccd46112769f1ce171642520592f495e2aa0e4531e233f1.js?body=1" for ::1 at 2018-08-03 09:08:28 -0500
+
+
+Started GET "/assets/bootstrap-datepicker/locales/bootstrap-datepicker.br.self-a5688a644e52da4b08865ee27390f8863538bea1e91e9a92a8f5fc0441b69a8a.js?body=1" for ::1 at 2018-08-03 09:08:28 -0500
+
+
+Started GET "/assets/bootstrap-datepicker/locales/bootstrap-datepicker.bs.self-a9f88ff3048eda7a3915d3bc5fee831813bf64357688ca1d71249f190b5b3c2e.js?body=1" for ::1 at 2018-08-03 09:08:28 -0500
+
+
+Started GET "/assets/bootstrap-datepicker/locales/bootstrap-datepicker.ca.self-9a18332afeed3b5d913f701e3a5359a3906fac9f8fe0d8271bfa59b17bef3843.js?body=1" for ::1 at 2018-08-03 09:08:28 -0500
+
+
+Started GET "/assets/bootstrap-datepicker/locales/bootstrap-datepicker.cs.self-48dbd562a4e8c7c2c22eb3b9371ed53dc442e8b25fe253a216200a8506ce972c.js?body=1" for ::1 at 2018-08-03 09:08:28 -0500
+
+
+Started GET "/assets/bootstrap-datepicker/locales/bootstrap-datepicker.cy.self-6269279f98dbec07d08be043c80d3698c8db6da6098298b06c7e9eaca989db3a.js?body=1" for ::1 at 2018-08-03 09:08:28 -0500
+
+
+Started GET "/assets/bootstrap-datepicker/locales/bootstrap-datepicker.el.self-c47144f58a0c79632a13f38f22efd1b9f2d077e4d6ed1184c473b92bb0a17383.js?body=1" for ::1 at 2018-08-03 09:08:28 -0500
+
+
+Started GET "/assets/bootstrap-datepicker/locales/bootstrap-datepicker.en-AU.self-6667a122850dd1f2b2e036bdaad22bc82d7fb3d6f24c0eb0ca5455cbdfae2985.js?body=1" for ::1 at 2018-08-03 09:08:28 -0500
+
+
+Started GET "/assets/bootstrap-datepicker/locales/bootstrap-datepicker.de.self-df52cb73f35b10e81c27da3726fedcb47ce944244b37822f2808191f1b699614.js?body=1" for ::1 at 2018-08-03 09:08:28 -0500
+
+
+Started GET "/assets/bootstrap-datepicker/locales/bootstrap-datepicker.en-NZ.self-e7bff6fcdc1f42c430f5244edebec300ec6789167e45ad0d8c919a0d448a85c2.js?body=1" for ::1 at 2018-08-03 09:08:28 -0500
+
+
+Started GET "/assets/bootstrap-datepicker/locales/bootstrap-datepicker.en-CA.self-c19bf50fb190b7b322f7c8e1d11e21bc315294878a8f103cd8432bc92d8c455c.js?body=1" for ::1 at 2018-08-03 09:08:28 -0500
+
+
+Started GET "/assets/bootstrap-datepicker/locales/bootstrap-datepicker.en-ZA.self-549cd856dbe9789814440b4a2b1ed261958a653716f64283cafd91fe41984ce7.js?body=1" for ::1 at 2018-08-03 09:08:28 -0500
+
+
+Started GET "/assets/bootstrap-datepicker/locales/bootstrap-datepicker.eo.self-bb3c1772c20b81e485802d43cdcda342c29037880fca098f5a82db81c8decae7.js?body=1" for ::1 at 2018-08-03 09:08:28 -0500
+
+
+Started GET "/assets/bootstrap-datepicker/locales/bootstrap-datepicker.et.self-8d6af09ae9e4558db67ad818cac5de0451f7a10dc31a6e2987a715562524c44b.js?body=1" for ::1 at 2018-08-03 09:08:28 -0500
+
+
+Started GET "/assets/bootstrap-datepicker/locales/bootstrap-datepicker.eu.self-fef5a06820b6e2f4f66bd3d468c78838d7f3ff742fdc16721b786736f73260e9.js?body=1" for ::1 at 2018-08-03 09:08:29 -0500
+
+
+Started GET "/assets/bootstrap-datepicker/locales/bootstrap-datepicker.fi.self-2609765afa68eb2078568f8d785522a588a73222538228637427eac53496df66.js?body=1" for ::1 at 2018-08-03 09:08:29 -0500
+
+
+Started GET "/assets/bootstrap-datepicker/locales/bootstrap-datepicker.fo.self-fd8c0c500526cb16dd180ba9d832a4e5e0d40c3a570318a73ee2076b32cbbd1a.js?body=1" for ::1 at 2018-08-03 09:08:29 -0500
+
+
+Started GET "/assets/bootstrap-datepicker/locales/bootstrap-datepicker.fr-CH.self-5a3e4840822fb4e6aa55af077ce89acb48e1629c299244258666a9eaf3e16a5f.js?body=1" for ::1 at 2018-08-03 09:08:29 -0500
+
+
+Started GET "/assets/bootstrap-datepicker/locales/bootstrap-datepicker.fr.self-fc22f4a24fd9c64106ee1ffdd8167f9bcbb8544093f9acfd3e78cc79acaaa8ab.js?body=1" for ::1 at 2018-08-03 09:08:29 -0500
+
+
+Started GET "/assets/bootstrap-datepicker/locales/bootstrap-datepicker.gl.self-1fccddef3fa899f6fc9f859fb7ea9d5839b554e6ec225bc2c195bd7f67ea55ad.js?body=1" for ::1 at 2018-08-03 09:08:29 -0500
+
+
+Started GET "/assets/bootstrap-datepicker/locales/bootstrap-datepicker.he.self-9d26121395049e408a1223d6eeccf625e4969a6a5d52f740af1ad533646e93a4.js?body=1" for ::1 at 2018-08-03 09:08:29 -0500
+
+
+Started GET "/assets/bootstrap-datepicker/locales/bootstrap-datepicker.hi.self-ee309099bb304ebd522110354528306f2dac4d926fd59889a616b2c9897b5ff6.js?body=1" for ::1 at 2018-08-03 09:08:29 -0500
+
+
+Started GET "/assets/bootstrap-datepicker/locales/bootstrap-datepicker.hr.self-7e61fabfb46c1eb015b85ee997ba8710aebb4640736f5ac596cfd37f32caab66.js?body=1" for ::1 at 2018-08-03 09:08:29 -0500
+
+
+Started GET "/assets/bootstrap-datepicker/locales/bootstrap-datepicker.hu.self-f49dd94a82276c26c3441a8f5834842aaff8e1015d2ee90af3a842482685b1b3.js?body=1" for ::1 at 2018-08-03 09:08:29 -0500
+
+
+Started GET "/assets/bootstrap-datepicker/locales/bootstrap-datepicker.hy.self-71f80b7156e45cfa7d017d3478f409c9045cad95afc89c51f81b9886d729ab80.js?body=1" for ::1 at 2018-08-03 09:08:29 -0500
+
+
+Started GET "/assets/bootstrap-datepicker/locales/bootstrap-datepicker.id.self-ea07114145eb6345c3e6b4e0ab99c8dcb42b05e7fc972cbde0997b752895ebc9.js?body=1" for ::1 at 2018-08-03 09:08:29 -0500
+
+
+Started GET "/assets/bootstrap-datepicker/locales/bootstrap-datepicker.it-CH.self-717fdb47d5142b72e9e7f64eec844ae20deacf76e64b484fc6c52139ea64e607.js?body=1" for ::1 at 2018-08-03 09:08:29 -0500
+
+
+Started GET "/assets/bootstrap-datepicker/locales/bootstrap-datepicker.it.self-71bbf2309e2ea365c4b4e21bcf5fa9e79bd1fb6aee0a2f097a0439645a79dbf7.js?body=1" for ::1 at 2018-08-03 09:08:29 -0500
+
+
+Started GET "/assets/bootstrap-datepicker/locales/bootstrap-datepicker.ja.self-cb335efac68187f94ccc34ed07c05f7cf6ace4ae97770209f1e89c92892f0610.js?body=1" for ::1 at 2018-08-03 09:08:29 -0500
+
+
+Started GET "/assets/bootstrap-datepicker/locales/bootstrap-datepicker.ka.self-a764d89f24c06495795654c820ee3f89643493c98638c209fb8e6d0fd779596a.js?body=1" for ::1 at 2018-08-03 09:08:29 -0500
+
+
+Started GET "/assets/bootstrap-datepicker/locales/bootstrap-datepicker.kh.self-6562a5a87f529e9a3121f8b49f20a6f7d3651340738f7d747a2418d721d01eae.js?body=1" for ::1 at 2018-08-03 09:08:29 -0500
+
+
+Started GET "/assets/bootstrap-datepicker/locales/bootstrap-datepicker.kk.self-4845840e42189e63d0aa4796c6664efe1edc81c9390acfdf1e5514fb91dc294e.js?body=1" for ::1 at 2018-08-03 09:08:29 -0500
+
+
+Started GET "/assets/bootstrap-datepicker/locales/bootstrap-datepicker.km.self-449e37427989750d04e0c199bf18974d9060a7e4b1a2ceca92113df290ab69e5.js?body=1" for ::1 at 2018-08-03 09:08:29 -0500
+
+
+Started GET "/assets/bootstrap-datepicker/locales/bootstrap-datepicker.ko.self-77411d790ff5bbd9da257d55c4375bc080c3c72222f94abc313f675eeabaedd1.js?body=1" for ::1 at 2018-08-03 09:08:29 -0500
+
+
+Started GET "/assets/bootstrap-datepicker/locales/bootstrap-datepicker.kr.self-ca28b775db5a32ebbee6667b0bc40e26e078ce363db5c55c9a904155d3b9fdb5.js?body=1" for ::1 at 2018-08-03 09:08:29 -0500
+
+
+Started GET "/assets/bootstrap-datepicker/locales/bootstrap-datepicker.me.self-bc3ded41fba54540cb7c229e2a81c54e1dc95aa060e13249996c3af17a07d925.js?body=1" for ::1 at 2018-08-03 09:08:29 -0500
+
+
+Started GET "/assets/bootstrap-datepicker/locales/bootstrap-datepicker.mk.self-2879e14c87c2ed072afa02e973d28c25eccda71604f545f325f5ccb7f9566d9a.js?body=1" for ::1 at 2018-08-03 09:08:29 -0500
+
+
+Started GET "/assets/bootstrap-datepicker/locales/bootstrap-datepicker.mn.self-9bde9683a01be40a036bf1d3df9376fc1855a9df29248e5604ab8c1926bafe4f.js?body=1" for ::1 at 2018-08-03 09:08:29 -0500
+
+
+Started GET "/assets/bootstrap-datepicker/locales/bootstrap-datepicker.nl-BE.self-8a42d57bf7a5ef08e774ad6ac07ccc42119609f0887a0a9db992a31bc22fb8c8.js?body=1" for ::1 at 2018-08-03 09:08:29 -0500
+
+
+Started GET "/assets/bootstrap-datepicker/locales/bootstrap-datepicker.nl.self-12fa155a1784c9def99d028f7178ab609055cce8de67d75371780172dea6e6ce.js?body=1" for ::1 at 2018-08-03 09:08:29 -0500
+
+
+Started GET "/assets/bootstrap-datepicker/locales/bootstrap-datepicker.no.self-18a1256faa8b00b26b963828386910d8cfb1b876bfc41b7539f627980023f364.js?body=1" for ::1 at 2018-08-03 09:08:29 -0500
+
+
+Started GET "/assets/bootstrap-datepicker/locales/bootstrap-datepicker.oc.self-473856c2eb30a34f3784c0b128f0e3a7808718789e5670d10a4efac75656cde3.js?body=1" for ::1 at 2018-08-03 09:08:29 -0500
+
+
+Started GET "/assets/bootstrap-datepicker/locales/bootstrap-datepicker.pt-BR.self-c8b0cbc3c837667cc1e12914294f4cc5e3310d82d74031773327f31004772938.js?body=1" for ::1 at 2018-08-03 09:08:29 -0500
+
+
+Started GET "/assets/bootstrap-datepicker/locales/bootstrap-datepicker.pt.self-761e5926a9ad2a08a3931dbecc3f19f9079398de8cd2388f2a193c14d40d7de7.js?body=1" for ::1 at 2018-08-03 09:08:29 -0500
+
+
+Started GET "/assets/bootstrap-datepicker/locales/bootstrap-datepicker.ro.self-b622123899a6726a09eb3144e3e5a143c1fa665b68944418baa3da207b9095c8.js?body=1" for ::1 at 2018-08-03 09:08:29 -0500
+
+
+Started GET "/assets/bootstrap-datepicker/locales/bootstrap-datepicker.rs-latin.self-a3302a16cb7cc00b6d455f26ed8a73f8890da7280ee9507c2cd9fe9f36ec6352.js?body=1" for ::1 at 2018-08-03 09:08:29 -0500
+
+
+Started GET "/assets/bootstrap-datepicker/locales/bootstrap-datepicker.ru.self-9454d3270f91908a6a033e58641a1ea206e47c92f6c259f1e795f00a3b011ee5.js?body=1" for ::1 at 2018-08-03 09:08:29 -0500
+
+
+Started GET "/assets/bootstrap-datepicker/locales/bootstrap-datepicker.sl.self-7f8b31b2067824ef4ed30a8bc9b892e4de22b635b675e732d8cf0f63f35f8f77.js?body=1" for ::1 at 2018-08-03 09:08:29 -0500
+
+
+Started GET "/assets/bootstrap-datepicker/locales/bootstrap-datepicker.sq.self-3224e5dba45c9b9362543f5efe2a02d23b71b7181ea0b7a92fc4637559f17799.js?body=1" for ::1 at 2018-08-03 09:08:29 -0500
+
+
+Started GET "/assets/bootstrap-datepicker/locales/bootstrap-datepicker.sr.self-0fdd9f114cd83480c0d41f6c4cd9ff5d41984d64f6d7944bd4739f2b9a8b0559.js?body=1" for ::1 at 2018-08-03 09:08:29 -0500
+
+
+Started GET "/assets/bootstrap-datepicker/locales/bootstrap-datepicker.sv.self-08b72a4d7b5c9c6c2ff76b09669a9885f1406198fa45149090db999564966c4c.js?body=1" for ::1 at 2018-08-03 09:08:29 -0500
+
+
+Started GET "/assets/bootstrap-datepicker/locales/bootstrap-datepicker.sw.self-6b5e12e322803172a7bb234b38a2774a18b7057caba09bf10e95276875879a35.js?body=1" for ::1 at 2018-08-03 09:08:29 -0500
+
+
+Started GET "/assets/bootstrap-datepicker/locales/bootstrap-datepicker.ta.self-5ff6431196fb31a4e711ebe0fe734091f8a185392a5a6aba76fcbb15de0ba29c.js?body=1" for ::1 at 2018-08-03 09:08:29 -0500
+
+
+Started GET "/assets/bootstrap-datepicker/locales/bootstrap-datepicker.tg.self-473d886df0ca36c64898aaecfeb066d0101d1beb448c056bf76fde19344d4bd1.js?body=1" for ::1 at 2018-08-03 09:08:29 -0500
+
+
+Started GET "/assets/bootstrap-datepicker/locales/bootstrap-datepicker.th.self-38ccaf19cff8c13178de6efb294156266bbb5ce6652531d4b53f7f869986ce71.js?body=1" for ::1 at 2018-08-03 09:08:29 -0500
+
+
+Started GET "/assets/bootstrap-datepicker/locales/bootstrap-datepicker.tk.self-f42944fa967f6ce3bcf053bfc9a48a60cd35c375e8a20ea398d28396f2413cff.js?body=1" for ::1 at 2018-08-03 09:08:29 -0500
+
+
+Started GET "/assets/bootstrap-datepicker/locales/bootstrap-datepicker.tr.self-32d4dcbd80fec4c33ced2cc50217d1cdfe9b351815a939878dedd504f0f29eec.js?body=1" for ::1 at 2018-08-03 09:08:29 -0500
+
+
+Started GET "/assets/bootstrap-datepicker/locales/bootstrap-datepicker.uk.self-ba78379f87a0202998faa6e7c5b20476712eb0431e243819807b20ef110db58f.js?body=1" for ::1 at 2018-08-03 09:08:29 -0500
+
+
+Started GET "/assets/bootstrap-datepicker/locales/bootstrap-datepicker.uz-cyrl.self-9561a9426b1eb7d1f84e623a4ff472d4c5fccdd0047b7aac95006eb383b993ff.js?body=1" for ::1 at 2018-08-03 09:08:29 -0500
+
+
+Started GET "/assets/bootstrap-datepicker/locales/bootstrap-datepicker.vi.self-36dc3fbbffa4afffa02f84c934c42cc69a7b8bf9637967f9d510c3a595c06bfd.js?body=1" for ::1 at 2018-08-03 09:08:29 -0500
+
+
+Started GET "/assets/bootstrap-datepicker/locales/bootstrap-datepicker.zh-CN.self-ea1ea635099f9e93b2f5903108a2f939897810d090fa5959545f9cd4ecfaef14.js?body=1" for ::1 at 2018-08-03 09:08:29 -0500
+
+
+Started GET "/assets/bootstrap-datepicker/locales/bootstrap-datepicker.zh-TW.self-919520009565c93f98d81b453874a8adc045d992e4cf63904186e82f852e123b.js?body=1" for ::1 at 2018-08-03 09:08:29 -0500
+
+
+Started GET "/assets/bootstrap-datepicker/index.self-75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070.js?body=1" for ::1 at 2018-08-03 09:08:29 -0500
+
+
+Started GET "/assets/abouts.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2018-08-03 09:08:29 -0500
+
+
+Started GET "/assets/grades.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2018-08-03 09:08:29 -0500
+
+
+Started GET "/assets/pages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2018-08-03 09:08:29 -0500
+
+
+Started GET "/assets/posts.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2018-08-03 09:08:29 -0500
+
+
+Started GET "/assets/responses.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2018-08-03 09:08:29 -0500
+
+
+Started GET "/assets/submissions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2018-08-03 09:08:29 -0500
+
+
+Started GET "/assets/tutorials.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2018-08-03 09:08:29 -0500
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2018-08-03 09:08:29 -0500
+
+
+Started GET "/assets/application.self-55d2f88127dcaaa99d5c6a5261f9015880991431c520781213525a199c900f0d.js?body=1" for ::1 at 2018-08-03 09:08:29 -0500
+
+
+Started GET "/assets/home-9899428f51895ea5281b309a21f98e95e4a1a2485aa3c5cdef323c67bb8054a1.png" for ::1 at 2018-08-03 09:08:29 -0500
+
+
+Started GET "/assets/calendar-21d6bf6c107bb4f5f8382bb58cddb580220af3c65d10943023c8bea392dc6bec.png" for ::1 at 2018-08-03 09:08:29 -0500
+
+
+Started GET "/assets/projects2-232a4af17f27b0a53ed699968c5961a9b41f6f96a0ebd0676f252d3799cebdff.png" for ::1 at 2018-08-03 09:08:29 -0500
+
+
+Started GET "/assets/projects-5bc5ea17f898463dd2e17fd0c8f965565ff103de1bec485cbbf821e955b24dde.png" for ::1 at 2018-08-03 09:08:29 -0500
+
+
+Started GET "/assets/hero-f2bbd5800d1dd606ff738b1cfd559140b76625acb51241a882c0120a9659caaf.jpg" for ::1 at 2018-08-03 09:08:29 -0500
+
+
+Started GET "/apple-touch-icon-precomposed.png" for ::1 at 2018-08-03 09:08:29 -0500
+
+ActionController::RoutingError (No route matches [GET] "/apple-touch-icon-precomposed.png"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.10) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.10) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.10) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.10) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.10) lib/rack/lock.rb:17:in `call'
+  rack (1.6.10) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.10) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/chrislam/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /Users/chrislam/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /Users/chrislam/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb (4.9ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.2ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (7.1ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (144.5ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (116.4ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (240.2ms)
+
+
+Started GET "/apple-touch-icon.png" for ::1 at 2018-08-03 09:08:30 -0500
+
+ActionController::RoutingError (No route matches [GET] "/apple-touch-icon.png"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.10) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.10) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.10) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.10) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.10) lib/rack/lock.rb:17:in `call'
+  rack (1.6.10) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.10) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/chrislam/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /Users/chrislam/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /Users/chrislam/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb (4.7ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.2ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.4ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (119.4ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (61.7ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (132.1ms)
+
+
+Started GET "/slidedecks" for ::1 at 2018-08-03 09:08:44 -0500
+Processing by SlidedecksController#index as HTML
+  [1m[36mSlidedeck Load (2.9ms)[0m  [1mSELECT "slidedecks".* FROM "slidedecks"  ORDER BY "slidedecks"."created_at" ASC[0m
+  Rendered slidedecks/index.html.erb within layouts/application (8.4ms)
+  Rendered layouts/_header.html.erb (4.2ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 425ms (Views: 411.9ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/assets/present-1b74a4ddf51eddced74517873d095c6f9ea780e77056b522537fd46847c18581.png" for ::1 at 2018-08-03 09:08:45 -0500
+
+
+Started GET "/slidedecks/new" for ::1 at 2018-08-03 09:08:47 -0500
+Processing by SlidedecksController#new as HTML
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2018-08-03 09:08:47 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (1.9ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (29.4ms)
+  Rendered layouts/_header.html.erb (4.0ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 398ms (Views: 379.4ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2018-08-03 09:08:53 -0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SH/+K6Sq3tvteRfVK/5/OcmqIvw98TP+2keb7CxnABvhq0aB8dBKgV+sEXNGpzQ83o94Vi467x2bJCyQuc6Z/A==", "user"=>{"email"=>"admin@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["email", "admin@gmail.com"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (2.3ms)[0m  UPDATE "users" SET "last_sign_in_at" = ?, "current_sign_in_at" = ?, "last_sign_in_ip" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["last_sign_in_at", "2018-07-27 15:51:21.770654"], ["current_sign_in_at", "2018-08-03 14:08:53.202320"], ["last_sign_in_ip", "::1"], ["sign_in_count", 9], ["updated_at", "2018-08-03 14:08:53.203313"], ["id", 1]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/slidedecks/new
+Completed 302 Found in 183ms (ActiveRecord: 4.2ms)
+
+
+Started GET "/slidedecks/new" for ::1 at 2018-08-03 09:08:53 -0500
+Processing by SlidedecksController#new as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered slidedecks/_contentmodule_fields.html.erb (2.6ms)
+  Rendered slidedecks/_bulleted_list_fields.html.erb (2.4ms)
+  Rendered slidedecks/_slide_fields.html.erb (36.6ms)
+  Rendered slidedecks/_form.html.erb (144.3ms)
+  Rendered slidedecks/new.html.erb within layouts/application (147.1ms)
+  Rendered layouts/_header.html.erb (5.1ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 517ms (Views: 510.7ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/slidedecks" for ::1 at 2018-08-03 09:08:59 -0500
+Processing by SlidedecksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"MPhC8hitW7unDaf1eOSwbwkvx5Tsfph48DOCX9hOX27XJBrY+j7q3TaIOBkWevCoHq7Spa91UNwUp3JZslh3dw==", "slidedeck"=>{"google"=>"<iframe src=\"https://docs.google.com/presentation/d/e/2PACX-1vSqThq1Tn1a6W6_0YqpF9FjrSlGxVs7Mhwin45U6C5-8tT5xm5aUasR1pGlxeNv1ndS0uSyu-UwFVU9/embed?start=false&loop=false&delayms=3000\" frameborder=\"0\" width=\"960\" height=\"569\" allowfullscreen=\"true\" mozallowfullscreen=\"true\" webkitallowfullscreen=\"true\"></iframe>", "title"=>""}, "commit"=>"Create Slidedeck"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "slidedecks" ("google", "title", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["google", "<iframe src=\"https://docs.google.com/presentation/d/e/2PACX-1vSqThq1Tn1a6W6_0YqpF9FjrSlGxVs7Mhwin45U6C5-8tT5xm5aUasR1pGlxeNv1ndS0uSyu-UwFVU9/embed?start=false&loop=false&delayms=3000\" frameborder=\"0\" width=\"960\" height=\"569\" allowfullscreen=\"true\" mozallowfullscreen=\"true\" webkitallowfullscreen=\"true\"></iframe>"], ["title", ""], ["created_at", "2018-08-03 14:08:59.666036"], ["updated_at", "2018-08-03 14:08:59.666036"]]
+  [1m[35m (4.5ms)[0m  commit transaction
+Redirected to http://localhost:3000/slidedecks/1
+Completed 302 Found in 10ms (ActiveRecord: 5.0ms)
+
+
+Started GET "/slidedecks/1" for ::1 at 2018-08-03 09:08:59 -0500
+Processing by SlidedecksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSlidedeck Load (0.2ms)[0m  [1mSELECT  "slidedecks".* FROM "slidedecks" WHERE "slidedecks"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mSlide Load (0.8ms)[0m  SELECT "slides".* FROM "slides" WHERE "slides"."slidedeck_id" = ?  [["slidedeck_id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mSlidedeck Load (0.2ms)[0m  SELECT "slidedecks".* FROM "slidedecks"  ORDER BY created_at ASC
+  [1m[36mNote Load (0.5ms)[0m  [1mSELECT "notes".* FROM "notes" WHERE "notes"."slidedeck_id" = ?[0m  [["slidedeck_id", 1]]
+  Rendered slidedecks/show.html.erb within layouts/application (16.9ms)
+  Rendered layouts/_header.html.erb (4.9ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 355ms (Views: 344.1ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/slidedecks/1" for ::1 at 2018-08-03 09:09:02 -0500
+Processing by SlidedecksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mSlidedeck Load (0.2ms)[0m  SELECT  "slidedecks".* FROM "slidedecks" WHERE "slidedecks"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mSlide Load (0.1ms)[0m  [1mSELECT "slides".* FROM "slides" WHERE "slides"."slidedeck_id" = ?[0m  [["slidedeck_id", 1]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mSlidedeck Load (0.2ms)[0m  [1mSELECT "slidedecks".* FROM "slidedecks"  ORDER BY created_at ASC[0m
+  [1m[35mNote Load (0.1ms)[0m  SELECT "notes".* FROM "notes" WHERE "notes"."slidedeck_id" = ?  [["slidedeck_id", 1]]
+  Rendered slidedecks/show.html.erb within layouts/application (7.7ms)
+  Rendered layouts/_header.html.erb (3.2ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 318ms (Views: 315.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/slick/ajax-loader-e7b44c86b050fca766a96ddac2d0932af0126da6f2305280342d909168dcce6b.gif" for ::1 at 2018-08-03 09:09:02 -0500
+
+
+Started GET "/assets/tinymce/themes/modern/theme.js" for ::1 at 2018-08-03 09:09:02 -0500
+
+
+Started GET "/assets/tinymce/skins/lightgray/skin.min.css" for ::1 at 2018-08-03 09:09:02 -0500
+
+
+Started GET "/assets/tinymce/skins/lightgray/content.min.css" for ::1 at 2018-08-03 09:09:02 -0500
+
+
+Started GET "/assets/tinymce/skins/lightgray/fonts/tinymce.woff" for ::1 at 2018-08-03 09:09:02 -0500
+
+
+Started GET "/slidedecks/1/edit" for ::1 at 2018-08-03 09:09:36 -0500
+Processing by SlidedecksController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSlidedeck Load (0.1ms)[0m  [1mSELECT  "slidedecks".* FROM "slidedecks" WHERE "slidedecks"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mSlide Load (0.1ms)[0m  [1mSELECT "slides".* FROM "slides" WHERE "slides"."slidedeck_id" = ?[0m  [["slidedeck_id", 1]]
+  Rendered slidedecks/_contentmodule_fields.html.erb (0.4ms)
+  Rendered slidedecks/_bulleted_list_fields.html.erb (0.4ms)
+  Rendered slidedecks/_slide_fields.html.erb (10.2ms)
+  Rendered slidedecks/_form.html.erb (19.8ms)
+  Rendered slidedecks/edit.html.erb within layouts/application (22.7ms)
+  Rendered layouts/_header.html.erb (7.2ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 459ms (Views: 455.3ms | ActiveRecord: 0.4ms)
+
+
+Started PATCH "/slidedecks/1" for ::1 at 2018-08-03 09:09:55 -0500
+Processing by SlidedecksController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9r9i07A91lVhnPprv0qliwH4NBXmavhuTUyvCoq59RYRYzr5Uq5nM/AZZYfR1OVMFnkhJKVhMMqp2F8M4K/dDw==", "slidedeck"=>{"google"=>"<iframe src=\"https://docs.google.com/presentation/d/e/2PACX-1vSqThq1Tn1a6W6_0YqpF9FjrSlGxVs7Mhwin45U6C5-8tT5xm5aUasR1pGlxeNv1ndS0uSyu-UwFVU9/embed?start=false&loop=false&delayms=3000\" frameborder=\"0\" width=\"100%\" height=\"569\" allowfullscreen=\"true\" mozallowfullscreen=\"true\" webkitallowfullscreen=\"true\"></iframe>", "title"=>""}, "commit"=>"Update Slidedeck", "id"=>"1"}
+  [1m[35mSlidedeck Load (0.1ms)[0m  SELECT  "slidedecks".* FROM "slidedecks" WHERE "slidedecks"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "slidedecks" SET "google" = ?, "updated_at" = ? WHERE "slidedecks"."id" = ?[0m  [["google", "<iframe src=\"https://docs.google.com/presentation/d/e/2PACX-1vSqThq1Tn1a6W6_0YqpF9FjrSlGxVs7Mhwin45U6C5-8tT5xm5aUasR1pGlxeNv1ndS0uSyu-UwFVU9/embed?start=false&loop=false&delayms=3000\" frameborder=\"0\" width=\"100%\" height=\"569\" allowfullscreen=\"true\" mozallowfullscreen=\"true\" webkitallowfullscreen=\"true\"></iframe>"], ["updated_at", "2018-08-03 14:09:55.286707"], ["id", 1]]
+  [1m[35m (0.7ms)[0m  commit transaction
+Redirected to http://localhost:3000/slidedecks/1
+Completed 302 Found in 5ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/slidedecks/1" for ::1 at 2018-08-03 09:09:55 -0500
+Processing by SlidedecksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSlidedeck Load (0.1ms)[0m  [1mSELECT  "slidedecks".* FROM "slidedecks" WHERE "slidedecks"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mSlide Load (0.1ms)[0m  SELECT "slides".* FROM "slides" WHERE "slides"."slidedeck_id" = ?  [["slidedeck_id", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mSlidedeck Load (0.2ms)[0m  SELECT "slidedecks".* FROM "slidedecks"  ORDER BY created_at ASC
+  [1m[36mNote Load (0.1ms)[0m  [1mSELECT "notes".* FROM "notes" WHERE "notes"."slidedeck_id" = ?[0m  [["slidedeck_id", 1]]
+  Rendered slidedecks/show.html.erb within layouts/application (7.5ms)
+  Rendered layouts/_header.html.erb (3.9ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 352ms (Views: 350.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/slidedecks/1" for ::1 at 2018-08-03 09:09:58 -0500
+Processing by SlidedecksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mSlidedeck Load (0.1ms)[0m  SELECT  "slidedecks".* FROM "slidedecks" WHERE "slidedecks"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mSlide Load (0.1ms)[0m  [1mSELECT "slides".* FROM "slides" WHERE "slides"."slidedeck_id" = ?[0m  [["slidedeck_id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mSlidedeck Load (0.1ms)[0m  [1mSELECT "slidedecks".* FROM "slidedecks"  ORDER BY created_at ASC[0m
+  [1m[35mNote Load (0.1ms)[0m  SELECT "notes".* FROM "notes" WHERE "notes"."slidedeck_id" = ?  [["slidedeck_id", 1]]
+  Rendered slidedecks/show.html.erb within layouts/application (6.5ms)
+  Rendered layouts/_header.html.erb (4.2ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 332ms (Views: 330.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/tinymce/skins/lightgray/skin.min.css" for ::1 at 2018-08-03 09:09:58 -0500
+
+
+Started GET "/assets/tinymce/themes/modern/theme.js" for ::1 at 2018-08-03 09:09:58 -0500
+
+
+Started GET "/assets/tinymce/skins/lightgray/fonts/tinymce.woff" for ::1 at 2018-08-03 09:09:58 -0500
+
+
+Started GET "/assets/tinymce/themes/modern/theme.js" for ::1 at 2018-08-03 09:09:58 -0500
+
+
+Started GET "/assets/tinymce/skins/lightgray/skin.min.css" for ::1 at 2018-08-03 09:09:58 -0500
+
+
+Started GET "/assets/tinymce/skins/lightgray/content.min.css" for ::1 at 2018-08-03 09:09:58 -0500
+
+
+Started GET "/assets/tinymce/skins/lightgray/fonts/tinymce.woff" for ::1 at 2018-08-03 09:09:58 -0500
+
+
+Started GET "/slidedecks/1" for ::1 at 2018-08-03 09:10:25 -0500
+Processing by SlidedecksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSlidedeck Load (0.1ms)[0m  [1mSELECT  "slidedecks".* FROM "slidedecks" WHERE "slidedecks"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mSlide Load (0.1ms)[0m  SELECT "slides".* FROM "slides" WHERE "slides"."slidedeck_id" = ?  [["slidedeck_id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mSlidedeck Load (0.2ms)[0m  SELECT "slidedecks".* FROM "slidedecks"  ORDER BY created_at ASC
+  [1m[36mNote Load (0.1ms)[0m  [1mSELECT "notes".* FROM "notes" WHERE "notes"."slidedeck_id" = ?[0m  [["slidedeck_id", 1]]
+  Rendered slidedecks/show.html.erb within layouts/application (10.0ms)
+  Rendered layouts/_header.html.erb (6.0ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 387ms (Views: 385.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/tinymce/skins/lightgray/skin.min.css" for ::1 at 2018-08-03 09:10:25 -0500
+
+
+Started GET "/assets/tinymce/themes/modern/theme.js" for ::1 at 2018-08-03 09:10:25 -0500
+
+
+Started GET "/assets/tinymce/skins/lightgray/fonts/tinymce.woff" for ::1 at 2018-08-03 09:10:25 -0500
+
+
+Started GET "/assets/tinymce/themes/modern/theme.js" for ::1 at 2018-08-03 09:10:26 -0500
+
+
+Started GET "/assets/tinymce/skins/lightgray/skin.min.css" for ::1 at 2018-08-03 09:10:26 -0500
+
+
+Started GET "/assets/tinymce/skins/lightgray/content.min.css" for ::1 at 2018-08-03 09:10:26 -0500
+
+
+Started GET "/assets/tinymce/skins/lightgray/fonts/tinymce.woff" for ::1 at 2018-08-03 09:10:26 -0500
+
+
+Started GET "/slidedecks/1" for ::1 at 2018-08-03 09:11:24 -0500
+Processing by SlidedecksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mSlidedeck Load (0.1ms)[0m  SELECT  "slidedecks".* FROM "slidedecks" WHERE "slidedecks"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mSlide Load (0.1ms)[0m  [1mSELECT "slides".* FROM "slides" WHERE "slides"."slidedeck_id" = ?[0m  [["slidedeck_id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mSlidedeck Load (0.2ms)[0m  [1mSELECT "slidedecks".* FROM "slidedecks"  ORDER BY created_at ASC[0m
+  [1m[35mNote Load (0.1ms)[0m  SELECT "notes".* FROM "notes" WHERE "notes"."slidedeck_id" = ?  [["slidedeck_id", 1]]
+  Rendered slidedecks/show.html.erb within layouts/application (9.0ms)
+  Rendered layouts/_header.html.erb (9.3ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 480ms (Views: 478.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/tinymce/skins/lightgray/skin.min.css" for ::1 at 2018-08-03 09:11:24 -0500
+
+
+Started GET "/assets/tinymce/themes/modern/theme.js" for ::1 at 2018-08-03 09:11:24 -0500
+
+
+Started GET "/assets/tinymce/skins/lightgray/fonts/tinymce.woff" for ::1 at 2018-08-03 09:11:24 -0500
+
+
+Started GET "/assets/tinymce/themes/modern/theme.js" for ::1 at 2018-08-03 09:11:24 -0500
+
+
+Started GET "/assets/tinymce/skins/lightgray/skin.min.css" for ::1 at 2018-08-03 09:11:24 -0500
+
+
+Started GET "/assets/tinymce/skins/lightgray/content.min.css" for ::1 at 2018-08-03 09:11:24 -0500
+
+
+Started GET "/assets/tinymce/skins/lightgray/fonts/tinymce.woff" for ::1 at 2018-08-03 09:11:24 -0500
