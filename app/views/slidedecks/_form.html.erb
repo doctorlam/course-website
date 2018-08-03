@@ -1,7 +1,7 @@
 
 <%= simple_form_for(@slidedeck) do |f| %>
   <%= f.error_notification %>
-  <%= f.input :google %>
+  <%= f.text_area :google, cols: "50", rows: "10" %>
   <div class="form-inputs">
     <%= f.input :title %>
   </div>
