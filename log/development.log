@@ -28187,3 +28187,13 @@ Processing by SubmissionsController#create as HTML
   Rendered layouts/_header.html.erb (3.9ms)
   Rendered layouts/_footer.html.erb (0.2ms)
 Completed 200 OK in 349ms (Views: 344.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assignments" for ::1 at 2018-08-03 13:51:54 -0500
+Processing by AssignmentsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mAssignment Load (0.2ms)[0m  SELECT "assignments".* FROM "assignments" WHERE "assignments"."status" = ?  ORDER BY "assignments"."deadline" ASC  [["status", "Open"]]
+  Rendered assignments/index.html.erb within layouts/application (4.0ms)
+  Rendered layouts/_header2.html.erb (9.1ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 483ms (Views: 480.2ms | ActiveRecord: 0.3ms)

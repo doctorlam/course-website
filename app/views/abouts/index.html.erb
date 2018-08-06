@@ -31,7 +31,7 @@
         </ol>
             <h2>Course Materials</h2>
             <% for material in about.materials %>
-                <ul><li><%= material.description %></li></ul>
+                <ul><li><%= material.description.html_safe %></li></ul>
             <% end %>
 
         </div>
