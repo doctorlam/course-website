@@ -11,13 +11,7 @@
     <% end %>
   <%= link_to_add_fields "Add Objective", f, :objectives, class: "btn btn-mini btn-info" %>
 </div>
-<div class="third-form-group">
-  <h2>Class Activities</h2>
-  <%= f.fields_for :classactivitys do |builder| %>
-  <%= render 'classactivity_fields', f:builder %>
-  <% end %>
-  <%= link_to_add_fields "Add Activity", f, :classactivitys, class: "btn btn-mini btn-info" %>
-</div>
+
 <div class="second-form-group">
 <h2>Add Attachment (if applicable)</h2>
       <%= f.label :attachment %>
@@ -25,22 +19,13 @@
 </div>
 <div class="second-form-group">
     <%= f.label :content %>
-    <%= f.text_area :content, rows: "30", class: 'form-control' %>
+    <%= f.text_area :content, rows: "30", class: 'form-control tinymce' %>
+    <%= tinymce %>
+
    
     
 </div>
 
-  <div class="third-form-group">
-<h2>Connect Tutorial with a Lesson</h2>
-
-        <%= hidden_field_tag "tutorial[lesson_ids][]", nil %>
-        <% Lesson.all.each do |lesson| %>
-          <%= check_box_tag "tutorial[lesson_ids][]", lesson.id, @tutorial.lesson_ids.include?(lesson.id), id: dom_id(lesson) %>
-          <%= label_tag dom_id(lesson), lesson.name %> | <%= lesson.date %>
-          <br />
-
-        <% end %>
-    </div>
 
   <div class="form-actions">
     <%= f.button :submit %>

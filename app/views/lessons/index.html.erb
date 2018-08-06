@@ -34,7 +34,7 @@
                 <li><%= homework.content.html_safe %></li>
               <% end %>
             <% for assignment in lesson.assignments %>  
-                <li><span style="color: #F9690E; font-weight: bold">[Turn In]</span> <%= link_to assignment.name, assignment_url(assignment) %></li>  
+                <li><span style="color: #00b894; font-weight: bold">[Turn In]</span> <%= link_to assignment.name, assignment_url(assignment) %></li>  
             <% end %>
         </ul>
       </td>
