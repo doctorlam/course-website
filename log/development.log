@@ -32141,3 +32141,563 @@ Processing by TutorialsController#show as HTML
   Rendered layouts/_header.html.erb (3.6ms)
   Rendered layouts/_footer.html.erb (0.2ms)
 Completed 200 OK in 399ms (Views: 398.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/tutorials/3/edit" for ::1 at 2018-08-06 13:48:17 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by TutorialsController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mTutorial Load (0.5ms)[0m  SELECT  "tutorials".* FROM "tutorials" WHERE "tutorials"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mObjective Load (0.4ms)[0m  SELECT "objectives".* FROM "objectives" WHERE "objectives"."tutorial_id" = ?  [["tutorial_id", 3]]
+  Rendered tutorials/_objective_fields.html.erb (3.1ms)
+  Rendered tutorials/_form.html.erb (154.0ms)
+  Rendered tutorials/edit.html.erb within layouts/application (161.4ms)
+  Rendered layouts/_header.html.erb (8.2ms)
+  Rendered layouts/_footer.html.erb (0.8ms)
+Completed 200 OK in 1739ms (Views: 1684.6ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/tutorials/3/edit" for ::1 at 2018-08-06 13:48:30 -0500
+Processing by TutorialsController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mTutorial Load (0.1ms)[0m  [1mSELECT  "tutorials".* FROM "tutorials" WHERE "tutorials"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mObjective Load (0.1ms)[0m  [1mSELECT "objectives".* FROM "objectives" WHERE "objectives"."tutorial_id" = ?[0m  [["tutorial_id", 3]]
+  Rendered tutorials/_objective_fields.html.erb (0.3ms)
+  Rendered tutorials/_form.html.erb (9.3ms)
+  Rendered tutorials/edit.html.erb within layouts/application (10.5ms)
+  Rendered layouts/_header.html.erb (4.5ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 447ms (Views: 444.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/tutorials/3/edit" for ::1 at 2018-08-06 13:48:34 -0500
+Processing by TutorialsController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mTutorial Load (0.1ms)[0m  SELECT  "tutorials".* FROM "tutorials" WHERE "tutorials"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mObjective Load (0.1ms)[0m  SELECT "objectives".* FROM "objectives" WHERE "objectives"."tutorial_id" = ?  [["tutorial_id", 3]]
+  Rendered tutorials/_objective_fields.html.erb (0.3ms)
+  Rendered tutorials/_form.html.erb (10.6ms)
+  Rendered tutorials/edit.html.erb within layouts/application (12.0ms)
+  Rendered layouts/_header.html.erb (3.5ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 428ms (Views: 425.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/tinymce/themes/modern/theme.js" for ::1 at 2018-08-06 13:48:35 -0500
+
+
+Started GET "/assets/tinymce/plugins/image/plugin.js" for ::1 at 2018-08-06 13:48:35 -0500
+
+
+Started GET "/assets/tinymce/plugins/link/plugin.js" for ::1 at 2018-08-06 13:48:35 -0500
+
+
+Started GET "/assets/tinymce/plugins/lists/plugin.js" for ::1 at 2018-08-06 13:48:35 -0500
+
+
+Started GET "/assets/tinymce/plugins/hr/plugin.js" for ::1 at 2018-08-06 13:48:35 -0500
+
+
+Started GET "/assets/tinymce/plugins/autosave/plugin.js" for ::1 at 2018-08-06 13:48:35 -0500
+
+
+Started GET "/assets/tinymce/plugins/textcolor/plugin.js" for ::1 at 2018-08-06 13:48:35 -0500
+
+
+Started GET "/assets/tinymce/plugins/codesample/plugin.js" for ::1 at 2018-08-06 13:48:35 -0500
+
+
+Started GET "/assets/tinymce/plugins/code/plugin.js" for ::1 at 2018-08-06 13:48:35 -0500
+
+
+Started GET "/assets/tinymce/skins/lightgray/skin.min.css" for ::1 at 2018-08-06 13:48:35 -0500
+
+
+Started GET "/assets/tinymce/skins/lightgray/content.min.css" for ::1 at 2018-08-06 13:48:35 -0500
+
+
+Started GET "/assets/tinymce/skins/lightgray/fonts/tinymce.woff" for ::1 at 2018-08-06 13:48:35 -0500
+
+
+Started GET "/assets/tinymce/plugins/codesample/css/prism.css" for ::1 at 2018-08-06 13:48:35 -0500
+
+
+Started GET "/assets/tinymce/skins/lightgray/skin.min.css.map" for ::1 at 2018-08-06 13:49:17 -0500
+
+ActionController::RoutingError (No route matches [GET] "/assets/tinymce/skins/lightgray/skin.min.css.map"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.10) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.10) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.10) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.10) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.10) lib/rack/lock.rb:17:in `call'
+  rack (1.6.10) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.10) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/chrislam/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /Users/chrislam/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /Users/chrislam/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.9ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb (4.9ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.3ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (3.8ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (183.2ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (92.0ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (193.9ms)
+
+
+Started PATCH "/tutorials/3" for ::1 at 2018-08-06 13:49:43 -0500
+Processing by TutorialsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CxtlMPsah0o9TpvnxPUqs4Qn6H2pdc0ARG0jEW/3tokZ9YieSETXbsgXOrz8wAfNEMpWBw2FhYCJdPhHe+kV3A==", "tutorial"=>{"name"=>"asdf", "video"=>"asdf", "content"=>"<h2><span style=\"text-decoration: underline;\"><strong>NOTE: I've updated some of the Gem files on this written explanation that differs from the video. Follow the written explanation!</strong></span></h2>\r\n<h1><span style=\"text-decoration: underline;\"><strong>Step 1: Creating a Root Route</strong></span></h1>\r\n<h2><span style=\"text-decoration: underline;\"><strong>Explanation</strong></span></h2>\r\n<p>One of the beauties of Rails is it's fairly simplistic way of handling routes. Routes are essentially a way to generate a permalink (URL) for a particular view in your app. The easiest way to wrap your head around this is to consider the \"Root\" route. That is, when a user enters in the main URL for your website or application, you can tell Rails which view or page to load for the user to see. It's similar to the index.html file you might see on a basic webserver for a static HTML/CSS website.&nbsp;</p>\r\n<p>So, with all that in mind, we'll set the \"root\" path for our Survey app. In our case, we want to view all of the survey responses as soon as a user loads the app (the index view file for Surveys). To change a route, you can find a file called routes.rb located in the \"config\" folder of your app.&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<figure class=\"image\"><img src=\"https://s3.us-east-2.amazonaws.com/lam-fall/images/routes.rb.png\" alt=\"root 'surveys#index\" width=\"100%\" height=\"auto\" />\r\n<figcaption><strong style=\"text-align: start;\">Filepath for Image: config &gt; routes.rb</strong></figcaption>\r\n</figure>\r\n<p style=\"padding-left: 30px;\"><code>root 'surveys#index</code></p>\r\n<p style=\"padding-left: 30px;\">&nbsp;</p>\r\n<h1><span style=\"text-decoration: underline;\"><strong>STEP 2: Add Bootstrap and JQuery to Gemfile</strong></span></h1>\r\n<p>&nbsp;</p>\r\n<figure class=\"image\"><img src=\"https://s3.us-east-2.amazonaws.com/lam-fall/images/gemfile.png\" alt=\"\" width=\"100%\" height=\"auto\" />\r\n<figcaption><strong>Filepath for Image: Gemfile</strong></figcaption>\r\n</figure>\r\n<p>1. Add the following code to your gemfile:</p>\r\n<pre class=\"language-ruby\"><code>gem 'bootstrap', '~&gt; 4.1.3'\r\ngem 'jquery-rails'</code></pre>\r\n<h1><span style=\"text-decoration: underline;\"><strong>STEP 3: Add Bootstrap to application.scss</strong></span></h1>\r\n<p>&nbsp;</p>\r\n<figure class=\"image\"><img src=\"https://s3.us-east-2.amazonaws.com/lam-fall/images/application.scss.png\" alt=\"\" width=\"100%\" height=\"auto\" />\r\n<figcaption><strong style=\"text-align: start;\">Filepath for Image: app &gt; assets &gt; stylesheets &gt; application.css</strong></figcaption>\r\n</figure>\r\n<p>Right-click the application.css file and rename the file to application.scss. Then, in \"app&gt;assets&gt;stylesheets&gt;application.scss\" add the following code:</p>\r\n<p style=\"padding-left: 30px;\"><code>@import \"bootstrap\";</code></p>\r\n<h1><span style=\"text-decoration: underline;\"><strong>STEP 4: Add Dependencies to application.js</strong></span></h1>\r\n<p>&nbsp;</p>\r\n<figure class=\"image\"><img src=\"https://s3.us-east-2.amazonaws.com/lam-fall/images/application.js.png\" alt=\"\" width=\"100%\" height=\"auto\" />\r\n<figcaption><strong style=\"text-align: start;\">Filepath for Image:&nbsp;</strong><strong style=\"text-align: start;\">app &gt; assets &gt; stylesheets &gt; application.js</strong></figcaption>\r\n</figure>\r\n<p><strong>Add JQUERY dependecies in your application.js file.</strong></p>\r\n<p style=\"padding-left: 30px;\"><code>//= require jquery3</code></p>\r\n<p style=\"padding-left: 30px;\"><code>//= require popper</code></p>\r\n<p style=\"padding-left: 30px;\"><code>//= require bootstrap-sprockets</code></p>\r\n<p><strong>in terminal or command line</strong></p>\r\n<p style=\"padding-left: 30px;\"><code>bundle install&nbsp;</code></p>\r\n<p style=\"padding-left: 30px;\"><code>Restart server</code></p>\r\n<h1><span style=\"text-decoration: underline;\"><strong>STEP 5: Style Index Page</strong></span></h1>\r\n<p>&nbsp;</p>\r\n<figure class=\"image\"><img src=\"https://s3.us-east-2.amazonaws.com/lam-fall/images/index.png\" alt=\"\" width=\"100%\" height=\"auto\" />\r\n<figcaption><strong>Filepath for Image: app &gt; views &gt; surveys &gt; index.html.erb</strong></figcaption>\r\n</figure>\r\n<p>1. Let's add a bootstrap class called table and table-striped to our main index table.&nbsp;</p>\r\n<p style=\"padding-left: 30px;\"><code>&lt;table class=\"table table-striped\"&gt;</code></p>\r\n<hr />\r\n<h1><span style=\"text-decoration: underline;\"><strong>STEP 6: Style Form Page</strong></span></h1>\r\n<p style=\"padding-left: 30px;\"><code></code></p>\r\n<p>&nbsp;</p>\r\n<figure class=\"image\"><img src=\"https://s3.us-east-2.amazonaws.com/lam-fall/images/form.png\" alt=\"\" width=\"100%\" height=\"auto\" />\r\n<figcaption><strong style=\"text-align: start;\">Filepath for Image: app &gt; views &gt; surveys &gt; _form.html.erb</strong></figcaption>\r\n</figure>\r\n<p><strong>Now, let's style our actual form a bit. in \"views&gt;surveys&gt;_form.html.erb</strong></p>\r\n<p style=\"padding-left: 30px;\">-- Add form-group class to each &lt;div&gt;:&nbsp;<code>&lt;div class=\"form-group\"&gt;</code></p>\r\n<p style=\"padding-left: 30px;\">-- Add form control to the name text area:&nbsp;<code>class: 'form-control'</code></p>\r\n<p><strong>Ok, now let's change Laptop to radio buttons instead of a textbox</strong></p>\r\n<p style=\"padding-left: 30px;\"><code>&lt;%= form.label :laptop, \"Do you own a laptop?\" %&gt;&lt;br /&gt;</code></p>\r\n<p style=\"padding-left: 30px;\"><code>&lt;%= form.label :laptop, \"Yes\", :value =&gt; \"true\" &nbsp;%&gt;</code></p>\r\n<p style=\"padding-left: 30px;\"><code>&lt;%= form.radio_button :laptop, 'yes',:checked =&gt; true &nbsp;%&gt;</code></p>\r\n<p style=\"padding-left: 30px;\"><code>&lt;%= form.label :laptop, \"No\", :value =&gt; \"false\" %&gt;</code></p>\r\n<p style=\"padding-left: 30px;\"><code>&lt;%= form.radio_button :laptop, 'No' %&gt;&nbsp;</code></p>\r\n<p><strong>Finally, let's Change Operating System to Drop-Down Menu</strong></p>\r\n<p style=\"padding-left: 30px;\"><code>&lt;%= form.select :os, ['No OS', 'Mac OSX', 'Windows 10', 'Windows 7 or below', 'Linux']%&gt;</code></p>\r\n<p>&nbsp;</p>\r\n<hr />\r\n<p><strong>Links</strong></p>\r\n<p>*<a href=\"https://github.com/twbs/bootstrap-rubygem\">Bootstrap Github Page</a></p>\r\n<p>*&nbsp;<a href=\"https://medium.freecodecamp.org/add-bootstrap-to-your-ruby-on-rails-project-8d76d70d0e3b\" target=\"_blank\" rel=\"noopener\">Add Bootstrap to your RoR App</a></p>\r\n<hr />\r\n<p>&nbsp;</p>"}, "commit"=>"Update Tutorial", "id"=>"3"}
+  [1m[36mTutorial Load (0.2ms)[0m  [1mSELECT  "tutorials".* FROM "tutorials" WHERE "tutorials"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/tutorials/3
+Completed 302 Found in 4ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/tutorials/3" for ::1 at 2018-08-06 13:49:43 -0500
+Processing by TutorialsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mTutorial Load (0.1ms)[0m  [1mSELECT  "tutorials".* FROM "tutorials" WHERE "tutorials"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mObjective Load (0.1ms)[0m  [1mSELECT "objectives".* FROM "objectives" WHERE "objectives"."tutorial_id" = ?[0m  [["tutorial_id", 3]]
+  Rendered tutorials/show.html.erb within layouts/application (252.4ms)
+  Rendered layouts/_header.html.erb (6.6ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 703ms (Views: 701.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2018-08-06 13:51:59 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by AboutsController#index as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mAbout Load (0.4ms)[0m  [1mSELECT "abouts".* FROM "abouts"[0m
+  Rendered abouts/index.html.erb within layouts/application (30.8ms)
+  Rendered layouts/_header.html.erb (16.0ms)
+  Rendered layouts/_footer.html.erb (0.9ms)
+Completed 200 OK in 8402ms (Views: 8371.4ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/assets/prism.self-0ce5561899518bb7814ec4b7f7b7c1b7b5f095f9856a11685f505f31211fbbff.css?body=1" for ::1 at 2018-08-06 13:52:08 -0500
+
+
+Started GET "/assets/application.self-6a3f111c13e46c2b83ff7f09f0e5df8734b6122cb1826639d6d9084f50b1b074.css?body=1" for ::1 at 2018-08-06 13:52:08 -0500
+
+
+Started GET "/assets/prism/prism-markup.self-3df5ba311d26be46eba03b899de00844b37d25c55d5e137fc2f3c4196a2199cb.js?body=1" for ::1 at 2018-08-06 13:52:08 -0500
+
+
+Started GET "/assets/prism/prism-clike.self-6bf9852d8757d0250be869419490ce814984d7f19babb31172960419aa41d474.js?body=1" for ::1 at 2018-08-06 13:52:08 -0500
+
+
+Started GET "/assets/prism/prism-javascript.self-c3a69b79c6d242cc0bc447188945e0438d23c091d4116d2697bc4aafd1fec9d7.js?body=1" for ::1 at 2018-08-06 13:52:08 -0500
+
+
+Started GET "/assets/prism/prism-core.self-6d8386c5303ada305ca237d100b91b301db02911e2809459b5da48656740e760.js?body=1" for ::1 at 2018-08-06 13:52:08 -0500
+
+
+Started GET "/assets/prism/prism-c.self-fb14f6f5ec66f1414289f5118374fbd5ad92dd7888767b0d05f4bccac516305c.js?body=1" for ::1 at 2018-08-06 13:52:08 -0500
+
+
+Started GET "/assets/prism/prism-ruby.self-add05f3f2031bb9093eb034b6c5fd1a99b26d361c262f09613c46f4233375869.js?body=1" for ::1 at 2018-08-06 13:52:08 -0500
+
+
+Started GET "/assets/prism/prism-css.self-5444889e197b88724dc08e2df25864452e57f50815c5bfaa3b0adfb2549e09b4.js?body=1" for ::1 at 2018-08-06 13:52:08 -0500
+
+
+Started GET "/assets/prism/prism-java.self-a4eaa6e72d53d4a3945c14df3982ac97de231ac56aacb6438f0a7dffabe3d296.js?body=1" for ::1 at 2018-08-06 13:52:08 -0500
+
+
+Started GET "/assets/prism/prism-actionscript.self-aae5a7d4561fd53f0640031eb02c0c8ff3fdcbd480888c52f1e852480c59ef11.js?body=1" for ::1 at 2018-08-06 13:52:08 -0500
+
+
+Started GET "/assets/prism/prism-abap.self-61d126315eac294125d5285e271ef5822f0c403afb47eb6b2a751b2be5535b1e.js?body=1" for ::1 at 2018-08-06 13:52:08 -0500
+
+
+Started GET "/assets/prism/prism-ada.self-d4a1912a3c26e312ad9702dbd539f3b16e99e2cfbf345452849025b2b0cff9cf.js?body=1" for ::1 at 2018-08-06 13:52:08 -0500
+
+
+Started GET "/assets/prism/prism-apacheconf.self-b7df00a4a0f4e0980eb59ce04e8965a13328d0ddc8d637327094554372ea5bfa.js?body=1" for ::1 at 2018-08-06 13:52:08 -0500
+
+
+Started GET "/assets/prism/prism-apl.self-b506e60ba440a1788e5d5845c1a9e639a7e2bfc6a43ea105a85a595653f2bd1f.js?body=1" for ::1 at 2018-08-06 13:52:08 -0500
+
+
+Started GET "/assets/prism/prism-applescript.self-39a285f029376732c72a8c56db11f440a053a0e9ba0cd607e4060b059fcc194e.js?body=1" for ::1 at 2018-08-06 13:52:08 -0500
+
+
+Started GET "/assets/prism/prism-asciidoc.self-b9d231ae7a6e212ef4012b6cae17a16b3b1253220e5a33eced6c0915a8dc2bfe.js?body=1" for ::1 at 2018-08-06 13:52:08 -0500
+
+
+Started GET "/assets/prism/prism-aspnet.self-1e201137c22e74bb8273d93c6b8deefda4679891ab6d3897984eba865c91d2b0.js?body=1" for ::1 at 2018-08-06 13:52:09 -0500
+
+
+Started GET "/assets/prism/prism-autohotkey.self-a62adc8253fea1c085628db6b1d7aa7f4175ab01a8572ef90725840f5a0603f3.js?body=1" for ::1 at 2018-08-06 13:52:09 -0500
+
+
+Started GET "/assets/prism/prism-autoit.self-d14c56cc49e2d949f790f228e696b90973bca0165c77a865e71e668970afbeb2.js?body=1" for ::1 at 2018-08-06 13:52:09 -0500
+
+
+Started GET "/assets/prism/prism-bash.self-2224d52d1b0795b49cfe31bd340af7c40180d509d64d531fe644511009e90de8.js?body=1" for ::1 at 2018-08-06 13:52:09 -0500
+
+
+Started GET "/assets/prism/prism-basic.self-d34bf93774cfd4c043d464a699f130bac5a851a34192ee0dd3f747fab3386272.js?body=1" for ::1 at 2018-08-06 13:52:09 -0500
+
+
+Started GET "/assets/prism/prism-batch.self-09671387d92ce9b2d689e00d98b527e5dffde2b1601373d00f54ec47d52afe08.js?body=1" for ::1 at 2018-08-06 13:52:09 -0500
+
+
+Started GET "/assets/prism/prism-bison.self-24df752283ea665a6ffb23227b4f6d2ca4d8d27dd13998d6f0a887b93811fe68.js?body=1" for ::1 at 2018-08-06 13:52:09 -0500
+
+
+Started GET "/assets/prism/prism-brainfuck.self-3321fd5fe661359fec9cd712b87c1545364566ccf3b626cbed8be7008ce93331.js?body=1" for ::1 at 2018-08-06 13:52:09 -0500
+
+
+Started GET "/assets/prism/prism-bro.self-f42189ff9f5e1549e6dc2471ad4be11d9bf0aec9d2d5be50f9e5973919bc7078.js?body=1" for ::1 at 2018-08-06 13:52:09 -0500
+
+
+Started GET "/assets/prism/prism-coffeescript.self-7ac6deb002b191a803356f4a036a82f48e7e1f7d799d2028ae7ed7f7808a9325.js?body=1" for ::1 at 2018-08-06 13:52:09 -0500
+
+
+Started GET "/assets/prism/prism-cpp.self-306987cef7eaa746f13a4525400ce98dc2f1ebd65708b729dbb0cd50670448f7.js?body=1" for ::1 at 2018-08-06 13:52:09 -0500
+
+
+Started GET "/assets/prism/prism-crystal.self-954df214d77a4a6cb46291b43e5861c9b885d2c9a8bb2f4f46c1e427dc3ffcfe.js?body=1" for ::1 at 2018-08-06 13:52:09 -0500
+
+
+Started GET "/assets/prism/prism-csharp.self-b79497a9e470d2be0da20026c4a8add6013dd84b302581a7b3f1514025c83daa.js?body=1" for ::1 at 2018-08-06 13:52:09 -0500
+
+
+Started GET "/assets/prism/prism-css-extras.self-6c1d6a4fd14ad94269bc80b0b1a36ea5f9ad4837e84450d14adeb16d14d4d979.js?body=1" for ::1 at 2018-08-06 13:52:09 -0500
+
+
+Started GET "/assets/prism/prism-d.self-09437c2e5071996a5bdd6ff3f97972ceb7bd51bd9e2ca511445602c9ce72ecc6.js?body=1" for ::1 at 2018-08-06 13:52:09 -0500
+
+
+Started GET "/assets/prism/prism-dart.self-0a0e1366177a2ba7e359cd70839cb324351843bcbdf0d76d50c7afe641b181cf.js?body=1" for ::1 at 2018-08-06 13:52:09 -0500
+
+
+Started GET "/assets/prism/prism-diff.self-59c645283d2c9afc0eeecd50173056c82b75bfa726347afe37b5ee447585889d.js?body=1" for ::1 at 2018-08-06 13:52:09 -0500
+
+
+Started GET "/assets/prism/prism-docker.self-e654716082cda968d0ea15766571c1be732d7ffffde7d14b386009a0795106a2.js?body=1" for ::1 at 2018-08-06 13:52:09 -0500
+
+
+Started GET "/assets/prism/prism-eiffel.self-d4377b23e93c9d921ee7b87e67950d5d83d8aacb658051dc6d3d62dde4547f8b.js?body=1" for ::1 at 2018-08-06 13:52:09 -0500
+
+
+Started GET "/assets/prism/prism-elixir.self-db2c9de11e84b0430aa69a84c4b44ade0753c07db98464f01fc9756f42f5e72f.js?body=1" for ::1 at 2018-08-06 13:52:09 -0500
+
+
+Started GET "/assets/prism/prism-erlang.self-3097bcc945b33ce37462fb0fbce8d19c15585c1ca5bf23b686d443dd9bb36fd6.js?body=1" for ::1 at 2018-08-06 13:52:09 -0500
+
+
+Started GET "/assets/prism/prism-fortran.self-21e8638ede72a69bfde01eff44e4b484126a19086d2553bb631619496389af17.js?body=1" for ::1 at 2018-08-06 13:52:09 -0500
+
+
+Started GET "/assets/prism/prism-fsharp.self-ae269105e0f00b14125a9330aedb48b03b3b1193fcbdb8545125d9a7b9b3ead8.js?body=1" for ::1 at 2018-08-06 13:52:09 -0500
+
+
+Started GET "/assets/prism/prism-gherkin.self-7a716dab79f19ca00e91fa7f55009024b716b8f59e26b6577f7d553bfb72cf52.js?body=1" for ::1 at 2018-08-06 13:52:09 -0500
+
+
+Started GET "/assets/prism/prism-git.self-6e7de96bebaec1d2baad2384e41eae409462b7d42f2026ee6830932002ee53a0.js?body=1" for ::1 at 2018-08-06 13:52:09 -0500
+
+
+Started GET "/assets/prism/prism-glsl.self-9eb0fd831b1fea598f7a560751ae81b7a08497693394617afd42df916dd79bde.js?body=1" for ::1 at 2018-08-06 13:52:09 -0500
+
+
+Started GET "/assets/prism/prism-go.self-42cd6328387bcc82bddeb83206ade0157aa04d1219ab53d60aef0f3a8bbc2318.js?body=1" for ::1 at 2018-08-06 13:52:09 -0500
+
+
+Started GET "/assets/prism/prism-graphql.self-59a4b5a50582591bfd2664555e3c8427c79eb0e06cd689d595b972be48b79c9a.js?body=1" for ::1 at 2018-08-06 13:52:09 -0500
+
+
+Started GET "/assets/prism/prism-groovy.self-dac109b2062355f0db7cabe909ad6d044a81d4f024dc2e0fafc2717d35129ce5.js?body=1" for ::1 at 2018-08-06 13:52:09 -0500
+
+
+Started GET "/assets/prism/prism-haml.self-91fa5ddeb9a05761bc3c694cf861240a2a9413aa66ed91e32e44e26f887ba966.js?body=1" for ::1 at 2018-08-06 13:52:09 -0500
+
+
+Started GET "/assets/prism/prism-handlebars.self-340650e8a77a4e0a98c3ce87d6a23c9d096093a4c66c936dc478c8e767470ed7.js?body=1" for ::1 at 2018-08-06 13:52:09 -0500
+
+
+Started GET "/assets/prism/prism-haskell.self-d1287a9ee84c390336d5feeebe564e623e9a32cd8276e8f533bb1913e72fa01d.js?body=1" for ::1 at 2018-08-06 13:52:09 -0500
+
+
+Started GET "/assets/prism/prism-haxe.self-b90b36c5389279ae077ba08d89f70ce37d34087a829e3dccee1e39fd1c29cb75.js?body=1" for ::1 at 2018-08-06 13:52:09 -0500
+
+
+Started GET "/assets/prism/prism-http.self-15393c81f518296877af4af4403abd256343ceac500c7347dd7a8bec95989098.js?body=1" for ::1 at 2018-08-06 13:52:09 -0500
+
+
+Started GET "/assets/prism/prism-icon.self-111256382f6708445e0dc71c454891408bb8d8b8624a095db4705b72830b676c.js?body=1" for ::1 at 2018-08-06 13:52:09 -0500
+
+
+Started GET "/assets/prism/prism-inform7.self-0a1ed2852012d852635f3f1affabd40ef14cb6d9dbbf9c142d8b61745740ecdd.js?body=1" for ::1 at 2018-08-06 13:52:09 -0500
+
+
+Started GET "/assets/prism/prism-ini.self-ec9f3ff5d54516461b0b04b69a430885d81b3cd2b13c80953eb2db56c22c4c46.js?body=1" for ::1 at 2018-08-06 13:52:09 -0500
+
+
+Started GET "/assets/prism/prism-j.self-0633ec8d67f84d50ff3afe5f2feffac444764432aee19791d27571ee2f2ac652.js?body=1" for ::1 at 2018-08-06 13:52:09 -0500
+
+
+Started GET "/assets/prism/prism-jade.self-833f3ce4d8be598a2494cef82f765fe4e89f19f9615c914035c7f7fc2b85c8d6.js?body=1" for ::1 at 2018-08-06 13:52:09 -0500
+
+
+Started GET "/assets/prism/prism-jolie.self-98ac8d63fec943740372363afca8e2e3a8a50796c6606c5d1797d8a405b6c40b.js?body=1" for ::1 at 2018-08-06 13:52:09 -0500
+
+
+Started GET "/assets/prism/prism-jsx.self-a494c1bbd48b5bb5868b942d5456744c379351f3d79b2dcf55c9907c59f2b6b6.js?body=1" for ::1 at 2018-08-06 13:52:09 -0500
+
+
+Started GET "/assets/prism/prism-json.self-e3b089a7b639f40b8c5444cf3ccbcc767b5859096dfbec7e7966b79df796c75d.js?body=1" for ::1 at 2018-08-06 13:52:09 -0500
+
+
+Started GET "/assets/prism/prism-julia.self-3b2f4e6829a3bc735469cab10297195a2e2b6ec65cde31de5f6c80c507f6c3d1.js?body=1" for ::1 at 2018-08-06 13:52:09 -0500
+
+
+Started GET "/assets/prism/prism-keyman.self-d66c3005c2b35e65f02224011ee564ce81dce5ad9ebb0239f4422c692041f61a.js?body=1" for ::1 at 2018-08-06 13:52:09 -0500
+
+
+Started GET "/assets/prism/prism-kotlin.self-afe67d27f2f24db355f7c8bdd637989c8e9fb10a09b3efc08cecfd31e3216e7a.js?body=1" for ::1 at 2018-08-06 13:52:09 -0500
+
+
+Started GET "/assets/prism/prism-latex.self-83d6819a739503e529270a29bee26c8171c28d926b4cd5d1de413452a04615e8.js?body=1" for ::1 at 2018-08-06 13:52:09 -0500
+
+
+Started GET "/assets/prism/prism-less.self-589a3b6f7522d6d236aca555e5dca7a261b85ab52cad9ac93969615138472a50.js?body=1" for ::1 at 2018-08-06 13:52:09 -0500
+
+
+Started GET "/assets/prism/prism-livescript.self-07c6ad8438de9d50e10ea8cb6be15c53d50d28f84a354d9a48202214d147e151.js?body=1" for ::1 at 2018-08-06 13:52:09 -0500
+
+
+Started GET "/assets/prism/prism-lolcode.self-c5d710034962a65e234d3f78155eb35e9a160dd24785575d08c83130ad079893.js?body=1" for ::1 at 2018-08-06 13:52:09 -0500
+
+
+Started GET "/assets/prism/prism-lua.self-0889df9326b2cec86e5c3260142a5c7ada823a2cbb5a2305fdb3a821f414cad5.js?body=1" for ::1 at 2018-08-06 13:52:09 -0500
+
+
+Started GET "/assets/prism/prism-makefile.self-cf1f01ddfa7957f676991a06e2241a27a75d32cf51fbd12b93790dc9f811d20e.js?body=1" for ::1 at 2018-08-06 13:52:09 -0500
+
+
+Started GET "/assets/prism/prism-markdown.self-0a4cdb326920a4c11b43ceba0dc8ce2a9b570115f5dc8b7b72e25c5e8d780fd5.js?body=1" for ::1 at 2018-08-06 13:52:09 -0500
+
+
+Started GET "/assets/prism/prism-matlab.self-e8ff7560899c8fcacb5e7fc6ef55522b7454bb780a97febe78c84c8e06bd6c10.js?body=1" for ::1 at 2018-08-06 13:52:09 -0500
+
+
+Started GET "/assets/prism/prism-mel.self-bbf03421dab68b475cf97795550e75ac1aa68621785a7bcb60eb7e84b961b7e6.js?body=1" for ::1 at 2018-08-06 13:52:09 -0500
+
+
+Started GET "/assets/prism/prism-mizar.self-8396be93fd67da5acfc29d8be2917f72f5d46fb719f953354771fe98887cd306.js?body=1" for ::1 at 2018-08-06 13:52:09 -0500
+
+
+Started GET "/assets/prism/prism-monkey.self-e4e7b30b6dffa113ee7f28acfe2295aeca3b26c118cd09aa623b3b4db57d592a.js?body=1" for ::1 at 2018-08-06 13:52:09 -0500
+
+
+Started GET "/assets/prism/prism-nasm.self-9de85cca14d53d24d912995493d9f8f0494520afd19feff329a3f9bf794d7c2b.js?body=1" for ::1 at 2018-08-06 13:52:09 -0500
+
+
+Started GET "/assets/prism/prism-nginx.self-4b5a9c35b270d875dd64cf40a8c3cabe2ce632fc36cb6a56e1424301d1198024.js?body=1" for ::1 at 2018-08-06 13:52:09 -0500
+
+
+Started GET "/assets/prism/prism-nim.self-8b85ca9082aba1328f40f8d96562440616ba7255481c32498d9821fcdd842459.js?body=1" for ::1 at 2018-08-06 13:52:09 -0500
+
+
+Started GET "/assets/prism/prism-nix.self-bb7e0cac8f8e8d5ab3c280fa02d016396f48b88e96a187a5c4e988a858173eb4.js?body=1" for ::1 at 2018-08-06 13:52:09 -0500
+
+
+Started GET "/assets/prism/prism-nsis.self-02e3722dbb62a09142fcf71e7638505aea0d80890138c6a09a2c66bdb2a3db94.js?body=1" for ::1 at 2018-08-06 13:52:09 -0500
+
+
+Started GET "/assets/prism/prism-objectivec.self-6700ea53fac85b0b5d12c16d53e792ab002420d36f1193b2f220a1eefb554636.js?body=1" for ::1 at 2018-08-06 13:52:09 -0500
+
+
+Started GET "/assets/prism/prism-ocaml.self-cf46d24d6cd3b2358456084bb55055b6e45c7aaa471317e2c4a593d628908250.js?body=1" for ::1 at 2018-08-06 13:52:09 -0500
+
+
+Started GET "/assets/prism/prism-oz.self-06ac01d16c0618b81dfd6e6eef4084bd0f425aa1e3c4e2ca177f305129d22922.js?body=1" for ::1 at 2018-08-06 13:52:09 -0500
+
+
+Started GET "/assets/prism/prism-parigp.self-a861911a43bf1100457a60004f2889189f3d4a4592ac126d77a3e7161d493d2c.js?body=1" for ::1 at 2018-08-06 13:52:09 -0500
+
+
+Started GET "/assets/prism/prism-pascal.self-addc86aa490a4031f9c8539f2c20b253377a28859c441ee2ab63916027dd7dfb.js?body=1" for ::1 at 2018-08-06 13:52:09 -0500
+
+
+Started GET "/assets/prism/prism-parser.self-2e4e0fd62eaec062b44c6ee2281f80b64c2fcbf628f4151ba7aefe1dcd6b70c8.js?body=1" for ::1 at 2018-08-06 13:52:09 -0500
+
+
+Started GET "/assets/prism/prism-perl.self-a51fcce6f3fb0c9625663b8aea5208d090f75ccea30f4504d7257277c7166866.js?body=1" for ::1 at 2018-08-06 13:52:09 -0500
+
+
+Started GET "/assets/prism/prism-php-extras.self-55e1abc5a24f9615c4e0ed7008b20932f6154b92037f2c179a7f96065ad605a0.js?body=1" for ::1 at 2018-08-06 13:52:09 -0500
+
+
+Started GET "/assets/prism/prism-php.self-b51f4e4078741466994c79d9a2a28ce45ee5c7f5ee5efe60877812e1f1f76e86.js?body=1" for ::1 at 2018-08-06 13:52:09 -0500
+
+
+Started GET "/assets/prism/prism-powershell.self-7b3b0bea3fd04b5347307a039ac6732d0471214caa978e451988a00cc4bf4fa1.js?body=1" for ::1 at 2018-08-06 13:52:09 -0500
+
+
+Started GET "/assets/prism/prism-processing.self-4f20d920ac661bbeefe545d8fcb36c39fc906fa533b5199c7250039db31d4f6e.js?body=1" for ::1 at 2018-08-06 13:52:09 -0500
+
+
+Started GET "/assets/prism/prism-prolog.self-a909655a72f14237b4c6af6ce9fa09dd99f957812879769adfcdf2e5e3cb8259.js?body=1" for ::1 at 2018-08-06 13:52:09 -0500
+
+
+Started GET "/assets/prism/prism-properties.self-92b8b762c5226e2b438135931822228f1aa3d5402b19895eb59dd822fe4afb83.js?body=1" for ::1 at 2018-08-06 13:52:09 -0500
+
+
+Started GET "/assets/prism/prism-protobuf.self-4915ab5e57429532a7bd0ca6188d94cd106931c6b4fa2c02d7e1c85733307a5a.js?body=1" for ::1 at 2018-08-06 13:52:09 -0500
+
+
+Started GET "/assets/prism/prism-puppet.self-8acf56d00d3ce547903df4bc03796b998d84ba2f1f9e5fe6ca0fea02ece30cb4.js?body=1" for ::1 at 2018-08-06 13:52:09 -0500
+
+
+Started GET "/assets/prism/prism-python.self-417c46dbe016dcc4366ddf181c899718ed15c7e6513deddccbb6fd2835697aa9.js?body=1" for ::1 at 2018-08-06 13:52:09 -0500
+
+
+Started GET "/assets/prism/prism-pure.self-1f7e4b6dda6629e5bc7eec09988f2d9b7bdcb6ef48fb65a90e84053a18ae686f.js?body=1" for ::1 at 2018-08-06 13:52:09 -0500
+
+
+Started GET "/assets/prism/prism-q.self-626dd60746acb8c91027b229e2d2e7bd4a7d46673007450f814bc8c987f46e1a.js?body=1" for ::1 at 2018-08-06 13:52:09 -0500
+
+
+Started GET "/assets/prism/prism-qore.self-8fd534e5ed19472392c39080905161a40d5bbd01381d007facfc127def606f75.js?body=1" for ::1 at 2018-08-06 13:52:09 -0500
+
+
+Started GET "/assets/prism/prism-r.self-5d7dcb92611813dd44b7d2a849961cb2c032aed606362cdf356b59689048e4c3.js?body=1" for ::1 at 2018-08-06 13:52:09 -0500
+
+
+Started GET "/assets/prism/prism-reason.self-78fea82218ec84e6114c9bedf7cafd151fa54705f39c229e71b5e89283711c27.js?body=1" for ::1 at 2018-08-06 13:52:09 -0500
+
+
+Started GET "/assets/prism/prism-rest.self-951e98efbaee95dd426d46754e0cd5836e28526a63ab70c35383194136cb9e87.js?body=1" for ::1 at 2018-08-06 13:52:09 -0500
+
+
+Started GET "/assets/prism/prism-rip.self-c4f02ec8322f2b20908737a84deed7a551c669d42a567dd61472b102c9bad6bc.js?body=1" for ::1 at 2018-08-06 13:52:09 -0500
+
+
+Started GET "/assets/prism/prism-roboconf.self-e47456b678fbfb3ef8d9c84f9cdb63d8b9e915f6c7b2804e2139a064fee39125.js?body=1" for ::1 at 2018-08-06 13:52:10 -0500
+
+
+Started GET "/assets/prism/prism-rust.self-033d488ee7bd94761032f5e30da08511e3cb016d204704db92885809f145d505.js?body=1" for ::1 at 2018-08-06 13:52:10 -0500
+
+
+Started GET "/assets/prism/prism-sas.self-82f04fb76b8f3066f1fdb34565cf344ca687f70d421d6334f350ffdfebb5d652.js?body=1" for ::1 at 2018-08-06 13:52:10 -0500
+
+
+Started GET "/assets/prism/prism-sass.self-5ba2c64e420c0a8dc51e8bf8dbdb2a000d4a03df9149799049480237cb861bbe.js?body=1" for ::1 at 2018-08-06 13:52:10 -0500
+
+
+Started GET "/assets/prism/prism-scala.self-fe7c0fc38109f64d267782fbd505c876070305529f8ef508936d438b379d74e3.js?body=1" for ::1 at 2018-08-06 13:52:10 -0500
+
+
+Started GET "/assets/prism/prism-scheme.self-feeaef8448bc352cf511be77a87a5b1779b806572e26beceda7010f2d93a85da.js?body=1" for ::1 at 2018-08-06 13:52:10 -0500
+
+
+Started GET "/assets/prism/prism-scss.self-988567da8ec2c48430240d7bd8b0178da1c03fb0805d41527708d792d4b0674f.js?body=1" for ::1 at 2018-08-06 13:52:10 -0500
+
+
+Started GET "/assets/prism/prism-smalltalk.self-36ab1152a115c44d14ad781c8371b3091d37d41ee1a2df131a5f4c7e386d0a15.js?body=1" for ::1 at 2018-08-06 13:52:10 -0500
+
+
+Started GET "/assets/prism/prism-smarty.self-2e0b7a8a98657d46e8a2db656b41de81918d3e5fc739673d49eef734fe307412.js?body=1" for ::1 at 2018-08-06 13:52:10 -0500
+
+
+Started GET "/assets/prism/prism-sql.self-6f528a5faeec88b9724908f74083777535c97aa1492f91bd08810f3e7be228e4.js?body=1" for ::1 at 2018-08-06 13:52:10 -0500
+
+
+Started GET "/assets/prism/prism-stylus.self-4fa5597f16065b6ecae76e2c431d09b6a86166e2477a7939b2b30e3350459eef.js?body=1" for ::1 at 2018-08-06 13:52:10 -0500
+
+
+Started GET "/assets/prism/prism-swift.self-f1ee9318c6693ad58ca2d55578e3e2beeaeb1fbee6ff20f7393bf1a03d3a8ab1.js?body=1" for ::1 at 2018-08-06 13:52:10 -0500
+
+
+Started GET "/assets/prism/prism-textile.self-a5ad63ab2ff5308a9cc65f252385c9fa29647a6da2b5eec442eaed4f621d7e4a.js?body=1" for ::1 at 2018-08-06 13:52:10 -0500
+
+
+Started GET "/assets/prism/prism-tcl.self-0822d4c4f9e869c9a3b89cef36ef22189100f68df41fa05c6852949c720665c9.js?body=1" for ::1 at 2018-08-06 13:52:10 -0500
+
+
+Started GET "/assets/prism/prism-twig.self-740d5165f959d61305bd14aca3e57a5bea78255dc6160feb3a9b04fb4a24c791.js?body=1" for ::1 at 2018-08-06 13:52:10 -0500
+
+
+Started GET "/assets/prism/prism-typescript.self-7782887cdfe8b7d3378dabe512d3f1c97385368566ed8c2ce4e8b693c40b9f27.js?body=1" for ::1 at 2018-08-06 13:52:10 -0500
+
+
+Started GET "/assets/prism/prism-verilog.self-d1c2c79862b58f74b071e5f75b410f2e0812972bfe1ac7ed697035c4b51d8d95.js?body=1" for ::1 at 2018-08-06 13:52:10 -0500
+
+
+Started GET "/assets/prism/prism-vhdl.self-46b7ef82760761628140e4c60f6387f870040240989aff8e3cc44ded228e2cd4.js?body=1" for ::1 at 2018-08-06 13:52:10 -0500
+
+
+Started GET "/assets/prism/prism-vim.self-48a4be5fd2bb5e54d60ec06df00903243c268232f07b3ed50b487637ffa27e74.js?body=1" for ::1 at 2018-08-06 13:52:10 -0500
+
+
+Started GET "/assets/prism/prism-wiki.self-0b8ba0fdd13242bfd7052fb5705ac7eb1b6d2d5add3f7859b7f1858e0e8927c1.js?body=1" for ::1 at 2018-08-06 13:52:10 -0500
+
+
+Started GET "/assets/prism/prism-xojo.self-002caaf442b92c11feacf7eb22022da6ad4f95c8c358f1a659f23dc92771a959.js?body=1" for ::1 at 2018-08-06 13:52:10 -0500
+
+
+Started GET "/assets/prism/prism-yaml.self-e463f24fc428a17c13c1bf027cb348934f8924753fcf4cb878c4f69c8037d099.js?body=1" for ::1 at 2018-08-06 13:52:10 -0500
+
+
+Started GET "/assets/prism.self-37c90ccab84eac70c0aa91aafaacc57d5fe2a58fde3d0c637acf8daa5ad5f43a.js?body=1" for ::1 at 2018-08-06 13:52:10 -0500
+
+
+Started GET "/assets/application.self-e088abdec24c652728c331cc53f5d2286e096b6080fa2bacfba79c56847e932e.js?body=1" for ::1 at 2018-08-06 13:52:10 -0500
+
+
+Started GET "/tutorials" for ::1 at 2018-08-06 13:52:13 -0500
+Processing by TutorialsController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mTutorial Load (0.6ms)[0m  [1mSELECT "tutorials".* FROM "tutorials"  ORDER BY "tutorials"."sort" ASC[0m
+  Rendered tutorials/index.html.erb within layouts/application (21.0ms)
+  Rendered layouts/_header.html.erb (6.3ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 848ms (Views: 838.3ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/tutorials/3" for ::1 at 2018-08-06 13:52:16 -0500
+Processing by TutorialsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mTutorial Load (0.2ms)[0m  SELECT  "tutorials".* FROM "tutorials" WHERE "tutorials"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mObjective Load (0.4ms)[0m  SELECT "objectives".* FROM "objectives" WHERE "objectives"."tutorial_id" = ?  [["tutorial_id", 3]]
+  Rendered tutorials/show.html.erb within layouts/application (91.7ms)
+  Rendered layouts/_header.html.erb (4.1ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 726ms (Views: 721.7ms | ActiveRecord: 0.9ms)

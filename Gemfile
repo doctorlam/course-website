@@ -37,6 +37,7 @@ gem 'rails_sortable', '~> 1.2', '>= 1.2.1'
 gem 'aws-sdk-s3'
 gem 'jquery-ui-rails', '~> 5.0', '>= 5.0.5'
 gem 'acts_as_list'
+gem 'prism-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

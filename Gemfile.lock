@@ -167,6 +167,8 @@ GEM
     pg (0.21.0)
     polyamorous (1.3.3)
       activerecord (>= 3.0)
+    prism-rails (1.6.0.3)
+      railties (>= 4.2, < 6)
     public_suffix (3.0.2)
     rack (1.6.10)
     rack-protection (1.5.5)
@@ -307,6 +309,7 @@ DEPENDENCIES
   material_icons
   paperclip!
   pg (~> 0.18)
+  prism-rails
   rails (= 4.2.4)
   rails_12factor
   rails_sortable (~> 1.2, >= 1.2.1)

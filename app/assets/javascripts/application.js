@@ -21,5 +21,6 @@
 //= require turbolinks
 //= require jquery.slick
 //= require tinymce
+//= require prism
 //= require bootstrap-datepicker
 //= require_tree .
