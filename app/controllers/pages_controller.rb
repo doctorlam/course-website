@@ -20,5 +20,7 @@ class PagesController < ApplicationController
   	redirect_to lessons_url, alert: "You don't have permission to do that! Nice try though :)"
   end
 
+
+
   end
 end
