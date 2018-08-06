@@ -30199,3 +30199,1696 @@ Started GET "/assets/tinymce/skins/lightgray/content.min.css" for ::1 at 2018-08
 
 
 Started GET "/assets/tinymce/skins/lightgray/fonts/tinymce.woff" for ::1 at 2018-08-06 11:46:48 -0500
+
+
+Started GET "/tutorials/" for ::1 at 2018-08-06 12:37:34 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by TutorialsController#index as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mTutorial Load (0.6ms)[0m  [1mSELECT "tutorials".* FROM "tutorials"  ORDER BY "tutorials"."sort" ASC[0m
+  Rendered tutorials/index.html.erb within layouts/application (1055.1ms)
+  Rendered layouts/_header.html.erb (7.0ms)
+  Rendered layouts/_footer.html.erb (0.8ms)
+Completed 200 OK in 1915ms (Views: 1892.2ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/assets/tutorial-899221fe96faa95cc40169986127d2f50af8d07e605543c08678f9690a83c9f7.png" for ::1 at 2018-08-06 12:37:36 -0500
+
+
+Started GET "/tutorials/3/edit" for ::1 at 2018-08-06 12:37:38 -0500
+Processing by TutorialsController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mTutorial Load (0.2ms)[0m  SELECT  "tutorials".* FROM "tutorials" WHERE "tutorials"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mObjective Load (0.4ms)[0m  SELECT "objectives".* FROM "objectives" WHERE "objectives"."tutorial_id" = ?  [["tutorial_id", 3]]
+  Rendered tutorials/_objective_fields.html.erb (2.8ms)
+  Rendered tutorials/_form.html.erb (148.8ms)
+  Rendered tutorials/edit.html.erb within layouts/application (151.2ms)
+  Rendered layouts/_header.html.erb (3.6ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 567ms (Views: 561.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/tinymce/themes/modern/theme.js" for ::1 at 2018-08-06 12:37:38 -0500
+
+
+Started GET "/assets/tinymce/plugins/link/plugin.js" for ::1 at 2018-08-06 12:37:38 -0500
+
+
+Started GET "/assets/tinymce/plugins/lists/plugin.js" for ::1 at 2018-08-06 12:37:38 -0500
+
+
+Started GET "/assets/tinymce/plugins/image/plugin.js" for ::1 at 2018-08-06 12:37:38 -0500
+
+
+Started GET "/assets/tinymce/skins/lightgray/skin.min.css" for ::1 at 2018-08-06 12:37:38 -0500
+
+
+Started GET "/assets/tinymce/skins/lightgray/content.min.css" for ::1 at 2018-08-06 12:37:38 -0500
+
+
+Started GET "/assets/tinymce/skins/lightgray/fonts/tinymce.woff" for ::1 at 2018-08-06 12:37:38 -0500
+
+
+Started PATCH "/tutorials/3" for ::1 at 2018-08-06 12:37:42 -0500
+Processing by TutorialsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9ek07a6MS+82gFFqFjdGDiEFpir7z0LF/5vNqMvi3uHnB9lDHdIby8PZ8DEuAmtwtegYUF8/CkUyghb+3/x9tA==", "tutorial"=>{"name"=>"asdf", "video"=>"asdf", "content"=>"<h2><span style=\"text-decoration: underline;\"><strong>NOTE: I've updated some of the Gem files on this written explanation that differs from the video. Follow the written explanation!</strong></span></h2>\r\n<h1><span style=\"text-decoration: underline;\"><strong>Step 1: Creating a Root Route</strong></span></h1>\r\n<h2><span style=\"text-decoration: underline;\"><strong>Explanation</strong></span></h2>\r\n<p>One of the beauties of Rails is it's fairly simplistic way of handling routes. Routes are essentially a way to generate a permalink (URL) for a particular view in your app. The easiest way to wrap your head around this is to consider the \"Root\" route. That is, when a user enters in the main URL for your website or application, you can tell Rails which view or page to load for the user to see. It's similar to the index.html file you might see on a basic webserver for a static HTML/CSS website.&nbsp;</p>\r\n<p>So, with all that in mind, we'll set the \"root\" path for our Survey app. In our case, we want to view all of the survey responses as soon as a user loads the app (the index view file for Surveys). To change a route, you can find a file called routes.rb located in the \"config\" folder of your app.&nbsp;</p>\r\n<p><strong>Filepath for Image below: config &gt; routes.rb</strong></p>\r\n<p><img src=\"https://s3.us-east-2.amazonaws.com/lam-fall/images/routes.rb.png\" alt=\"root 'surveys#index\" width=\"100%\" height=\"auto\" /></p>\r\n<p><span style=\"text-decoration: underline;\"><strong>Change the Index Route</strong></span></p>\r\n<p style=\"padding-left: 30px;\"><code>root 'surveys#index</code></p>\r\n<p style=\"padding-left: 30px;\">&nbsp;</p>\r\n<h1><span style=\"text-decoration: underline;\"><strong>STEP 2: Install Bootstrap Gem*</strong></span></h1>\r\n<p><span style=\"text-decoration: underline;\"><strong style=\"text-decoration: none;\">Filepath for Image below: Gemfile</strong></span></p>\r\n<p><span style=\"text-decoration: underline;\"><strong><img src=\"https://s3.us-east-2.amazonaws.com/lam-fall/images/gemfile.png\" alt=\"\" width=\"100%\" height=\"auto\" /></strong></span></p>\r\n<p>1. Add the following code to your gemfile:</p>\r\n<p style=\"padding-left: 30px;\"><code>gem 'bootstrap', '~&gt; 4.1.3'</code></p>\r\n<p style=\"padding-left: 30px;\"><code>gem 'jquery-rails'</code></p>\r\n<p style=\"padding-left: 30px;\">&nbsp;</p>\r\n<p style=\"padding-left: 30px;\"><strong>Filepath for Image below: app &gt; assets &gt; stylesheets &gt; application.css</strong></p>\r\n<p style=\"padding-left: 30px;\"><img src=\"https://s3.us-east-2.amazonaws.com/lam-fall/images/application.scss.png\" alt=\"\" width=\"100%\" height=\"auto\" /></p>\r\n<p>2. Right-click the application.css file and rename the file to application.scss. Then, in \"app&gt;assets&gt;stylesheets&gt;application.scss\" add the following code:</p>\r\n<p style=\"padding-left: 30px;\"><code>@import \"bootstrap\";</code></p>\r\n<p style=\"padding-left: 30px;\">&nbsp;</p>\r\n<p style=\"padding-left: 30px;\"><strong>Filepath for Image below:&nbsp;</strong><strong>app &gt; assets &gt; stylesheets &gt; application.js</strong><img src=\"https://s3.us-east-2.amazonaws.com/lam-fall/images/application.js.png\" alt=\"\" width=\"100%\" height=\"auto\" /></p>\r\n<p>3. Add JQUERY dependecies in your application.js file. In \"app&gt;assets&gt;javascripts&gt;application.js\"</p>\r\n<p style=\"padding-left: 30px;\"><code>//= require jquery3</code></p>\r\n<p style=\"padding-left: 30px;\"><code>//= require popper</code></p>\r\n<p style=\"padding-left: 30px;\"><code>//= require bootstrap-sprocketsts</code></p>\r\n<p>&nbsp;</p>\r\n<p>4. in terminal or command line</p>\r\n<p style=\"padding-left: 30px;\"><code>bundle install&nbsp;</code></p>\r\n<p style=\"padding-left: 30px;\"><code>Restart server</code></p>\r\n<h1><span style=\"text-decoration: underline;\"><strong>STEP 3: Style Index and Form Pages</strong></span></h1>\r\n<p><span style=\"text-decoration: underline;\"><strong style=\"text-decoration: none;\">Filepath for Image below: app &gt; views &gt; surveys &gt; index.html.erb</strong></span></p>\r\n<p><img src=\"https://s3.us-east-2.amazonaws.com/lam-fall/images/index.png\" alt=\"\" width=\"100%\" height=\"auto\" /></p>\r\n<p>1. Let's add a bootstrap class called table and table-striped to our main index table. in \"views&gt;surveys&gt;index.html.erb</p>\r\n<p style=\"padding-left: 30px;\"><code>&lt;table class=\"table table-striped\"&gt;</code></p>\r\n<p style=\"padding-left: 30px;\">&nbsp;</p>\r\n<p style=\"padding-left: 30px;\"><strong>Filepath for Image below: app &gt; views &gt; surveys &gt; _form.html.erb</strong></p>\r\n<p style=\"padding-left: 30px;\"><code></code></p>\r\n<p><img src=\"https://s3.us-east-2.amazonaws.com/lam-fall/images/form.png\" alt=\"\" width=\"100%\" height=\"auto\" /></p>\r\n<p>2. Now, let's style our actual form a bit. in \"views&gt;surveys&gt;_form.html.erb</p>\r\n<p style=\"padding-left: 30px;\">-- Add form-group class to each &lt;div&gt;:&nbsp;<code>&lt;div class=\"form-group\"&gt;</code></p>\r\n<p style=\"padding-left: 30px;\">-- Add form control to the name text area:&nbsp;<code>class: 'form-control'</code></p>\r\n<p style=\"padding-left: 30px;\">&nbsp;</p>\r\n<p><span style=\"text-decoration: underline;\">3. Ok, now let's change Laptop to radio buttons instead of a textbox</span></p>\r\n<p style=\"padding-left: 30px;\"><code>&lt;%= form.label :laptop, \"Do you own a laptop?\" %&gt;&lt;br /&gt;</code></p>\r\n<p style=\"padding-left: 30px;\"><code>&lt;%= form.label :laptop, \"Yes\", :value =&gt; \"true\" &nbsp;%&gt;</code></p>\r\n<p style=\"padding-left: 30px;\"><code>&lt;%= form.radio_button :laptop, 'yes',:checked =&gt; true &nbsp;%&gt;</code></p>\r\n<p style=\"padding-left: 30px;\"><code>&lt;%= form.label :laptop, \"No\", :value =&gt; \"false\" %&gt;</code></p>\r\n<p style=\"padding-left: 30px;\"><code>&lt;%= form.radio_button :laptop, 'No' %&gt;&nbsp;</code></p>\r\n<p>&nbsp;</p>\r\n<p><span style=\"text-decoration: underline;\">4. Finally, let's Change Operating System to Drop-Down Menu</span></p>\r\n<p style=\"padding-left: 30px;\"><code>&lt;%= form.select :os, ['No OS', 'Mac OSX', 'Windows 10', 'Windows 7 or below', 'Linux']%&gt;</code></p>\r\n<p style=\"padding-left: 60px;\">&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<hr />\r\n<p><strong>Links</strong></p>\r\n<p>*<a href=\"https://github.com/twbs/bootstrap-rubygem\">Bootstrap Github Page</a></p>\r\n<p>*&nbsp;<a href=\"https://medium.freecodecamp.org/add-bootstrap-to-your-ruby-on-rails-project-8d76d70d0e3b\" target=\"_blank\" rel=\"noopener\">Add Bootstrap to your RoR App</a></p>\r\n<hr />\r\n<p>&nbsp;</p>"}, "commit"=>"Update Tutorial", "id"=>"3"}
+  [1m[36mTutorial Load (0.1ms)[0m  [1mSELECT  "tutorials".* FROM "tutorials" WHERE "tutorials"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  UPDATE "tutorials" SET "content" = ?, "updated_at" = ? WHERE "tutorials"."id" = ?  [["content", "<h2><span style=\"text-decoration: underline;\"><strong>NOTE: I've updated some of the Gem files on this written explanation that differs from the video. Follow the written explanation!</strong></span></h2>\r\n<h1><span style=\"text-decoration: underline;\"><strong>Step 1: Creating a Root Route</strong></span></h1>\r\n<h2><span style=\"text-decoration: underline;\"><strong>Explanation</strong></span></h2>\r\n<p>One of the beauties of Rails is it's fairly simplistic way of handling routes. Routes are essentially a way to generate a permalink (URL) for a particular view in your app. The easiest way to wrap your head around this is to consider the \"Root\" route. That is, when a user enters in the main URL for your website or application, you can tell Rails which view or page to load for the user to see. It's similar to the index.html file you might see on a basic webserver for a static HTML/CSS website.&nbsp;</p>\r\n<p>So, with all that in mind, we'll set the \"root\" path for our Survey app. In our case, we want to view all of the survey responses as soon as a user loads the app (the index view file for Surveys). To change a route, you can find a file called routes.rb located in the \"config\" folder of your app.&nbsp;</p>\r\n<p><strong>Filepath for Image below: config &gt; routes.rb</strong></p>\r\n<p><img src=\"https://s3.us-east-2.amazonaws.com/lam-fall/images/routes.rb.png\" alt=\"root 'surveys#index\" width=\"100%\" height=\"auto\" /></p>\r\n<p><span style=\"text-decoration: underline;\"><strong>Change the Index Route</strong></span></p>\r\n<p style=\"padding-left: 30px;\"><code>root 'surveys#index</code></p>\r\n<p style=\"padding-left: 30px;\">&nbsp;</p>\r\n<h1><span style=\"text-decoration: underline;\"><strong>STEP 2: Install Bootstrap Gem*</strong></span></h1>\r\n<p><span style=\"text-decoration: underline;\"><strong style=\"text-decoration: none;\">Filepath for Image below: Gemfile</strong></span></p>\r\n<p><span style=\"text-decoration: underline;\"><strong><img src=\"https://s3.us-east-2.amazonaws.com/lam-fall/images/gemfile.png\" alt=\"\" width=\"100%\" height=\"auto\" /></strong></span></p>\r\n<p>1. Add the following code to your gemfile:</p>\r\n<p style=\"padding-left: 30px;\"><code>gem 'bootstrap', '~&gt; 4.1.3'</code></p>\r\n<p style=\"padding-left: 30px;\"><code>gem 'jquery-rails'</code></p>\r\n<p style=\"padding-left: 30px;\">&nbsp;</p>\r\n<p style=\"padding-left: 30px;\"><strong>Filepath for Image below: app &gt; assets &gt; stylesheets &gt; application.css</strong></p>\r\n<p style=\"padding-left: 30px;\"><img src=\"https://s3.us-east-2.amazonaws.com/lam-fall/images/application.scss.png\" alt=\"\" width=\"100%\" height=\"auto\" /></p>\r\n<p>2. Right-click the application.css file and rename the file to application.scss. Then, in \"app&gt;assets&gt;stylesheets&gt;application.scss\" add the following code:</p>\r\n<p style=\"padding-left: 30px;\"><code>@import \"bootstrap\";</code></p>\r\n<p style=\"padding-left: 30px;\">&nbsp;</p>\r\n<p style=\"padding-left: 30px;\"><strong>Filepath for Image below:&nbsp;</strong><strong>app &gt; assets &gt; stylesheets &gt; application.js</strong><img src=\"https://s3.us-east-2.amazonaws.com/lam-fall/images/application.js.png\" alt=\"\" width=\"100%\" height=\"auto\" /></p>\r\n<p>3. Add JQUERY dependecies in your application.js file. In \"app&gt;assets&gt;javascripts&gt;application.js\"</p>\r\n<p style=\"padding-left: 30px;\"><code>//= require jquery3</code></p>\r\n<p style=\"padding-left: 30px;\"><code>//= require popper</code></p>\r\n<p style=\"padding-left: 30px;\"><code>//= require bootstrap-sprocketsts</code></p>\r\n<p>&nbsp;</p>\r\n<p>4. in terminal or command line</p>\r\n<p style=\"padding-left: 30px;\"><code>bundle install&nbsp;</code></p>\r\n<p style=\"padding-left: 30px;\"><code>Restart server</code></p>\r\n<h1><span style=\"text-decoration: underline;\"><strong>STEP 3: Style Index and Form Pages</strong></span></h1>\r\n<p><span style=\"text-decoration: underline;\"><strong style=\"text-decoration: none;\">Filepath for Image below: app &gt; views &gt; surveys &gt; index.html.erb</strong></span></p>\r\n<p><img src=\"https://s3.us-east-2.amazonaws.com/lam-fall/images/index.png\" alt=\"\" width=\"100%\" height=\"auto\" /></p>\r\n<p>1. Let's add a bootstrap class called table and table-striped to our main index table. in \"views&gt;surveys&gt;index.html.erb</p>\r\n<p style=\"padding-left: 30px;\"><code>&lt;table class=\"table table-striped\"&gt;</code></p>\r\n<p style=\"padding-left: 30px;\">&nbsp;</p>\r\n<p style=\"padding-left: 30px;\"><strong>Filepath for Image below: app &gt; views &gt; surveys &gt; _form.html.erb</strong></p>\r\n<p style=\"padding-left: 30px;\"><code></code></p>\r\n<p><img src=\"https://s3.us-east-2.amazonaws.com/lam-fall/images/form.png\" alt=\"\" width=\"100%\" height=\"auto\" /></p>\r\n<p>2. Now, let's style our actual form a bit. in \"views&gt;surveys&gt;_form.html.erb</p>\r\n<p style=\"padding-left: 30px;\">-- Add form-group class to each &lt;div&gt;:&nbsp;<code>&lt;div class=\"form-group\"&gt;</code></p>\r\n<p style=\"padding-left: 30px;\">-- Add form control to the name text area:&nbsp;<code>class: 'form-control'</code></p>\r\n<p style=\"padding-left: 30px;\">&nbsp;</p>\r\n<p><span style=\"text-decoration: underline;\">3. Ok, now let's change Laptop to radio buttons instead of a textbox</span></p>\r\n<p style=\"padding-left: 30px;\"><code>&lt;%= form.label :laptop, \"Do you own a laptop?\" %&gt;&lt;br /&gt;</code></p>\r\n<p style=\"padding-left: 30px;\"><code>&lt;%= form.label :laptop, \"Yes\", :value =&gt; \"true\" &nbsp;%&gt;</code></p>\r\n<p style=\"padding-left: 30px;\"><code>&lt;%= form.radio_button :laptop, 'yes',:checked =&gt; true &nbsp;%&gt;</code></p>\r\n<p style=\"padding-left: 30px;\"><code>&lt;%= form.label :laptop, \"No\", :value =&gt; \"false\" %&gt;</code></p>\r\n<p style=\"padding-left: 30px;\"><code>&lt;%= form.radio_button :laptop, 'No' %&gt;&nbsp;</code></p>\r\n<p>&nbsp;</p>\r\n<p><span style=\"text-decoration: underline;\">4. Finally, let's Change Operating System to Drop-Down Menu</span></p>\r\n<p style=\"padding-left: 30px;\"><code>&lt;%= form.select :os, ['No OS', 'Mac OSX', 'Windows 10', 'Windows 7 or below', 'Linux']%&gt;</code></p>\r\n<p style=\"padding-left: 60px;\">&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<hr />\r\n<p><strong>Links</strong></p>\r\n<p>*<a href=\"https://github.com/twbs/bootstrap-rubygem\">Bootstrap Github Page</a></p>\r\n<p>*&nbsp;<a href=\"https://medium.freecodecamp.org/add-bootstrap-to-your-ruby-on-rails-project-8d76d70d0e3b\" target=\"_blank\" rel=\"noopener\">Add Bootstrap to your RoR App</a></p>\r\n<hr />\r\n<p>&nbsp;</p>"], ["updated_at", "2018-08-06 17:37:42.620597"], ["id", 3]]
+  [1m[36m (3.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/tutorials/3
+Completed 302 Found in 11ms (ActiveRecord: 3.8ms)
+
+
+Started GET "/tutorials/3" for ::1 at 2018-08-06 12:37:42 -0500
+Processing by TutorialsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mTutorial Load (0.3ms)[0m  SELECT  "tutorials".* FROM "tutorials" WHERE "tutorials"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mObjective Load (0.1ms)[0m  SELECT "objectives".* FROM "objectives" WHERE "objectives"."tutorial_id" = ?  [["tutorial_id", 3]]
+  Rendered tutorials/show.html.erb within layouts/application (69.0ms)
+  Rendered layouts/_header.html.erb (5.3ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 528ms (Views: 525.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/attachments-e41e6f6fb7b4735fafb14ef777088dd3738ae0c1ea3e1938d8a172db38b261d8.png" for ::1 at 2018-08-06 12:37:43 -0500
+
+
+Started GET "/tutorials/3" for ::1 at 2018-08-06 12:41:17 -0500
+Processing by TutorialsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mTutorial Load (0.2ms)[0m  [1mSELECT  "tutorials".* FROM "tutorials" WHERE "tutorials"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mObjective Load (0.1ms)[0m  [1mSELECT "objectives".* FROM "objectives" WHERE "objectives"."tutorial_id" = ?[0m  [["tutorial_id", 3]]
+  Rendered tutorials/show.html.erb within layouts/application (17.8ms)
+  Rendered layouts/_header.html.erb (8.3ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 569ms (Views: 567.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/tutorials/3/edit" for ::1 at 2018-08-06 12:41:27 -0500
+Processing by TutorialsController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mTutorial Load (0.1ms)[0m  SELECT  "tutorials".* FROM "tutorials" WHERE "tutorials"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mObjective Load (0.1ms)[0m  SELECT "objectives".* FROM "objectives" WHERE "objectives"."tutorial_id" = ?  [["tutorial_id", 3]]
+  Rendered tutorials/_objective_fields.html.erb (0.9ms)
+  Rendered tutorials/_form.html.erb (13.3ms)
+  Rendered tutorials/edit.html.erb within layouts/application (15.6ms)
+  Rendered layouts/_header.html.erb (6.9ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 448ms (Views: 446.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/tinymce/themes/modern/theme.js" for ::1 at 2018-08-06 12:41:27 -0500
+
+
+Started GET "/assets/tinymce/plugins/link/plugin.js" for ::1 at 2018-08-06 12:41:28 -0500
+
+
+Started GET "/assets/tinymce/plugins/table/plugin.js" for ::1 at 2018-08-06 12:41:28 -0500
+
+
+Started GET "/assets/tinymce/plugins/lists/plugin.js" for ::1 at 2018-08-06 12:41:28 -0500
+
+
+Started GET "/assets/tinymce/plugins/image/plugin.js" for ::1 at 2018-08-06 12:41:28 -0500
+
+
+Started GET "/assets/tinymce/skins/lightgray/skin.min.css" for ::1 at 2018-08-06 12:41:28 -0500
+
+
+Started GET "/assets/tinymce/skins/lightgray/content.min.css" for ::1 at 2018-08-06 12:41:28 -0500
+
+
+Started GET "/assets/tinymce/skins/lightgray/fonts/tinymce.woff" for ::1 at 2018-08-06 12:41:28 -0500
+
+
+Started GET "/assets/tinymce/skins/lightgray/skin.min.css.map" for ::1 at 2018-08-06 12:41:28 -0500
+
+ActionController::RoutingError (No route matches [GET] "/assets/tinymce/skins/lightgray/skin.min.css.map"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.10) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.10) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.10) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.10) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.10) lib/rack/lock.rb:17:in `call'
+  rack (1.6.10) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.10) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/chrislam/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /Users/chrislam/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /Users/chrislam/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.8ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb (4.3ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.2ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (3.9ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (149.5ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (70.5ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (151.0ms)
+
+
+Started PATCH "/tutorials/3" for ::1 at 2018-08-06 12:43:21 -0500
+Processing by TutorialsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"uGngvha+rwblVVdD/Ly674sd1LIkUAGmAzw36ov4nrCqhw0QpeD/IhAM9hjEiZeRH/BqyICgSSbOJey8n+Y95Q==", "tutorial"=>{"name"=>"asdf", "video"=>"asdf", "content"=>"<h2><span style=\"text-decoration: underline;\"><strong>NOTE: I've updated some of the Gem files on this written explanation that differs from the video. Follow the written explanation!</strong></span></h2>\r\n<h1><span style=\"text-decoration: underline;\"><strong>Step 1: Creating a Root Route</strong></span></h1>\r\n<h2><span style=\"text-decoration: underline;\"><strong>Explanation</strong></span></h2>\r\n<p>One of the beauties of Rails is it's fairly simplistic way of handling routes. Routes are essentially a way to generate a permalink (URL) for a particular view in your app. The easiest way to wrap your head around this is to consider the \"Root\" route. That is, when a user enters in the main URL for your website or application, you can tell Rails which view or page to load for the user to see. It's similar to the index.html file you might see on a basic webserver for a static HTML/CSS website.&nbsp;</p>\r\n<p>So, with all that in mind, we'll set the \"root\" path for our Survey app. In our case, we want to view all of the survey responses as soon as a user loads the app (the index view file for Surveys). To change a route, you can find a file called routes.rb located in the \"config\" folder of your app.&nbsp;</p>\r\n<table style=\"border-collapse: collapse; width: 100%;\" border=\"1\">\r\n<tbody>\r\n<tr>\r\n<td style=\"width: 23.10606060606061%;\"><strong>File Path</strong></td>\r\n<td style=\"width: 54.24242424242424%;\"><strong>Screenshot</strong></td>\r\n<td style=\"width: 22.651515151515156%;\"><strong>Code Needed</strong></td>\r\n</tr>\r\n<tr>\r\n<td style=\"width: 23.10606060606061%;\"><strong>config &gt; routes.rb</strong></td>\r\n<td style=\"width: 54.24242424242424%;\"><img src=\"https://s3.us-east-2.amazonaws.com/lam-fall/images/routes.rb.png\" alt=\"\" width=\"100%\" height=\"auto\" /></td>\r\n<td style=\"width: 22.651515151515156%;\"><span style=\"font-family: monospace; background-color: #bfe6ff;\">root 'surveys#index</span></td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n<p><strong>Filepath for Image below: config &gt; routes.rb</strong></p>\r\n<p><img src=\"https://s3.us-east-2.amazonaws.com/lam-fall/images/routes.rb.png\" alt=\"root 'surveys#index\" width=\"100%\" height=\"auto\" /></p>\r\n<p><span style=\"text-decoration: underline;\"><strong>Change the Index Route</strong></span></p>\r\n<p style=\"padding-left: 30px;\"><code>root 'surveys#index</code></p>\r\n<p style=\"padding-left: 30px;\">&nbsp;</p>\r\n<h1><span style=\"text-decoration: underline;\"><strong>STEP 2: Install Bootstrap Gem*</strong></span></h1>\r\n<p><span style=\"text-decoration: underline;\"><strong style=\"text-decoration: none;\">Filepath for Image below: Gemfile</strong></span></p>\r\n<p><span style=\"text-decoration: underline;\"><strong><img src=\"https://s3.us-east-2.amazonaws.com/lam-fall/images/gemfile.png\" alt=\"\" width=\"100%\" height=\"auto\" /></strong></span></p>\r\n<p>1. Add the following code to your gemfile:</p>\r\n<p style=\"padding-left: 30px;\"><code>gem 'bootstrap', '~&gt; 4.1.3'</code></p>\r\n<p style=\"padding-left: 30px;\"><code>gem 'jquery-rails'</code></p>\r\n<p style=\"padding-left: 30px;\">&nbsp;</p>\r\n<p style=\"padding-left: 30px;\"><strong>Filepath for Image below: app &gt; assets &gt; stylesheets &gt; application.css</strong></p>\r\n<p style=\"padding-left: 30px;\"><img src=\"https://s3.us-east-2.amazonaws.com/lam-fall/images/application.scss.png\" alt=\"\" width=\"100%\" height=\"auto\" /></p>\r\n<p>2. Right-click the application.css file and rename the file to application.scss. Then, in \"app&gt;assets&gt;stylesheets&gt;application.scss\" add the following code:</p>\r\n<p style=\"padding-left: 30px;\"><code>@import \"bootstrap\";</code></p>\r\n<p style=\"padding-left: 30px;\">&nbsp;</p>\r\n<p style=\"padding-left: 30px;\"><strong>Filepath for Image below:&nbsp;</strong><strong>app &gt; assets &gt; stylesheets &gt; application.js</strong><img src=\"https://s3.us-east-2.amazonaws.com/lam-fall/images/application.js.png\" alt=\"\" width=\"100%\" height=\"auto\" /></p>\r\n<p>3. Add JQUERY dependecies in your application.js file. In \"app&gt;assets&gt;javascripts&gt;application.js\"</p>\r\n<p style=\"padding-left: 30px;\"><code>//= require jquery3</code></p>\r\n<p style=\"padding-left: 30px;\"><code>//= require popper</code></p>\r\n<p style=\"padding-left: 30px;\"><code>//= require bootstrap-sprocketsts</code></p>\r\n<p>&nbsp;</p>\r\n<p>4. in terminal or command line</p>\r\n<p style=\"padding-left: 30px;\"><code>bundle install&nbsp;</code></p>\r\n<p style=\"padding-left: 30px;\"><code>Restart server</code></p>\r\n<h1><span style=\"text-decoration: underline;\"><strong>STEP 3: Style Index and Form Pages</strong></span></h1>\r\n<p><span style=\"text-decoration: underline;\"><strong style=\"text-decoration: none;\">Filepath for Image below: app &gt; views &gt; surveys &gt; index.html.erb</strong></span></p>\r\n<p><img src=\"https://s3.us-east-2.amazonaws.com/lam-fall/images/index.png\" alt=\"\" width=\"100%\" height=\"auto\" /></p>\r\n<p>1. Let's add a bootstrap class called table and table-striped to our main index table. in \"views&gt;surveys&gt;index.html.erb</p>\r\n<p style=\"padding-left: 30px;\"><code>&lt;table class=\"table table-striped\"&gt;</code></p>\r\n<p style=\"padding-left: 30px;\">&nbsp;</p>\r\n<p style=\"padding-left: 30px;\"><strong>Filepath for Image below: app &gt; views &gt; surveys &gt; _form.html.erb</strong></p>\r\n<p style=\"padding-left: 30px;\"><code></code></p>\r\n<p><img src=\"https://s3.us-east-2.amazonaws.com/lam-fall/images/form.png\" alt=\"\" width=\"100%\" height=\"auto\" /></p>\r\n<p>2. Now, let's style our actual form a bit. in \"views&gt;surveys&gt;_form.html.erb</p>\r\n<p style=\"padding-left: 30px;\">-- Add form-group class to each &lt;div&gt;:&nbsp;<code>&lt;div class=\"form-group\"&gt;</code></p>\r\n<p style=\"padding-left: 30px;\">-- Add form control to the name text area:&nbsp;<code>class: 'form-control'</code></p>\r\n<p style=\"padding-left: 30px;\">&nbsp;</p>\r\n<p><span style=\"text-decoration: underline;\">3. Ok, now let's change Laptop to radio buttons instead of a textbox</span></p>\r\n<p style=\"padding-left: 30px;\"><code>&lt;%= form.label :laptop, \"Do you own a laptop?\" %&gt;&lt;br /&gt;</code></p>\r\n<p style=\"padding-left: 30px;\"><code>&lt;%= form.label :laptop, \"Yes\", :value =&gt; \"true\" &nbsp;%&gt;</code></p>\r\n<p style=\"padding-left: 30px;\"><code>&lt;%= form.radio_button :laptop, 'yes',:checked =&gt; true &nbsp;%&gt;</code></p>\r\n<p style=\"padding-left: 30px;\"><code>&lt;%= form.label :laptop, \"No\", :value =&gt; \"false\" %&gt;</code></p>\r\n<p style=\"padding-left: 30px;\"><code>&lt;%= form.radio_button :laptop, 'No' %&gt;&nbsp;</code></p>\r\n<p>&nbsp;</p>\r\n<p><span style=\"text-decoration: underline;\">4. Finally, let's Change Operating System to Drop-Down Menu</span></p>\r\n<p style=\"padding-left: 30px;\"><code>&lt;%= form.select :os, ['No OS', 'Mac OSX', 'Windows 10', 'Windows 7 or below', 'Linux']%&gt;</code></p>\r\n<p style=\"padding-left: 60px;\">&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<hr />\r\n<p><strong>Links</strong></p>\r\n<p>*<a href=\"https://github.com/twbs/bootstrap-rubygem\">Bootstrap Github Page</a></p>\r\n<p>*&nbsp;<a href=\"https://medium.freecodecamp.org/add-bootstrap-to-your-ruby-on-rails-project-8d76d70d0e3b\" target=\"_blank\" rel=\"noopener\">Add Bootstrap to your RoR App</a></p>\r\n<hr />\r\n<p>&nbsp;</p>"}, "commit"=>"Update Tutorial", "id"=>"3"}
+  [1m[36mTutorial Load (0.1ms)[0m  [1mSELECT  "tutorials".* FROM "tutorials" WHERE "tutorials"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  UPDATE "tutorials" SET "content" = ?, "updated_at" = ? WHERE "tutorials"."id" = ?  [["content", "<h2><span style=\"text-decoration: underline;\"><strong>NOTE: I've updated some of the Gem files on this written explanation that differs from the video. Follow the written explanation!</strong></span></h2>\r\n<h1><span style=\"text-decoration: underline;\"><strong>Step 1: Creating a Root Route</strong></span></h1>\r\n<h2><span style=\"text-decoration: underline;\"><strong>Explanation</strong></span></h2>\r\n<p>One of the beauties of Rails is it's fairly simplistic way of handling routes. Routes are essentially a way to generate a permalink (URL) for a particular view in your app. The easiest way to wrap your head around this is to consider the \"Root\" route. That is, when a user enters in the main URL for your website or application, you can tell Rails which view or page to load for the user to see. It's similar to the index.html file you might see on a basic webserver for a static HTML/CSS website.&nbsp;</p>\r\n<p>So, with all that in mind, we'll set the \"root\" path for our Survey app. In our case, we want to view all of the survey responses as soon as a user loads the app (the index view file for Surveys). To change a route, you can find a file called routes.rb located in the \"config\" folder of your app.&nbsp;</p>\r\n<table style=\"border-collapse: collapse; width: 100%;\" border=\"1\">\r\n<tbody>\r\n<tr>\r\n<td style=\"width: 23.10606060606061%;\"><strong>File Path</strong></td>\r\n<td style=\"width: 54.24242424242424%;\"><strong>Screenshot</strong></td>\r\n<td style=\"width: 22.651515151515156%;\"><strong>Code Needed</strong></td>\r\n</tr>\r\n<tr>\r\n<td style=\"width: 23.10606060606061%;\"><strong>config &gt; routes.rb</strong></td>\r\n<td style=\"width: 54.24242424242424%;\"><img src=\"https://s3.us-east-2.amazonaws.com/lam-fall/images/routes.rb.png\" alt=\"\" width=\"100%\" height=\"auto\" /></td>\r\n<td style=\"width: 22.651515151515156%;\"><span style=\"font-family: monospace; background-color: #bfe6ff;\">root 'surveys#index</span></td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n<p><strong>Filepath for Image below: config &gt; routes.rb</strong></p>\r\n<p><img src=\"https://s3.us-east-2.amazonaws.com/lam-fall/images/routes.rb.png\" alt=\"root 'surveys#index\" width=\"100%\" height=\"auto\" /></p>\r\n<p><span style=\"text-decoration: underline;\"><strong>Change the Index Route</strong></span></p>\r\n<p style=\"padding-left: 30px;\"><code>root 'surveys#index</code></p>\r\n<p style=\"padding-left: 30px;\">&nbsp;</p>\r\n<h1><span style=\"text-decoration: underline;\"><strong>STEP 2: Install Bootstrap Gem*</strong></span></h1>\r\n<p><span style=\"text-decoration: underline;\"><strong style=\"text-decoration: none;\">Filepath for Image below: Gemfile</strong></span></p>\r\n<p><span style=\"text-decoration: underline;\"><strong><img src=\"https://s3.us-east-2.amazonaws.com/lam-fall/images/gemfile.png\" alt=\"\" width=\"100%\" height=\"auto\" /></strong></span></p>\r\n<p>1. Add the following code to your gemfile:</p>\r\n<p style=\"padding-left: 30px;\"><code>gem 'bootstrap', '~&gt; 4.1.3'</code></p>\r\n<p style=\"padding-left: 30px;\"><code>gem 'jquery-rails'</code></p>\r\n<p style=\"padding-left: 30px;\">&nbsp;</p>\r\n<p style=\"padding-left: 30px;\"><strong>Filepath for Image below: app &gt; assets &gt; stylesheets &gt; application.css</strong></p>\r\n<p style=\"padding-left: 30px;\"><img src=\"https://s3.us-east-2.amazonaws.com/lam-fall/images/application.scss.png\" alt=\"\" width=\"100%\" height=\"auto\" /></p>\r\n<p>2. Right-click the application.css file and rename the file to application.scss. Then, in \"app&gt;assets&gt;stylesheets&gt;application.scss\" add the following code:</p>\r\n<p style=\"padding-left: 30px;\"><code>@import \"bootstrap\";</code></p>\r\n<p style=\"padding-left: 30px;\">&nbsp;</p>\r\n<p style=\"padding-left: 30px;\"><strong>Filepath for Image below:&nbsp;</strong><strong>app &gt; assets &gt; stylesheets &gt; application.js</strong><img src=\"https://s3.us-east-2.amazonaws.com/lam-fall/images/application.js.png\" alt=\"\" width=\"100%\" height=\"auto\" /></p>\r\n<p>3. Add JQUERY dependecies in your application.js file. In \"app&gt;assets&gt;javascripts&gt;application.js\"</p>\r\n<p style=\"padding-left: 30px;\"><code>//= require jquery3</code></p>\r\n<p style=\"padding-left: 30px;\"><code>//= require popper</code></p>\r\n<p style=\"padding-left: 30px;\"><code>//= require bootstrap-sprocketsts</code></p>\r\n<p>&nbsp;</p>\r\n<p>4. in terminal or command line</p>\r\n<p style=\"padding-left: 30px;\"><code>bundle install&nbsp;</code></p>\r\n<p style=\"padding-left: 30px;\"><code>Restart server</code></p>\r\n<h1><span style=\"text-decoration: underline;\"><strong>STEP 3: Style Index and Form Pages</strong></span></h1>\r\n<p><span style=\"text-decoration: underline;\"><strong style=\"text-decoration: none;\">Filepath for Image below: app &gt; views &gt; surveys &gt; index.html.erb</strong></span></p>\r\n<p><img src=\"https://s3.us-east-2.amazonaws.com/lam-fall/images/index.png\" alt=\"\" width=\"100%\" height=\"auto\" /></p>\r\n<p>1. Let's add a bootstrap class called table and table-striped to our main index table. in \"views&gt;surveys&gt;index.html.erb</p>\r\n<p style=\"padding-left: 30px;\"><code>&lt;table class=\"table table-striped\"&gt;</code></p>\r\n<p style=\"padding-left: 30px;\">&nbsp;</p>\r\n<p style=\"padding-left: 30px;\"><strong>Filepath for Image below: app &gt; views &gt; surveys &gt; _form.html.erb</strong></p>\r\n<p style=\"padding-left: 30px;\"><code></code></p>\r\n<p><img src=\"https://s3.us-east-2.amazonaws.com/lam-fall/images/form.png\" alt=\"\" width=\"100%\" height=\"auto\" /></p>\r\n<p>2. Now, let's style our actual form a bit. in \"views&gt;surveys&gt;_form.html.erb</p>\r\n<p style=\"padding-left: 30px;\">-- Add form-group class to each &lt;div&gt;:&nbsp;<code>&lt;div class=\"form-group\"&gt;</code></p>\r\n<p style=\"padding-left: 30px;\">-- Add form control to the name text area:&nbsp;<code>class: 'form-control'</code></p>\r\n<p style=\"padding-left: 30px;\">&nbsp;</p>\r\n<p><span style=\"text-decoration: underline;\">3. Ok, now let's change Laptop to radio buttons instead of a textbox</span></p>\r\n<p style=\"padding-left: 30px;\"><code>&lt;%= form.label :laptop, \"Do you own a laptop?\" %&gt;&lt;br /&gt;</code></p>\r\n<p style=\"padding-left: 30px;\"><code>&lt;%= form.label :laptop, \"Yes\", :value =&gt; \"true\" &nbsp;%&gt;</code></p>\r\n<p style=\"padding-left: 30px;\"><code>&lt;%= form.radio_button :laptop, 'yes',:checked =&gt; true &nbsp;%&gt;</code></p>\r\n<p style=\"padding-left: 30px;\"><code>&lt;%= form.label :laptop, \"No\", :value =&gt; \"false\" %&gt;</code></p>\r\n<p style=\"padding-left: 30px;\"><code>&lt;%= form.radio_button :laptop, 'No' %&gt;&nbsp;</code></p>\r\n<p>&nbsp;</p>\r\n<p><span style=\"text-decoration: underline;\">4. Finally, let's Change Operating System to Drop-Down Menu</span></p>\r\n<p style=\"padding-left: 30px;\"><code>&lt;%= form.select :os, ['No OS', 'Mac OSX', 'Windows 10', 'Windows 7 or below', 'Linux']%&gt;</code></p>\r\n<p style=\"padding-left: 60px;\">&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<hr />\r\n<p><strong>Links</strong></p>\r\n<p>*<a href=\"https://github.com/twbs/bootstrap-rubygem\">Bootstrap Github Page</a></p>\r\n<p>*&nbsp;<a href=\"https://medium.freecodecamp.org/add-bootstrap-to-your-ruby-on-rails-project-8d76d70d0e3b\" target=\"_blank\" rel=\"noopener\">Add Bootstrap to your RoR App</a></p>\r\n<hr />\r\n<p>&nbsp;</p>"], ["updated_at", "2018-08-06 17:43:21.695806"], ["id", 3]]
+  [1m[36m (4.8ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/tutorials/3
+Completed 302 Found in 12ms (ActiveRecord: 5.8ms)
+
+
+Started GET "/tutorials/3" for ::1 at 2018-08-06 12:43:21 -0500
+Processing by TutorialsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mTutorial Load (0.1ms)[0m  SELECT  "tutorials".* FROM "tutorials" WHERE "tutorials"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mObjective Load (0.1ms)[0m  SELECT "objectives".* FROM "objectives" WHERE "objectives"."tutorial_id" = ?  [["tutorial_id", 3]]
+  Rendered tutorials/show.html.erb within layouts/application (13.6ms)
+  Rendered layouts/_header.html.erb (7.5ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 501ms (Views: 499.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/tutorials/3/edit" for ::1 at 2018-08-06 12:43:51 -0500
+Processing by TutorialsController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mTutorial Load (0.1ms)[0m  [1mSELECT  "tutorials".* FROM "tutorials" WHERE "tutorials"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mObjective Load (0.1ms)[0m  [1mSELECT "objectives".* FROM "objectives" WHERE "objectives"."tutorial_id" = ?[0m  [["tutorial_id", 3]]
+  Rendered tutorials/_objective_fields.html.erb (0.5ms)
+  Rendered tutorials/_form.html.erb (9.3ms)
+  Rendered tutorials/edit.html.erb within layouts/application (10.8ms)
+  Rendered layouts/_header.html.erb (7.4ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 447ms (Views: 445.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/tinymce/themes/modern/theme.js" for ::1 at 2018-08-06 12:43:51 -0500
+
+
+Started GET "/assets/tinymce/plugins/image/plugin.js" for ::1 at 2018-08-06 12:43:52 -0500
+
+
+Started GET "/assets/tinymce/plugins/link/plugin.js" for ::1 at 2018-08-06 12:43:52 -0500
+
+
+Started GET "/assets/tinymce/plugins/table/plugin.js" for ::1 at 2018-08-06 12:43:52 -0500
+
+
+Started GET "/assets/tinymce/plugins/lists/plugin.js" for ::1 at 2018-08-06 12:43:52 -0500
+
+
+Started GET "/assets/tinymce/skins/lightgray/skin.min.css" for ::1 at 2018-08-06 12:43:52 -0500
+
+
+Started GET "/assets/tinymce/skins/lightgray/content.min.css" for ::1 at 2018-08-06 12:43:52 -0500
+
+
+Started GET "/assets/tinymce/skins/lightgray/fonts/tinymce.woff" for ::1 at 2018-08-06 12:43:52 -0500
+
+
+Started PATCH "/tutorials/3" for ::1 at 2018-08-06 12:44:44 -0500
+Processing by TutorialsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"98VyoTOMOqIVPt0VJB0d9LHW+zrYmexhPNo7i1zG1pnlK58PgNJqhuBnfE4cKDCKJTtFQHxppOHxw+DdSNh1zA==", "tutorial"=>{"name"=>"asdf", "video"=>"asdf", "content"=>"<h2><span style=\"text-decoration: underline;\"><strong>NOTE: I've updated some of the Gem files on this written explanation that differs from the video. Follow the written explanation!</strong></span></h2>\r\n<h1><span style=\"text-decoration: underline;\"><strong>Step 1: Creating a Root Route</strong></span></h1>\r\n<h2><span style=\"text-decoration: underline;\"><strong>Explanation</strong></span></h2>\r\n<p>One of the beauties of Rails is it's fairly simplistic way of handling routes. Routes are essentially a way to generate a permalink (URL) for a particular view in your app. The easiest way to wrap your head around this is to consider the \"Root\" route. That is, when a user enters in the main URL for your website or application, you can tell Rails which view or page to load for the user to see. It's similar to the index.html file you might see on a basic webserver for a static HTML/CSS website.&nbsp;</p>\r\n<p>So, with all that in mind, we'll set the \"root\" path for our Survey app. In our case, we want to view all of the survey responses as soon as a user loads the app (the index view file for Surveys). To change a route, you can find a file called routes.rb located in the \"config\" folder of your app.&nbsp;</p>\r\n<table style=\"border-collapse: collapse; width: 100%;\" border=\"1\">\r\n<tbody>\r\n<tr>\r\n<td style=\"width: 23.10606060606061%;\"><strong>File Path</strong></td>\r\n<td style=\"width: 54.24242424242424%;\"><strong>Screenshot</strong></td>\r\n<td style=\"width: 22.651515151515156%;\"><strong>Code Needed</strong></td>\r\n</tr>\r\n<tr>\r\n<td style=\"width: 23.10606060606061%;\"><strong>config &gt; routes.rb</strong></td>\r\n<td style=\"width: 54.24242424242424%;\"><img src=\"https://s3.us-east-2.amazonaws.com/lam-fall/images/routes.rb.png\" alt=\"\" width=\"100%\" height=\"auto\" /></td>\r\n<td style=\"width: 22.651515151515156%;\"><span style=\"font-family: monospace; background-color: #bfe6ff;\">root 'surveys#index</span></td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n<p><strong>Filepath for Image below: config &gt; routes.rb</strong></p>\r\n<p><img src=\"https://s3.us-east-2.amazonaws.com/lam-fall/images/routes.rb.png\" alt=\"root 'surveys#index\" width=\"100%\" height=\"auto\" /></p>\r\n<p><span style=\"text-decoration: underline;\"><strong>Change the Index Route</strong></span></p>\r\n<p style=\"padding-left: 30px;\"><code>root 'surveys#index</code></p>\r\n<p style=\"padding-left: 30px;\">&nbsp;</p>\r\n<h1><span style=\"text-decoration: underline;\"><strong>STEP 2: Install Bootstrap Gem*</strong></span></h1>\r\n<p><span style=\"text-decoration: underline;\"><strong style=\"text-decoration: none;\">Filepath for Image below: Gemfile</strong></span></p>\r\n<p><span style=\"text-decoration: underline;\"><strong><img src=\"https://s3.us-east-2.amazonaws.com/lam-fall/images/gemfile.png\" alt=\"\" width=\"100%\" height=\"auto\" /></strong></span></p>\r\n<p>1. Add the following code to your gemfile:</p>\r\n<p style=\"padding-left: 30px;\"><code>gem 'bootstrap', '~&gt; 4.1.3'</code></p>\r\n<p style=\"padding-left: 30px;\"><code>gem 'jquery-rails'</code></p>\r\n<p style=\"padding-left: 30px;\">&nbsp;</p>\r\n<p style=\"padding-left: 30px;\"><strong>Filepath for Image below: app &gt; assets &gt; stylesheets &gt; application.css</strong></p>\r\n<p style=\"padding-left: 30px;\"><img src=\"https://s3.us-east-2.amazonaws.com/lam-fall/images/application.scss.png\" alt=\"\" width=\"100%\" height=\"auto\" /></p>\r\n<p>2. Right-click the application.css file and rename the file to application.scss. Then, in \"app&gt;assets&gt;stylesheets&gt;application.scss\" add the following code:</p>\r\n<p style=\"padding-left: 30px;\"><code>@import \"bootstrap\";</code></p>\r\n<p style=\"padding-left: 30px;\">&nbsp;</p>\r\n<p style=\"padding-left: 30px;\"><strong>Filepath for Image below:&nbsp;</strong><strong>app &gt; assets &gt; stylesheets &gt; application.js</strong><img src=\"https://s3.us-east-2.amazonaws.com/lam-fall/images/application.js.png\" alt=\"\" width=\"100%\" height=\"auto\" /></p>\r\n<p>3. Add JQUERY dependecies in your application.js file. In \"app&gt;assets&gt;javascripts&gt;application.js\"</p>\r\n<p style=\"padding-left: 30px;\"><code>//= require jquery3</code></p>\r\n<p style=\"padding-left: 30px;\"><code>//= require popper</code></p>\r\n<p style=\"padding-left: 30px;\"><code>//= require bootstrap-sprocketsts</code></p>\r\n<p>&nbsp;</p>\r\n<p>4. in terminal or command line</p>\r\n<p style=\"padding-left: 30px;\"><code>bundle install&nbsp;</code></p>\r\n<p style=\"padding-left: 30px;\"><code>Restart server</code></p>\r\n<h1><span style=\"text-decoration: underline;\"><strong>STEP 3: Style Index and Form Pages</strong></span></h1>\r\n<p><span style=\"text-decoration: underline;\"><strong style=\"text-decoration: none;\">Filepath for Image below: app &gt; views &gt; surveys &gt; index.html.erb</strong></span></p>\r\n<p><img src=\"https://s3.us-east-2.amazonaws.com/lam-fall/images/index.png\" alt=\"\" width=\"100%\" height=\"auto\" /></p>\r\n<p>1. Let's add a bootstrap class called table and table-striped to our main index table. in \"views&gt;surveys&gt;index.html.erb</p>\r\n<p style=\"padding-left: 30px;\"><code>&lt;table class=\"table table-striped\"&gt;</code></p>\r\n<p style=\"padding-left: 30px;\">&nbsp;</p>\r\n<p style=\"padding-left: 30px;\"><strong>Filepath for Image below: app &gt; views &gt; surveys &gt; _form.html.erb</strong></p>\r\n<p style=\"padding-left: 30px;\"><code></code></p>\r\n<p><img src=\"https://s3.us-east-2.amazonaws.com/lam-fall/images/form.png\" alt=\"\" width=\"100%\" height=\"auto\" /></p>\r\n<p>2. Now, let's style our actual form a bit. in \"views&gt;surveys&gt;_form.html.erb</p>\r\n<p style=\"padding-left: 30px;\">-- Add form-group class to each &lt;div&gt;:&nbsp;<code>&lt;div class=\"form-group\"&gt;</code></p>\r\n<p style=\"padding-left: 30px;\">-- Add form control to the name text area:&nbsp;<code>class: 'form-control'</code></p>\r\n<p style=\"padding-left: 30px;\">&nbsp;</p>\r\n<p><span style=\"text-decoration: underline;\">3. Ok, now let's change Laptop to radio buttons instead of a textbox</span></p>\r\n<p style=\"padding-left: 30px;\"><code>&lt;%= form.label :laptop, \"Do you own a laptop?\" %&gt;&lt;br /&gt;</code></p>\r\n<p style=\"padding-left: 30px;\"><code>&lt;%= form.label :laptop, \"Yes\", :value =&gt; \"true\" &nbsp;%&gt;</code></p>\r\n<p style=\"padding-left: 30px;\"><code>&lt;%= form.radio_button :laptop, 'yes',:checked =&gt; true &nbsp;%&gt;</code></p>\r\n<p style=\"padding-left: 30px;\"><code>&lt;%= form.label :laptop, \"No\", :value =&gt; \"false\" %&gt;</code></p>\r\n<p style=\"padding-left: 30px;\"><code>&lt;%= form.radio_button :laptop, 'No' %&gt;&nbsp;</code></p>\r\n<p>&nbsp;</p>\r\n<p><span style=\"text-decoration: underline;\">4. Finally, let's Change Operating System to Drop-Down Menu</span></p>\r\n<p style=\"padding-left: 30px;\"><code>&lt;%= form.select :os, ['No OS', 'Mac OSX', 'Windows 10', 'Windows 7 or below', 'Linux']%&gt;</code></p>\r\n<p style=\"padding-left: 60px;\">&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<hr />\r\n<p><strong>Links</strong></p>\r\n<p>*<a href=\"https://github.com/twbs/bootstrap-rubygem\">Bootstrap Github Page</a></p>\r\n<p>*&nbsp;<a href=\"https://medium.freecodecamp.org/add-bootstrap-to-your-ruby-on-rails-project-8d76d70d0e3b\" target=\"_blank\" rel=\"noopener\">Add Bootstrap to your RoR App</a></p>\r\n<hr />\r\n<p>&nbsp;</p>"}, "commit"=>"Update Tutorial", "id"=>"3"}
+  [1m[35mTutorial Load (0.1ms)[0m  SELECT  "tutorials".* FROM "tutorials" WHERE "tutorials"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/tutorials/3
+Completed 302 Found in 5ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/tutorials/3" for ::1 at 2018-08-06 12:44:44 -0500
+Processing by TutorialsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mTutorial Load (0.1ms)[0m  SELECT  "tutorials".* FROM "tutorials" WHERE "tutorials"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mObjective Load (0.1ms)[0m  SELECT "objectives".* FROM "objectives" WHERE "objectives"."tutorial_id" = ?  [["tutorial_id", 3]]
+  Rendered tutorials/show.html.erb within layouts/application (13.8ms)
+  Rendered layouts/_header.html.erb (7.5ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 573ms (Views: 571.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/tutorials/3/edit" for ::1 at 2018-08-06 12:45:06 -0500
+Processing by TutorialsController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mTutorial Load (0.1ms)[0m  [1mSELECT  "tutorials".* FROM "tutorials" WHERE "tutorials"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mObjective Load (0.1ms)[0m  [1mSELECT "objectives".* FROM "objectives" WHERE "objectives"."tutorial_id" = ?[0m  [["tutorial_id", 3]]
+  Rendered tutorials/_objective_fields.html.erb (0.9ms)
+  Rendered tutorials/_form.html.erb (11.4ms)
+  Rendered tutorials/edit.html.erb within layouts/application (13.3ms)
+  Rendered layouts/_header.html.erb (7.3ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 455ms (Views: 453.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/tinymce/themes/modern/theme.js" for ::1 at 2018-08-06 12:45:07 -0500
+
+
+Started GET "/assets/tinymce/plugins/image/plugin.js" for ::1 at 2018-08-06 12:45:07 -0500
+
+
+Started GET "/assets/tinymce/plugins/link/plugin.js" for ::1 at 2018-08-06 12:45:07 -0500
+
+
+Started GET "/assets/tinymce/plugins/lists/plugin.js" for ::1 at 2018-08-06 12:45:07 -0500
+
+
+Started GET "/assets/tinymce/plugins/table/plugin.js" for ::1 at 2018-08-06 12:45:07 -0500
+
+
+Started GET "/assets/tinymce/skins/lightgray/skin.min.css" for ::1 at 2018-08-06 12:45:07 -0500
+
+
+Started GET "/assets/tinymce/skins/lightgray/content.min.css" for ::1 at 2018-08-06 12:45:07 -0500
+
+
+Started GET "/assets/tinymce/skins/lightgray/fonts/tinymce.woff" for ::1 at 2018-08-06 12:45:07 -0500
+
+
+Started PATCH "/tutorials/3" for ::1 at 2018-08-06 12:45:28 -0500
+Processing by TutorialsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QKYdQE6CoKTREW4T2NeNDJkha0CFEWrGITJ9ioxNFGxSSPDu/dzwgCRIz0jg4qByDczVOiHhIkbsK6bcmFO3OQ==", "tutorial"=>{"name"=>"asdf", "video"=>"asdf", "content"=>"<h2><span style=\"text-decoration: underline;\"><strong>NOTE: I've updated some of the Gem files on this written explanation that differs from the video. Follow the written explanation!</strong></span></h2>\r\n<h1><span style=\"text-decoration: underline;\"><strong>Step 1: Creating a Root Route</strong></span></h1>\r\n<h2><span style=\"text-decoration: underline;\"><strong>Explanation</strong></span></h2>\r\n<p>One of the beauties of Rails is it's fairly simplistic way of handling routes. Routes are essentially a way to generate a permalink (URL) for a particular view in your app. The easiest way to wrap your head around this is to consider the \"Root\" route. That is, when a user enters in the main URL for your website or application, you can tell Rails which view or page to load for the user to see. It's similar to the index.html file you might see on a basic webserver for a static HTML/CSS website.&nbsp;</p>\r\n<p>So, with all that in mind, we'll set the \"root\" path for our Survey app. In our case, we want to view all of the survey responses as soon as a user loads the app (the index view file for Surveys). To change a route, you can find a file called routes.rb located in the \"config\" folder of your app.&nbsp;</p>\r\n<table style=\"border-collapse: collapse; width: 100%;\" border=\"1\">\r\n<tbody>\r\n<tr>\r\n<td style=\"width: 200.109375px;\"><strong>File Path</strong></td>\r\n<td style=\"width: 473.796875px;\"><strong>Screenshot</strong></td>\r\n<td style=\"width: 196.109375px;\"><strong>Code Needed</strong></td>\r\n</tr>\r\n<tr>\r\n<td style=\"width: 200.109375px;\"><strong>config &gt; routes.rb</strong></td>\r\n<td style=\"width: 473.796875px;\"><img src=\"https://s3.us-east-2.amazonaws.com/lam-fall/images/routes.rb.png\" alt=\"\" width=\"100%\" height=\"auto\" /></td>\r\n<td style=\"width: 196.109375px;\"><span style=\"font-family: monospace; background-color: #bfe6ff;\">root 'surveys#index</span></td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n<p>&nbsp;</p>\r\n<p><span style=\"text-decoration: underline;\"><strong>Change the Index Route</strong></span></p>\r\n<p style=\"padding-left: 30px;\"><code>root 'surveys#index</code></p>\r\n<p style=\"padding-left: 30px;\">&nbsp;</p>\r\n<h1><span style=\"text-decoration: underline;\"><strong>STEP 2: Install Bootstrap Gem*</strong></span></h1>\r\n<p><span style=\"text-decoration: underline;\"><strong style=\"text-decoration: none;\">Filepath for Image below: Gemfile</strong></span></p>\r\n<p><span style=\"text-decoration: underline;\"><strong><img src=\"https://s3.us-east-2.amazonaws.com/lam-fall/images/gemfile.png\" alt=\"\" width=\"100%\" height=\"auto\" /></strong></span></p>\r\n<p>1. Add the following code to your gemfile:</p>\r\n<p style=\"padding-left: 30px;\"><code>gem 'bootstrap', '~&gt; 4.1.3'</code></p>\r\n<p style=\"padding-left: 30px;\"><code>gem 'jquery-rails'</code></p>\r\n<p style=\"padding-left: 30px;\">&nbsp;</p>\r\n<p style=\"padding-left: 30px;\"><strong>Filepath for Image below: app &gt; assets &gt; stylesheets &gt; application.css</strong></p>\r\n<p style=\"padding-left: 30px;\"><img src=\"https://s3.us-east-2.amazonaws.com/lam-fall/images/application.scss.png\" alt=\"\" width=\"100%\" height=\"auto\" /></p>\r\n<p>2. Right-click the application.css file and rename the file to application.scss. Then, in \"app&gt;assets&gt;stylesheets&gt;application.scss\" add the following code:</p>\r\n<p style=\"padding-left: 30px;\"><code>@import \"bootstrap\";</code></p>\r\n<p style=\"padding-left: 30px;\">&nbsp;</p>\r\n<p style=\"padding-left: 30px;\"><strong>Filepath for Image below:&nbsp;</strong><strong>app &gt; assets &gt; stylesheets &gt; application.js</strong><img src=\"https://s3.us-east-2.amazonaws.com/lam-fall/images/application.js.png\" alt=\"\" width=\"100%\" height=\"auto\" /></p>\r\n<p>3. Add JQUERY dependecies in your application.js file. In \"app&gt;assets&gt;javascripts&gt;application.js\"</p>\r\n<p style=\"padding-left: 30px;\"><code>//= require jquery3</code></p>\r\n<p style=\"padding-left: 30px;\"><code>//= require popper</code></p>\r\n<p style=\"padding-left: 30px;\"><code>//= require bootstrap-sprocketsts</code></p>\r\n<p>&nbsp;</p>\r\n<p>4. in terminal or command line</p>\r\n<p style=\"padding-left: 30px;\"><code>bundle install&nbsp;</code></p>\r\n<p style=\"padding-left: 30px;\"><code>Restart server</code></p>\r\n<h1><span style=\"text-decoration: underline;\"><strong>STEP 3: Style Index and Form Pages</strong></span></h1>\r\n<p><span style=\"text-decoration: underline;\"><strong style=\"text-decoration: none;\">Filepath for Image below: app &gt; views &gt; surveys &gt; index.html.erb</strong></span></p>\r\n<p><img src=\"https://s3.us-east-2.amazonaws.com/lam-fall/images/index.png\" alt=\"\" width=\"100%\" height=\"auto\" /></p>\r\n<p>1. Let's add a bootstrap class called table and table-striped to our main index table. in \"views&gt;surveys&gt;index.html.erb</p>\r\n<p style=\"padding-left: 30px;\"><code>&lt;table class=\"table table-striped\"&gt;</code></p>\r\n<p style=\"padding-left: 30px;\">&nbsp;</p>\r\n<p style=\"padding-left: 30px;\"><strong>Filepath for Image below: app &gt; views &gt; surveys &gt; _form.html.erb</strong></p>\r\n<p style=\"padding-left: 30px;\"><code></code></p>\r\n<p><img src=\"https://s3.us-east-2.amazonaws.com/lam-fall/images/form.png\" alt=\"\" width=\"100%\" height=\"auto\" /></p>\r\n<p>2. Now, let's style our actual form a bit. in \"views&gt;surveys&gt;_form.html.erb</p>\r\n<p style=\"padding-left: 30px;\">-- Add form-group class to each &lt;div&gt;:&nbsp;<code>&lt;div class=\"form-group\"&gt;</code></p>\r\n<p style=\"padding-left: 30px;\">-- Add form control to the name text area:&nbsp;<code>class: 'form-control'</code></p>\r\n<p style=\"padding-left: 30px;\">&nbsp;</p>\r\n<p><span style=\"text-decoration: underline;\">3. Ok, now let's change Laptop to radio buttons instead of a textbox</span></p>\r\n<p style=\"padding-left: 30px;\"><code>&lt;%= form.label :laptop, \"Do you own a laptop?\" %&gt;&lt;br /&gt;</code></p>\r\n<p style=\"padding-left: 30px;\"><code>&lt;%= form.label :laptop, \"Yes\", :value =&gt; \"true\" &nbsp;%&gt;</code></p>\r\n<p style=\"padding-left: 30px;\"><code>&lt;%= form.radio_button :laptop, 'yes',:checked =&gt; true &nbsp;%&gt;</code></p>\r\n<p style=\"padding-left: 30px;\"><code>&lt;%= form.label :laptop, \"No\", :value =&gt; \"false\" %&gt;</code></p>\r\n<p style=\"padding-left: 30px;\"><code>&lt;%= form.radio_button :laptop, 'No' %&gt;&nbsp;</code></p>\r\n<p>&nbsp;</p>\r\n<p><span style=\"text-decoration: underline;\">4. Finally, let's Change Operating System to Drop-Down Menu</span></p>\r\n<p style=\"padding-left: 30px;\"><code>&lt;%= form.select :os, ['No OS', 'Mac OSX', 'Windows 10', 'Windows 7 or below', 'Linux']%&gt;</code></p>\r\n<p style=\"padding-left: 60px;\">&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<hr />\r\n<p><strong>Links</strong></p>\r\n<p>*<a href=\"https://github.com/twbs/bootstrap-rubygem\">Bootstrap Github Page</a></p>\r\n<p>*&nbsp;<a href=\"https://medium.freecodecamp.org/add-bootstrap-to-your-ruby-on-rails-project-8d76d70d0e3b\" target=\"_blank\" rel=\"noopener\">Add Bootstrap to your RoR App</a></p>\r\n<hr />\r\n<p>&nbsp;</p>"}, "commit"=>"Update Tutorial", "id"=>"3"}
+  [1m[35mTutorial Load (0.1ms)[0m  SELECT  "tutorials".* FROM "tutorials" WHERE "tutorials"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (3.3ms)[0m  [1mUPDATE "tutorials" SET "content" = ?, "updated_at" = ? WHERE "tutorials"."id" = ?[0m  [["content", "<h2><span style=\"text-decoration: underline;\"><strong>NOTE: I've updated some of the Gem files on this written explanation that differs from the video. Follow the written explanation!</strong></span></h2>\r\n<h1><span style=\"text-decoration: underline;\"><strong>Step 1: Creating a Root Route</strong></span></h1>\r\n<h2><span style=\"text-decoration: underline;\"><strong>Explanation</strong></span></h2>\r\n<p>One of the beauties of Rails is it's fairly simplistic way of handling routes. Routes are essentially a way to generate a permalink (URL) for a particular view in your app. The easiest way to wrap your head around this is to consider the \"Root\" route. That is, when a user enters in the main URL for your website or application, you can tell Rails which view or page to load for the user to see. It's similar to the index.html file you might see on a basic webserver for a static HTML/CSS website.&nbsp;</p>\r\n<p>So, with all that in mind, we'll set the \"root\" path for our Survey app. In our case, we want to view all of the survey responses as soon as a user loads the app (the index view file for Surveys). To change a route, you can find a file called routes.rb located in the \"config\" folder of your app.&nbsp;</p>\r\n<table style=\"border-collapse: collapse; width: 100%;\" border=\"1\">\r\n<tbody>\r\n<tr>\r\n<td style=\"width: 200.109375px;\"><strong>File Path</strong></td>\r\n<td style=\"width: 473.796875px;\"><strong>Screenshot</strong></td>\r\n<td style=\"width: 196.109375px;\"><strong>Code Needed</strong></td>\r\n</tr>\r\n<tr>\r\n<td style=\"width: 200.109375px;\"><strong>config &gt; routes.rb</strong></td>\r\n<td style=\"width: 473.796875px;\"><img src=\"https://s3.us-east-2.amazonaws.com/lam-fall/images/routes.rb.png\" alt=\"\" width=\"100%\" height=\"auto\" /></td>\r\n<td style=\"width: 196.109375px;\"><span style=\"font-family: monospace; background-color: #bfe6ff;\">root 'surveys#index</span></td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n<p>&nbsp;</p>\r\n<p><span style=\"text-decoration: underline;\"><strong>Change the Index Route</strong></span></p>\r\n<p style=\"padding-left: 30px;\"><code>root 'surveys#index</code></p>\r\n<p style=\"padding-left: 30px;\">&nbsp;</p>\r\n<h1><span style=\"text-decoration: underline;\"><strong>STEP 2: Install Bootstrap Gem*</strong></span></h1>\r\n<p><span style=\"text-decoration: underline;\"><strong style=\"text-decoration: none;\">Filepath for Image below: Gemfile</strong></span></p>\r\n<p><span style=\"text-decoration: underline;\"><strong><img src=\"https://s3.us-east-2.amazonaws.com/lam-fall/images/gemfile.png\" alt=\"\" width=\"100%\" height=\"auto\" /></strong></span></p>\r\n<p>1. Add the following code to your gemfile:</p>\r\n<p style=\"padding-left: 30px;\"><code>gem 'bootstrap', '~&gt; 4.1.3'</code></p>\r\n<p style=\"padding-left: 30px;\"><code>gem 'jquery-rails'</code></p>\r\n<p style=\"padding-left: 30px;\">&nbsp;</p>\r\n<p style=\"padding-left: 30px;\"><strong>Filepath for Image below: app &gt; assets &gt; stylesheets &gt; application.css</strong></p>\r\n<p style=\"padding-left: 30px;\"><img src=\"https://s3.us-east-2.amazonaws.com/lam-fall/images/application.scss.png\" alt=\"\" width=\"100%\" height=\"auto\" /></p>\r\n<p>2. Right-click the application.css file and rename the file to application.scss. Then, in \"app&gt;assets&gt;stylesheets&gt;application.scss\" add the following code:</p>\r\n<p style=\"padding-left: 30px;\"><code>@import \"bootstrap\";</code></p>\r\n<p style=\"padding-left: 30px;\">&nbsp;</p>\r\n<p style=\"padding-left: 30px;\"><strong>Filepath for Image below:&nbsp;</strong><strong>app &gt; assets &gt; stylesheets &gt; application.js</strong><img src=\"https://s3.us-east-2.amazonaws.com/lam-fall/images/application.js.png\" alt=\"\" width=\"100%\" height=\"auto\" /></p>\r\n<p>3. Add JQUERY dependecies in your application.js file. In \"app&gt;assets&gt;javascripts&gt;application.js\"</p>\r\n<p style=\"padding-left: 30px;\"><code>//= require jquery3</code></p>\r\n<p style=\"padding-left: 30px;\"><code>//= require popper</code></p>\r\n<p style=\"padding-left: 30px;\"><code>//= require bootstrap-sprocketsts</code></p>\r\n<p>&nbsp;</p>\r\n<p>4. in terminal or command line</p>\r\n<p style=\"padding-left: 30px;\"><code>bundle install&nbsp;</code></p>\r\n<p style=\"padding-left: 30px;\"><code>Restart server</code></p>\r\n<h1><span style=\"text-decoration: underline;\"><strong>STEP 3: Style Index and Form Pages</strong></span></h1>\r\n<p><span style=\"text-decoration: underline;\"><strong style=\"text-decoration: none;\">Filepath for Image below: app &gt; views &gt; surveys &gt; index.html.erb</strong></span></p>\r\n<p><img src=\"https://s3.us-east-2.amazonaws.com/lam-fall/images/index.png\" alt=\"\" width=\"100%\" height=\"auto\" /></p>\r\n<p>1. Let's add a bootstrap class called table and table-striped to our main index table. in \"views&gt;surveys&gt;index.html.erb</p>\r\n<p style=\"padding-left: 30px;\"><code>&lt;table class=\"table table-striped\"&gt;</code></p>\r\n<p style=\"padding-left: 30px;\">&nbsp;</p>\r\n<p style=\"padding-left: 30px;\"><strong>Filepath for Image below: app &gt; views &gt; surveys &gt; _form.html.erb</strong></p>\r\n<p style=\"padding-left: 30px;\"><code></code></p>\r\n<p><img src=\"https://s3.us-east-2.amazonaws.com/lam-fall/images/form.png\" alt=\"\" width=\"100%\" height=\"auto\" /></p>\r\n<p>2. Now, let's style our actual form a bit. in \"views&gt;surveys&gt;_form.html.erb</p>\r\n<p style=\"padding-left: 30px;\">-- Add form-group class to each &lt;div&gt;:&nbsp;<code>&lt;div class=\"form-group\"&gt;</code></p>\r\n<p style=\"padding-left: 30px;\">-- Add form control to the name text area:&nbsp;<code>class: 'form-control'</code></p>\r\n<p style=\"padding-left: 30px;\">&nbsp;</p>\r\n<p><span style=\"text-decoration: underline;\">3. Ok, now let's change Laptop to radio buttons instead of a textbox</span></p>\r\n<p style=\"padding-left: 30px;\"><code>&lt;%= form.label :laptop, \"Do you own a laptop?\" %&gt;&lt;br /&gt;</code></p>\r\n<p style=\"padding-left: 30px;\"><code>&lt;%= form.label :laptop, \"Yes\", :value =&gt; \"true\" &nbsp;%&gt;</code></p>\r\n<p style=\"padding-left: 30px;\"><code>&lt;%= form.radio_button :laptop, 'yes',:checked =&gt; true &nbsp;%&gt;</code></p>\r\n<p style=\"padding-left: 30px;\"><code>&lt;%= form.label :laptop, \"No\", :value =&gt; \"false\" %&gt;</code></p>\r\n<p style=\"padding-left: 30px;\"><code>&lt;%= form.radio_button :laptop, 'No' %&gt;&nbsp;</code></p>\r\n<p>&nbsp;</p>\r\n<p><span style=\"text-decoration: underline;\">4. Finally, let's Change Operating System to Drop-Down Menu</span></p>\r\n<p style=\"padding-left: 30px;\"><code>&lt;%= form.select :os, ['No OS', 'Mac OSX', 'Windows 10', 'Windows 7 or below', 'Linux']%&gt;</code></p>\r\n<p style=\"padding-left: 60px;\">&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<hr />\r\n<p><strong>Links</strong></p>\r\n<p>*<a href=\"https://github.com/twbs/bootstrap-rubygem\">Bootstrap Github Page</a></p>\r\n<p>*&nbsp;<a href=\"https://medium.freecodecamp.org/add-bootstrap-to-your-ruby-on-rails-project-8d76d70d0e3b\" target=\"_blank\" rel=\"noopener\">Add Bootstrap to your RoR App</a></p>\r\n<hr />\r\n<p>&nbsp;</p>"], ["updated_at", "2018-08-06 17:45:28.451499"], ["id", 3]]
+  [1m[35m (2.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/tutorials/3
+Completed 302 Found in 14ms (ActiveRecord: 5.8ms)
+
+
+Started GET "/tutorials/3" for ::1 at 2018-08-06 12:45:28 -0500
+Processing by TutorialsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mTutorial Load (0.1ms)[0m  [1mSELECT  "tutorials".* FROM "tutorials" WHERE "tutorials"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mObjective Load (0.1ms)[0m  [1mSELECT "objectives".* FROM "objectives" WHERE "objectives"."tutorial_id" = ?[0m  [["tutorial_id", 3]]
+  Rendered tutorials/show.html.erb within layouts/application (13.5ms)
+  Rendered layouts/_header.html.erb (4.2ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 384ms (Views: 383.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/tutorials/3" for ::1 at 2018-08-06 12:46:13 -0500
+Processing by TutorialsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mTutorial Load (0.8ms)[0m  SELECT  "tutorials".* FROM "tutorials" WHERE "tutorials"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mObjective Load (0.2ms)[0m  SELECT "objectives".* FROM "objectives" WHERE "objectives"."tutorial_id" = ?  [["tutorial_id", 3]]
+  Rendered tutorials/show.html.erb within layouts/application (71.1ms)
+  Rendered layouts/_header.html.erb (10.8ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 788ms (Views: 776.0ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/tutorials/3/edit" for ::1 at 2018-08-06 12:46:22 -0500
+Processing by TutorialsController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mTutorial Load (0.1ms)[0m  [1mSELECT  "tutorials".* FROM "tutorials" WHERE "tutorials"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mObjective Load (0.1ms)[0m  [1mSELECT "objectives".* FROM "objectives" WHERE "objectives"."tutorial_id" = ?[0m  [["tutorial_id", 3]]
+  Rendered tutorials/_objective_fields.html.erb (0.6ms)
+  Rendered tutorials/_form.html.erb (18.9ms)
+  Rendered tutorials/edit.html.erb within layouts/application (21.5ms)
+  Rendered layouts/_header.html.erb (7.5ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 539ms (Views: 536.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/tinymce/themes/modern/theme.js" for ::1 at 2018-08-06 12:46:22 -0500
+
+
+Started GET "/assets/tinymce/plugins/link/plugin.js" for ::1 at 2018-08-06 12:46:22 -0500
+
+
+Started GET "/assets/tinymce/plugins/image/plugin.js" for ::1 at 2018-08-06 12:46:22 -0500
+
+
+Started GET "/assets/tinymce/plugins/table/plugin.js" for ::1 at 2018-08-06 12:46:22 -0500
+
+
+Started GET "/assets/tinymce/plugins/lists/plugin.js" for ::1 at 2018-08-06 12:46:22 -0500
+
+
+Started GET "/assets/tinymce/skins/lightgray/skin.min.css" for ::1 at 2018-08-06 12:46:22 -0500
+
+
+Started GET "/assets/tinymce/skins/lightgray/content.min.css" for ::1 at 2018-08-06 12:46:23 -0500
+
+
+Started GET "/assets/tinymce/skins/lightgray/fonts/tinymce.woff" for ::1 at 2018-08-06 12:46:23 -0500
+
+
+Started PATCH "/tutorials/3" for ::1 at 2018-08-06 12:46:52 -0500
+Processing by TutorialsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/WMQ3oN7+PneuUcPxBGTyT73UjHEq+00DyEQX9i5DX7vjf1wMCWo3Svg5lT8JL63qhrsS2BbpbTCOMsJzKeuKw==", "tutorial"=>{"name"=>"asdf", "video"=>"asdf", "content"=>"<h2><span style=\"text-decoration: underline;\"><strong>NOTE: I've updated some of the Gem files on this written explanation that differs from the video. Follow the written explanation!</strong></span></h2>\r\n<h1><span style=\"text-decoration: underline;\"><strong>Step 1: Creating a Root Route</strong></span></h1>\r\n<h2><span style=\"text-decoration: underline;\"><strong>Explanation</strong></span></h2>\r\n<p>One of the beauties of Rails is it's fairly simplistic way of handling routes. Routes are essentially a way to generate a permalink (URL) for a particular view in your app. The easiest way to wrap your head around this is to consider the \"Root\" route. That is, when a user enters in the main URL for your website or application, you can tell Rails which view or page to load for the user to see. It's similar to the index.html file you might see on a basic webserver for a static HTML/CSS website.&nbsp;</p>\r\n<p>So, with all that in mind, we'll set the \"root\" path for our Survey app. In our case, we want to view all of the survey responses as soon as a user loads the app (the index view file for Surveys). To change a route, you can find a file called routes.rb located in the \"config\" folder of your app.&nbsp;</p>\r\n<table style=\"border-collapse: collapse; width: 100%;\" border=\"1\">\r\n<tbody>\r\n<tr>\r\n<td style=\"width: 200.109375px;\"><strong>File Path</strong></td>\r\n<td style=\"width: 473.796875px;\"><strong>Screenshot</strong></td>\r\n<td style=\"width: 196.109375px;\"><strong>Code Needed</strong></td>\r\n</tr>\r\n<tr>\r\n<td style=\"width: 200.109375px;\"><strong>config &gt; routes.rb</strong></td>\r\n<td style=\"width: 473.796875px;\"><img src=\"https://s3.us-east-2.amazonaws.com/lam-fall/images/routes.rb.png\" alt=\"\" width=\"100%\" height=\"auto\" /></td>\r\n<td style=\"width: 196.109375px;\"><span style=\"font-family: monospace; background-color: #bfe6ff;\">root 'surveys#index</span></td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n<p>&nbsp;</p>\r\n<p><span style=\"text-decoration: underline;\"><strong>Change the Index Route</strong></span></p>\r\n<p style=\"padding-left: 30px;\"><code>root 'surveys#index</code></p>\r\n<p style=\"padding-left: 30px;\">&nbsp;</p>\r\n<table style=\"border-collapse: collapse; width: 100%;\" border=\"1\">\r\n<tbody>\r\n<tr>\r\n<td style=\"width: 33.333333333333336%;\">adf</td>\r\n<td style=\"width: 33.333333333333336%;\">adf</td>\r\n<td style=\"width: 33.333333333333336%;\">adf</td>\r\n</tr>\r\n<tr>\r\n<td style=\"width: 33.333333333333336%;\">&nbsp;</td>\r\n<td style=\"width: 33.333333333333336%;\">&nbsp;</td>\r\n<td style=\"width: 33.333333333333336%;\">&nbsp;</td>\r\n</tr>\r\n<tr>\r\n<td style=\"width: 33.333333333333336%;\">&nbsp;</td>\r\n<td style=\"width: 33.333333333333336%;\">&nbsp;</td>\r\n<td style=\"width: 33.333333333333336%;\">&nbsp;</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n<h1><span style=\"text-decoration: underline;\"><strong>STEP 2: Install Bootstrap Gem*</strong></span></h1>\r\n<p><span style=\"text-decoration: underline;\"><strong style=\"text-decoration: none;\">Filepath for Image below: Gemfile</strong></span></p>\r\n<p><span style=\"text-decoration: underline;\"><strong><img src=\"https://s3.us-east-2.amazonaws.com/lam-fall/images/gemfile.png\" alt=\"\" width=\"100%\" height=\"auto\" /></strong></span></p>\r\n<p>1. Add the following code to your gemfile:</p>\r\n<p style=\"padding-left: 30px;\"><code>gem 'bootstrap', '~&gt; 4.1.3'</code></p>\r\n<p style=\"padding-left: 30px;\"><code>gem 'jquery-rails'</code></p>\r\n<p style=\"padding-left: 30px;\">&nbsp;</p>\r\n<p style=\"padding-left: 30px;\"><strong>Filepath for Image below: app &gt; assets &gt; stylesheets &gt; application.css</strong></p>\r\n<p style=\"padding-left: 30px;\"><img src=\"https://s3.us-east-2.amazonaws.com/lam-fall/images/application.scss.png\" alt=\"\" width=\"100%\" height=\"auto\" /></p>\r\n<p>2. Right-click the application.css file and rename the file to application.scss. Then, in \"app&gt;assets&gt;stylesheets&gt;application.scss\" add the following code:</p>\r\n<p style=\"padding-left: 30px;\"><code>@import \"bootstrap\";</code></p>\r\n<p style=\"padding-left: 30px;\">&nbsp;</p>\r\n<p style=\"padding-left: 30px;\"><strong>Filepath for Image below:&nbsp;</strong><strong>app &gt; assets &gt; stylesheets &gt; application.js</strong><img src=\"https://s3.us-east-2.amazonaws.com/lam-fall/images/application.js.png\" alt=\"\" width=\"100%\" height=\"auto\" /></p>\r\n<p>3. Add JQUERY dependecies in your application.js file. In \"app&gt;assets&gt;javascripts&gt;application.js\"</p>\r\n<p style=\"padding-left: 30px;\"><code>//= require jquery3</code></p>\r\n<p style=\"padding-left: 30px;\"><code>//= require popper</code></p>\r\n<p style=\"padding-left: 30px;\"><code>//= require bootstrap-sprocketsts</code></p>\r\n<p>&nbsp;</p>\r\n<p>4. in terminal or command line</p>\r\n<p style=\"padding-left: 30px;\"><code>bundle install&nbsp;</code></p>\r\n<p style=\"padding-left: 30px;\"><code>Restart server</code></p>\r\n<h1><span style=\"text-decoration: underline;\"><strong>STEP 3: Style Index and Form Pages</strong></span></h1>\r\n<p><span style=\"text-decoration: underline;\"><strong style=\"text-decoration: none;\">Filepath for Image below: app &gt; views &gt; surveys &gt; index.html.erb</strong></span></p>\r\n<p><img src=\"https://s3.us-east-2.amazonaws.com/lam-fall/images/index.png\" alt=\"\" width=\"100%\" height=\"auto\" /></p>\r\n<p>1. Let's add a bootstrap class called table and table-striped to our main index table. in \"views&gt;surveys&gt;index.html.erb</p>\r\n<p style=\"padding-left: 30px;\"><code>&lt;table class=\"table table-striped\"&gt;</code></p>\r\n<p style=\"padding-left: 30px;\">&nbsp;</p>\r\n<p style=\"padding-left: 30px;\"><strong>Filepath for Image below: app &gt; views &gt; surveys &gt; _form.html.erb</strong></p>\r\n<p style=\"padding-left: 30px;\"><code></code></p>\r\n<p><img src=\"https://s3.us-east-2.amazonaws.com/lam-fall/images/form.png\" alt=\"\" width=\"100%\" height=\"auto\" /></p>\r\n<p>2. Now, let's style our actual form a bit. in \"views&gt;surveys&gt;_form.html.erb</p>\r\n<p style=\"padding-left: 30px;\">-- Add form-group class to each &lt;div&gt;:&nbsp;<code>&lt;div class=\"form-group\"&gt;</code></p>\r\n<p style=\"padding-left: 30px;\">-- Add form control to the name text area:&nbsp;<code>class: 'form-control'</code></p>\r\n<p style=\"padding-left: 30px;\">&nbsp;</p>\r\n<p><span style=\"text-decoration: underline;\">3. Ok, now let's change Laptop to radio buttons instead of a textbox</span></p>\r\n<p style=\"padding-left: 30px;\"><code>&lt;%= form.label :laptop, \"Do you own a laptop?\" %&gt;&lt;br /&gt;</code></p>\r\n<p style=\"padding-left: 30px;\"><code>&lt;%= form.label :laptop, \"Yes\", :value =&gt; \"true\" &nbsp;%&gt;</code></p>\r\n<p style=\"padding-left: 30px;\"><code>&lt;%= form.radio_button :laptop, 'yes',:checked =&gt; true &nbsp;%&gt;</code></p>\r\n<p style=\"padding-left: 30px;\"><code>&lt;%= form.label :laptop, \"No\", :value =&gt; \"false\" %&gt;</code></p>\r\n<p style=\"padding-left: 30px;\"><code>&lt;%= form.radio_button :laptop, 'No' %&gt;&nbsp;</code></p>\r\n<p>&nbsp;</p>\r\n<p><span style=\"text-decoration: underline;\">4. Finally, let's Change Operating System to Drop-Down Menu</span></p>\r\n<p style=\"padding-left: 30px;\"><code>&lt;%= form.select :os, ['No OS', 'Mac OSX', 'Windows 10', 'Windows 7 or below', 'Linux']%&gt;</code></p>\r\n<p style=\"padding-left: 60px;\">&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<hr />\r\n<p><strong>Links</strong></p>\r\n<p>*<a href=\"https://github.com/twbs/bootstrap-rubygem\">Bootstrap Github Page</a></p>\r\n<p>*&nbsp;<a href=\"https://medium.freecodecamp.org/add-bootstrap-to-your-ruby-on-rails-project-8d76d70d0e3b\" target=\"_blank\" rel=\"noopener\">Add Bootstrap to your RoR App</a></p>\r\n<hr />\r\n<p>&nbsp;</p>"}, "commit"=>"Update Tutorial", "id"=>"3"}
+  [1m[35mTutorial Load (0.1ms)[0m  SELECT  "tutorials".* FROM "tutorials" WHERE "tutorials"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.3ms)[0m  begin transaction
+  [1m[36mSQL (1.4ms)[0m  [1mUPDATE "tutorials" SET "content" = ?, "updated_at" = ? WHERE "tutorials"."id" = ?[0m  [["content", "<h2><span style=\"text-decoration: underline;\"><strong>NOTE: I've updated some of the Gem files on this written explanation that differs from the video. Follow the written explanation!</strong></span></h2>\r\n<h1><span style=\"text-decoration: underline;\"><strong>Step 1: Creating a Root Route</strong></span></h1>\r\n<h2><span style=\"text-decoration: underline;\"><strong>Explanation</strong></span></h2>\r\n<p>One of the beauties of Rails is it's fairly simplistic way of handling routes. Routes are essentially a way to generate a permalink (URL) for a particular view in your app. The easiest way to wrap your head around this is to consider the \"Root\" route. That is, when a user enters in the main URL for your website or application, you can tell Rails which view or page to load for the user to see. It's similar to the index.html file you might see on a basic webserver for a static HTML/CSS website.&nbsp;</p>\r\n<p>So, with all that in mind, we'll set the \"root\" path for our Survey app. In our case, we want to view all of the survey responses as soon as a user loads the app (the index view file for Surveys). To change a route, you can find a file called routes.rb located in the \"config\" folder of your app.&nbsp;</p>\r\n<table style=\"border-collapse: collapse; width: 100%;\" border=\"1\">\r\n<tbody>\r\n<tr>\r\n<td style=\"width: 200.109375px;\"><strong>File Path</strong></td>\r\n<td style=\"width: 473.796875px;\"><strong>Screenshot</strong></td>\r\n<td style=\"width: 196.109375px;\"><strong>Code Needed</strong></td>\r\n</tr>\r\n<tr>\r\n<td style=\"width: 200.109375px;\"><strong>config &gt; routes.rb</strong></td>\r\n<td style=\"width: 473.796875px;\"><img src=\"https://s3.us-east-2.amazonaws.com/lam-fall/images/routes.rb.png\" alt=\"\" width=\"100%\" height=\"auto\" /></td>\r\n<td style=\"width: 196.109375px;\"><span style=\"font-family: monospace; background-color: #bfe6ff;\">root 'surveys#index</span></td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n<p>&nbsp;</p>\r\n<p><span style=\"text-decoration: underline;\"><strong>Change the Index Route</strong></span></p>\r\n<p style=\"padding-left: 30px;\"><code>root 'surveys#index</code></p>\r\n<p style=\"padding-left: 30px;\">&nbsp;</p>\r\n<table style=\"border-collapse: collapse; width: 100%;\" border=\"1\">\r\n<tbody>\r\n<tr>\r\n<td style=\"width: 33.333333333333336%;\">adf</td>\r\n<td style=\"width: 33.333333333333336%;\">adf</td>\r\n<td style=\"width: 33.333333333333336%;\">adf</td>\r\n</tr>\r\n<tr>\r\n<td style=\"width: 33.333333333333336%;\">&nbsp;</td>\r\n<td style=\"width: 33.333333333333336%;\">&nbsp;</td>\r\n<td style=\"width: 33.333333333333336%;\">&nbsp;</td>\r\n</tr>\r\n<tr>\r\n<td style=\"width: 33.333333333333336%;\">&nbsp;</td>\r\n<td style=\"width: 33.333333333333336%;\">&nbsp;</td>\r\n<td style=\"width: 33.333333333333336%;\">&nbsp;</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n<h1><span style=\"text-decoration: underline;\"><strong>STEP 2: Install Bootstrap Gem*</strong></span></h1>\r\n<p><span style=\"text-decoration: underline;\"><strong style=\"text-decoration: none;\">Filepath for Image below: Gemfile</strong></span></p>\r\n<p><span style=\"text-decoration: underline;\"><strong><img src=\"https://s3.us-east-2.amazonaws.com/lam-fall/images/gemfile.png\" alt=\"\" width=\"100%\" height=\"auto\" /></strong></span></p>\r\n<p>1. Add the following code to your gemfile:</p>\r\n<p style=\"padding-left: 30px;\"><code>gem 'bootstrap', '~&gt; 4.1.3'</code></p>\r\n<p style=\"padding-left: 30px;\"><code>gem 'jquery-rails'</code></p>\r\n<p style=\"padding-left: 30px;\">&nbsp;</p>\r\n<p style=\"padding-left: 30px;\"><strong>Filepath for Image below: app &gt; assets &gt; stylesheets &gt; application.css</strong></p>\r\n<p style=\"padding-left: 30px;\"><img src=\"https://s3.us-east-2.amazonaws.com/lam-fall/images/application.scss.png\" alt=\"\" width=\"100%\" height=\"auto\" /></p>\r\n<p>2. Right-click the application.css file and rename the file to application.scss. Then, in \"app&gt;assets&gt;stylesheets&gt;application.scss\" add the following code:</p>\r\n<p style=\"padding-left: 30px;\"><code>@import \"bootstrap\";</code></p>\r\n<p style=\"padding-left: 30px;\">&nbsp;</p>\r\n<p style=\"padding-left: 30px;\"><strong>Filepath for Image below:&nbsp;</strong><strong>app &gt; assets &gt; stylesheets &gt; application.js</strong><img src=\"https://s3.us-east-2.amazonaws.com/lam-fall/images/application.js.png\" alt=\"\" width=\"100%\" height=\"auto\" /></p>\r\n<p>3. Add JQUERY dependecies in your application.js file. In \"app&gt;assets&gt;javascripts&gt;application.js\"</p>\r\n<p style=\"padding-left: 30px;\"><code>//= require jquery3</code></p>\r\n<p style=\"padding-left: 30px;\"><code>//= require popper</code></p>\r\n<p style=\"padding-left: 30px;\"><code>//= require bootstrap-sprocketsts</code></p>\r\n<p>&nbsp;</p>\r\n<p>4. in terminal or command line</p>\r\n<p style=\"padding-left: 30px;\"><code>bundle install&nbsp;</code></p>\r\n<p style=\"padding-left: 30px;\"><code>Restart server</code></p>\r\n<h1><span style=\"text-decoration: underline;\"><strong>STEP 3: Style Index and Form Pages</strong></span></h1>\r\n<p><span style=\"text-decoration: underline;\"><strong style=\"text-decoration: none;\">Filepath for Image below: app &gt; views &gt; surveys &gt; index.html.erb</strong></span></p>\r\n<p><img src=\"https://s3.us-east-2.amazonaws.com/lam-fall/images/index.png\" alt=\"\" width=\"100%\" height=\"auto\" /></p>\r\n<p>1. Let's add a bootstrap class called table and table-striped to our main index table. in \"views&gt;surveys&gt;index.html.erb</p>\r\n<p style=\"padding-left: 30px;\"><code>&lt;table class=\"table table-striped\"&gt;</code></p>\r\n<p style=\"padding-left: 30px;\">&nbsp;</p>\r\n<p style=\"padding-left: 30px;\"><strong>Filepath for Image below: app &gt; views &gt; surveys &gt; _form.html.erb</strong></p>\r\n<p style=\"padding-left: 30px;\"><code></code></p>\r\n<p><img src=\"https://s3.us-east-2.amazonaws.com/lam-fall/images/form.png\" alt=\"\" width=\"100%\" height=\"auto\" /></p>\r\n<p>2. Now, let's style our actual form a bit. in \"views&gt;surveys&gt;_form.html.erb</p>\r\n<p style=\"padding-left: 30px;\">-- Add form-group class to each &lt;div&gt;:&nbsp;<code>&lt;div class=\"form-group\"&gt;</code></p>\r\n<p style=\"padding-left: 30px;\">-- Add form control to the name text area:&nbsp;<code>class: 'form-control'</code></p>\r\n<p style=\"padding-left: 30px;\">&nbsp;</p>\r\n<p><span style=\"text-decoration: underline;\">3. Ok, now let's change Laptop to radio buttons instead of a textbox</span></p>\r\n<p style=\"padding-left: 30px;\"><code>&lt;%= form.label :laptop, \"Do you own a laptop?\" %&gt;&lt;br /&gt;</code></p>\r\n<p style=\"padding-left: 30px;\"><code>&lt;%= form.label :laptop, \"Yes\", :value =&gt; \"true\" &nbsp;%&gt;</code></p>\r\n<p style=\"padding-left: 30px;\"><code>&lt;%= form.radio_button :laptop, 'yes',:checked =&gt; true &nbsp;%&gt;</code></p>\r\n<p style=\"padding-left: 30px;\"><code>&lt;%= form.label :laptop, \"No\", :value =&gt; \"false\" %&gt;</code></p>\r\n<p style=\"padding-left: 30px;\"><code>&lt;%= form.radio_button :laptop, 'No' %&gt;&nbsp;</code></p>\r\n<p>&nbsp;</p>\r\n<p><span style=\"text-decoration: underline;\">4. Finally, let's Change Operating System to Drop-Down Menu</span></p>\r\n<p style=\"padding-left: 30px;\"><code>&lt;%= form.select :os, ['No OS', 'Mac OSX', 'Windows 10', 'Windows 7 or below', 'Linux']%&gt;</code></p>\r\n<p style=\"padding-left: 60px;\">&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<hr />\r\n<p><strong>Links</strong></p>\r\n<p>*<a href=\"https://github.com/twbs/bootstrap-rubygem\">Bootstrap Github Page</a></p>\r\n<p>*&nbsp;<a href=\"https://medium.freecodecamp.org/add-bootstrap-to-your-ruby-on-rails-project-8d76d70d0e3b\" target=\"_blank\" rel=\"noopener\">Add Bootstrap to your RoR App</a></p>\r\n<hr />\r\n<p>&nbsp;</p>"], ["updated_at", "2018-08-06 17:46:52.580235"], ["id", 3]]
+  [1m[35m (3.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/tutorials/3
+Completed 302 Found in 14ms (ActiveRecord: 5.1ms)
+
+
+Started GET "/tutorials/3" for ::1 at 2018-08-06 12:46:52 -0500
+Processing by TutorialsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mTutorial Load (0.1ms)[0m  [1mSELECT  "tutorials".* FROM "tutorials" WHERE "tutorials"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mObjective Load (0.1ms)[0m  [1mSELECT "objectives".* FROM "objectives" WHERE "objectives"."tutorial_id" = ?[0m  [["tutorial_id", 3]]
+  Rendered tutorials/show.html.erb within layouts/application (14.9ms)
+  Rendered layouts/_header.html.erb (9.4ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 471ms (Views: 470.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/tutorials/3/edit" for ::1 at 2018-08-06 12:50:14 -0500
+Processing by TutorialsController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mTutorial Load (0.2ms)[0m  SELECT  "tutorials".* FROM "tutorials" WHERE "tutorials"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mObjective Load (0.1ms)[0m  SELECT "objectives".* FROM "objectives" WHERE "objectives"."tutorial_id" = ?  [["tutorial_id", 3]]
+  Rendered tutorials/_objective_fields.html.erb (0.4ms)
+  Rendered tutorials/_form.html.erb (13.6ms)
+  Rendered tutorials/edit.html.erb within layouts/application (17.5ms)
+  Rendered layouts/_header.html.erb (8.6ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 589ms (Views: 586.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/tinymce/themes/modern/theme.js" for ::1 at 2018-08-06 12:50:15 -0500
+
+
+Started GET "/assets/tinymce/plugins/powerpaste/plugin.js" for ::1 at 2018-08-06 12:50:15 -0500
+
+ActionController::RoutingError (No route matches [GET] "/assets/tinymce/plugins/powerpaste/plugin.js"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.10) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.10) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.10) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.10) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.10) lib/rack/lock.rb:17:in `call'
+  rack (1.6.10) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.10) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/chrislam/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /Users/chrislam/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /Users/chrislam/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb (4.6ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.3ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.8ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (133.0ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (64.0ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (154.1ms)
+
+
+Started GET "/assets/tinymce/plugins/link/plugin.js" for ::1 at 2018-08-06 12:50:16 -0500
+
+
+Started GET "/assets/tinymce/plugins/lists/plugin.js" for ::1 at 2018-08-06 12:50:16 -0500
+
+
+Started GET "/assets/tinymce/plugins/image/plugin.js" for ::1 at 2018-08-06 12:50:16 -0500
+
+
+Started GET "/assets/tinymce/plugins/table/plugin.js" for ::1 at 2018-08-06 12:50:16 -0500
+
+
+Started GET "/assets/tinymce/skins/lightgray/skin.min.css" for ::1 at 2018-08-06 12:50:16 -0500
+
+
+Started GET "/assets/tinymce/skins/lightgray/content.min.css" for ::1 at 2018-08-06 12:50:16 -0500
+
+
+Started GET "/assets/tinymce/skins/lightgray/fonts/tinymce.woff" for ::1 at 2018-08-06 12:50:16 -0500
+
+
+Started PATCH "/tutorials/3" for ::1 at 2018-08-06 12:50:22 -0500
+Processing by TutorialsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"c9xq1CmzCikkn+2y8J5LQI6rMAak3qrwZsmORayWYthhMod6mu1aDdHGTOnIq2Y+GkaOfAAu4nCr0FUTuIjBjQ==", "tutorial"=>{"name"=>"asdf", "video"=>"asdf", "content"=>"<p class=\"MsoNormal\" style=\"margin: 0in 0in 0.0001pt; font-size: medium; font-family: Calibri, sans-serif;\"><strong><u><span style=\"font-size: 18pt; font-family: Verdana, sans-serif;\">NOTE: I've updated some of the Gem files on this written explanation that differs from the video. Follow the written explanation!</span></u></strong></p>\r\n<p class=\"MsoNormal\" style=\"margin: 0in 0in 0.0001pt; font-size: medium; font-family: Calibri, sans-serif;\"><strong><u><span style=\"font-size: 24pt; font-family: Verdana, sans-serif;\">Step 1: Creating a Root Route</span></u></strong></p>\r\n<p class=\"MsoNormal\" style=\"margin: 0in 0in 0.0001pt; font-size: medium; font-family: Calibri, sans-serif;\"><strong><u><span style=\"font-size: 18pt; font-family: Verdana, sans-serif;\">Explanation</span></u></strong></p>\r\n<p class=\"MsoNormal\" style=\"margin: 0in 0in 0.0001pt; font-size: medium; font-family: Calibri, sans-serif;\"><span style=\"font-size: 10.5pt; font-family: Verdana, sans-serif;\">One of the beauties of Rails is it's fairly simplistic way of handling routes. Routes are essentially a way to generate a permalink (URL) for a particular view in your app. The easiest way to wrap your head around this is to consider the \"Root\" route. That is, when a user enters in the main URL for your website or application, you can tell Rails which view or page to load for the user to see. It's similar to the index.html file you might see on a basic webserver for a static HTML/CSS website.&nbsp;</span></p>\r\n<p class=\"MsoNormal\" style=\"margin: 0in 0in 0.0001pt; font-size: medium; font-family: Calibri, sans-serif;\"><span style=\"font-size: 10.5pt; font-family: Verdana, sans-serif;\">So, with all that in mind, we'll set the \"root\" path for our Survey app. In our case, we want to view all of the survey responses as soon as a user loads the app (the index view file for Surveys). To change a route, you can find a file called routes.rb located in the \"config\" folder of your app.&nbsp;</span></p>\r\n<p class=\"MsoNormal\" style=\"margin: 0in 0in 0.0001pt; font-size: medium; font-family: Calibri, sans-serif; break-after: avoid-page;\"><span style=\"font-size: 10.5pt; font-family: Verdana, sans-serif;\"><img src=\"blob:http://localhost:3000/bb16ef2e-f71a-4f1a-a733-e26b524f998a\" alt=\"root 'surveys#index\" width=\"468\" height=\"311\" /></span></p>\r\n<p class=\"MsoCaption\" style=\"margin: 0in 0in 10pt; font-size: 9pt; font-family: Calibri, sans-serif; color: #44546a; font-style: italic;\">Figure 1: Filepath for Image below: config &gt; routes.rb</p>\r\n<p class=\"MsoNormal\" style=\"margin: 0in 0in 0.0001pt; font-size: medium; font-family: Calibri, sans-serif;\"><span style=\"font-size: 10pt; font-family: 'Courier New';\">root 'surveys#index</span></p>"}, "commit"=>"Update Tutorial", "id"=>"3"}
+  [1m[36mTutorial Load (0.1ms)[0m  [1mSELECT  "tutorials".* FROM "tutorials" WHERE "tutorials"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.1ms)[0m  UPDATE "tutorials" SET "content" = ?, "updated_at" = ? WHERE "tutorials"."id" = ?  [["content", "<p class=\"MsoNormal\" style=\"margin: 0in 0in 0.0001pt; font-size: medium; font-family: Calibri, sans-serif;\"><strong><u><span style=\"font-size: 18pt; font-family: Verdana, sans-serif;\">NOTE: I've updated some of the Gem files on this written explanation that differs from the video. Follow the written explanation!</span></u></strong></p>\r\n<p class=\"MsoNormal\" style=\"margin: 0in 0in 0.0001pt; font-size: medium; font-family: Calibri, sans-serif;\"><strong><u><span style=\"font-size: 24pt; font-family: Verdana, sans-serif;\">Step 1: Creating a Root Route</span></u></strong></p>\r\n<p class=\"MsoNormal\" style=\"margin: 0in 0in 0.0001pt; font-size: medium; font-family: Calibri, sans-serif;\"><strong><u><span style=\"font-size: 18pt; font-family: Verdana, sans-serif;\">Explanation</span></u></strong></p>\r\n<p class=\"MsoNormal\" style=\"margin: 0in 0in 0.0001pt; font-size: medium; font-family: Calibri, sans-serif;\"><span style=\"font-size: 10.5pt; font-family: Verdana, sans-serif;\">One of the beauties of Rails is it's fairly simplistic way of handling routes. Routes are essentially a way to generate a permalink (URL) for a particular view in your app. The easiest way to wrap your head around this is to consider the \"Root\" route. That is, when a user enters in the main URL for your website or application, you can tell Rails which view or page to load for the user to see. It's similar to the index.html file you might see on a basic webserver for a static HTML/CSS website.&nbsp;</span></p>\r\n<p class=\"MsoNormal\" style=\"margin: 0in 0in 0.0001pt; font-size: medium; font-family: Calibri, sans-serif;\"><span style=\"font-size: 10.5pt; font-family: Verdana, sans-serif;\">So, with all that in mind, we'll set the \"root\" path for our Survey app. In our case, we want to view all of the survey responses as soon as a user loads the app (the index view file for Surveys). To change a route, you can find a file called routes.rb located in the \"config\" folder of your app.&nbsp;</span></p>\r\n<p class=\"MsoNormal\" style=\"margin: 0in 0in 0.0001pt; font-size: medium; font-family: Calibri, sans-serif; break-after: avoid-page;\"><span style=\"font-size: 10.5pt; font-family: Verdana, sans-serif;\"><img src=\"blob:http://localhost:3000/bb16ef2e-f71a-4f1a-a733-e26b524f998a\" alt=\"root 'surveys#index\" width=\"468\" height=\"311\" /></span></p>\r\n<p class=\"MsoCaption\" style=\"margin: 0in 0in 10pt; font-size: 9pt; font-family: Calibri, sans-serif; color: #44546a; font-style: italic;\">Figure 1: Filepath for Image below: config &gt; routes.rb</p>\r\n<p class=\"MsoNormal\" style=\"margin: 0in 0in 0.0001pt; font-size: medium; font-family: Calibri, sans-serif;\"><span style=\"font-size: 10pt; font-family: 'Courier New';\">root 'surveys#index</span></p>"], ["updated_at", "2018-08-06 17:50:22.912996"], ["id", 3]]
+  [1m[36m (3.4ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/tutorials/3
+Completed 302 Found in 9ms (ActiveRecord: 4.8ms)
+
+
+Started GET "/tutorials/3" for ::1 at 2018-08-06 12:50:22 -0500
+Processing by TutorialsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mTutorial Load (0.1ms)[0m  SELECT  "tutorials".* FROM "tutorials" WHERE "tutorials"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mObjective Load (0.1ms)[0m  SELECT "objectives".* FROM "objectives" WHERE "objectives"."tutorial_id" = ?  [["tutorial_id", 3]]
+  Rendered tutorials/show.html.erb within layouts/application (8.4ms)
+  Rendered layouts/_header.html.erb (7.2ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 434ms (Views: 432.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/tutorials/3" for ::1 at 2018-08-06 12:50:53 -0500
+Processing by TutorialsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mTutorial Load (0.2ms)[0m  [1mSELECT  "tutorials".* FROM "tutorials" WHERE "tutorials"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mObjective Load (0.1ms)[0m  [1mSELECT "objectives".* FROM "objectives" WHERE "objectives"."tutorial_id" = ?[0m  [["tutorial_id", 3]]
+  Rendered tutorials/show.html.erb within layouts/application (27.8ms)
+  Rendered layouts/_header.html.erb (8.2ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 491ms (Views: 488.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/tutorials/3/edit" for ::1 at 2018-08-06 12:50:56 -0500
+Processing by TutorialsController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mTutorial Load (0.1ms)[0m  SELECT  "tutorials".* FROM "tutorials" WHERE "tutorials"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mObjective Load (0.1ms)[0m  SELECT "objectives".* FROM "objectives" WHERE "objectives"."tutorial_id" = ?  [["tutorial_id", 3]]
+  Rendered tutorials/_objective_fields.html.erb (0.9ms)
+  Rendered tutorials/_form.html.erb (14.4ms)
+  Rendered tutorials/edit.html.erb within layouts/application (16.2ms)
+  Rendered layouts/_header.html.erb (3.5ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 401ms (Views: 398.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/tinymce/themes/modern/theme.js" for ::1 at 2018-08-06 12:50:57 -0500
+
+
+Started GET "/assets/tinymce/plugins/bbcode/plugin.js" for ::1 at 2018-08-06 12:50:57 -0500
+
+
+Started GET "/assets/tinymce/plugins/image/plugin.js" for ::1 at 2018-08-06 12:50:57 -0500
+
+
+Started GET "/assets/tinymce/plugins/link/plugin.js" for ::1 at 2018-08-06 12:50:57 -0500
+
+
+Started GET "/assets/tinymce/plugins/lists/plugin.js" for ::1 at 2018-08-06 12:50:57 -0500
+
+
+Started GET "/assets/tinymce/plugins/table/plugin.js" for ::1 at 2018-08-06 12:50:57 -0500
+
+
+Started GET "/assets/tinymce/skins/lightgray/skin.min.css" for ::1 at 2018-08-06 12:50:57 -0500
+
+
+Started GET "/assets/tinymce/skins/lightgray/content.min.css" for ::1 at 2018-08-06 12:50:57 -0500
+
+
+Started GET "/assets/tinymce/skins/lightgray/fonts/tinymce.woff" for ::1 at 2018-08-06 12:50:57 -0500
+
+
+Started GET "/tutorials/3/edit" for ::1 at 2018-08-06 12:51:38 -0500
+Processing by TutorialsController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mTutorial Load (0.1ms)[0m  [1mSELECT  "tutorials".* FROM "tutorials" WHERE "tutorials"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mObjective Load (0.1ms)[0m  [1mSELECT "objectives".* FROM "objectives" WHERE "objectives"."tutorial_id" = ?[0m  [["tutorial_id", 3]]
+  Rendered tutorials/_objective_fields.html.erb (0.3ms)
+  Rendered tutorials/_form.html.erb (9.4ms)
+  Rendered tutorials/edit.html.erb within layouts/application (11.6ms)
+  Rendered layouts/_header.html.erb (5.3ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 493ms (Views: 490.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/tinymce/plugins/image/plugin.js" for ::1 at 2018-08-06 12:51:39 -0500
+
+
+Started GET "/assets/tinymce/plugins/lists/plugin.js" for ::1 at 2018-08-06 12:51:39 -0500
+
+
+Started GET "/assets/tinymce/plugins/link/plugin.js" for ::1 at 2018-08-06 12:51:39 -0500
+
+
+Started GET "/assets/tinymce/themes/modern/theme.js" for ::1 at 2018-08-06 12:51:39 -0500
+
+
+Started GET "/assets/tinymce/plugins/lists/plugin.js" for ::1 at 2018-08-06 12:51:39 -0500
+
+
+Started GET "/assets/tinymce/plugins/link/plugin.js" for ::1 at 2018-08-06 12:51:39 -0500
+
+
+Started GET "/assets/tinymce/plugins/bbcode/plugin.js" for ::1 at 2018-08-06 12:51:39 -0500
+
+
+Started GET "/assets/tinymce/plugins/image/plugin.js" for ::1 at 2018-08-06 12:51:39 -0500
+
+
+Started GET "/assets/tinymce/skins/lightgray/skin.min.css" for ::1 at 2018-08-06 12:51:39 -0500
+
+
+Started GET "/assets/tinymce/skins/lightgray/content.min.css" for ::1 at 2018-08-06 12:51:39 -0500
+
+
+Started GET "/assets/tinymce/skins/lightgray/fonts/tinymce.woff" for ::1 at 2018-08-06 12:51:39 -0500
+
+
+Started GET "/tutorials/3/edit" for ::1 at 2018-08-06 12:51:55 -0500
+Processing by TutorialsController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mTutorial Load (0.1ms)[0m  SELECT  "tutorials".* FROM "tutorials" WHERE "tutorials"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mObjective Load (0.1ms)[0m  SELECT "objectives".* FROM "objectives" WHERE "objectives"."tutorial_id" = ?  [["tutorial_id", 3]]
+  Rendered tutorials/_objective_fields.html.erb (0.5ms)
+  Rendered tutorials/_form.html.erb (18.0ms)
+  Rendered tutorials/edit.html.erb within layouts/application (20.6ms)
+  Rendered layouts/_header.html.erb (4.8ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 433ms (Views: 431.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/tinymce/plugins/lists/plugin.js" for ::1 at 2018-08-06 12:51:56 -0500
+
+
+Started GET "/assets/tinymce/plugins/image/plugin.js" for ::1 at 2018-08-06 12:51:56 -0500
+
+
+Started GET "/assets/tinymce/plugins/link/plugin.js" for ::1 at 2018-08-06 12:51:56 -0500
+
+
+Started GET "/assets/tinymce/themes/modern/theme.js" for ::1 at 2018-08-06 12:51:56 -0500
+
+
+Started GET "/assets/tinymce/plugins/link/plugin.js" for ::1 at 2018-08-06 12:51:56 -0500
+
+
+Started GET "/assets/tinymce/plugins/lists/plugin.js" for ::1 at 2018-08-06 12:51:56 -0500
+
+
+Started GET "/assets/tinymce/plugins/image/plugin.js" for ::1 at 2018-08-06 12:51:56 -0500
+
+
+Started GET "/assets/tinymce/plugins/bbcode/plugin.js" for ::1 at 2018-08-06 12:51:56 -0500
+
+
+Started GET "/assets/tinymce/skins/lightgray/skin.min.css" for ::1 at 2018-08-06 12:51:56 -0500
+
+
+Started GET "/assets/tinymce/skins/lightgray/content.min.css" for ::1 at 2018-08-06 12:51:56 -0500
+
+
+Started GET "/assets/tinymce/skins/lightgray/fonts/tinymce.woff" for ::1 at 2018-08-06 12:51:56 -0500
+
+
+Started GET "/tutorials/3/edit" for ::1 at 2018-08-06 12:52:36 -0500
+Processing by TutorialsController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mTutorial Load (0.1ms)[0m  [1mSELECT  "tutorials".* FROM "tutorials" WHERE "tutorials"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mObjective Load (0.1ms)[0m  [1mSELECT "objectives".* FROM "objectives" WHERE "objectives"."tutorial_id" = ?[0m  [["tutorial_id", 3]]
+  Rendered tutorials/_objective_fields.html.erb (0.4ms)
+  Rendered tutorials/_form.html.erb (12.1ms)
+  Rendered tutorials/edit.html.erb within layouts/application (14.0ms)
+  Rendered layouts/_header.html.erb (6.0ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 530ms (Views: 528.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/tinymce/plugins/image/plugin.js" for ::1 at 2018-08-06 12:52:36 -0500
+
+
+Started GET "/assets/tinymce/plugins/lists/plugin.js" for ::1 at 2018-08-06 12:52:36 -0500
+
+
+Started GET "/assets/tinymce/plugins/link/plugin.js" for ::1 at 2018-08-06 12:52:36 -0500
+
+
+Started GET "/assets/tinymce/themes/modern/theme.js" for ::1 at 2018-08-06 12:52:36 -0500
+
+
+Started GET "/assets/tinymce/plugins/lists/plugin.js" for ::1 at 2018-08-06 12:52:36 -0500
+
+
+Started GET "/assets/tinymce/plugins/link/plugin.js" for ::1 at 2018-08-06 12:52:36 -0500
+
+
+Started GET "/assets/tinymce/plugins/image/plugin.js" for ::1 at 2018-08-06 12:52:36 -0500
+
+
+Started GET "/assets/tinymce/plugins/%7B%22bbcode_dialect%22=%3E%22punbb%22%7D/plugin.js" for ::1 at 2018-08-06 12:52:36 -0500
+
+ActionController::RoutingError (No route matches [GET] "/assets/tinymce/plugins/%7B%22bbcode_dialect%22=%3E%22punbb%22%7D/plugin.js"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.10) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.10) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.10) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.10) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.10) lib/rack/lock.rb:17:in `call'
+  rack (1.6.10) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.10) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/chrislam/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /Users/chrislam/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /Users/chrislam/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb (4.2ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.3ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.4ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (127.4ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (58.9ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (137.2ms)
+
+
+Started GET "/assets/tinymce/plugins/bbcode/plugin.js" for ::1 at 2018-08-06 12:52:37 -0500
+
+
+Started GET "/assets/tinymce/skins/lightgray/skin.min.css" for ::1 at 2018-08-06 12:52:37 -0500
+
+
+Started GET "/assets/tinymce/skins/lightgray/content.min.css" for ::1 at 2018-08-06 12:52:37 -0500
+
+
+Started GET "/assets/tinymce/skins/lightgray/fonts/tinymce.woff" for ::1 at 2018-08-06 12:52:37 -0500
+
+
+Started GET "/tutorials/3/edit" for ::1 at 2018-08-06 12:52:48 -0500
+Processing by TutorialsController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mTutorial Load (0.1ms)[0m  SELECT  "tutorials".* FROM "tutorials" WHERE "tutorials"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mObjective Load (0.1ms)[0m  SELECT "objectives".* FROM "objectives" WHERE "objectives"."tutorial_id" = ?  [["tutorial_id", 3]]
+  Rendered tutorials/_objective_fields.html.erb (0.4ms)
+  Rendered tutorials/_form.html.erb (12.7ms)
+  Rendered tutorials/edit.html.erb within layouts/application (14.3ms)
+  Rendered layouts/_header.html.erb (5.4ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 422ms (Views: 419.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/tinymce/themes/modern/theme.js" for ::1 at 2018-08-06 12:52:48 -0500
+
+
+Started GET "/assets/tinymce/plugins/punbb/plugin.js" for ::1 at 2018-08-06 12:52:48 -0500
+
+ActionController::RoutingError (No route matches [GET] "/assets/tinymce/plugins/punbb/plugin.js"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.10) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.10) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.10) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.10) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.10) lib/rack/lock.rb:17:in `call'
+  rack (1.6.10) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.10) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/chrislam/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /Users/chrislam/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /Users/chrislam/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb (4.2ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.2ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.3ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (122.0ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (64.1ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (148.6ms)
+
+
+Started GET "/assets/tinymce/plugins/lists/plugin.js" for ::1 at 2018-08-06 12:52:49 -0500
+
+
+Started GET "/assets/tinymce/plugins/bbcode/plugin.js" for ::1 at 2018-08-06 12:52:49 -0500
+
+
+Started GET "/assets/tinymce/plugins/link/plugin.js" for ::1 at 2018-08-06 12:52:49 -0500
+
+
+Started GET "/assets/tinymce/plugins/image/plugin.js" for ::1 at 2018-08-06 12:52:49 -0500
+
+
+Started GET "/assets/tinymce/skins/lightgray/skin.min.css" for ::1 at 2018-08-06 12:52:49 -0500
+
+
+Started GET "/assets/tinymce/skins/lightgray/content.min.css" for ::1 at 2018-08-06 12:52:49 -0500
+
+
+Started GET "/assets/tinymce/skins/lightgray/fonts/tinymce.woff" for ::1 at 2018-08-06 12:52:49 -0500
+
+
+Started GET "/tutorials/3/edit" for ::1 at 2018-08-06 12:53:19 -0500
+Processing by TutorialsController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mTutorial Load (0.1ms)[0m  [1mSELECT  "tutorials".* FROM "tutorials" WHERE "tutorials"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mObjective Load (0.1ms)[0m  [1mSELECT "objectives".* FROM "objectives" WHERE "objectives"."tutorial_id" = ?[0m  [["tutorial_id", 3]]
+  Rendered tutorials/_objective_fields.html.erb (0.5ms)
+  Rendered tutorials/_form.html.erb (10.7ms)
+  Rendered tutorials/edit.html.erb within layouts/application (13.2ms)
+  Rendered layouts/_header.html.erb (8.0ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 557ms (Views: 554.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/tinymce/themes/modern/theme.js" for ::1 at 2018-08-06 12:53:20 -0500
+
+
+Started GET "/assets/tinymce/plugins/autosave/plugin.js" for ::1 at 2018-08-06 12:53:20 -0500
+
+
+Started GET "/assets/tinymce/plugins/image/plugin.js" for ::1 at 2018-08-06 12:53:20 -0500
+
+
+Started GET "/assets/tinymce/plugins/link/plugin.js" for ::1 at 2018-08-06 12:53:20 -0500
+
+
+Started GET "/assets/tinymce/plugins/lists/plugin.js" for ::1 at 2018-08-06 12:53:20 -0500
+
+
+Started GET "/assets/tinymce/skins/lightgray/skin.min.css" for ::1 at 2018-08-06 12:53:20 -0500
+
+
+Started GET "/assets/tinymce/skins/lightgray/content.min.css" for ::1 at 2018-08-06 12:53:20 -0500
+
+
+Started GET "/assets/tinymce/skins/lightgray/fonts/tinymce.woff" for ::1 at 2018-08-06 12:53:20 -0500
+
+
+Started GET "/tutorials/3/edit" for ::1 at 2018-08-06 12:54:16 -0500
+Processing by TutorialsController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mTutorial Load (0.1ms)[0m  SELECT  "tutorials".* FROM "tutorials" WHERE "tutorials"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mObjective Load (0.1ms)[0m  SELECT "objectives".* FROM "objectives" WHERE "objectives"."tutorial_id" = ?  [["tutorial_id", 3]]
+  Rendered tutorials/_objective_fields.html.erb (0.4ms)
+  Rendered tutorials/_form.html.erb (10.1ms)
+  Rendered tutorials/edit.html.erb within layouts/application (12.4ms)
+  Rendered layouts/_header.html.erb (7.0ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 506ms (Views: 504.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/tinymce/themes/modern/theme.js" for ::1 at 2018-08-06 12:54:16 -0500
+
+
+Started GET "/assets/tinymce/plugins/code/plugin.js" for ::1 at 2018-08-06 12:54:16 -0500
+
+
+Started GET "/assets/tinymce/plugins/lists/plugin.js" for ::1 at 2018-08-06 12:54:16 -0500
+
+
+Started GET "/assets/tinymce/plugins/autosave/plugin.js" for ::1 at 2018-08-06 12:54:16 -0500
+
+
+Started GET "/assets/tinymce/plugins/image/plugin.js" for ::1 at 2018-08-06 12:54:16 -0500
+
+
+Started GET "/assets/tinymce/plugins/link/plugin.js" for ::1 at 2018-08-06 12:54:16 -0500
+
+
+Started GET "/assets/tinymce/skins/lightgray/skin.min.css" for ::1 at 2018-08-06 12:54:16 -0500
+
+
+Started GET "/assets/tinymce/skins/lightgray/content.min.css" for ::1 at 2018-08-06 12:54:16 -0500
+
+
+Started GET "/assets/tinymce/skins/lightgray/fonts/tinymce.woff" for ::1 at 2018-08-06 12:54:17 -0500
+
+
+Started GET "/tutorials/3/edit" for ::1 at 2018-08-06 12:55:32 -0500
+Processing by TutorialsController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mTutorial Load (0.1ms)[0m  [1mSELECT  "tutorials".* FROM "tutorials" WHERE "tutorials"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mObjective Load (0.1ms)[0m  [1mSELECT "objectives".* FROM "objectives" WHERE "objectives"."tutorial_id" = ?[0m  [["tutorial_id", 3]]
+  Rendered tutorials/_objective_fields.html.erb (0.4ms)
+  Rendered tutorials/_form.html.erb (10.4ms)
+  Rendered tutorials/edit.html.erb within layouts/application (12.7ms)
+  Rendered layouts/_header.html.erb (8.1ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 528ms (Views: 525.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/tinymce/themes/modern/theme.js" for ::1 at 2018-08-06 12:55:33 -0500
+
+
+Started GET "/assets/tinymce/plugins/textcolor/plugin.js" for ::1 at 2018-08-06 12:55:33 -0500
+
+
+Started GET "/assets/tinymce/plugins/image/plugin.js" for ::1 at 2018-08-06 12:55:33 -0500
+
+
+Started GET "/assets/tinymce/plugins/link/plugin.js" for ::1 at 2018-08-06 12:55:33 -0500
+
+
+Started GET "/assets/tinymce/plugins/autosave/plugin.js" for ::1 at 2018-08-06 12:55:33 -0500
+
+
+Started GET "/assets/tinymce/plugins/code/plugin.js" for ::1 at 2018-08-06 12:55:33 -0500
+
+
+Started GET "/assets/tinymce/plugins/lists/plugin.js" for ::1 at 2018-08-06 12:55:33 -0500
+
+
+Started GET "/assets/tinymce/skins/lightgray/skin.min.css" for ::1 at 2018-08-06 12:55:33 -0500
+
+
+Started GET "/assets/tinymce/skins/lightgray/content.min.css" for ::1 at 2018-08-06 12:55:33 -0500
+
+
+Started GET "/assets/tinymce/skins/lightgray/fonts/tinymce.woff" for ::1 at 2018-08-06 12:55:33 -0500
+
+
+Started PATCH "/tutorials/3" for ::1 at 2018-08-06 12:55:44 -0500
+Processing by TutorialsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rbgCJQ1daf2vK6Cmv0l2Cm5o/4mWLUm3T3w+FoeIWHe/Vu+LvgM52VpyAf2HfFt0+oVB8zLdATeCZeVAk5b7Ig==", "tutorial"=>{"name"=>"asdf", "video"=>"asdf", "content"=>"<p class=\"MsoNormal\" style=\"margin: 0in 0in 0.0001pt; font-size: medium; font-family: Calibri, sans-serif;\"><strong><u><span style=\"font-size: 18pt; font-family: Verdana, sans-serif;\">NOTE: I've updated some of the Gem files on this written explanation that differs from the video. Follow the written explanation!</span></u></strong></p>\r\n<p class=\"MsoNormal\" style=\"margin: 0in 0in 0.0001pt; font-size: medium; font-family: Calibri, sans-serif;\"><span style=\"background-color: #800000; color: #ffffff;\"><strong><u><span style=\"font-size: 24pt; font-family: Verdana, sans-serif; background-color: #800000;\">Step 1: Creating a Root Route</span></u></strong></span></p>\r\n<p class=\"MsoNormal\" style=\"margin: 0in 0in 0.0001pt; font-size: medium; font-family: Calibri, sans-serif;\"><span style=\"background-color: #800000; color: #ffffff;\"><strong><u><span style=\"font-size: 18pt; font-family: Verdana, sans-serif; background-color: #800000;\">Explanation</span></u></strong></span></p>\r\n<p class=\"MsoNormal\" style=\"margin: 0in 0in 0.0001pt; font-size: medium; font-family: Calibri, sans-serif;\"><span style=\"font-size: 10.5pt; font-family: Verdana, sans-serif;\">One of the beauties of Rails is it's fairly simplistic way of handling routes. Routes are essentially a way to generate a permalink (URL) for a particular view in your app. The easiest way to wrap your head around this is to consider the \"Root\" route. That is, when a user enters in the main URL for your website or application, you can tell Rails which view or page to load for the user to see. It's similar to the index.html file you might see on a basic webserver for a static HTML/CSS website.&nbsp;</span></p>\r\n<p class=\"MsoNormal\" style=\"margin: 0in 0in 0.0001pt; font-size: medium; font-family: Calibri, sans-serif;\"><span style=\"font-size: 10.5pt; font-family: Verdana, sans-serif;\">So, with all that in mind, we'll set the \"root\" path for our Survey app. In our case, we want to view all of the survey responses as soon as a user loads the app (the index view file for Surveys). To change a route, you can find a file called routes.rb located in the \"config\" folder of your app.&nbsp;</span></p>\r\n<p class=\"MsoNormal\" style=\"margin: 0in 0in 0.0001pt; font-size: medium; font-family: Calibri, sans-serif; break-after: avoid-page;\"><span style=\"font-size: 10.5pt; font-family: Verdana, sans-serif;\"><img src=\"blob:http://localhost:3000/bb16ef2e-f71a-4f1a-a733-e26b524f998a\" alt=\"root 'surveys#index\" width=\"468\" height=\"311\" /></span></p>\r\n<p class=\"MsoCaption\" style=\"margin: 0in 0in 10pt; font-size: 9pt; font-family: Calibri, sans-serif; color: #44546a; font-style: italic;\">Figure 1: Filepath for Image below: config &gt; routes.rb</p>\r\n<p class=\"MsoNormal\" style=\"margin: 0in 0in 0.0001pt; font-size: medium; font-family: Calibri, sans-serif;\"><span style=\"font-size: 10pt; font-family: 'Courier New';\">root 'surveys#index</span></p>"}, "commit"=>"Update Tutorial", "id"=>"3"}
+  [1m[35mTutorial Load (0.1ms)[0m  SELECT  "tutorials".* FROM "tutorials" WHERE "tutorials"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (2.0ms)[0m  [1mUPDATE "tutorials" SET "content" = ?, "updated_at" = ? WHERE "tutorials"."id" = ?[0m  [["content", "<p class=\"MsoNormal\" style=\"margin: 0in 0in 0.0001pt; font-size: medium; font-family: Calibri, sans-serif;\"><strong><u><span style=\"font-size: 18pt; font-family: Verdana, sans-serif;\">NOTE: I've updated some of the Gem files on this written explanation that differs from the video. Follow the written explanation!</span></u></strong></p>\r\n<p class=\"MsoNormal\" style=\"margin: 0in 0in 0.0001pt; font-size: medium; font-family: Calibri, sans-serif;\"><span style=\"background-color: #800000; color: #ffffff;\"><strong><u><span style=\"font-size: 24pt; font-family: Verdana, sans-serif; background-color: #800000;\">Step 1: Creating a Root Route</span></u></strong></span></p>\r\n<p class=\"MsoNormal\" style=\"margin: 0in 0in 0.0001pt; font-size: medium; font-family: Calibri, sans-serif;\"><span style=\"background-color: #800000; color: #ffffff;\"><strong><u><span style=\"font-size: 18pt; font-family: Verdana, sans-serif; background-color: #800000;\">Explanation</span></u></strong></span></p>\r\n<p class=\"MsoNormal\" style=\"margin: 0in 0in 0.0001pt; font-size: medium; font-family: Calibri, sans-serif;\"><span style=\"font-size: 10.5pt; font-family: Verdana, sans-serif;\">One of the beauties of Rails is it's fairly simplistic way of handling routes. Routes are essentially a way to generate a permalink (URL) for a particular view in your app. The easiest way to wrap your head around this is to consider the \"Root\" route. That is, when a user enters in the main URL for your website or application, you can tell Rails which view or page to load for the user to see. It's similar to the index.html file you might see on a basic webserver for a static HTML/CSS website.&nbsp;</span></p>\r\n<p class=\"MsoNormal\" style=\"margin: 0in 0in 0.0001pt; font-size: medium; font-family: Calibri, sans-serif;\"><span style=\"font-size: 10.5pt; font-family: Verdana, sans-serif;\">So, with all that in mind, we'll set the \"root\" path for our Survey app. In our case, we want to view all of the survey responses as soon as a user loads the app (the index view file for Surveys). To change a route, you can find a file called routes.rb located in the \"config\" folder of your app.&nbsp;</span></p>\r\n<p class=\"MsoNormal\" style=\"margin: 0in 0in 0.0001pt; font-size: medium; font-family: Calibri, sans-serif; break-after: avoid-page;\"><span style=\"font-size: 10.5pt; font-family: Verdana, sans-serif;\"><img src=\"blob:http://localhost:3000/bb16ef2e-f71a-4f1a-a733-e26b524f998a\" alt=\"root 'surveys#index\" width=\"468\" height=\"311\" /></span></p>\r\n<p class=\"MsoCaption\" style=\"margin: 0in 0in 10pt; font-size: 9pt; font-family: Calibri, sans-serif; color: #44546a; font-style: italic;\">Figure 1: Filepath for Image below: config &gt; routes.rb</p>\r\n<p class=\"MsoNormal\" style=\"margin: 0in 0in 0.0001pt; font-size: medium; font-family: Calibri, sans-serif;\"><span style=\"font-size: 10pt; font-family: 'Courier New';\">root 'surveys#index</span></p>"], ["updated_at", "2018-08-06 17:55:45.007147"], ["id", 3]]
+  [1m[35m (2.6ms)[0m  commit transaction
+Redirected to http://localhost:3000/tutorials/3
+Completed 302 Found in 12ms (ActiveRecord: 4.9ms)
+
+
+Started GET "/tutorials/3" for ::1 at 2018-08-06 12:55:45 -0500
+Processing by TutorialsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mTutorial Load (0.1ms)[0m  [1mSELECT  "tutorials".* FROM "tutorials" WHERE "tutorials"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mObjective Load (0.1ms)[0m  [1mSELECT "objectives".* FROM "objectives" WHERE "objectives"."tutorial_id" = ?[0m  [["tutorial_id", 3]]
+  Rendered tutorials/show.html.erb within layouts/application (8.0ms)
+  Rendered layouts/_header.html.erb (3.5ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 418ms (Views: 416.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/tutorials/3/edit" for ::1 at 2018-08-06 12:55:52 -0500
+Processing by TutorialsController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mTutorial Load (0.1ms)[0m  SELECT  "tutorials".* FROM "tutorials" WHERE "tutorials"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mObjective Load (0.1ms)[0m  SELECT "objectives".* FROM "objectives" WHERE "objectives"."tutorial_id" = ?  [["tutorial_id", 3]]
+  Rendered tutorials/_objective_fields.html.erb (0.9ms)
+  Rendered tutorials/_form.html.erb (10.6ms)
+  Rendered tutorials/edit.html.erb within layouts/application (13.0ms)
+  Rendered layouts/_header.html.erb (4.0ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 428ms (Views: 426.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/tinymce/themes/modern/theme.js" for ::1 at 2018-08-06 12:55:53 -0500
+
+
+Started GET "/assets/tinymce/plugins/lists/plugin.js" for ::1 at 2018-08-06 12:55:53 -0500
+
+
+Started GET "/assets/tinymce/plugins/autosave/plugin.js" for ::1 at 2018-08-06 12:55:53 -0500
+
+
+Started GET "/assets/tinymce/plugins/code/plugin.js" for ::1 at 2018-08-06 12:55:53 -0500
+
+
+Started GET "/assets/tinymce/plugins/textcolor/plugin.js" for ::1 at 2018-08-06 12:55:53 -0500
+
+
+Started GET "/assets/tinymce/plugins/link/plugin.js" for ::1 at 2018-08-06 12:55:53 -0500
+
+
+Started GET "/assets/tinymce/plugins/image/plugin.js" for ::1 at 2018-08-06 12:55:53 -0500
+
+
+Started GET "/assets/tinymce/skins/lightgray/skin.min.css" for ::1 at 2018-08-06 12:55:53 -0500
+
+
+Started GET "/assets/tinymce/skins/lightgray/content.min.css" for ::1 at 2018-08-06 12:55:53 -0500
+
+
+Started GET "/assets/tinymce/skins/lightgray/fonts/tinymce.woff" for ::1 at 2018-08-06 12:55:53 -0500
+
+
+Started PATCH "/tutorials/3" for ::1 at 2018-08-06 12:56:13 -0500
+Processing by TutorialsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jxI3iFJ3n7ch8E+JQV6g2D9qGX1zgxQuX5F1p4e4FWOd/Nom4SnPk9Sp7tJ5a42mq4enB9dzXK6SiK7xk6a2Ng==", "tutorial"=>{"name"=>"asdf", "video"=>"asdf", "content"=>"<p class=\"MsoNormal\" style=\"margin: 0in 0in 0.0001pt; font-size: medium; font-family: Calibri, sans-serif;\"><strong><u><span style=\"font-size: 18pt; font-family: Verdana, sans-serif;\">NOTE: I've updated some of the Gem files on this written explanation that differs from the video. Follow the written explanation!</span></u></strong></p>\r\n<p><span style=\"background-color: #3366ff; color: #ffffff;\">Step 1: Creating a Root Route</span></p>\r\n<p>Explanation</p>\r\n<p class=\"MsoNormal\" style=\"margin: 0in 0in 0.0001pt; font-size: medium; font-family: Calibri, sans-serif;\"><span style=\"font-size: 10.5pt; font-family: Verdana, sans-serif;\">One of the beauties of Rails is it's fairly simplistic way of handling routes. Routes are essentially a way to generate a permalink (URL) for a particular view in your app. The easiest way to wrap your head around this is to consider the \"Root\" route. That is, when a user enters in the main URL for your website or application, you can tell Rails which view or page to load for the user to see. It's similar to the index.html file you might see on a basic webserver for a static HTML/CSS website.&nbsp;</span></p>\r\n<p class=\"MsoNormal\" style=\"margin: 0in 0in 0.0001pt; font-size: medium; font-family: Calibri, sans-serif;\"><span style=\"font-size: 10.5pt; font-family: Verdana, sans-serif;\">So, with all that in mind, we'll set the \"root\" path for our Survey app. In our case, we want to view all of the survey responses as soon as a user loads the app (the index view file for Surveys). To change a route, you can find a file called routes.rb located in the \"config\" folder of your app.&nbsp;</span></p>\r\n<p class=\"MsoNormal\" style=\"margin: 0in 0in 0.0001pt; font-size: medium; font-family: Calibri, sans-serif; break-after: avoid-page;\"><span style=\"font-size: 10.5pt; font-family: Verdana, sans-serif;\"><img src=\"blob:http://localhost:3000/bb16ef2e-f71a-4f1a-a733-e26b524f998a\" alt=\"root 'surveys#index\" width=\"468\" height=\"311\" /></span></p>\r\n<p class=\"MsoCaption\" style=\"margin: 0in 0in 10pt; font-size: 9pt; font-family: Calibri, sans-serif; color: #44546a; font-style: italic;\">Figure 1: Filepath for Image below: config &gt; routes.rb</p>\r\n<p class=\"MsoNormal\" style=\"margin: 0in 0in 0.0001pt; font-size: medium; font-family: Calibri, sans-serif;\"><span style=\"font-size: 10pt; font-family: 'Courier New';\">root 'surveys#index</span></p>"}, "commit"=>"Update Tutorial", "id"=>"3"}
+  [1m[36mTutorial Load (0.1ms)[0m  [1mSELECT  "tutorials".* FROM "tutorials" WHERE "tutorials"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "tutorials" SET "content" = ?, "updated_at" = ? WHERE "tutorials"."id" = ?  [["content", "<p class=\"MsoNormal\" style=\"margin: 0in 0in 0.0001pt; font-size: medium; font-family: Calibri, sans-serif;\"><strong><u><span style=\"font-size: 18pt; font-family: Verdana, sans-serif;\">NOTE: I've updated some of the Gem files on this written explanation that differs from the video. Follow the written explanation!</span></u></strong></p>\r\n<p><span style=\"background-color: #3366ff; color: #ffffff;\">Step 1: Creating a Root Route</span></p>\r\n<p>Explanation</p>\r\n<p class=\"MsoNormal\" style=\"margin: 0in 0in 0.0001pt; font-size: medium; font-family: Calibri, sans-serif;\"><span style=\"font-size: 10.5pt; font-family: Verdana, sans-serif;\">One of the beauties of Rails is it's fairly simplistic way of handling routes. Routes are essentially a way to generate a permalink (URL) for a particular view in your app. The easiest way to wrap your head around this is to consider the \"Root\" route. That is, when a user enters in the main URL for your website or application, you can tell Rails which view or page to load for the user to see. It's similar to the index.html file you might see on a basic webserver for a static HTML/CSS website.&nbsp;</span></p>\r\n<p class=\"MsoNormal\" style=\"margin: 0in 0in 0.0001pt; font-size: medium; font-family: Calibri, sans-serif;\"><span style=\"font-size: 10.5pt; font-family: Verdana, sans-serif;\">So, with all that in mind, we'll set the \"root\" path for our Survey app. In our case, we want to view all of the survey responses as soon as a user loads the app (the index view file for Surveys). To change a route, you can find a file called routes.rb located in the \"config\" folder of your app.&nbsp;</span></p>\r\n<p class=\"MsoNormal\" style=\"margin: 0in 0in 0.0001pt; font-size: medium; font-family: Calibri, sans-serif; break-after: avoid-page;\"><span style=\"font-size: 10.5pt; font-family: Verdana, sans-serif;\"><img src=\"blob:http://localhost:3000/bb16ef2e-f71a-4f1a-a733-e26b524f998a\" alt=\"root 'surveys#index\" width=\"468\" height=\"311\" /></span></p>\r\n<p class=\"MsoCaption\" style=\"margin: 0in 0in 10pt; font-size: 9pt; font-family: Calibri, sans-serif; color: #44546a; font-style: italic;\">Figure 1: Filepath for Image below: config &gt; routes.rb</p>\r\n<p class=\"MsoNormal\" style=\"margin: 0in 0in 0.0001pt; font-size: medium; font-family: Calibri, sans-serif;\"><span style=\"font-size: 10pt; font-family: 'Courier New';\">root 'surveys#index</span></p>"], ["updated_at", "2018-08-06 17:56:13.082492"], ["id", 3]]
+  [1m[36m (1.3ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/tutorials/3
+Completed 302 Found in 7ms (ActiveRecord: 1.9ms)
+
+
+Started GET "/tutorials/3" for ::1 at 2018-08-06 12:56:13 -0500
+Processing by TutorialsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mTutorial Load (0.1ms)[0m  SELECT  "tutorials".* FROM "tutorials" WHERE "tutorials"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mObjective Load (0.1ms)[0m  SELECT "objectives".* FROM "objectives" WHERE "objectives"."tutorial_id" = ?  [["tutorial_id", 3]]
+  Rendered tutorials/show.html.erb within layouts/application (4.8ms)
+  Rendered layouts/_header.html.erb (4.2ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 404ms (Views: 403.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/tutorials/3" for ::1 at 2018-08-06 12:57:10 -0500
+Processing by TutorialsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mTutorial Load (0.1ms)[0m  [1mSELECT  "tutorials".* FROM "tutorials" WHERE "tutorials"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mObjective Load (0.1ms)[0m  [1mSELECT "objectives".* FROM "objectives" WHERE "objectives"."tutorial_id" = ?[0m  [["tutorial_id", 3]]
+  Rendered tutorials/show.html.erb within layouts/application (4.7ms)
+  Rendered layouts/_header.html.erb (4.5ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 378ms (Views: 377.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/tinymce/plugins/bbcode/plugin.js" for ::1 at 2018-08-06 12:57:11 -0500
+
+
+Started GET "/tutorials/3/edit" for ::1 at 2018-08-06 12:57:13 -0500
+Processing by TutorialsController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mTutorial Load (0.1ms)[0m  SELECT  "tutorials".* FROM "tutorials" WHERE "tutorials"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mObjective Load (0.1ms)[0m  SELECT "objectives".* FROM "objectives" WHERE "objectives"."tutorial_id" = ?  [["tutorial_id", 3]]
+  Rendered tutorials/_objective_fields.html.erb (0.4ms)
+  Rendered tutorials/_form.html.erb (10.7ms)
+  Rendered tutorials/edit.html.erb within layouts/application (12.1ms)
+  Rendered layouts/_header.html.erb (3.8ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 429ms (Views: 427.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/tinymce/themes/modern/theme.js" for ::1 at 2018-08-06 12:57:13 -0500
+
+
+Started GET "/assets/tinymce/plugins/image/plugin.js" for ::1 at 2018-08-06 12:57:13 -0500
+
+
+Started GET "/assets/tinymce/plugins/lists/plugin.js" for ::1 at 2018-08-06 12:57:13 -0500
+
+
+Started GET "/assets/tinymce/plugins/link/plugin.js" for ::1 at 2018-08-06 12:57:13 -0500
+
+
+Started GET "/assets/tinymce/plugins/textcolor/plugin.js" for ::1 at 2018-08-06 12:57:13 -0500
+
+
+Started GET "/assets/tinymce/plugins/autosave/plugin.js" for ::1 at 2018-08-06 12:57:13 -0500
+
+
+Started GET "/assets/tinymce/plugins/code/plugin.js" for ::1 at 2018-08-06 12:57:13 -0500
+
+
+Started GET "/assets/tinymce/skins/lightgray/skin.min.css" for ::1 at 2018-08-06 12:57:13 -0500
+
+
+Started GET "/assets/tinymce/skins/lightgray/content.min.css" for ::1 at 2018-08-06 12:57:13 -0500
+
+
+Started GET "/assets/tinymce/skins/lightgray/fonts/tinymce.woff" for ::1 at 2018-08-06 12:57:13 -0500
+
+
+Started GET "/tutorials/3/edit" for ::1 at 2018-08-06 12:57:28 -0500
+Processing by TutorialsController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mTutorial Load (0.1ms)[0m  [1mSELECT  "tutorials".* FROM "tutorials" WHERE "tutorials"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mObjective Load (0.1ms)[0m  [1mSELECT "objectives".* FROM "objectives" WHERE "objectives"."tutorial_id" = ?[0m  [["tutorial_id", 3]]
+  Rendered tutorials/_objective_fields.html.erb (0.5ms)
+  Rendered tutorials/_form.html.erb (14.3ms)
+  Rendered tutorials/edit.html.erb within layouts/application (16.5ms)
+  Rendered layouts/_header.html.erb (7.7ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 545ms (Views: 542.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/tinymce/themes/modern/theme.js" for ::1 at 2018-08-06 12:57:28 -0500
+
+
+Started GET "/assets/tinymce/plugins/advcode/plugin.js" for ::1 at 2018-08-06 12:57:28 -0500
+
+ActionController::RoutingError (No route matches [GET] "/assets/tinymce/plugins/advcode/plugin.js"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.10) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.10) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.10) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.10) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.10) lib/rack/lock.rb:17:in `call'
+  rack (1.6.10) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.10) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/chrislam/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /Users/chrislam/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /Users/chrislam/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb (5.7ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.2ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (3.2ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (3.4ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (199.4ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.0ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.7ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (93.0ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (3.2ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (211.0ms)
+
+
+Started GET "/assets/tinymce/plugins/textcolor/plugin.js" for ::1 at 2018-08-06 12:57:29 -0500
+
+
+Started GET "/assets/tinymce/plugins/link/plugin.js" for ::1 at 2018-08-06 12:57:29 -0500
+
+
+Started GET "/assets/tinymce/plugins/image/plugin.js" for ::1 at 2018-08-06 12:57:29 -0500
+
+
+Started GET "/assets/tinymce/plugins/lists/plugin.js" for ::1 at 2018-08-06 12:57:29 -0500
+
+
+Started GET "/assets/tinymce/plugins/autosave/plugin.js" for ::1 at 2018-08-06 12:57:29 -0500
+
+
+Started GET "/assets/tinymce/skins/lightgray/skin.min.css" for ::1 at 2018-08-06 12:57:29 -0500
+
+
+Started GET "/assets/tinymce/skins/lightgray/content.min.css" for ::1 at 2018-08-06 12:57:29 -0500
+
+
+Started GET "/assets/tinymce/skins/lightgray/fonts/tinymce.woff" for ::1 at 2018-08-06 12:57:29 -0500
+
+
+Started GET "/tutorials/3/edit" for ::1 at 2018-08-06 12:57:39 -0500
+Processing by TutorialsController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mTutorial Load (0.8ms)[0m  SELECT  "tutorials".* FROM "tutorials" WHERE "tutorials"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mObjective Load (0.1ms)[0m  SELECT "objectives".* FROM "objectives" WHERE "objectives"."tutorial_id" = ?  [["tutorial_id", 3]]
+  Rendered tutorials/_objective_fields.html.erb (1.7ms)
+  Rendered tutorials/_form.html.erb (53.4ms)
+  Rendered tutorials/edit.html.erb within layouts/application (56.4ms)
+  Rendered layouts/_header.html.erb (7.4ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 764ms (Views: 741.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/tinymce/themes/modern/theme.js" for ::1 at 2018-08-06 12:57:40 -0500
+
+
+Started GET "/assets/tinymce/plugins/link/plugin.js" for ::1 at 2018-08-06 12:57:40 -0500
+
+
+Started GET "/assets/tinymce/plugins/lists/plugin.js" for ::1 at 2018-08-06 12:57:40 -0500
+
+
+Started GET "/assets/tinymce/plugins/image/plugin.js" for ::1 at 2018-08-06 12:57:40 -0500
+
+
+Started GET "/assets/tinymce/plugins/textcolor/plugin.js" for ::1 at 2018-08-06 12:57:40 -0500
+
+
+Started GET "/assets/tinymce/plugins/code/plugin.js" for ::1 at 2018-08-06 12:57:40 -0500
+
+
+Started GET "/assets/tinymce/plugins/autosave/plugin.js" for ::1 at 2018-08-06 12:57:40 -0500
+
+
+Started GET "/assets/tinymce/skins/lightgray/skin.min.css" for ::1 at 2018-08-06 12:57:40 -0500
+
+
+Started GET "/assets/tinymce/skins/lightgray/content.min.css" for ::1 at 2018-08-06 12:57:40 -0500
+
+
+Started GET "/assets/tinymce/skins/lightgray/fonts/tinymce.woff" for ::1 at 2018-08-06 12:57:40 -0500
+
+
+Started GET "/tutorials/3/edit" for ::1 at 2018-08-06 12:57:54 -0500
+Processing by TutorialsController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mTutorial Load (0.1ms)[0m  [1mSELECT  "tutorials".* FROM "tutorials" WHERE "tutorials"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mObjective Load (0.1ms)[0m  [1mSELECT "objectives".* FROM "objectives" WHERE "objectives"."tutorial_id" = ?[0m  [["tutorial_id", 3]]
+  Rendered tutorials/_objective_fields.html.erb (0.6ms)
+  Rendered tutorials/_form.html.erb (10.9ms)
+  Rendered tutorials/edit.html.erb within layouts/application (12.8ms)
+  Rendered layouts/_header.html.erb (7.1ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 672ms (Views: 670.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/tinymce/themes/modern/theme.js" for ::1 at 2018-08-06 12:57:55 -0500
+
+
+Started GET "/assets/tinymce/plugins/image/plugin.js" for ::1 at 2018-08-06 12:57:55 -0500
+
+
+Started GET "/assets/tinymce/plugins/lists/plugin.js" for ::1 at 2018-08-06 12:57:55 -0500
+
+
+Started GET "/assets/tinymce/plugins/textcolor/plugin.js" for ::1 at 2018-08-06 12:57:55 -0500
+
+
+Started GET "/assets/tinymce/plugins/link/plugin.js" for ::1 at 2018-08-06 12:57:55 -0500
+
+
+Started GET "/assets/tinymce/plugins/code/plugin.js" for ::1 at 2018-08-06 12:57:55 -0500
+
+
+Started GET "/assets/tinymce/plugins/autosave/plugin.js" for ::1 at 2018-08-06 12:57:55 -0500
+
+
+Started GET "/assets/tinymce/skins/lightgray/skin.min.css" for ::1 at 2018-08-06 12:57:55 -0500
+
+
+Started GET "/assets/tinymce/skins/lightgray/content.min.css" for ::1 at 2018-08-06 12:57:55 -0500
+
+
+Started GET "/assets/tinymce/skins/lightgray/fonts/tinymce.woff" for ::1 at 2018-08-06 12:57:55 -0500
+
+
+Started GET "/tutorials/3/edit" for ::1 at 2018-08-06 12:58:11 -0500
+Processing by TutorialsController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mTutorial Load (0.1ms)[0m  SELECT  "tutorials".* FROM "tutorials" WHERE "tutorials"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mObjective Load (0.1ms)[0m  SELECT "objectives".* FROM "objectives" WHERE "objectives"."tutorial_id" = ?  [["tutorial_id", 3]]
+  Rendered tutorials/_objective_fields.html.erb (0.5ms)
+  Rendered tutorials/_form.html.erb (11.1ms)
+  Rendered tutorials/edit.html.erb within layouts/application (12.8ms)
+  Rendered layouts/_header.html.erb (3.4ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 476ms (Views: 474.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/tinymce/themes/modern/theme.js" for ::1 at 2018-08-06 12:58:11 -0500
+
+
+Started GET "/assets/tinymce/plugins/image/plugin.js" for ::1 at 2018-08-06 12:58:11 -0500
+
+
+Started GET "/assets/tinymce/plugins/link/plugin.js" for ::1 at 2018-08-06 12:58:11 -0500
+
+
+Started GET "/assets/tinymce/plugins/lists/plugin.js" for ::1 at 2018-08-06 12:58:11 -0500
+
+
+Started GET "/assets/tinymce/plugins/autosave/plugin.js" for ::1 at 2018-08-06 12:58:11 -0500
+
+
+Started GET "/assets/tinymce/plugins/textcolor/plugin.js" for ::1 at 2018-08-06 12:58:11 -0500
+
+
+Started GET "/assets/tinymce/plugins/advcode/plugin.js" for ::1 at 2018-08-06 12:58:11 -0500
+
+ActionController::RoutingError (No route matches [GET] "/assets/tinymce/plugins/advcode/plugin.js"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.10) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.10) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.10) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.10) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.10) lib/rack/lock.rb:17:in `call'
+  rack (1.6.10) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.10) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/chrislam/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /Users/chrislam/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /Users/chrislam/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb (5.1ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.3ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.3ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (126.5ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (63.3ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (138.7ms)
+
+
+Started GET "/assets/tinymce/skins/lightgray/skin.min.css" for ::1 at 2018-08-06 12:58:12 -0500
+
+
+Started GET "/assets/tinymce/skins/lightgray/content.min.css" for ::1 at 2018-08-06 12:58:12 -0500
+
+
+Started GET "/assets/tinymce/skins/lightgray/fonts/tinymce.woff" for ::1 at 2018-08-06 12:58:12 -0500
+
+
+Started GET "/tutorials/3/edit" for ::1 at 2018-08-06 12:59:26 -0500
+Processing by TutorialsController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mTutorial Load (0.1ms)[0m  [1mSELECT  "tutorials".* FROM "tutorials" WHERE "tutorials"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mObjective Load (0.1ms)[0m  [1mSELECT "objectives".* FROM "objectives" WHERE "objectives"."tutorial_id" = ?[0m  [["tutorial_id", 3]]
+  Rendered tutorials/_objective_fields.html.erb (0.4ms)
+  Rendered tutorials/_form.html.erb (13.5ms)
+  Rendered tutorials/edit.html.erb within layouts/application (15.7ms)
+  Rendered layouts/_header.html.erb (8.4ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 538ms (Views: 536.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/tinymce/plugins/advcode/plugin.js" for ::1 at 2018-08-06 12:59:27 -0500
+
+ActionController::RoutingError (No route matches [GET] "/assets/tinymce/plugins/advcode/plugin.js"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.10) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.10) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.10) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.10) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.10) lib/rack/lock.rb:17:in `call'
+  rack (1.6.10) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.10) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/chrislam/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /Users/chrislam/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /Users/chrislam/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb (4.4ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.2ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.6ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (125.1ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (58.8ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (139.1ms)
+
+
+Started GET "/assets/tinymce/themes/modern/theme.js" for ::1 at 2018-08-06 12:59:27 -0500
+
+
+Started GET "/assets/tinymce/plugins/%7B%22image/plugin.js" for ::1 at 2018-08-06 12:59:27 -0500
+
+ActionController::RoutingError (No route matches [GET] "/assets/tinymce/plugins/%7B%22image/plugin.js"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.10) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.10) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.10) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.10) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.10) lib/rack/lock.rb:17:in `call'
+  rack (1.6.10) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.10) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/chrislam/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /Users/chrislam/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /Users/chrislam/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb (5.6ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.2ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.0ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (124.1ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (66.3ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (147.5ms)
+
+
+Started GET "/assets/tinymce/plugins/image_caption%22=%3Etrue%7D/plugin.js" for ::1 at 2018-08-06 12:59:28 -0500
+
+ActionController::RoutingError (No route matches [GET] "/assets/tinymce/plugins/image_caption%22=%3Etrue%7D/plugin.js"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.10) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.10) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.10) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.10) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.10) lib/rack/lock.rb:17:in `call'
+  rack (1.6.10) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.10) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/chrislam/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /Users/chrislam/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /Users/chrislam/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb (5.1ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.2ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.0ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (125.5ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (56.0ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (130.1ms)
+
+
+Started GET "/assets/tinymce/plugins/hr/plugin.js" for ::1 at 2018-08-06 12:59:28 -0500
+
+
+Started GET "/assets/tinymce/plugins/autosave/plugin.js" for ::1 at 2018-08-06 12:59:28 -0500
+
+
+Started GET "/assets/tinymce/plugins/lists/plugin.js" for ::1 at 2018-08-06 12:59:28 -0500
+
+
+Started GET "/assets/tinymce/plugins/link/plugin.js" for ::1 at 2018-08-06 12:59:28 -0500
+
+
+Started GET "/assets/tinymce/plugins/textcolor/plugin.js" for ::1 at 2018-08-06 12:59:28 -0500
+
+
+Started GET "/assets/tinymce/plugins/code/plugin.js" for ::1 at 2018-08-06 12:59:28 -0500
+
+
+Started GET "/assets/tinymce/skins/lightgray/skin.min.css" for ::1 at 2018-08-06 12:59:28 -0500
+
+
+Started GET "/assets/tinymce/skins/lightgray/content.min.css" for ::1 at 2018-08-06 12:59:28 -0500
+
+
+Started GET "/assets/tinymce/skins/lightgray/fonts/tinymce.woff" for ::1 at 2018-08-06 12:59:28 -0500
+
+
+Started GET "/tutorials/3/edit" for ::1 at 2018-08-06 12:59:40 -0500
+Processing by TutorialsController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mTutorial Load (0.1ms)[0m  SELECT  "tutorials".* FROM "tutorials" WHERE "tutorials"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mObjective Load (0.1ms)[0m  SELECT "objectives".* FROM "objectives" WHERE "objectives"."tutorial_id" = ?  [["tutorial_id", 3]]
+  Rendered tutorials/_objective_fields.html.erb (0.4ms)
+  Rendered tutorials/_form.html.erb (9.6ms)
+  Rendered tutorials/edit.html.erb within layouts/application (11.2ms)
+  Rendered layouts/_header.html.erb (7.3ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 502ms (Views: 499.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/tinymce/themes/modern/theme.js" for ::1 at 2018-08-06 12:59:40 -0500
+
+
+Started GET "/assets/tinymce/plugins/image_caption/plugin.js" for ::1 at 2018-08-06 12:59:40 -0500
+
+ActionController::RoutingError (No route matches [GET] "/assets/tinymce/plugins/image_caption/plugin.js"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.10) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.10) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.10) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.10) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.10) lib/rack/lock.rb:17:in `call'
+  rack (1.6.10) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.10) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/chrislam/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /Users/chrislam/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /Users/chrislam/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb (4.0ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.2ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.1ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (118.0ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (64.5ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (138.8ms)
+
+
+Started GET "/assets/tinymce/plugins/link/plugin.js" for ::1 at 2018-08-06 12:59:41 -0500
+
+
+Started GET "/assets/tinymce/plugins/image/plugin.js" for ::1 at 2018-08-06 12:59:41 -0500
+
+
+Started GET "/assets/tinymce/plugins/autosave/plugin.js" for ::1 at 2018-08-06 12:59:41 -0500
+
+
+Started GET "/assets/tinymce/plugins/lists/plugin.js" for ::1 at 2018-08-06 12:59:41 -0500
+
+
+Started GET "/assets/tinymce/plugins/textcolor/plugin.js" for ::1 at 2018-08-06 12:59:41 -0500
+
+
+Started GET "/assets/tinymce/plugins/code/plugin.js" for ::1 at 2018-08-06 12:59:41 -0500
+
+
+Started GET "/assets/tinymce/plugins/hr/plugin.js" for ::1 at 2018-08-06 12:59:41 -0500
+
+
+Started GET "/assets/tinymce/skins/lightgray/skin.min.css" for ::1 at 2018-08-06 12:59:41 -0500
+
+
+Started GET "/assets/tinymce/skins/lightgray/content.min.css" for ::1 at 2018-08-06 12:59:41 -0500
+
+
+Started GET "/assets/tinymce/skins/lightgray/fonts/tinymce.woff" for ::1 at 2018-08-06 12:59:41 -0500
+
+
+Started GET "/tutorials/3/edit" for ::1 at 2018-08-06 13:02:27 -0500
+Processing by TutorialsController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mTutorial Load (0.1ms)[0m  [1mSELECT  "tutorials".* FROM "tutorials" WHERE "tutorials"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mObjective Load (0.1ms)[0m  [1mSELECT "objectives".* FROM "objectives" WHERE "objectives"."tutorial_id" = ?[0m  [["tutorial_id", 3]]
+  Rendered tutorials/_objective_fields.html.erb (0.3ms)
+  Rendered tutorials/_form.html.erb (10.2ms)
+  Rendered tutorials/edit.html.erb within layouts/application (11.8ms)
+  Rendered layouts/_header.html.erb (7.8ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 604ms (Views: 602.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/tinymce/themes/modern/theme.js" for ::1 at 2018-08-06 13:02:28 -0500
+
+
+Started GET "/assets/tinymce/plugins/image/plugin.js" for ::1 at 2018-08-06 13:02:28 -0500
+
+
+Started GET "/assets/tinymce/plugins/lists/plugin.js" for ::1 at 2018-08-06 13:02:28 -0500
+
+
+Started GET "/assets/tinymce/plugins/link/plugin.js" for ::1 at 2018-08-06 13:02:28 -0500
+
+
+Started GET "/assets/tinymce/plugins/autosave/plugin.js" for ::1 at 2018-08-06 13:02:28 -0500
+
+
+Started GET "/assets/tinymce/plugins/hr/plugin.js" for ::1 at 2018-08-06 13:02:28 -0500
+
+
+Started GET "/assets/tinymce/plugins/code/plugin.js" for ::1 at 2018-08-06 13:02:28 -0500
+
+
+Started GET "/assets/tinymce/plugins/textcolor/plugin.js" for ::1 at 2018-08-06 13:02:28 -0500
+
+
+Started GET "/assets/tinymce/skins/lightgray/skin.min.css" for ::1 at 2018-08-06 13:02:28 -0500
+
+
+Started GET "/assets/tinymce/skins/lightgray/content.min.css" for ::1 at 2018-08-06 13:02:28 -0500
+
+
+Started GET "/assets/tinymce/skins/lightgray/fonts/tinymce.woff" for ::1 at 2018-08-06 13:02:28 -0500

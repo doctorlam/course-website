@@ -1,7 +1,12 @@
 toolbar:
   - styleselect | bold italic | undo redo | bullist numlist |
-  - image | link
+  - image | link | restoredraft | code | 
 plugins:
   - image
   - link
   - lists
+  - autosave
+  - code
+  - textcolor
+  - hr
+image_caption: true
