@@ -1,6 +1,6 @@
 toolbar:
   - styleselect | bold italic | undo redo | bullist numlist |
-  - image | link | restoredraft | code | 
+  - image | link | restoredraft | code | codesample |
 plugins:
   - image
   - link
@@ -9,4 +9,5 @@ plugins:
   - code
   - textcolor
   - hr
+  - codesample 
 image_caption: true
