@@ -29374,3 +29374,303 @@ Processing by TutorialsController#show as HTML
   Rendered layouts/_header.html.erb (5.5ms)
   Rendered layouts/_footer.html.erb (0.3ms)
 Completed 200 OK in 403ms (Views: 401.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/tutorials/3/edit" for ::1 at 2018-08-06 11:19:08 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by TutorialsController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mTutorial Load (0.5ms)[0m  SELECT  "tutorials".* FROM "tutorials" WHERE "tutorials"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mObjective Load (0.4ms)[0m  SELECT "objectives".* FROM "objectives" WHERE "objectives"."tutorial_id" = ?  [["tutorial_id", 3]]
+  Rendered tutorials/_objective_fields.html.erb (3.6ms)
+  Rendered tutorials/_form.html.erb (165.1ms)
+  Rendered tutorials/edit.html.erb within layouts/application (173.5ms)
+  Rendered layouts/_header.html.erb (4.9ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 2149ms (Views: 2095.6ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/assets/tinymce/themes/modern/theme.js" for ::1 at 2018-08-06 11:19:11 -0500
+
+
+Started GET "/assets/tinymce/skins/lightgray/skin.min.css" for ::1 at 2018-08-06 11:19:11 -0500
+
+
+Started GET "/assets/tinymce/skins/lightgray/content.min.css" for ::1 at 2018-08-06 11:19:11 -0500
+
+
+Started GET "/assets/tinymce/skins/lightgray/fonts/tinymce.woff" for ::1 at 2018-08-06 11:19:11 -0500
+
+
+Started GET "/tutorials/3/edit" for ::1 at 2018-08-06 11:19:42 -0500
+Processing by TutorialsController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mTutorial Load (0.2ms)[0m  [1mSELECT  "tutorials".* FROM "tutorials" WHERE "tutorials"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mObjective Load (0.1ms)[0m  [1mSELECT "objectives".* FROM "objectives" WHERE "objectives"."tutorial_id" = ?[0m  [["tutorial_id", 3]]
+  Rendered tutorials/_objective_fields.html.erb (0.4ms)
+  Rendered tutorials/_form.html.erb (8.9ms)
+  Rendered tutorials/edit.html.erb within layouts/application (11.1ms)
+  Rendered layouts/_header.html.erb (3.9ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 458ms (Views: 455.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/tinymce/themes/modern/theme.js" for ::1 at 2018-08-06 11:19:43 -0500
+
+
+Started GET "/assets/tinymce/skins/lightgray/skin.min.css" for ::1 at 2018-08-06 11:19:43 -0500
+
+
+Started GET "/assets/tinymce/skins/lightgray/content.min.css" for ::1 at 2018-08-06 11:19:43 -0500
+
+
+Started GET "/assets/tinymce/skins/lightgray/fonts/tinymce.woff" for ::1 at 2018-08-06 11:19:43 -0500
+
+
+Started GET "/tutorials/3/edit" for ::1 at 2018-08-06 11:20:28 -0500
+Processing by TutorialsController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mTutorial Load (0.1ms)[0m  SELECT  "tutorials".* FROM "tutorials" WHERE "tutorials"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mObjective Load (0.1ms)[0m  SELECT "objectives".* FROM "objectives" WHERE "objectives"."tutorial_id" = ?  [["tutorial_id", 3]]
+  Rendered tutorials/_objective_fields.html.erb (0.4ms)
+  Rendered tutorials/_form.html.erb (11.3ms)
+  Rendered tutorials/edit.html.erb within layouts/application (12.9ms)
+  Rendered layouts/_header.html.erb (3.0ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 389ms (Views: 386.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/tinymce/themes/modern/theme.js" for ::1 at 2018-08-06 11:20:29 -0500
+
+
+Started GET "/assets/tinymce/skins/lightgray/skin.min.css" for ::1 at 2018-08-06 11:20:29 -0500
+
+
+Started GET "/assets/tinymce/skins/lightgray/content.min.css" for ::1 at 2018-08-06 11:20:29 -0500
+
+
+Started GET "/assets/tinymce/skins/lightgray/fonts/tinymce.woff" for ::1 at 2018-08-06 11:20:29 -0500
+
+
+Started GET "/tutorials/3/edit" for ::1 at 2018-08-06 11:20:40 -0500
+Processing by TutorialsController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mTutorial Load (0.1ms)[0m  [1mSELECT  "tutorials".* FROM "tutorials" WHERE "tutorials"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mObjective Load (0.1ms)[0m  [1mSELECT "objectives".* FROM "objectives" WHERE "objectives"."tutorial_id" = ?[0m  [["tutorial_id", 3]]
+  Rendered tutorials/_objective_fields.html.erb (0.3ms)
+  Rendered tutorials/_form.html.erb (6.9ms)
+  Rendered tutorials/edit.html.erb within layouts/application (8.1ms)
+  Rendered layouts/_header.html.erb (3.0ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 388ms (Views: 386.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/tinymce/themes/modern/theme.js" for ::1 at 2018-08-06 11:20:41 -0500
+
+
+Started GET "/assets/tinymce/skins/lightgray/skin.min.css" for ::1 at 2018-08-06 11:20:41 -0500
+
+
+Started GET "/assets/tinymce/skins/lightgray/content.min.css" for ::1 at 2018-08-06 11:20:41 -0500
+
+
+Started GET "/assets/tinymce/skins/lightgray/fonts/tinymce.woff" for ::1 at 2018-08-06 11:20:41 -0500
+
+
+Started GET "/tutorials/3/edit" for ::1 at 2018-08-06 11:21:03 -0500
+Processing by TutorialsController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mTutorial Load (0.1ms)[0m  SELECT  "tutorials".* FROM "tutorials" WHERE "tutorials"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mObjective Load (0.1ms)[0m  SELECT "objectives".* FROM "objectives" WHERE "objectives"."tutorial_id" = ?  [["tutorial_id", 3]]
+  Rendered tutorials/_objective_fields.html.erb (0.3ms)
+  Rendered tutorials/_form.html.erb (7.2ms)
+  Rendered tutorials/edit.html.erb within layouts/application (8.3ms)
+  Rendered layouts/_header.html.erb (3.9ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 377ms (Views: 375.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/tinymce/themes/modern/theme.js" for ::1 at 2018-08-06 11:21:03 -0500
+
+
+Started GET "/assets/tinymce/skins/lightgray/skin.min.css" for ::1 at 2018-08-06 11:21:03 -0500
+
+
+Started GET "/assets/tinymce/skins/lightgray/content.min.css" for ::1 at 2018-08-06 11:21:03 -0500
+
+
+Started GET "/assets/tinymce/skins/lightgray/fonts/tinymce.woff" for ::1 at 2018-08-06 11:21:03 -0500
+
+
+Started GET "/tutorials/3/edit" for ::1 at 2018-08-06 11:21:40 -0500
+Processing by TutorialsController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mTutorial Load (0.1ms)[0m  [1mSELECT  "tutorials".* FROM "tutorials" WHERE "tutorials"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mObjective Load (0.1ms)[0m  [1mSELECT "objectives".* FROM "objectives" WHERE "objectives"."tutorial_id" = ?[0m  [["tutorial_id", 3]]
+  Rendered tutorials/_objective_fields.html.erb (0.3ms)
+  Rendered tutorials/_form.html.erb (9.4ms)
+  Rendered tutorials/edit.html.erb within layouts/application (10.6ms)
+  Rendered layouts/_header.html.erb (3.4ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 393ms (Views: 391.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/tinymce/themes/modern/theme.js" for ::1 at 2018-08-06 11:21:41 -0500
+
+
+Started GET "/assets/tinymce/skins/lightgray/skin.min.css" for ::1 at 2018-08-06 11:21:41 -0500
+
+
+Started GET "/assets/tinymce/skins/lightgray/content.min.css" for ::1 at 2018-08-06 11:21:41 -0500
+
+
+Started GET "/assets/tinymce/plugins/advlist/plugin.js" for ::1 at 2018-08-06 11:21:41 -0500
+
+
+Started GET "/assets/tinymce/plugins/charmap/plugin.js" for ::1 at 2018-08-06 11:21:41 -0500
+
+
+Started GET "/assets/tinymce/plugins/lists/plugin.js" for ::1 at 2018-08-06 11:21:41 -0500
+
+
+Started GET "/assets/tinymce/plugins/autolink/plugin.js" for ::1 at 2018-08-06 11:21:41 -0500
+
+
+Started GET "/assets/tinymce/plugins/image/plugin.js" for ::1 at 2018-08-06 11:21:41 -0500
+
+
+Started GET "/assets/tinymce/plugins/link/plugin.js" for ::1 at 2018-08-06 11:21:41 -0500
+
+
+Started GET "/assets/tinymce/plugins/print/plugin.js" for ::1 at 2018-08-06 11:21:41 -0500
+
+
+Started GET "/assets/tinymce/plugins/preview/plugin.js" for ::1 at 2018-08-06 11:21:41 -0500
+
+
+Started GET "/assets/tinymce/plugins/anchor/plugin.js" for ::1 at 2018-08-06 11:21:41 -0500
+
+
+Started GET "/assets/tinymce/plugins/searchreplace/plugin.js" for ::1 at 2018-08-06 11:21:41 -0500
+
+
+Started GET "/assets/tinymce/plugins/visualblocks/plugin.js" for ::1 at 2018-08-06 11:21:41 -0500
+
+
+Started GET "/assets/tinymce/plugins/code/plugin.js" for ::1 at 2018-08-06 11:21:41 -0500
+
+
+Started GET "/assets/tinymce/plugins/fullscreen/plugin.js" for ::1 at 2018-08-06 11:21:41 -0500
+
+
+Started GET "/assets/tinymce/plugins/insertdatetime/plugin.js" for ::1 at 2018-08-06 11:21:41 -0500
+
+
+Started GET "/assets/tinymce/plugins/media/plugin.js" for ::1 at 2018-08-06 11:21:41 -0500
+
+
+Started GET "/assets/tinymce/plugins/table/plugin.js" for ::1 at 2018-08-06 11:21:41 -0500
+
+
+Started GET "/assets/tinymce/plugins/contextmenu/plugin.js" for ::1 at 2018-08-06 11:21:41 -0500
+
+
+Started GET "/assets/tinymce/plugins/paste/plugin.js" for ::1 at 2018-08-06 11:21:41 -0500
+
+
+Started GET "/assets/tinymce/skins/lightgray/fonts/tinymce.woff" for ::1 at 2018-08-06 11:21:41 -0500
+
+
+Started GET "/assets/tinymce/skins/lightgray/content.min.css" for ::1 at 2018-08-06 11:21:41 -0500
+
+
+Started GET "/tutorials/3/edit" for ::1 at 2018-08-06 11:23:07 -0500
+Processing by TutorialsController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mTutorial Load (0.2ms)[0m  SELECT  "tutorials".* FROM "tutorials" WHERE "tutorials"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mObjective Load (0.1ms)[0m  SELECT "objectives".* FROM "objectives" WHERE "objectives"."tutorial_id" = ?  [["tutorial_id", 3]]
+  Rendered tutorials/_objective_fields.html.erb (0.4ms)
+  Rendered tutorials/_form.html.erb (10.5ms)
+  Rendered tutorials/edit.html.erb within layouts/application (12.6ms)
+  Rendered layouts/_header.html.erb (8.6ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 458ms (Views: 456.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/tinymce/plugins/lists/plugin.js" for ::1 at 2018-08-06 11:23:07 -0500
+
+
+Started GET "/assets/tinymce/plugins/advlist/plugin.js" for ::1 at 2018-08-06 11:23:07 -0500
+
+
+Started GET "/assets/tinymce/plugins/image/plugin.js" for ::1 at 2018-08-06 11:23:07 -0500
+
+
+Started GET "/assets/tinymce/plugins/charmap/plugin.js" for ::1 at 2018-08-06 11:23:07 -0500
+
+
+Started GET "/assets/tinymce/plugins/autolink/plugin.js" for ::1 at 2018-08-06 11:23:07 -0500
+
+
+Started GET "/assets/tinymce/plugins/link/plugin.js" for ::1 at 2018-08-06 11:23:07 -0500
+
+
+Started GET "/assets/tinymce/plugins/print/plugin.js" for ::1 at 2018-08-06 11:23:07 -0500
+
+
+Started GET "/assets/tinymce/plugins/preview/plugin.js" for ::1 at 2018-08-06 11:23:07 -0500
+
+
+Started GET "/assets/tinymce/plugins/anchor/plugin.js" for ::1 at 2018-08-06 11:23:07 -0500
+
+
+Started GET "/assets/tinymce/plugins/visualblocks/plugin.js" for ::1 at 2018-08-06 11:23:07 -0500
+
+
+Started GET "/assets/tinymce/plugins/searchreplace/plugin.js" for ::1 at 2018-08-06 11:23:07 -0500
+
+
+Started GET "/assets/tinymce/plugins/media/plugin.js" for ::1 at 2018-08-06 11:23:07 -0500
+
+
+Started GET "/assets/tinymce/plugins/fullscreen/plugin.js" for ::1 at 2018-08-06 11:23:07 -0500
+
+
+Started GET "/assets/tinymce/plugins/insertdatetime/plugin.js" for ::1 at 2018-08-06 11:23:07 -0500
+
+
+Started GET "/assets/tinymce/plugins/code/plugin.js" for ::1 at 2018-08-06 11:23:07 -0500
+
+
+Started GET "/assets/tinymce/plugins/paste/plugin.js" for ::1 at 2018-08-06 11:23:07 -0500
+
+
+Started GET "/assets/tinymce/plugins/contextmenu/plugin.js" for ::1 at 2018-08-06 11:23:07 -0500
+
+
+Started GET "/assets/tinymce/plugins/table/plugin.js" for ::1 at 2018-08-06 11:23:07 -0500
+
+
+Started GET "/assets/tinymce/themes/modern/theme.js" for ::1 at 2018-08-06 11:23:07 -0500
+
+
+Started GET "/assets/tinymce/plugins/link/plugin.js" for ::1 at 2018-08-06 11:23:07 -0500
+
+
+Started GET "/assets/tinymce/plugins/image/plugin.js" for ::1 at 2018-08-06 11:23:07 -0500
+
+
+Started GET "/assets/tinymce/skins/lightgray/skin.min.css" for ::1 at 2018-08-06 11:23:07 -0500
+
+
+Started GET "/assets/tinymce/skins/lightgray/content.min.css" for ::1 at 2018-08-06 11:23:07 -0500
+
+
+Started GET "/assets/tinymce/skins/lightgray/fonts/tinymce.woff" for ::1 at 2018-08-06 11:23:07 -0500
