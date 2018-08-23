@@ -4,30 +4,30 @@
 <% end %>
 <div class="month-view container">
 <%= month_calendar events: @lessons do |date, lessons| %>
-  <%= date %>
+  <%= date.to_formatted_s(:short) %>
   <% lessons.each do |lesson| %>
     <div>
-        <p style="font-weight: bold; font-size:1.25rem !important"><%= link_to lesson.name, lesson %></p>
+        <p style="font-weight: bold; font-size:1.15rem !important"><%= link_to truncate(lesson.name, :length => 60),lesson %></p>
 
   <% end %>
 
     <% lessons.each do |lesson| %>
-        <p style="font-weight: bold; border-bottom: 1px solid black; margin-bottom: 0px !important; margin-top: 10px">Readings: <i style="cursor:pointer;" class="toggle2 fas fa-plus-circle"></i></p>
-    <div id="target2">
+       <div class="item-title"><p style="font-weight: bold; border-bottom: 1px solid black; margin-bottom: 0px !important; margin-top: 10px">Readings: <i style="cursor:pointer;" class="toggle2 fas fa-plus-circle" onclick="showStuff(this); return false;"></i></p></div>
+    <div class="item-content">
       <ul>
        <% for reading in lesson.readings %>
-        
             <li><%= reading.content.html_safe %></li>
-              <% end %>
-      </ul>
-    </div><!--/target-2-->
+      <% end %>
+
+            </ul>
+
+    </div><!--/item-content-->
+  
       <% end %>
 
         <% lessons.each do |lesson| %>
           
-          <p style="font-weight: bold; border-bottom: 1px solid black; margin-bottom: 0px !important; margin-top: 10px">Homework: <i style="cursor:pointer;" class="toggle fas fa-plus-circle"></i>
-
-</p>
+          <p style="font-weight: bold; border-bottom: 1px solid black; margin-bottom: 0px !important; margin-top: 10px">Homework: <i style="cursor:pointer;" class="toggle fas fa-plus-circle" onclick="showStuff(this); return false;"></i></p>
       <div id="target">
           <ul>
          <% for homework in lesson.homeworks %>
@@ -110,35 +110,12 @@
 
 </div>-->
 <script>
-  $('.Show').click(function() {
-    $('#target').show(500);
-    $('.Show').hide(0);
-    $('.Hide').show(0);
-});
-$('.Hide').click(function() {
-    $('#target').hide(500);
-    $('.Show').show(0);
-    $('.Hide').hide(0);
-});
-$('.toggle').click(function() {
-    $('#target').toggle('slow');
-});
-  $('.Show').click(function() {
-    $('#target2').show(500);
-    $('.Show').hide(0);
-    $('.Hide').show(0);
-});
-$('.Hide').click(function() {
-    $('#target2').hide(500);
-    $('.Show').show(0);
-    $('.Hide').hide(0);
-});
-$('.toggle2').click(function() {
-    $('#target2').toggle('slow');
-});
+$('.item-content').hide();
+$(document).on('click','.item-title', function(e){
+   e.preventDefault();
+   $(this).next('.item-content').toggle('slow');
+}); 
 </script>
 <style>
-  #target, #target2 {
-    display: none;
-  }
+ 
   </style>
