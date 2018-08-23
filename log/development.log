@@ -38948,3 +38948,605 @@ Completed 200 OK in 869ms (Views: 867.7ms | ActiveRecord: 1.2ms)
 
 
 Started GET "/assets/application.self-95a2168c54f10ab99952b24821db15fc1ed1d4f9b9179c0a107d3b80a3cd235a.css?body=1" for ::1 at 2018-08-23 09:55:32 -0500
+
+
+Started GET "/" for ::1 at 2018-08-23 13:42:55 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by AboutsController#index as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mAbout Load (0.5ms)[0m  [1mSELECT "abouts".* FROM "abouts"[0m
+  Rendered abouts/index.html.erb within layouts/application (29.6ms)
+  Rendered layouts/_header.html.erb (13.7ms)
+  Rendered layouts/_footer.html.erb (1.0ms)
+Completed 200 OK in 2637ms (Views: 2611.8ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/assets/assignments.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2018-08-23 13:42:57 -0500
+
+
+Started GET "/assets/jquery-ui/sortable.self-df2d80a36f9dfbe0facc596ccd92af83ca50d38e4cd6a84810aaf5d40b8cd181.js?body=1" for ::1 at 2018-08-23 13:42:57 -0500
+
+
+Started GET "/assets/rails_sortable.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2018-08-23 13:42:57 -0500
+
+
+Started GET "/assets/posts.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2018-08-23 13:42:57 -0500
+
+
+Started GET "/assets/tinymce/tinymce.self-09afac208c41fa3b2bdeb851ee915688f1d3cd1ff75641c9fde867542a07757a.js?body=1" for ::1 at 2018-08-23 13:42:57 -0500
+
+
+Started GET "/assets/prism/prism-applescript.self-39a285f029376732c72a8c56db11f440a053a0e9ba0cd607e4060b059fcc194e.js?body=1" for ::1 at 2018-08-23 13:42:57 -0500
+
+
+Started GET "/assets/bootstrap.self-b38817c3e3a3049abb1fc08dd6ae448b23330f8453226efdb074710209474f75.js?body=1" for ::1 at 2018-08-23 13:42:57 -0500
+
+
+Started GET "/assets/prism/prism-aspnet.self-1e201137c22e74bb8273d93c6b8deefda4679891ab6d3897984eba865c91d2b0.js?body=1" for ::1 at 2018-08-23 13:42:57 -0500
+
+
+Started GET "/assets/prism/prism-css-extras.self-6c1d6a4fd14ad94269bc80b0b1a36ea5f9ad4837e84450d14adeb16d14d4d979.js?body=1" for ::1 at 2018-08-23 13:42:57 -0500
+
+
+Started GET "/assets/prism/prism-docker.self-e654716082cda968d0ea15766571c1be732d7ffffde7d14b386009a0795106a2.js?body=1" for ::1 at 2018-08-23 13:42:57 -0500
+
+
+Started GET "/assets/prism/prism-diff.self-59c645283d2c9afc0eeecd50173056c82b75bfa726347afe37b5ee447585889d.js?body=1" for ::1 at 2018-08-23 13:42:58 -0500
+
+
+Started GET "/assets/prism/prism-fsharp.self-ae269105e0f00b14125a9330aedb48b03b3b1193fcbdb8545125d9a7b9b3ead8.js?body=1" for ::1 at 2018-08-23 13:42:58 -0500
+
+
+Started GET "/assets/prism/prism-gherkin.self-7a716dab79f19ca00e91fa7f55009024b716b8f59e26b6577f7d553bfb72cf52.js?body=1" for ::1 at 2018-08-23 13:42:58 -0500
+
+
+Started GET "/assets/prism/prism-groovy.self-dac109b2062355f0db7cabe909ad6d044a81d4f024dc2e0fafc2717d35129ce5.js?body=1" for ::1 at 2018-08-23 13:42:58 -0500
+
+
+Started GET "/assets/prism/prism-haskell.self-d1287a9ee84c390336d5feeebe564e623e9a32cd8276e8f533bb1913e72fa01d.js?body=1" for ::1 at 2018-08-23 13:42:58 -0500
+
+
+Started GET "/assets/prism/prism-haxe.self-b90b36c5389279ae077ba08d89f70ce37d34087a829e3dccee1e39fd1c29cb75.js?body=1" for ::1 at 2018-08-23 13:42:58 -0500
+
+
+Started GET "/assets/prism/prism-json.self-e3b089a7b639f40b8c5444cf3ccbcc767b5859096dfbec7e7966b79df796c75d.js?body=1" for ::1 at 2018-08-23 13:42:58 -0500
+
+
+Started GET "/assets/prism/prism-less.self-589a3b6f7522d6d236aca555e5dca7a261b85ab52cad9ac93969615138472a50.js?body=1" for ::1 at 2018-08-23 13:42:58 -0500
+
+
+Started GET "/assets/prism/prism-perl.self-a51fcce6f3fb0c9625663b8aea5208d090f75ccea30f4504d7257277c7166866.js?body=1" for ::1 at 2018-08-23 13:42:58 -0500
+
+
+Started GET "/assets/prism/prism-puppet.self-8acf56d00d3ce547903df4bc03796b998d84ba2f1f9e5fe6ca0fea02ece30cb4.js?body=1" for ::1 at 2018-08-23 13:42:58 -0500
+
+
+Started GET "/assets/prism/prism-pure.self-1f7e4b6dda6629e5bc7eec09988f2d9b7bdcb6ef48fb65a90e84053a18ae686f.js?body=1" for ::1 at 2018-08-23 13:42:58 -0500
+
+
+Started GET "/assets/prism/prism-r.self-5d7dcb92611813dd44b7d2a849961cb2c032aed606362cdf356b59689048e4c3.js?body=1" for ::1 at 2018-08-23 13:42:58 -0500
+
+
+Started GET "/assets/prism/prism-swift.self-f1ee9318c6693ad58ca2d55578e3e2beeaeb1fbee6ff20f7393bf1a03d3a8ab1.js?body=1" for ::1 at 2018-08-23 13:42:58 -0500
+
+
+Started GET "/assets/prism/prism-tcl.self-0822d4c4f9e869c9a3b89cef36ef22189100f68df41fa05c6852949c720665c9.js?body=1" for ::1 at 2018-08-23 13:42:58 -0500
+
+
+Started GET "/assets/prism/prism-twig.self-740d5165f959d61305bd14aca3e57a5bea78255dc6160feb3a9b04fb4a24c791.js?body=1" for ::1 at 2018-08-23 13:42:58 -0500
+
+
+Started GET "/assets/prism/prism-vhdl.self-46b7ef82760761628140e4c60f6387f870040240989aff8e3cc44ded228e2cd4.js?body=1" for ::1 at 2018-08-23 13:42:58 -0500
+
+
+Started GET "/assets/prism/prism-wiki.self-0b8ba0fdd13242bfd7052fb5705ac7eb1b6d2d5add3f7859b7f1858e0e8927c1.js?body=1" for ::1 at 2018-08-23 13:42:58 -0500
+
+
+Started GET "/assets/prism/prism-yaml.self-e463f24fc428a17c13c1bf027cb348934f8924753fcf4cb878c4f69c8037d099.js?body=1" for ::1 at 2018-08-23 13:42:58 -0500
+
+
+Started GET "/assets/bootstrap-datepicker/locales/bootstrap-datepicker.ar-tn.self-cd89e457cd24dc3422b04345bbd6fc5ac9488e2f62866aaf2d2a1af10e5a9b23.js?body=1" for ::1 at 2018-08-23 13:42:58 -0500
+
+
+Started GET "/assets/bootstrap-datepicker/locales/bootstrap-datepicker.bg.self-962a18198db67ac87d9079f67b2167072ca4588cb77341999c5d6a93334a9143.js?body=1" for ::1 at 2018-08-23 13:42:58 -0500
+
+
+Started GET "/assets/bootstrap-datepicker/locales/bootstrap-datepicker.ca.self-9a18332afeed3b5d913f701e3a5359a3906fac9f8fe0d8271bfa59b17bef3843.js?body=1" for ::1 at 2018-08-23 13:42:58 -0500
+
+
+Started GET "/assets/bootstrap-datepicker/locales/bootstrap-datepicker.de.self-df52cb73f35b10e81c27da3726fedcb47ce944244b37822f2808191f1b699614.js?body=1" for ::1 at 2018-08-23 13:42:58 -0500
+
+
+Started GET "/assets/bootstrap-datepicker/locales/bootstrap-datepicker.en-AU.self-6667a122850dd1f2b2e036bdaad22bc82d7fb3d6f24c0eb0ca5455cbdfae2985.js?body=1" for ::1 at 2018-08-23 13:42:58 -0500
+
+
+Started GET "/assets/bootstrap-datepicker/locales/bootstrap-datepicker.en-CA.self-c19bf50fb190b7b322f7c8e1d11e21bc315294878a8f103cd8432bc92d8c455c.js?body=1" for ::1 at 2018-08-23 13:42:58 -0500
+
+
+Started GET "/assets/bootstrap-datepicker/locales/bootstrap-datepicker.en-GB.self-e822658c28f996dd9184e78b590ee770da01e479bc73fdb235b694232278bb4c.js?body=1" for ::1 at 2018-08-23 13:42:58 -0500
+
+
+Started GET "/assets/bootstrap-datepicker/locales/bootstrap-datepicker.fr.self-fc22f4a24fd9c64106ee1ffdd8167f9bcbb8544093f9acfd3e78cc79acaaa8ab.js?body=1" for ::1 at 2018-08-23 13:42:58 -0500
+
+
+Started GET "/assets/bootstrap-datepicker/locales/bootstrap-datepicker.hr.self-7e61fabfb46c1eb015b85ee997ba8710aebb4640736f5ac596cfd37f32caab66.js?body=1" for ::1 at 2018-08-23 13:42:58 -0500
+
+
+Started GET "/assets/bootstrap-datepicker/locales/bootstrap-datepicker.is.self-eb9734e137173e9c043266c371c2dc6723f896d0d10cd0d9489ab448425352de.js?body=1" for ::1 at 2018-08-23 13:42:58 -0500
+
+
+Started GET "/assets/bootstrap-datepicker/locales/bootstrap-datepicker.hu.self-f49dd94a82276c26c3441a8f5834842aaff8e1015d2ee90af3a842482685b1b3.js?body=1" for ::1 at 2018-08-23 13:42:58 -0500
+
+
+Started GET "/assets/bootstrap-datepicker/locales/bootstrap-datepicker.kh.self-6562a5a87f529e9a3121f8b49f20a6f7d3651340738f7d747a2418d721d01eae.js?body=1" for ::1 at 2018-08-23 13:42:58 -0500
+
+
+Started GET "/assets/bootstrap-datepicker/locales/bootstrap-datepicker.km.self-449e37427989750d04e0c199bf18974d9060a7e4b1a2ceca92113df290ab69e5.js?body=1" for ::1 at 2018-08-23 13:42:58 -0500
+
+
+Started GET "/assets/bootstrap-datepicker/locales/bootstrap-datepicker.me.self-bc3ded41fba54540cb7c229e2a81c54e1dc95aa060e13249996c3af17a07d925.js?body=1" for ::1 at 2018-08-23 13:42:58 -0500
+
+
+Started GET "/assets/bootstrap-datepicker/locales/bootstrap-datepicker.pl.self-beaec6979fb517a0022dd06657f2310ffa201718262e3effe464224290b923c3.js?body=1" for ::1 at 2018-08-23 13:42:58 -0500
+
+
+Started GET "/assets/bootstrap-datepicker/locales/bootstrap-datepicker.ru.self-9454d3270f91908a6a033e58641a1ea206e47c92f6c259f1e795f00a3b011ee5.js?body=1" for ::1 at 2018-08-23 13:42:58 -0500
+
+
+Started GET "/assets/bootstrap-datepicker/locales/bootstrap-datepicker.sq.self-3224e5dba45c9b9362543f5efe2a02d23b71b7181ea0b7a92fc4637559f17799.js?body=1" for ::1 at 2018-08-23 13:42:58 -0500
+
+
+Started GET "/assets/bootstrap-datepicker/locales/bootstrap-datepicker.sv.self-08b72a4d7b5c9c6c2ff76b09669a9885f1406198fa45149090db999564966c4c.js?body=1" for ::1 at 2018-08-23 13:42:58 -0500
+
+
+Started GET "/assets/bootstrap-datepicker/locales/bootstrap-datepicker.ta.self-5ff6431196fb31a4e711ebe0fe734091f8a185392a5a6aba76fcbb15de0ba29c.js?body=1" for ::1 at 2018-08-23 13:42:58 -0500
+
+
+Started GET "/assets/bootstrap-datepicker/locales/bootstrap-datepicker.tg.self-473d886df0ca36c64898aaecfeb066d0101d1beb448c056bf76fde19344d4bd1.js?body=1" for ::1 at 2018-08-23 13:42:58 -0500
+
+
+Started GET "/assets/bootstrap-datepicker/locales/bootstrap-datepicker.tr.self-32d4dcbd80fec4c33ced2cc50217d1cdfe9b351815a939878dedd504f0f29eec.js?body=1" for ::1 at 2018-08-23 13:42:58 -0500
+
+
+Started GET "/assets/bootstrap-datepicker/locales/bootstrap-datepicker.ua.self-d3090a654f9c3b2ecf04746b1d8616e9fbcd4f6063435f91e76ffd00688684f4.js?body=1" for ::1 at 2018-08-23 13:42:58 -0500
+
+
+Started GET "/assets/ct-navbar.self-b743aaf8b69b322c084a9ce01aa24251005bb4148af81302717b774fc950d6fa.js?body=1" for ::1 at 2018-08-23 13:42:58 -0500
+
+
+Started GET "/assets/application.self-e088abdec24c652728c331cc53f5d2286e096b6080fa2bacfba79c56847e932e.js?body=1" for ::1 at 2018-08-23 13:42:58 -0500
+
+
+Started GET "/assets/home-9899428f51895ea5281b309a21f98e95e4a1a2485aa3c5cdef323c67bb8054a1.png" for ::1 at 2018-08-23 13:42:58 -0500
+
+
+Started GET "/assets/projects-5bc5ea17f898463dd2e17fd0c8f965565ff103de1bec485cbbf821e955b24dde.png" for ::1 at 2018-08-23 13:42:58 -0500
+
+
+Started GET "/lessons" for ::1 at 2018-08-23 13:43:00 -0500
+Processing by LessonsController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mLesson Load (0.6ms)[0m  [1mSELECT "lessons".* FROM "lessons"  ORDER BY "lessons"."sort" ASC[0m
+  [1m[35mReading Load (0.4ms)[0m  SELECT "readings".* FROM "readings" WHERE "readings"."lesson_id" = ?  [["lesson_id", 1]]
+  [1m[36mHomework Load (0.5ms)[0m  [1mSELECT "homeworks".* FROM "homeworks" WHERE "homeworks"."lesson_id" = ?[0m  [["lesson_id", 1]]
+  [1m[35mAssignment Load (1.3ms)[0m  SELECT "assignments".* FROM "assignments" INNER JOIN "learnings" ON "assignments"."id" = "learnings"."assignment_id" WHERE "learnings"."lesson_id" = ?  [["lesson_id", 1]]
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/simple_calendar-2.3.0/app/views/simple_calendar/_month_calendar.html.erb (108.8ms)
+  [1m[36mReading Load (0.1ms)[0m  [1mSELECT "readings".* FROM "readings" WHERE "readings"."lesson_id" = ?[0m  [["lesson_id", 3]]
+  [1m[35mHomework Load (0.1ms)[0m  SELECT "homeworks".* FROM "homeworks" WHERE "homeworks"."lesson_id" = ?  [["lesson_id", 3]]
+  [1m[36mAssignment Load (0.5ms)[0m  [1mSELECT "assignments".* FROM "assignments" INNER JOIN "learnings" ON "assignments"."id" = "learnings"."assignment_id" WHERE "learnings"."lesson_id" = ?[0m  [["lesson_id", 3]]
+  [1m[35mReading Load (0.1ms)[0m  SELECT "readings".* FROM "readings" WHERE "readings"."lesson_id" = ?  [["lesson_id", 2]]
+  [1m[36mHomework Load (0.1ms)[0m  [1mSELECT "homeworks".* FROM "homeworks" WHERE "homeworks"."lesson_id" = ?[0m  [["lesson_id", 2]]
+  [1m[35mAssignment Load (0.1ms)[0m  SELECT "assignments".* FROM "assignments" INNER JOIN "learnings" ON "assignments"."id" = "learnings"."assignment_id" WHERE "learnings"."lesson_id" = ?  [["lesson_id", 2]]
+  Rendered lessons/index.html.erb within layouts/application (145.9ms)
+  Rendered layouts/_header.html.erb (3.8ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 848ms (Views: 826.1ms | ActiveRecord: 5.3ms)
+
+
+Started GET "/lessons" for ::1 at 2018-08-23 13:43:50 -0500
+Processing by LessonsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mLesson Load (0.2ms)[0m  SELECT "lessons".* FROM "lessons"  ORDER BY "lessons"."sort" ASC
+  [1m[36mReading Load (0.1ms)[0m  [1mSELECT "readings".* FROM "readings" WHERE "readings"."lesson_id" = ?[0m  [["lesson_id", 1]]
+  [1m[35mHomework Load (0.1ms)[0m  SELECT "homeworks".* FROM "homeworks" WHERE "homeworks"."lesson_id" = ?  [["lesson_id", 1]]
+  [1m[36mAssignment Load (0.1ms)[0m  [1mSELECT "assignments".* FROM "assignments" INNER JOIN "learnings" ON "assignments"."id" = "learnings"."assignment_id" WHERE "learnings"."lesson_id" = ?[0m  [["lesson_id", 1]]
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/simple_calendar-2.3.0/app/views/simple_calendar/_month_calendar.html.erb (8.4ms)
+  [1m[35mReading Load (0.1ms)[0m  SELECT "readings".* FROM "readings" WHERE "readings"."lesson_id" = ?  [["lesson_id", 3]]
+  [1m[36mHomework Load (0.1ms)[0m  [1mSELECT "homeworks".* FROM "homeworks" WHERE "homeworks"."lesson_id" = ?[0m  [["lesson_id", 3]]
+  [1m[35mAssignment Load (0.1ms)[0m  SELECT "assignments".* FROM "assignments" INNER JOIN "learnings" ON "assignments"."id" = "learnings"."assignment_id" WHERE "learnings"."lesson_id" = ?  [["lesson_id", 3]]
+  [1m[36mReading Load (0.1ms)[0m  [1mSELECT "readings".* FROM "readings" WHERE "readings"."lesson_id" = ?[0m  [["lesson_id", 2]]
+  [1m[35mHomework Load (0.1ms)[0m  SELECT "homeworks".* FROM "homeworks" WHERE "homeworks"."lesson_id" = ?  [["lesson_id", 2]]
+  [1m[36mAssignment Load (0.0ms)[0m  [1mSELECT "assignments".* FROM "assignments" INNER JOIN "learnings" ON "assignments"."id" = "learnings"."assignment_id" WHERE "learnings"."lesson_id" = ?[0m  [["lesson_id", 2]]
+  Rendered lessons/index.html.erb within layouts/application (20.9ms)
+  Rendered layouts/_header.html.erb (3.8ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 608ms (Views: 606.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/lessons" for ::1 at 2018-08-23 13:44:09 -0500
+Processing by LessonsController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mLesson Load (0.3ms)[0m  [1mSELECT "lessons".* FROM "lessons"  ORDER BY "lessons"."sort" ASC[0m
+  [1m[35mReading Load (0.1ms)[0m  SELECT "readings".* FROM "readings" WHERE "readings"."lesson_id" = ?  [["lesson_id", 1]]
+  [1m[36mHomework Load (0.1ms)[0m  [1mSELECT "homeworks".* FROM "homeworks" WHERE "homeworks"."lesson_id" = ?[0m  [["lesson_id", 1]]
+  [1m[35mAssignment Load (0.1ms)[0m  SELECT "assignments".* FROM "assignments" INNER JOIN "learnings" ON "assignments"."id" = "learnings"."assignment_id" WHERE "learnings"."lesson_id" = ?  [["lesson_id", 1]]
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/simple_calendar-2.3.0/app/views/simple_calendar/_month_calendar.html.erb (7.3ms)
+  [1m[36mReading Load (0.1ms)[0m  [1mSELECT "readings".* FROM "readings" WHERE "readings"."lesson_id" = ?[0m  [["lesson_id", 3]]
+  [1m[35mHomework Load (0.1ms)[0m  SELECT "homeworks".* FROM "homeworks" WHERE "homeworks"."lesson_id" = ?  [["lesson_id", 3]]
+  [1m[36mAssignment Load (0.1ms)[0m  [1mSELECT "assignments".* FROM "assignments" INNER JOIN "learnings" ON "assignments"."id" = "learnings"."assignment_id" WHERE "learnings"."lesson_id" = ?[0m  [["lesson_id", 3]]
+  [1m[35mReading Load (0.1ms)[0m  SELECT "readings".* FROM "readings" WHERE "readings"."lesson_id" = ?  [["lesson_id", 2]]
+  [1m[36mHomework Load (0.1ms)[0m  [1mSELECT "homeworks".* FROM "homeworks" WHERE "homeworks"."lesson_id" = ?[0m  [["lesson_id", 2]]
+  [1m[35mAssignment Load (0.1ms)[0m  SELECT "assignments".* FROM "assignments" INNER JOIN "learnings" ON "assignments"."id" = "learnings"."assignment_id" WHERE "learnings"."lesson_id" = ?  [["lesson_id", 2]]
+  Rendered lessons/index.html.erb within layouts/application (19.1ms)
+  Rendered layouts/_header.html.erb (3.6ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 631ms (Views: 629.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/lessons" for ::1 at 2018-08-23 13:44:29 -0500
+Processing by LessonsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mLesson Load (0.2ms)[0m  SELECT "lessons".* FROM "lessons"  ORDER BY "lessons"."sort" ASC
+  [1m[36mReading Load (0.1ms)[0m  [1mSELECT "readings".* FROM "readings" WHERE "readings"."lesson_id" = ?[0m  [["lesson_id", 1]]
+  [1m[35mHomework Load (0.1ms)[0m  SELECT "homeworks".* FROM "homeworks" WHERE "homeworks"."lesson_id" = ?  [["lesson_id", 1]]
+  [1m[36mAssignment Load (0.1ms)[0m  [1mSELECT "assignments".* FROM "assignments" INNER JOIN "learnings" ON "assignments"."id" = "learnings"."assignment_id" WHERE "learnings"."lesson_id" = ?[0m  [["lesson_id", 1]]
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/simple_calendar-2.3.0/app/views/simple_calendar/_month_calendar.html.erb (8.4ms)
+  [1m[35mReading Load (0.1ms)[0m  SELECT "readings".* FROM "readings" WHERE "readings"."lesson_id" = ?  [["lesson_id", 3]]
+  [1m[36mHomework Load (0.1ms)[0m  [1mSELECT "homeworks".* FROM "homeworks" WHERE "homeworks"."lesson_id" = ?[0m  [["lesson_id", 3]]
+  [1m[35mAssignment Load (0.1ms)[0m  SELECT "assignments".* FROM "assignments" INNER JOIN "learnings" ON "assignments"."id" = "learnings"."assignment_id" WHERE "learnings"."lesson_id" = ?  [["lesson_id", 3]]
+  [1m[36mReading Load (0.1ms)[0m  [1mSELECT "readings".* FROM "readings" WHERE "readings"."lesson_id" = ?[0m  [["lesson_id", 2]]
+  [1m[35mHomework Load (0.2ms)[0m  SELECT "homeworks".* FROM "homeworks" WHERE "homeworks"."lesson_id" = ?  [["lesson_id", 2]]
+  [1m[36mAssignment Load (0.2ms)[0m  [1mSELECT "assignments".* FROM "assignments" INNER JOIN "learnings" ON "assignments"."id" = "learnings"."assignment_id" WHERE "learnings"."lesson_id" = ?[0m  [["lesson_id", 2]]
+  Rendered lessons/index.html.erb within layouts/application (23.1ms)
+  Rendered layouts/_header.html.erb (3.4ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 614ms (Views: 611.6ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/lessons" for ::1 at 2018-08-23 13:45:12 -0500
+Processing by LessonsController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mLesson Load (0.2ms)[0m  [1mSELECT "lessons".* FROM "lessons"  ORDER BY "lessons"."sort" ASC[0m
+  [1m[35mReading Load (0.2ms)[0m  SELECT "readings".* FROM "readings" WHERE "readings"."lesson_id" = ?  [["lesson_id", 1]]
+  [1m[36mHomework Load (0.1ms)[0m  [1mSELECT "homeworks".* FROM "homeworks" WHERE "homeworks"."lesson_id" = ?[0m  [["lesson_id", 1]]
+  [1m[35mAssignment Load (0.1ms)[0m  SELECT "assignments".* FROM "assignments" INNER JOIN "learnings" ON "assignments"."id" = "learnings"."assignment_id" WHERE "learnings"."lesson_id" = ?  [["lesson_id", 1]]
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/simple_calendar-2.3.0/app/views/simple_calendar/_month_calendar.html.erb (9.5ms)
+  [1m[36mReading Load (0.1ms)[0m  [1mSELECT "readings".* FROM "readings" WHERE "readings"."lesson_id" = ?[0m  [["lesson_id", 3]]
+  [1m[35mHomework Load (0.1ms)[0m  SELECT "homeworks".* FROM "homeworks" WHERE "homeworks"."lesson_id" = ?  [["lesson_id", 3]]
+  [1m[36mAssignment Load (0.1ms)[0m  [1mSELECT "assignments".* FROM "assignments" INNER JOIN "learnings" ON "assignments"."id" = "learnings"."assignment_id" WHERE "learnings"."lesson_id" = ?[0m  [["lesson_id", 3]]
+  [1m[35mReading Load (0.2ms)[0m  SELECT "readings".* FROM "readings" WHERE "readings"."lesson_id" = ?  [["lesson_id", 2]]
+  [1m[36mHomework Load (0.1ms)[0m  [1mSELECT "homeworks".* FROM "homeworks" WHERE "homeworks"."lesson_id" = ?[0m  [["lesson_id", 2]]
+  [1m[35mAssignment Load (0.1ms)[0m  SELECT "assignments".* FROM "assignments" INNER JOIN "learnings" ON "assignments"."id" = "learnings"."assignment_id" WHERE "learnings"."lesson_id" = ?  [["lesson_id", 2]]
+  Rendered lessons/index.html.erb within layouts/application (23.3ms)
+  Rendered layouts/_header.html.erb (3.4ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 622ms (Views: 620.1ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/lessons" for ::1 at 2018-08-23 13:46:18 -0500
+Processing by LessonsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mLesson Load (0.2ms)[0m  SELECT "lessons".* FROM "lessons"  ORDER BY "lessons"."sort" ASC
+  [1m[36mReading Load (0.1ms)[0m  [1mSELECT "readings".* FROM "readings" WHERE "readings"."lesson_id" = ?[0m  [["lesson_id", 1]]
+  [1m[35mHomework Load (0.1ms)[0m  SELECT "homeworks".* FROM "homeworks" WHERE "homeworks"."lesson_id" = ?  [["lesson_id", 1]]
+  [1m[36mAssignment Load (0.1ms)[0m  [1mSELECT "assignments".* FROM "assignments" INNER JOIN "learnings" ON "assignments"."id" = "learnings"."assignment_id" WHERE "learnings"."lesson_id" = ?[0m  [["lesson_id", 1]]
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/simple_calendar-2.3.0/app/views/simple_calendar/_month_calendar.html.erb (10.3ms)
+  [1m[35mReading Load (0.1ms)[0m  SELECT "readings".* FROM "readings" WHERE "readings"."lesson_id" = ?  [["lesson_id", 3]]
+  [1m[36mHomework Load (0.1ms)[0m  [1mSELECT "homeworks".* FROM "homeworks" WHERE "homeworks"."lesson_id" = ?[0m  [["lesson_id", 3]]
+  [1m[35mAssignment Load (0.1ms)[0m  SELECT "assignments".* FROM "assignments" INNER JOIN "learnings" ON "assignments"."id" = "learnings"."assignment_id" WHERE "learnings"."lesson_id" = ?  [["lesson_id", 3]]
+  [1m[36mReading Load (0.1ms)[0m  [1mSELECT "readings".* FROM "readings" WHERE "readings"."lesson_id" = ?[0m  [["lesson_id", 2]]
+  [1m[35mHomework Load (0.1ms)[0m  SELECT "homeworks".* FROM "homeworks" WHERE "homeworks"."lesson_id" = ?  [["lesson_id", 2]]
+  [1m[36mAssignment Load (0.5ms)[0m  [1mSELECT "assignments".* FROM "assignments" INNER JOIN "learnings" ON "assignments"."id" = "learnings"."assignment_id" WHERE "learnings"."lesson_id" = ?[0m  [["lesson_id", 2]]
+  Rendered lessons/index.html.erb within layouts/application (26.6ms)
+  Rendered layouts/_header.html.erb (3.9ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 618ms (Views: 615.5ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/lessons" for ::1 at 2018-08-23 13:46:54 -0500
+Processing by LessonsController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mLesson Load (0.2ms)[0m  [1mSELECT "lessons".* FROM "lessons"  ORDER BY "lessons"."sort" ASC[0m
+  [1m[35mReading Load (0.1ms)[0m  SELECT "readings".* FROM "readings" WHERE "readings"."lesson_id" = ?  [["lesson_id", 1]]
+  [1m[36mHomework Load (0.1ms)[0m  [1mSELECT "homeworks".* FROM "homeworks" WHERE "homeworks"."lesson_id" = ?[0m  [["lesson_id", 1]]
+  [1m[35mAssignment Load (0.1ms)[0m  SELECT "assignments".* FROM "assignments" INNER JOIN "learnings" ON "assignments"."id" = "learnings"."assignment_id" WHERE "learnings"."lesson_id" = ?  [["lesson_id", 1]]
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/simple_calendar-2.3.0/app/views/simple_calendar/_month_calendar.html.erb (7.6ms)
+  [1m[36mReading Load (0.1ms)[0m  [1mSELECT "readings".* FROM "readings" WHERE "readings"."lesson_id" = ?[0m  [["lesson_id", 3]]
+  [1m[35mHomework Load (0.1ms)[0m  SELECT "homeworks".* FROM "homeworks" WHERE "homeworks"."lesson_id" = ?  [["lesson_id", 3]]
+  [1m[36mAssignment Load (0.1ms)[0m  [1mSELECT "assignments".* FROM "assignments" INNER JOIN "learnings" ON "assignments"."id" = "learnings"."assignment_id" WHERE "learnings"."lesson_id" = ?[0m  [["lesson_id", 3]]
+  [1m[35mReading Load (0.1ms)[0m  SELECT "readings".* FROM "readings" WHERE "readings"."lesson_id" = ?  [["lesson_id", 2]]
+  [1m[36mHomework Load (0.1ms)[0m  [1mSELECT "homeworks".* FROM "homeworks" WHERE "homeworks"."lesson_id" = ?[0m  [["lesson_id", 2]]
+  [1m[35mAssignment Load (0.1ms)[0m  SELECT "assignments".* FROM "assignments" INNER JOIN "learnings" ON "assignments"."id" = "learnings"."assignment_id" WHERE "learnings"."lesson_id" = ?  [["lesson_id", 2]]
+  Rendered lessons/index.html.erb within layouts/application (19.5ms)
+  Rendered layouts/_header.html.erb (3.3ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 629ms (Views: 627.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/lessons" for ::1 at 2018-08-23 13:47:18 -0500
+Processing by LessonsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mLesson Load (0.3ms)[0m  SELECT "lessons".* FROM "lessons"  ORDER BY "lessons"."sort" ASC
+  [1m[36mReading Load (0.1ms)[0m  [1mSELECT "readings".* FROM "readings" WHERE "readings"."lesson_id" = ?[0m  [["lesson_id", 1]]
+  [1m[35mHomework Load (0.1ms)[0m  SELECT "homeworks".* FROM "homeworks" WHERE "homeworks"."lesson_id" = ?  [["lesson_id", 1]]
+  [1m[36mAssignment Load (0.1ms)[0m  [1mSELECT "assignments".* FROM "assignments" INNER JOIN "learnings" ON "assignments"."id" = "learnings"."assignment_id" WHERE "learnings"."lesson_id" = ?[0m  [["lesson_id", 1]]
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/simple_calendar-2.3.0/app/views/simple_calendar/_month_calendar.html.erb (7.5ms)
+  [1m[35mReading Load (0.1ms)[0m  SELECT "readings".* FROM "readings" WHERE "readings"."lesson_id" = ?  [["lesson_id", 3]]
+  [1m[36mHomework Load (0.1ms)[0m  [1mSELECT "homeworks".* FROM "homeworks" WHERE "homeworks"."lesson_id" = ?[0m  [["lesson_id", 3]]
+  [1m[35mAssignment Load (0.1ms)[0m  SELECT "assignments".* FROM "assignments" INNER JOIN "learnings" ON "assignments"."id" = "learnings"."assignment_id" WHERE "learnings"."lesson_id" = ?  [["lesson_id", 3]]
+  [1m[36mReading Load (0.1ms)[0m  [1mSELECT "readings".* FROM "readings" WHERE "readings"."lesson_id" = ?[0m  [["lesson_id", 2]]
+  [1m[35mHomework Load (0.1ms)[0m  SELECT "homeworks".* FROM "homeworks" WHERE "homeworks"."lesson_id" = ?  [["lesson_id", 2]]
+  [1m[36mAssignment Load (0.0ms)[0m  [1mSELECT "assignments".* FROM "assignments" INNER JOIN "learnings" ON "assignments"."id" = "learnings"."assignment_id" WHERE "learnings"."lesson_id" = ?[0m  [["lesson_id", 2]]
+  Rendered lessons/index.html.erb within layouts/application (20.1ms)
+  Rendered layouts/_header.html.erb (8.5ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 739ms (Views: 737.8ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/lessons" for ::1 at 2018-08-23 13:48:08 -0500
+Processing by LessonsController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mLesson Load (0.2ms)[0m  [1mSELECT "lessons".* FROM "lessons"  ORDER BY "lessons"."sort" ASC[0m
+  [1m[35mReading Load (0.1ms)[0m  SELECT "readings".* FROM "readings" WHERE "readings"."lesson_id" = ?  [["lesson_id", 1]]
+  [1m[36mHomework Load (0.1ms)[0m  [1mSELECT "homeworks".* FROM "homeworks" WHERE "homeworks"."lesson_id" = ?[0m  [["lesson_id", 1]]
+  [1m[35mAssignment Load (0.1ms)[0m  SELECT "assignments".* FROM "assignments" INNER JOIN "learnings" ON "assignments"."id" = "learnings"."assignment_id" WHERE "learnings"."lesson_id" = ?  [["lesson_id", 1]]
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/simple_calendar-2.3.0/app/views/simple_calendar/_month_calendar.html.erb (9.6ms)
+  [1m[36mReading Load (0.1ms)[0m  [1mSELECT "readings".* FROM "readings" WHERE "readings"."lesson_id" = ?[0m  [["lesson_id", 3]]
+  [1m[35mHomework Load (0.1ms)[0m  SELECT "homeworks".* FROM "homeworks" WHERE "homeworks"."lesson_id" = ?  [["lesson_id", 3]]
+  [1m[36mAssignment Load (0.1ms)[0m  [1mSELECT "assignments".* FROM "assignments" INNER JOIN "learnings" ON "assignments"."id" = "learnings"."assignment_id" WHERE "learnings"."lesson_id" = ?[0m  [["lesson_id", 3]]
+  [1m[35mReading Load (0.1ms)[0m  SELECT "readings".* FROM "readings" WHERE "readings"."lesson_id" = ?  [["lesson_id", 2]]
+  [1m[36mHomework Load (0.1ms)[0m  [1mSELECT "homeworks".* FROM "homeworks" WHERE "homeworks"."lesson_id" = ?[0m  [["lesson_id", 2]]
+  [1m[35mAssignment Load (0.1ms)[0m  SELECT "assignments".* FROM "assignments" INNER JOIN "learnings" ON "assignments"."id" = "learnings"."assignment_id" WHERE "learnings"."lesson_id" = ?  [["lesson_id", 2]]
+  Rendered lessons/index.html.erb within layouts/application (24.0ms)
+  Rendered layouts/_header.html.erb (8.4ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 757ms (Views: 755.3ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/lessons" for ::1 at 2018-08-23 13:48:21 -0500
+Processing by LessonsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mLesson Load (0.2ms)[0m  SELECT "lessons".* FROM "lessons"  ORDER BY "lessons"."sort" ASC
+  [1m[36mReading Load (0.1ms)[0m  [1mSELECT "readings".* FROM "readings" WHERE "readings"."lesson_id" = ?[0m  [["lesson_id", 1]]
+  [1m[35mHomework Load (0.1ms)[0m  SELECT "homeworks".* FROM "homeworks" WHERE "homeworks"."lesson_id" = ?  [["lesson_id", 1]]
+  [1m[36mAssignment Load (0.1ms)[0m  [1mSELECT "assignments".* FROM "assignments" INNER JOIN "learnings" ON "assignments"."id" = "learnings"."assignment_id" WHERE "learnings"."lesson_id" = ?[0m  [["lesson_id", 1]]
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/simple_calendar-2.3.0/app/views/simple_calendar/_month_calendar.html.erb (10.4ms)
+  [1m[35mReading Load (0.1ms)[0m  SELECT "readings".* FROM "readings" WHERE "readings"."lesson_id" = ?  [["lesson_id", 3]]
+  [1m[36mHomework Load (0.1ms)[0m  [1mSELECT "homeworks".* FROM "homeworks" WHERE "homeworks"."lesson_id" = ?[0m  [["lesson_id", 3]]
+  [1m[35mAssignment Load (0.1ms)[0m  SELECT "assignments".* FROM "assignments" INNER JOIN "learnings" ON "assignments"."id" = "learnings"."assignment_id" WHERE "learnings"."lesson_id" = ?  [["lesson_id", 3]]
+  [1m[36mReading Load (0.1ms)[0m  [1mSELECT "readings".* FROM "readings" WHERE "readings"."lesson_id" = ?[0m  [["lesson_id", 2]]
+  [1m[35mHomework Load (0.1ms)[0m  SELECT "homeworks".* FROM "homeworks" WHERE "homeworks"."lesson_id" = ?  [["lesson_id", 2]]
+  [1m[36mAssignment Load (0.1ms)[0m  [1mSELECT "assignments".* FROM "assignments" INNER JOIN "learnings" ON "assignments"."id" = "learnings"."assignment_id" WHERE "learnings"."lesson_id" = ?[0m  [["lesson_id", 2]]
+  Rendered lessons/index.html.erb within layouts/application (23.8ms)
+  Rendered layouts/_header.html.erb (3.5ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 623ms (Views: 621.2ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/lessons" for ::1 at 2018-08-23 13:48:29 -0500
+Processing by LessonsController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mLesson Load (0.2ms)[0m  [1mSELECT "lessons".* FROM "lessons"  ORDER BY "lessons"."sort" ASC[0m
+  [1m[35mReading Load (0.1ms)[0m  SELECT "readings".* FROM "readings" WHERE "readings"."lesson_id" = ?  [["lesson_id", 1]]
+  [1m[36mHomework Load (0.1ms)[0m  [1mSELECT "homeworks".* FROM "homeworks" WHERE "homeworks"."lesson_id" = ?[0m  [["lesson_id", 1]]
+  [1m[35mAssignment Load (0.1ms)[0m  SELECT "assignments".* FROM "assignments" INNER JOIN "learnings" ON "assignments"."id" = "learnings"."assignment_id" WHERE "learnings"."lesson_id" = ?  [["lesson_id", 1]]
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/simple_calendar-2.3.0/app/views/simple_calendar/_month_calendar.html.erb (7.9ms)
+  [1m[36mReading Load (0.1ms)[0m  [1mSELECT "readings".* FROM "readings" WHERE "readings"."lesson_id" = ?[0m  [["lesson_id", 3]]
+  [1m[35mHomework Load (0.2ms)[0m  SELECT "homeworks".* FROM "homeworks" WHERE "homeworks"."lesson_id" = ?  [["lesson_id", 3]]
+  [1m[36mAssignment Load (0.2ms)[0m  [1mSELECT "assignments".* FROM "assignments" INNER JOIN "learnings" ON "assignments"."id" = "learnings"."assignment_id" WHERE "learnings"."lesson_id" = ?[0m  [["lesson_id", 3]]
+  [1m[35mReading Load (0.1ms)[0m  SELECT "readings".* FROM "readings" WHERE "readings"."lesson_id" = ?  [["lesson_id", 2]]
+  [1m[36mHomework Load (0.1ms)[0m  [1mSELECT "homeworks".* FROM "homeworks" WHERE "homeworks"."lesson_id" = ?[0m  [["lesson_id", 2]]
+  [1m[35mAssignment Load (0.1ms)[0m  SELECT "assignments".* FROM "assignments" INNER JOIN "learnings" ON "assignments"."id" = "learnings"."assignment_id" WHERE "learnings"."lesson_id" = ?  [["lesson_id", 2]]
+  Rendered lessons/index.html.erb within layouts/application (20.5ms)
+  Rendered layouts/_header.html.erb (3.8ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 628ms (Views: 626.3ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/lessons" for ::1 at 2018-08-23 13:49:15 -0500
+Processing by LessonsController#index as HTML
+  Rendered lessons/index.html.erb within layouts/application (1.7ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/Users/chrislam/tecm4400/app/views/lessons/index.html.erb:132: syntax error, unexpected keyword_ensure, expecting keyword_end
+/Users/chrislam/tecm4400/app/views/lessons/index.html.erb:134: syntax error, unexpected end-of-input, expecting keyword_end):
+  app/views/lessons/index.html.erb:132: syntax error, unexpected keyword_ensure, expecting keyword_end
+  app/views/lessons/index.html.erb:134: syntax error, unexpected end-of-input, expecting keyword_end
+
+
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.3ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (77.8ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (71.6ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (159.0ms)
+
+
+Started GET "/lessons" for ::1 at 2018-08-23 13:49:28 -0500
+Processing by LessonsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mLesson Load (0.2ms)[0m  SELECT "lessons".* FROM "lessons"  ORDER BY "lessons"."sort" ASC
+  [1m[36mReading Load (0.1ms)[0m  [1mSELECT "readings".* FROM "readings" WHERE "readings"."lesson_id" = ?[0m  [["lesson_id", 1]]
+  [1m[35mHomework Load (0.1ms)[0m  SELECT "homeworks".* FROM "homeworks" WHERE "homeworks"."lesson_id" = ?  [["lesson_id", 1]]
+  [1m[36mAssignment Load (0.1ms)[0m  [1mSELECT "assignments".* FROM "assignments" INNER JOIN "learnings" ON "assignments"."id" = "learnings"."assignment_id" WHERE "learnings"."lesson_id" = ?[0m  [["lesson_id", 1]]
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/simple_calendar-2.3.0/app/views/simple_calendar/_month_calendar.html.erb (15.3ms)
+  [1m[35mReading Load (0.2ms)[0m  SELECT "readings".* FROM "readings" WHERE "readings"."lesson_id" = ?  [["lesson_id", 3]]
+  [1m[36mHomework Load (0.1ms)[0m  [1mSELECT "homeworks".* FROM "homeworks" WHERE "homeworks"."lesson_id" = ?[0m  [["lesson_id", 3]]
+  [1m[35mAssignment Load (0.2ms)[0m  SELECT "assignments".* FROM "assignments" INNER JOIN "learnings" ON "assignments"."id" = "learnings"."assignment_id" WHERE "learnings"."lesson_id" = ?  [["lesson_id", 3]]
+  [1m[36mReading Load (0.1ms)[0m  [1mSELECT "readings".* FROM "readings" WHERE "readings"."lesson_id" = ?[0m  [["lesson_id", 2]]
+  [1m[35mHomework Load (0.1ms)[0m  SELECT "homeworks".* FROM "homeworks" WHERE "homeworks"."lesson_id" = ?  [["lesson_id", 2]]
+  [1m[36mAssignment Load (0.2ms)[0m  [1mSELECT "assignments".* FROM "assignments" INNER JOIN "learnings" ON "assignments"."id" = "learnings"."assignment_id" WHERE "learnings"."lesson_id" = ?[0m  [["lesson_id", 2]]
+  Rendered lessons/index.html.erb within layouts/application (29.9ms)
+  Rendered layouts/_header.html.erb (3.5ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 630ms (Views: 627.8ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/lessons" for ::1 at 2018-08-23 13:50:34 -0500
+Processing by LessonsController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mLesson Load (0.2ms)[0m  [1mSELECT "lessons".* FROM "lessons"  ORDER BY "lessons"."sort" ASC[0m
+  [1m[35mReading Load (0.2ms)[0m  SELECT "readings".* FROM "readings" WHERE "readings"."lesson_id" = ?  [["lesson_id", 1]]
+  [1m[36mHomework Load (0.1ms)[0m  [1mSELECT "homeworks".* FROM "homeworks" WHERE "homeworks"."lesson_id" = ?[0m  [["lesson_id", 1]]
+  [1m[35mAssignment Load (0.1ms)[0m  SELECT "assignments".* FROM "assignments" INNER JOIN "learnings" ON "assignments"."id" = "learnings"."assignment_id" WHERE "learnings"."lesson_id" = ?  [["lesson_id", 1]]
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/simple_calendar-2.3.0/app/views/simple_calendar/_month_calendar.html.erb (11.0ms)
+  [1m[36mReading Load (0.1ms)[0m  [1mSELECT "readings".* FROM "readings" WHERE "readings"."lesson_id" = ?[0m  [["lesson_id", 3]]
+  [1m[35mHomework Load (0.1ms)[0m  SELECT "homeworks".* FROM "homeworks" WHERE "homeworks"."lesson_id" = ?  [["lesson_id", 3]]
+  [1m[36mAssignment Load (0.1ms)[0m  [1mSELECT "assignments".* FROM "assignments" INNER JOIN "learnings" ON "assignments"."id" = "learnings"."assignment_id" WHERE "learnings"."lesson_id" = ?[0m  [["lesson_id", 3]]
+  [1m[35mReading Load (0.2ms)[0m  SELECT "readings".* FROM "readings" WHERE "readings"."lesson_id" = ?  [["lesson_id", 2]]
+  [1m[36mHomework Load (0.1ms)[0m  [1mSELECT "homeworks".* FROM "homeworks" WHERE "homeworks"."lesson_id" = ?[0m  [["lesson_id", 2]]
+  [1m[35mAssignment Load (0.1ms)[0m  SELECT "assignments".* FROM "assignments" INNER JOIN "learnings" ON "assignments"."id" = "learnings"."assignment_id" WHERE "learnings"."lesson_id" = ?  [["lesson_id", 2]]
+  Rendered lessons/index.html.erb within layouts/application (25.5ms)
+  Rendered layouts/_header.html.erb (3.6ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 622ms (Views: 620.1ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/lessons" for ::1 at 2018-08-23 13:51:06 -0500
+Processing by LessonsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mLesson Load (0.3ms)[0m  SELECT "lessons".* FROM "lessons"  ORDER BY "lessons"."sort" ASC
+  [1m[36mReading Load (0.1ms)[0m  [1mSELECT "readings".* FROM "readings" WHERE "readings"."lesson_id" = ?[0m  [["lesson_id", 1]]
+  [1m[35mHomework Load (0.1ms)[0m  SELECT "homeworks".* FROM "homeworks" WHERE "homeworks"."lesson_id" = ?  [["lesson_id", 1]]
+  [1m[36mAssignment Load (0.1ms)[0m  [1mSELECT "assignments".* FROM "assignments" INNER JOIN "learnings" ON "assignments"."id" = "learnings"."assignment_id" WHERE "learnings"."lesson_id" = ?[0m  [["lesson_id", 1]]
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/simple_calendar-2.3.0/app/views/simple_calendar/_month_calendar.html.erb (8.3ms)
+  [1m[35mReading Load (0.1ms)[0m  SELECT "readings".* FROM "readings" WHERE "readings"."lesson_id" = ?  [["lesson_id", 3]]
+  [1m[36mHomework Load (0.1ms)[0m  [1mSELECT "homeworks".* FROM "homeworks" WHERE "homeworks"."lesson_id" = ?[0m  [["lesson_id", 3]]
+  [1m[35mAssignment Load (0.1ms)[0m  SELECT "assignments".* FROM "assignments" INNER JOIN "learnings" ON "assignments"."id" = "learnings"."assignment_id" WHERE "learnings"."lesson_id" = ?  [["lesson_id", 3]]
+  [1m[36mReading Load (0.1ms)[0m  [1mSELECT "readings".* FROM "readings" WHERE "readings"."lesson_id" = ?[0m  [["lesson_id", 2]]
+  [1m[35mHomework Load (0.1ms)[0m  SELECT "homeworks".* FROM "homeworks" WHERE "homeworks"."lesson_id" = ?  [["lesson_id", 2]]
+  [1m[36mAssignment Load (0.1ms)[0m  [1mSELECT "assignments".* FROM "assignments" INNER JOIN "learnings" ON "assignments"."id" = "learnings"."assignment_id" WHERE "learnings"."lesson_id" = ?[0m  [["lesson_id", 2]]
+  Rendered lessons/index.html.erb within layouts/application (27.9ms)
+  Rendered layouts/_header.html.erb (13.3ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 641ms (Views: 639.1ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/lessons" for ::1 at 2018-08-23 13:51:17 -0500
+Processing by LessonsController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mLesson Load (0.2ms)[0m  [1mSELECT "lessons".* FROM "lessons"  ORDER BY "lessons"."sort" ASC[0m
+  [1m[35mReading Load (0.2ms)[0m  SELECT "readings".* FROM "readings" WHERE "readings"."lesson_id" = ?  [["lesson_id", 1]]
+  [1m[36mHomework Load (0.1ms)[0m  [1mSELECT "homeworks".* FROM "homeworks" WHERE "homeworks"."lesson_id" = ?[0m  [["lesson_id", 1]]
+  [1m[35mAssignment Load (0.1ms)[0m  SELECT "assignments".* FROM "assignments" INNER JOIN "learnings" ON "assignments"."id" = "learnings"."assignment_id" WHERE "learnings"."lesson_id" = ?  [["lesson_id", 1]]
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/simple_calendar-2.3.0/app/views/simple_calendar/_month_calendar.html.erb (8.5ms)
+  [1m[36mReading Load (0.1ms)[0m  [1mSELECT "readings".* FROM "readings" WHERE "readings"."lesson_id" = ?[0m  [["lesson_id", 3]]
+  [1m[35mHomework Load (0.1ms)[0m  SELECT "homeworks".* FROM "homeworks" WHERE "homeworks"."lesson_id" = ?  [["lesson_id", 3]]
+  [1m[36mAssignment Load (0.0ms)[0m  [1mSELECT "assignments".* FROM "assignments" INNER JOIN "learnings" ON "assignments"."id" = "learnings"."assignment_id" WHERE "learnings"."lesson_id" = ?[0m  [["lesson_id", 3]]
+  [1m[35mReading Load (0.1ms)[0m  SELECT "readings".* FROM "readings" WHERE "readings"."lesson_id" = ?  [["lesson_id", 2]]
+  [1m[36mHomework Load (0.1ms)[0m  [1mSELECT "homeworks".* FROM "homeworks" WHERE "homeworks"."lesson_id" = ?[0m  [["lesson_id", 2]]
+  [1m[35mAssignment Load (0.1ms)[0m  SELECT "assignments".* FROM "assignments" INNER JOIN "learnings" ON "assignments"."id" = "learnings"."assignment_id" WHERE "learnings"."lesson_id" = ?  [["lesson_id", 2]]
+  Rendered lessons/index.html.erb within layouts/application (19.6ms)
+  Rendered layouts/_header.html.erb (3.9ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 629ms (Views: 627.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/lessons" for ::1 at 2018-08-23 13:52:06 -0500
+Processing by LessonsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mLesson Load (0.2ms)[0m  SELECT "lessons".* FROM "lessons"  ORDER BY "lessons"."sort" ASC
+  [1m[36mReading Load (0.1ms)[0m  [1mSELECT "readings".* FROM "readings" WHERE "readings"."lesson_id" = ?[0m  [["lesson_id", 1]]
+  [1m[35mHomework Load (0.1ms)[0m  SELECT "homeworks".* FROM "homeworks" WHERE "homeworks"."lesson_id" = ?  [["lesson_id", 1]]
+  [1m[36mAssignment Load (0.1ms)[0m  [1mSELECT "assignments".* FROM "assignments" INNER JOIN "learnings" ON "assignments"."id" = "learnings"."assignment_id" WHERE "learnings"."lesson_id" = ?[0m  [["lesson_id", 1]]
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/simple_calendar-2.3.0/app/views/simple_calendar/_month_calendar.html.erb (7.7ms)
+  [1m[35mReading Load (0.1ms)[0m  SELECT "readings".* FROM "readings" WHERE "readings"."lesson_id" = ?  [["lesson_id", 3]]
+  [1m[36mHomework Load (0.1ms)[0m  [1mSELECT "homeworks".* FROM "homeworks" WHERE "homeworks"."lesson_id" = ?[0m  [["lesson_id", 3]]
+  [1m[35mAssignment Load (0.1ms)[0m  SELECT "assignments".* FROM "assignments" INNER JOIN "learnings" ON "assignments"."id" = "learnings"."assignment_id" WHERE "learnings"."lesson_id" = ?  [["lesson_id", 3]]
+  [1m[36mReading Load (0.1ms)[0m  [1mSELECT "readings".* FROM "readings" WHERE "readings"."lesson_id" = ?[0m  [["lesson_id", 2]]
+  [1m[35mHomework Load (0.1ms)[0m  SELECT "homeworks".* FROM "homeworks" WHERE "homeworks"."lesson_id" = ?  [["lesson_id", 2]]
+  [1m[36mAssignment Load (0.1ms)[0m  [1mSELECT "assignments".* FROM "assignments" INNER JOIN "learnings" ON "assignments"."id" = "learnings"."assignment_id" WHERE "learnings"."lesson_id" = ?[0m  [["lesson_id", 2]]
+  Rendered lessons/index.html.erb within layouts/application (20.6ms)
+  Rendered layouts/_header.html.erb (4.0ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 633ms (Views: 631.3ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/lessons" for ::1 at 2018-08-23 13:52:37 -0500
+Processing by LessonsController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mLesson Load (0.2ms)[0m  [1mSELECT "lessons".* FROM "lessons"  ORDER BY "lessons"."sort" ASC[0m
+  [1m[35mReading Load (0.1ms)[0m  SELECT "readings".* FROM "readings" WHERE "readings"."lesson_id" = ?  [["lesson_id", 1]]
+  [1m[36mHomework Load (0.1ms)[0m  [1mSELECT "homeworks".* FROM "homeworks" WHERE "homeworks"."lesson_id" = ?[0m  [["lesson_id", 1]]
+  [1m[35mAssignment Load (0.1ms)[0m  SELECT "assignments".* FROM "assignments" INNER JOIN "learnings" ON "assignments"."id" = "learnings"."assignment_id" WHERE "learnings"."lesson_id" = ?  [["lesson_id", 1]]
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/simple_calendar-2.3.0/app/views/simple_calendar/_month_calendar.html.erb (8.4ms)
+  [1m[36mReading Load (0.1ms)[0m  [1mSELECT "readings".* FROM "readings" WHERE "readings"."lesson_id" = ?[0m  [["lesson_id", 3]]
+  [1m[35mHomework Load (0.1ms)[0m  SELECT "homeworks".* FROM "homeworks" WHERE "homeworks"."lesson_id" = ?  [["lesson_id", 3]]
+  [1m[36mAssignment Load (0.1ms)[0m  [1mSELECT "assignments".* FROM "assignments" INNER JOIN "learnings" ON "assignments"."id" = "learnings"."assignment_id" WHERE "learnings"."lesson_id" = ?[0m  [["lesson_id", 3]]
+  [1m[35mReading Load (0.1ms)[0m  SELECT "readings".* FROM "readings" WHERE "readings"."lesson_id" = ?  [["lesson_id", 2]]
+  [1m[36mHomework Load (0.1ms)[0m  [1mSELECT "homeworks".* FROM "homeworks" WHERE "homeworks"."lesson_id" = ?[0m  [["lesson_id", 2]]
+  [1m[35mAssignment Load (0.1ms)[0m  SELECT "assignments".* FROM "assignments" INNER JOIN "learnings" ON "assignments"."id" = "learnings"."assignment_id" WHERE "learnings"."lesson_id" = ?  [["lesson_id", 2]]
+  Rendered lessons/index.html.erb within layouts/application (21.5ms)
+  Rendered layouts/_header.html.erb (3.4ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 630ms (Views: 628.8ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/lessons" for ::1 at 2018-08-23 13:53:02 -0500
+Processing by LessonsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mLesson Load (0.2ms)[0m  SELECT "lessons".* FROM "lessons"  ORDER BY "lessons"."sort" ASC
+  [1m[36mReading Load (0.1ms)[0m  [1mSELECT "readings".* FROM "readings" WHERE "readings"."lesson_id" = ?[0m  [["lesson_id", 1]]
+  [1m[35mHomework Load (0.2ms)[0m  SELECT "homeworks".* FROM "homeworks" WHERE "homeworks"."lesson_id" = ?  [["lesson_id", 1]]
+  [1m[36mAssignment Load (0.1ms)[0m  [1mSELECT "assignments".* FROM "assignments" INNER JOIN "learnings" ON "assignments"."id" = "learnings"."assignment_id" WHERE "learnings"."lesson_id" = ?[0m  [["lesson_id", 1]]
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/simple_calendar-2.3.0/app/views/simple_calendar/_month_calendar.html.erb (8.5ms)
+  [1m[35mReading Load (0.1ms)[0m  SELECT "readings".* FROM "readings" WHERE "readings"."lesson_id" = ?  [["lesson_id", 3]]
+  [1m[36mHomework Load (0.1ms)[0m  [1mSELECT "homeworks".* FROM "homeworks" WHERE "homeworks"."lesson_id" = ?[0m  [["lesson_id", 3]]
+  [1m[35mAssignment Load (0.1ms)[0m  SELECT "assignments".* FROM "assignments" INNER JOIN "learnings" ON "assignments"."id" = "learnings"."assignment_id" WHERE "learnings"."lesson_id" = ?  [["lesson_id", 3]]
+  [1m[36mReading Load (0.1ms)[0m  [1mSELECT "readings".* FROM "readings" WHERE "readings"."lesson_id" = ?[0m  [["lesson_id", 2]]
+  [1m[35mHomework Load (0.1ms)[0m  SELECT "homeworks".* FROM "homeworks" WHERE "homeworks"."lesson_id" = ?  [["lesson_id", 2]]
+  [1m[36mAssignment Load (0.1ms)[0m  [1mSELECT "assignments".* FROM "assignments" INNER JOIN "learnings" ON "assignments"."id" = "learnings"."assignment_id" WHERE "learnings"."lesson_id" = ?[0m  [["lesson_id", 2]]
+  Rendered lessons/index.html.erb within layouts/application (20.3ms)
+  Rendered layouts/_header.html.erb (3.5ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 650ms (Views: 647.9ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/lessons" for ::1 at 2018-08-23 13:54:01 -0500
+Processing by LessonsController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mLesson Load (0.2ms)[0m  [1mSELECT "lessons".* FROM "lessons"  ORDER BY "lessons"."sort" ASC[0m
+  [1m[35mReading Load (0.1ms)[0m  SELECT "readings".* FROM "readings" WHERE "readings"."lesson_id" = ?  [["lesson_id", 1]]
+  [1m[36mHomework Load (0.3ms)[0m  [1mSELECT "homeworks".* FROM "homeworks" WHERE "homeworks"."lesson_id" = ?[0m  [["lesson_id", 1]]
+  [1m[35mAssignment Load (0.1ms)[0m  SELECT "assignments".* FROM "assignments" INNER JOIN "learnings" ON "assignments"."id" = "learnings"."assignment_id" WHERE "learnings"."lesson_id" = ?  [["lesson_id", 1]]
+  Rendered /Users/chrislam/.rvm/gems/ruby-2.3.0/gems/simple_calendar-2.3.0/app/views/simple_calendar/_month_calendar.html.erb (15.8ms)
+  [1m[36mReading Load (0.1ms)[0m  [1mSELECT "readings".* FROM "readings" WHERE "readings"."lesson_id" = ?[0m  [["lesson_id", 3]]
+  [1m[35mHomework Load (0.1ms)[0m  SELECT "homeworks".* FROM "homeworks" WHERE "homeworks"."lesson_id" = ?  [["lesson_id", 3]]
+  [1m[36mAssignment Load (0.1ms)[0m  [1mSELECT "assignments".* FROM "assignments" INNER JOIN "learnings" ON "assignments"."id" = "learnings"."assignment_id" WHERE "learnings"."lesson_id" = ?[0m  [["lesson_id", 3]]
+  [1m[35mReading Load (0.2ms)[0m  SELECT "readings".* FROM "readings" WHERE "readings"."lesson_id" = ?  [["lesson_id", 2]]
+  [1m[36mHomework Load (0.1ms)[0m  [1mSELECT "homeworks".* FROM "homeworks" WHERE "homeworks"."lesson_id" = ?[0m  [["lesson_id", 2]]
+  [1m[35mAssignment Load (0.1ms)[0m  SELECT "assignments".* FROM "assignments" INNER JOIN "learnings" ON "assignments"."id" = "learnings"."assignment_id" WHERE "learnings"."lesson_id" = ?  [["lesson_id", 2]]
+  Rendered lessons/index.html.erb within layouts/application (33.4ms)
+  Rendered layouts/_header.html.erb (9.9ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 984ms (Views: 981.4ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/lessons/1" for ::1 at 2018-08-23 13:54:07 -0500
+Processing by LessonsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mLesson Load (0.3ms)[0m  [1mSELECT  "lessons".* FROM "lessons" WHERE "lessons"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mObjective Load (0.8ms)[0m  SELECT "objectives".* FROM "objectives" WHERE "objectives"."lesson_id" = ?  [["lesson_id", 1]]
+  [1m[36mClassactivity Load (0.5ms)[0m  [1mSELECT "classactivities".* FROM "classactivities" WHERE "classactivities"."lesson_id" = ?  ORDER BY "classactivities"."created_at" ASC[0m  [["lesson_id", 1]]
+  [1m[35mReading Load (0.2ms)[0m  SELECT "readings".* FROM "readings" WHERE "readings"."lesson_id" = ?  [["lesson_id", 1]]
+  [1m[36mHomework Load (0.1ms)[0m  [1mSELECT "homeworks".* FROM "homeworks" WHERE "homeworks"."lesson_id" = ?[0m  [["lesson_id", 1]]
+  [1m[35mAssignment Load (0.1ms)[0m  SELECT "assignments".* FROM "assignments" INNER JOIN "learnings" ON "assignments"."id" = "learnings"."assignment_id" WHERE "learnings"."lesson_id" = ?  [["lesson_id", 1]]
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT "projects".* FROM "projects" INNER JOIN "learnings" ON "projects"."id" = "learnings"."project_id" WHERE "learnings"."lesson_id" = ?[0m  [["lesson_id", 1]]
+  [1m[35mTakeaway Load (0.4ms)[0m  SELECT "takeaways".* FROM "takeaways" WHERE "takeaways"."lesson_id" = ?  [["lesson_id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered lessons/show.html.erb within layouts/application (84.8ms)
+  Rendered layouts/_header.html.erb (6.8ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 746ms (Views: 741.3ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/assets/calendar-show-36325371ad2dc4892b022adc0f4c702c4acc53a9d6c39198b1a7831e83112821.png" for ::1 at 2018-08-23 13:54:08 -0500
+
+
+Started GET "/assets/book-3519fef4a9106d5c4e6c3967909e85adf4c9e37786e292c18937fdef46f462c0.png" for ::1 at 2018-08-23 13:54:08 -0500

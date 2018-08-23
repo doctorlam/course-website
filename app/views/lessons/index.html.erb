@@ -7,37 +7,41 @@
   <%= date %>
   <% lessons.each do |lesson| %>
     <div>
-        <p style="font-weight: bold; font-size:1.4rem !important"><%= link_to lesson.name, lesson %></p>
+        <p style="font-weight: bold; font-size:1.25rem !important"><%= link_to lesson.name, lesson %></p>
 
   <% end %>
 
     <% lessons.each do |lesson| %>
-        <p style="font-weight: bold; border-bottom: 1px solid black; margin-bottom: 0px !important; margin-top: 10px">Readings:</p>
+        <p style="font-weight: bold; border-bottom: 1px solid black; margin-bottom: 0px !important; margin-top: 10px">Readings: <i style="cursor:pointer;" class="toggle2 fas fa-plus-circle"></i></p>
+    <div id="target2">
       <ul>
        <% for reading in lesson.readings %>
         
             <li><%= reading.content.html_safe %></li>
               <% end %>
       </ul>
+    </div><!--/target-2-->
       <% end %>
-        <% lessons.each do |lesson| %>
 
-          <p style="font-weight: bold; border-bottom: 1px solid black; margin-bottom: 0px !important; margin-top: 10px">Homework:</p>
+        <% lessons.each do |lesson| %>
+          
+          <p style="font-weight: bold; border-bottom: 1px solid black; margin-bottom: 0px !important; margin-top: 10px">Homework: <i style="cursor:pointer;" class="toggle fas fa-plus-circle"></i>
+
+</p>
+      <div id="target">
           <ul>
          <% for homework in lesson.homeworks %>
-           <% if homework.content? %>
-            
                 <li><%= homework.content.html_safe %></li>
 
-              <% end %>
-              <% end %>
+            <% end %>
             <% for assignment in lesson.assignments %>  
                 <li><span style="color: #00b894; font-weight: bold">[Turn In]</span> <%= link_to assignment.name, assignment_url(assignment) %></li>  
             <% end %>
           </ul>
+        </div><!--/homework target-->
+
     </div>
   <% end %>
-
 <% end %>
 
 </div><!--/month-view-->
@@ -105,3 +109,36 @@
 
 
 </div>-->
+<script>
+  $('.Show').click(function() {
+    $('#target').show(500);
+    $('.Show').hide(0);
+    $('.Hide').show(0);
+});
+$('.Hide').click(function() {
+    $('#target').hide(500);
+    $('.Show').show(0);
+    $('.Hide').hide(0);
+});
+$('.toggle').click(function() {
+    $('#target').toggle('slow');
+});
+  $('.Show').click(function() {
+    $('#target2').show(500);
+    $('.Show').hide(0);
+    $('.Hide').show(0);
+});
+$('.Hide').click(function() {
+    $('#target2').hide(500);
+    $('.Show').show(0);
+    $('.Hide').hide(0);
+});
+$('.toggle2').click(function() {
+    $('#target2').toggle('slow');
+});
+</script>
+<style>
+  #target, #target2 {
+    display: none;
+  }
+  </style>
