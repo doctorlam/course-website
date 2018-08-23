@@ -19,6 +19,8 @@ class ApplicationController < ActionController::Base
     rescue ActionController::RedirectBackError
     redirect_to root_path, alert: "Nice try! Don't try hacking me :)"
 end
+   private
 
+  
 end
 

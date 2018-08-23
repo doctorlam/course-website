@@ -14,11 +14,59 @@
   *= require slick
   *= require slick-theme
   *= require prism
+ *= require simple_calendar
  *= require_self
 */
 
 tbody a, tbody a:visited, .projects-right a, .projects-right a:visited {
 	color: #6c5ce7 !important;
+}
+/* =======CALENDAR DAYS ========*/
+.calendar-heading {
+	margin: 0 auto;
+	text-align:center;
+	margin-bottom: 20px;
+}
+.calendar-title {
+	font-weight: bold;
+	font-size: 1.5rem;
+	margin-left:20px;
+	margin-right: 20px;
+
+}
+.month-view ul {
+	padding-left: 15px;
+}
+.simple-calendar {
+  .day {	height: 200px !important;
+  	font-size:.8rem !important;
+  	border-bottom: 1px solid black;
+}
+.day li {
+	font-size: .8rem !important;
+}
+  .wday-0 {}
+  .wday-1 {}
+  .wday-2 {}
+  .wday-3 {}
+  .wday-4 {}
+  .wday-5 {}
+  .wday-6 {}
+
+  .today {}
+  .past {}
+  .future {}
+
+  .start-date {}
+
+  .prev-month {}
+  .next-month { }
+  .current-month {
+
+
+  }
+
+  .has-events {}
 }
 /* =======NOTES AND SLIDES ========*/
 

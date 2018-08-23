@@ -240,6 +240,8 @@ GEM
     sendgrid-ruby (5.2.0)
       ruby_http_client (~> 3.2)
       sinatra (>= 1.4.7, < 3)
+    simple_calendar (2.3.0)
+      rails (>= 3.0)
     simple_form (4.0.0)
       actionpack (> 4)
       activemodel (> 4)
@@ -319,6 +321,7 @@ DEPENDENCIES
   sdoc (~> 0.4.0)
   sendgrid
   sendgrid-ruby
+  simple_calendar (~> 2.0)
   simple_form
   spring
   sqlite3
