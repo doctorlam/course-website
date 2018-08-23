@@ -12,7 +12,10 @@
   <% end %>
 
     <% lessons.each do |lesson| %>
-       <div class="item-title"><p style="font-weight: bold; border-bottom: 1px solid black; margin-bottom: 0px !important; margin-top: 10px">Readings: <i style="cursor:pointer;" class="toggle2 fas fa-plus-circle" onclick="showStuff(this); return false;"></i></p></div>
+    <% if lesson.readings.any? %>
+       <div class="item-title"><p style="cursor: pointer; font-weight: bold; border-bottom: 1px solid black; margin-bottom: 0px !important; margin-top: 10px"><i class="fas fa-book-open"></i> Readings: <i style="cursor:pointer;" class="toggle2 fas fa-plus-circle"></i></p></div>
+      <% else %>
+    <% end %>
     <div class="item-content">
       <ul>
        <% for reading in lesson.readings %>
@@ -26,12 +29,20 @@
       <% end %>
 
         <% lessons.each do |lesson| %>
-          
-               <div class="item-title"><p style="font-weight: bold; border-bottom: 1px solid black; margin-bottom: 0px !important; margin-top: 10px">Homework: <i style="cursor:pointer;" class="toggle fas fa-plus-circle" onclick="showStuff(this); return false;"></i></p></div>
+        <% if lesson.homeworks.any? or lesson.assignments.any? %>
+
+               <div class="item-title"><p style="cursor: pointer; font-weight: bold; border-bottom: 1px solid black; margin-bottom: 0px !important; margin-top: 10px"><i class="fas fa-check-double"></i> Homework: <i style="cursor:pointer;" class="toggle fas fa-plus-circle"></i></p></div>
+        <% else %>
+
+        <% end %>
       <div class="item-content">
           <ul>
          <% for homework in lesson.homeworks %>
+          <% if homework.content? %>
                 <li><%= homework.content.html_safe %></li>
+            <% else %>
+                <li>Nada</li>
+            <% end %>
 
             <% end %>
             <% for assignment in lesson.assignments %>  
