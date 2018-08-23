@@ -27,8 +27,8 @@
 
         <% lessons.each do |lesson| %>
           
-          <p style="font-weight: bold; border-bottom: 1px solid black; margin-bottom: 0px !important; margin-top: 10px">Homework: <i style="cursor:pointer;" class="toggle fas fa-plus-circle" onclick="showStuff(this); return false;"></i></p>
-      <div id="target">
+               <div class="item-title"><p style="font-weight: bold; border-bottom: 1px solid black; margin-bottom: 0px !important; margin-top: 10px">Homework: <i style="cursor:pointer;" class="toggle fas fa-plus-circle" onclick="showStuff(this); return false;"></i></p></div>
+      <div class="item-content">
           <ul>
          <% for homework in lesson.homeworks %>
                 <li><%= homework.content.html_safe %></li>
@@ -38,7 +38,7 @@
                 <li><span style="color: #00b894; font-weight: bold">[Turn In]</span> <%= link_to assignment.name, assignment_url(assignment) %></li>  
             <% end %>
           </ul>
-        </div><!--/homework target-->
+        </div><!--/item-content target-->
 
     </div>
   <% end %>
