@@ -13,10 +13,12 @@
 
     <% lessons.each do |lesson| %>
     <% if lesson.readings.any? %>
-       <div class="item-title"><p style="cursor: pointer; font-weight: bold; border-bottom: 1px solid black; margin-bottom: 0px !important; margin-top: 10px"><i class="fas fa-book-open"></i> Readings: <i style="cursor:pointer;" class="toggle2 fas fa-plus-circle"></i></p></div>
+       <div class="click-reading"><p><i class="fas fa-book-open"></i> Readings  <i style="cursor:pointer;" class="toggle2 fas fa-plus-circle"></i></p>
       <% else %>
     <% end %>
-    <div class="item-content">
+    <div class="hover-reading">
+              <h3>Readings for <%= date %></h3>
+
       <ul>
        <% for reading in lesson.readings %>
             <li><%= reading.content.html_safe %></li>
@@ -25,17 +27,19 @@
             </ul>
 
     </div><!--/item-content-->
+  </div>
   
       <% end %>
 
         <% lessons.each do |lesson| %>
         <% if lesson.homeworks.any? or lesson.assignments.any? %>
 
-               <div class="item-title-2"><p style="cursor: pointer; font-weight: bold; border-bottom: 1px solid black; margin-bottom: 0px !important; margin-top: 10px"><i class="fas fa-check-double"></i> Homework: <i style="cursor:pointer;" class="toggle fas fa-plus-circle"></i></p></div>
+               <div class="click-hw"><p><i class="fas fa-check-double"></i> Homework: <i style="cursor:pointer;" class="toggle fas fa-plus-circle"></i></p>
         <% else %>
 
         <% end %>
-      <div class="item-content-2">
+      <div class="hover-hw">
+        <h3>Homework for <%= date %></h3>
           <ul>
          <% for homework in lesson.homeworks %>
           <% if homework.content? %>
@@ -50,7 +54,7 @@
             <% end %>
           </ul>
         </div><!--/item-content target-->
-
+      </div><!--/click-hw-->
     </div>
   <% end %>
 <% end %>

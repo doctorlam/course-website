@@ -17,9 +17,9 @@
  *= require simple_calendar
  *= require_self
 */
-
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700');
 tbody a, tbody a:visited, .projects-right a, .projects-right a:visited {
-	color: #6c5ce7 !important;
+	color: #2980b9;
 }
 /* =======CALENDAR DAYS ========*/
 .calendar-heading {
@@ -34,9 +34,7 @@ tbody a, tbody a:visited, .projects-right a, .projects-right a:visited {
 	margin-right: 20px;
 
 }
-.month-view ul {
-	padding-left: 15px;
-}
+
 .simple-calendar {
   .day {	height: 200px !important;
   	font-size:.8rem !important;
@@ -67,6 +65,58 @@ tbody a, tbody a:visited, .projects-right a, .projects-right a:visited {
   }
 
   .has-events {}
+}
+.hover-hw {
+	display: none;
+	background: #c0392b;
+	color: white;
+	position: absolute;
+	width:200px;
+	top: 0;
+	left: 100%;
+	min-height: 200px;
+}
+.hover-hw a, .hover-reading a {
+	color: white !important;
+}
+.click-hw {
+	position: relative;
+	background: #c0392b; 
+	padding: 3px
+
+}
+.hover-reading {
+	display: none;
+	background: #16a085;
+	color: white;
+	position: absolute;
+	width:200px;
+	top: 0;
+	left: 100%;
+	min-height: 200px;
+}
+.click-reading {
+	position: relative;
+	background: #16a085; 
+	padding: 3px;
+	margin-bottom: 10px;
+}
+.click-reading p, .click-hw p {
+		display: flex;
+	justify-content: space-between;
+	align-items: center;
+	cursor: pointer; 
+	margin-bottom: 0px !important;
+	color: white
+}
+.hover-reading h3, .hover-hw h3 {
+	text-align: center;
+	font-size: 1rem;
+	padding-left:2px;
+	padding-right: 2px;
+}
+.click-reading:active .hover-reading, .click-reading:hover .hover-reading, .click-hw:active .hover-hw, .click-hw:hover .hover-hw {
+	display: block;
 }
 /* =======NOTES AND SLIDES ========*/
 
@@ -378,7 +428,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5c9d96', end
 }
 .form label {
 	font-weight: 400 !important;
-	font-family: 'Muli';
+	font-family: 'roboto';
 }
 .form {
 	width: 450px !important;
@@ -390,7 +440,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5c9d96', end
 .form h2 {
 	text-align: center;
 	text-transform: uppercase;
-	font-family: 'Muli';
+	font-family: 'roboto';
 }
 .filter-box {
 	border: 1px solid black;
@@ -403,7 +453,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5c9d96', end
 	width: 95%;
 }
 .filter label {
-	font-family: 'Muli';
+	font-family: 'roboto';
 	font-weight: 700;
 	font-size: 1rem;
 }
@@ -504,7 +554,7 @@ select {
 	color: white !important;
 	text-decoration: none;
 	font-size: 1.1rem !important;
-	font-family: 'muli';
+	font-family: 'roboto';
 	
 }
 a.btn.btn-green:hover {
@@ -607,7 +657,7 @@ h1 a:hover {
 nav a, nav a:visited {
 	font-size: 0.8rem;
 	color: white !important;
-	font-family: 'Muli', sans-serif !important;
+	font-family: 'roboto', sans-serif !important;
 	text-decoration: none;
 	text-transform: uppercase;
 }
@@ -623,17 +673,17 @@ nav a:hover {
 	background: none !important;
 }
 h1 {
-	font-family: 'Open Sans Condensed', sans-serif; 
-	font-weight: 400;
-	text-transform: uppercase;
+	font-family: 'Roboto', sans-serif; 
+	font-weight: 300;
 	border-bottom: gray 1px dotted;
 	padding-bottom: 10px;
-	font-size: 2.5rem !important;
+	font-size: 2.3rem !important;
 
 }
 h2 {
-	font-family: 'Open Sans Condensed', sans-serif;
-	font-size: 2rem;
+	font-family: 'roboto', sans-serif;
+	font-size: 1.75rem;
+	font-weight: 300;
 }
 .padding-right h2 {
 	border-bottom: gray 1px dotted;
@@ -641,7 +691,7 @@ h2 {
 }
 
 h3 {
-	font-family: 'Muli', sans-serif;
+	font-family: 'roboto', sans-serif;
 	font-size: 1.5rem;
 }
 .show-left {
@@ -656,7 +706,7 @@ h3 {
 	
 }
 p, ol, li, td {
-	font-family: 'Muli', sans-serif !important;
+	font-family: 'roboto', sans-serif !important;
 	font-size: 1rem !important;
 	line-height: 1.5rem;
 }
@@ -788,7 +838,7 @@ display: flex;
 
 .tagline h1 {
 	font-size: 3rem !important;
-	font-family: 'Josefin Sans', sans-serif;
+	font-family: 'roboto', sans-serif;
 	text-align: center !important;
 	letter-spacing: 15px;
 	color: white;
@@ -807,7 +857,7 @@ display: flex;
 	background: none;
 }
 .tagline h2 {
-	font-family: 'Open Sans Condensed', sans-serif;
+	font-family: 'roboto', sans-serif;
 	text-align: center;
 	color: white;
 	font-size: 1.75rem;
@@ -826,7 +876,7 @@ footer {
 footer h2 {
 	font-size: 1.25rem;
 	color: #666666;
-	font-family: 'Muli';
+	font-family: 'roboto';
 	font-weight: 700;
 	text-transform: uppercase;
 }
@@ -861,7 +911,7 @@ footer ul {
 	border: 1px solid black !important;
 	text-decoration: none;
 	color: black;
-	font-family: 'Open Sans Condensed', sans-serif;
+	font-family: 'roboto', sans-serif;
 	text-transform: uppercase;
 }
 .btn-primary:hover {
@@ -974,7 +1024,7 @@ input.takeaway {
 }
 
 .lower label{
-  font-family: 'Open Sans Condensed' 'sans-serif';
+  font-family: 'roboto' 'sans-serif';
   font-size:1.5rem;
   text-align: center;
   text-transform: uppercase;
@@ -1041,7 +1091,7 @@ header.gradebook {
   	text-decoration:none;
 	-webkit-transition: color 0.2s;
 	transition: color 0.2s;
-  	font-family: 'Open sans condensed' !important;
+  	font-family: 'roboto' !important;
   	font-size: 1.7rem !important;
  	 line-height: 2rem !important;
 
