@@ -79,6 +79,7 @@ tbody a, tbody a:visited, .projects-right a, .projects-right a:visited {
 	left: 100%;
 	min-height: 200px;
 	padding: 0 5px 0 5px;
+	z-index:1000 !important;
 }
 .hover-hw a, .hover-reading a {
 	color: white !important;
@@ -99,6 +100,8 @@ tbody a, tbody a:visited, .projects-right a, .projects-right a:visited {
 	left: 100%;
 	min-height: 200px;
 	padding: 0 5px 0 5px;
+		z-index:1000 !important;
+
 }
 .click-reading {
 	position: relative;
