@@ -40,14 +40,7 @@
       <div class="hover-hw">
         <h3>Homework for <%= date %></h3>
           <ul>
-         <% for homework in lesson.homeworks %>
-          <% if homework.content? %>
-                <li><%= homework.content.html_safe %></li>
-            <% else %>
-                <li>Nada</li>
-            <% end %>
-
-            <% end %>
+         
             <% for assignment in lesson.assignments %>  
               <% unless assignment.major_project == '1' %>
 
