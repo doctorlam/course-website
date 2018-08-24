@@ -32,11 +32,9 @@
       <% end %>
 
         <% lessons.each do |lesson| %>
-        
           <% for assignment in lesson.assignments %>
-            <% if assignment.major_project == '0' or lesson.homeworks.any? %>
+            <% if  assignment.major_project == '0' %>
                <div class="click-hw"><p><i class="fas fa-check-double"></i> Homework: <i style="cursor:pointer;" class="toggle fas fa-plus-circle"></i></p>
-        <% else %>
         <% end %>
       <% end %>
       <div class="hover-hw">
@@ -74,7 +72,7 @@
           <ul>
          <% for assignment in lesson.assignments %>
           <% if assignment.major_project == '1' %>
-                <li><%= assignment.name %></li>
+                <li>[Turn In]</span> <%= link_to assignment.name, assignment_url(assignment) %></li>
             <% else %>
                 
             <% end %>
