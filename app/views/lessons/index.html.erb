@@ -32,12 +32,13 @@
       <% end %>
 
         <% lessons.each do |lesson| %>
-        <% if lesson.homeworks.any? or lesson.assignments.any? %>
-
+        
+          <% for assignment in lesson.assignments %>
+            <% if assignment.major_project == '0' or lesson.homeworks.any? %>
                <div class="click-hw"><p><i class="fas fa-check-double"></i> Homework: <i style="cursor:pointer;" class="toggle fas fa-plus-circle"></i></p>
         <% else %>
-
         <% end %>
+      <% end %>
       <div class="hover-hw">
         <h3>Homework for <%= date %></h3>
           <ul>
@@ -50,15 +51,42 @@
 
             <% end %>
             <% for assignment in lesson.assignments %>  
+              <% unless assignment.major_project == '1' %>
+
                 <li><span style="color: #00b894; font-weight: bold">[Turn In]</span> <%= link_to assignment.name, assignment_url(assignment) %></li>  
+            <% end %>
             <% end %>
           </ul>
         </div><!--/item-content target-->
       </div><!--/click-hw-->
     </div>
   <% end %>
-<% end %>
+  <% lessons.each do |lesson| %>
+  <% for assignment in lesson.assignments %>
 
+    <% if assignment.major_project == '1' %>
+
+               <div class="click-project"><p><i class="fas fa-exclamation-circle"></i> Major Project: <i style="cursor:pointer;" class="toggle fas fa-plus-circle"></i></p>
+    <% end %>
+    <% end %>
+      <div class="hover-project">
+        <h3>Project for <%= date %></h3>
+          <ul>
+         <% for assignment in lesson.assignments %>
+          <% if assignment.major_project == '1' %>
+                <li><%= assignment.name %></li>
+            <% else %>
+                
+            <% end %>
+
+            <% end %>
+            
+          </ul>
+        </div><!--/item-content target-->
+      </div><!--/click-hw-->
+    </div>
+  <% end %>
+<% end %>
 </div><!--/month-view-->
 
 

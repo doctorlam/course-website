@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180823133826) do
+ActiveRecord::Schema.define(version: 20180824152351) do
 
   create_table "abouts", force: :cascade do |t|
     t.text     "name"
@@ -43,6 +43,7 @@ ActiveRecord::Schema.define(version: 20180823133826) do
     t.datetime "attachment_updated_at"
     t.string   "assignment_type"
     t.string   "status"
+    t.binary   "major_project"
   end
 
   create_table "bulleted_lists", force: :cascade do |t|
