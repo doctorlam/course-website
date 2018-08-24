@@ -24,7 +24,6 @@ module Scheduler20
     config.active_record.raise_in_transactional_callbacks = true
     config.i18n.load_path += Dir[root.join('config', 'locales', '**', '*.{rb,yml}')]
     config.action_mailer.default_url_options = { host: 'http://tecm4400.herokuapp.com' }
-    config.beginning_of_week = :sunday
 
   end
 end

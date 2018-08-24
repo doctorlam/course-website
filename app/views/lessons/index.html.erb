@@ -4,7 +4,7 @@
 <% end %>
 <div class="month-view container">
 <%= month_calendar events: @lessons do |date, lessons| %>
-  <%= date.day %>
+  <%= date.to_formatted_s(:short) %>
   <% lessons.each do |lesson| %>
     <div>
         <p style="font-weight: bold; font-size:1.15rem !important"><%= link_to truncate(lesson.name, :length => 60),lesson %></p>
