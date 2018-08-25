@@ -7,5 +7,13 @@ module LessonsHelper
 	end
 	def truncate_with_hover(text_to_truncate, length = 30)
     "<span title='#{text_to_truncate.gsub("'","\\'")}'>#{truncate(text_to_truncate, :length => length)}</span>" if !text_to_truncate.blank?
-end
+	end
+
+	  def lessons_ajax_previous_link
+    ->(param, date_range) { link_to raw("&laquo;"), {param => date_range.first - 1.day}, remote: :true}
+  end
+
+  def lessons_ajax_next_link
+    ->(param, date_range) { link_to raw("&raquo;"), {param => date_range.last + 1.day}, remote: :true}
+  end
 end

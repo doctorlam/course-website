@@ -1,0 +1,76 @@
+<%= month_calendar events: @lessons, previous_link: lessons_ajax_previous_link, next_link: lessons_ajax_next_link do |date, lessons| %>
+  <%= date.to_formatted_s(:short) %>
+  <% lessons.each do |lesson| %>
+    <div>
+        <p style="font-weight: bold; font-size:1.15rem !important"><%= link_to truncate(lesson.name, :length => 60),lesson %></p>
+
+  <% end %>
+
+    <% lessons.each do |lesson| %>
+    <% if lesson.readings.any? %>
+       <div class="click-reading"><p class="hw"><i class="fas fa-book-open"></i> Readings  <i style="cursor:pointer;" class="toggle2 fas fa-plus-circle"></i></p>
+      <% else %>
+    <% end %>
+    <div class="hover-reading">
+              <h3>Readings for <%= date %></h3>
+
+      <ul>
+       <% for reading in lesson.readings %>
+            <li><%= reading.content.html_safe %></li>
+      <% end %>
+
+            </ul>
+
+    </div><!--/item-content-->
+  </div>
+  
+      <% end %>
+<div class="reset">
+        <% lessons.each do |lesson| %>
+          <% for assignment in lesson.assignments  %>
+            <% if assignment.major_project == '0' %>
+      <div class="click-hw">
+
+              <p class="hw">Assignment <i style="cursor:pointer;" class="toggle fas fa-plus-circle"></i></p>
+      <div class="hover-hw">
+        <h3>Assignment for <%= date %></h3>
+         
+                <h4><span style="color: white; font-weight: bold">[Turn In]</span> <%= link_to assignment.name, assignment_url(assignment) %></h4>  
+            
+        
+        </div><!--/item-content target-->
+      </div><!--/click-hw-->
+      <% end %>
+      <% end %>
+
+  <% end %>
+</div><!--/resdet-->
+  <% lessons.each do |lesson| %>
+  <% for assignment in lesson.assignments %>
+
+    <% if assignment.major_project == '1' %>
+    <div class="click-project">
+
+             <p class="hw"><i class="fas fa-exclamation-circle"></i> Major Project: <i style="cursor:pointer;" class="toggle fas fa-plus-circle"></i></p>
+    <% else %>
+        <% end %>
+
+      <% end %>
+      <div class="hover-project">
+        <h3>Project for <%= date %></h3>
+          <ul>
+         <% for assignment in lesson.assignments %>
+          <% if assignment.major_project == '1' %>
+                <h4>[Turn In]</span> <%= link_to assignment.name, assignment_url(assignment) %></h4>
+            <% else %>
+                
+            <% end %>
+
+            <% end %>
+            
+          </ul>
+        </div><!--/item-content target-->
+      </div><!--/click-hw-->
+    </div>
+  <% end %>
+<% end %>
