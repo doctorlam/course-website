@@ -14,7 +14,7 @@ $(function() {
 <p id="notice"><%= notice %></p>
 <img style="width:70%; height: auto;" src="https://s3.us-east-2.amazonaws.com/lam-fall/Screen+Shot+2018-08-03+at+1.01.55+PM.png">
 <h1>Course Projects</h1>
-<div class="sortable"">
+<div class="sortable">
 
 <% @projects.each_with_sortable_id do |project, sortable_id| %>
     <div class="row" id="<%= sortable_id %>">

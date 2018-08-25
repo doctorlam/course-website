@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180824152351) do
+ActiveRecord::Schema.define(version: 20180825200802) do
 
   create_table "abouts", force: :cascade do |t|
     t.text     "name"
@@ -158,6 +158,14 @@ ActiveRecord::Schema.define(version: 20180824152351) do
     t.integer  "project_id"
   end
 
+  create_table "drives", force: :cascade do |t|
+    t.string   "name"
+    t.string   "link"
+    t.text     "category"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "gradecategories", force: :cascade do |t|
     t.text     "description"
     t.integer  "grade_id"
@@ -221,6 +229,15 @@ ActiveRecord::Schema.define(version: 20180824152351) do
     t.string   "slidedeck_link"
     t.integer  "sort"
     t.datetime "start_time"
+  end
+
+  create_table "links", force: :cascade do |t|
+    t.text     "name"
+    t.string   "link"
+    t.text     "category"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "sort"
   end
 
   create_table "materials", force: :cascade do |t|

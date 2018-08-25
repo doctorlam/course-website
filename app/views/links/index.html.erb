@@ -1,0 +1,46 @@
+<p id="notice"><%= notice %></p>
+<% if current_user.try(:admin?) %>
+<script type="text/javascript">
+$(function() {
+  $('.sortable').railsSortable();
+});
+</script>
+<% end %>
+<div class="container">
+<h1><i class="fab fa-google-drive"></i> Google Drive Files</h1>
+<div class="table-responsive">
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Link</th>
+      <th>Category</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody class="sortable">
+
+    <% @links.each_with_sortable_id do |link, sortable_id|  %>
+  
+      <tr id="<%= sortable_id %>">
+        <td><%= link.name %></td>
+        <td><%= link.link.html_safe %></td>
+        <td><%= link.category %></td>
+        <td><%= link_to 'Show', link %></td>
+    <% if current_user.try(:admin?) %>
+        <td><%= link_to 'Edit', edit_link_path(link) %></td>
+        <td><%= link_to 'Destroy', link, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</tbody>
+<br>
+
+<% if current_user.try(:admin?) %>
+
+<%= link_to 'New Link', new_link_path %>
+
+<% end %>
