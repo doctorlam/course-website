@@ -33,16 +33,18 @@
 
         <% lessons.each do |lesson| %>
           <% for assignment in lesson.assignments %>
-            <% if  assignment.major_project == '0' %>
+            <% if  assignment.major_project.blank? %>
                <div class="click-hw"><p><i class="fas fa-check-double"></i> Homework: <i style="cursor:pointer;" class="toggle fas fa-plus-circle"></i></p>
+            <% else %>
         <% end %>
+
       <% end %>
       <div class="hover-hw">
         <h3>Homework for <%= date %></h3>
           <ul>
          
             <% for assignment in lesson.assignments %>  
-              <% unless assignment.major_project == '1' %>
+              <% if assignment.major_project == '0' %>
 
                 <li><span style="color: #00b894; font-weight: bold">[Turn In]</span> <%= link_to assignment.name, assignment_url(assignment) %></li>  
             <% end %>
@@ -58,8 +60,10 @@
     <% if assignment.major_project == '1' %>
 
                <div class="click-project"><p><i class="fas fa-exclamation-circle"></i> Major Project: <i style="cursor:pointer;" class="toggle fas fa-plus-circle"></i></p>
-    <% end %>
-    <% end %>
+    <% else %>
+        <% end %>
+
+      <% end %>
       <div class="hover-project">
         <h3>Project for <%= date %></h3>
           <ul>
