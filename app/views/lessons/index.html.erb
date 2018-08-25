@@ -33,7 +33,7 @@
 
         <% lessons.each do |lesson| %>
           <% for assignment in lesson.assignments %>
-            <% if assignment.major_project.nil? %>
+            <% if assignment.major_project.blank? %>
                <div class="click-hw"><p><i class="fas fa-check-double"></i> Homework: <i style="cursor:pointer;" class="toggle fas fa-plus-circle"></i></p>
             <% else %>
         <% end %>
@@ -44,7 +44,7 @@
           <ul>
          
             <% for assignment in lesson.assignments %>  
-              <% if assignment.major_project == '0' %>
+              <% if assignment.major_project == '' %>
                 <li><span style="color: #00b894; font-weight: bold">[Turn In]</span> <%= link_to assignment.name, assignment_url(assignment) %></li>  
             <% end %>
             <% end %>
