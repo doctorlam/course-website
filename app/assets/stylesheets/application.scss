@@ -128,11 +128,11 @@ tbody a, tbody a:visited, .projects-right a, .projects-right a:visited {
 	background: #2c2c54;
 	color: white;
 	position: absolute;
-	width:300px;
+	width:250px;
 	top: 0;
 	left: 100%;
 	min-height: 200px;
-	padding: 0 5px 0 5px;
+	padding: 5px;
 	z-index:1000 !important;
 }
 .hover-project {
@@ -1275,6 +1275,7 @@ nav.gradebook {
 	html {
 	font-size: 14px !important;
 	}
+
 	.hero-image, .hero-overlay {
 		height: 450px !important;
 	}
@@ -1334,6 +1335,13 @@ nav.gradebook {
 		margin-left: 10px;
 	}
 	
+}
+@media only screen and (max-width: 600px) {
+
+	.hover-hw, .hover-reading, .hover-project {
+		left: 0;
+		top: 100%;
+	}
 }
 @media only screen and (max-width: 500px) {
 	html {
