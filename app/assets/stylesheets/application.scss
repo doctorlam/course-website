@@ -27,8 +27,8 @@ tbody a, tbody a:visited, .projects-right a, .projects-right a:visited {
 }
 .simple-calendar {
 		margin-bottom: 200px;
-
 }
+
 .calendar-heading {
 	margin: 0 auto;
 	text-align:center;
@@ -132,7 +132,7 @@ tbody a, tbody a:visited, .projects-right a, .projects-right a:visited {
 	top: 0;
 	left: 100%;
 	min-height: 200px;
-	padding: 5px;
+	padding: 0px 5px 0 5px;
 	z-index:1000 !important;
 }
 .hover-project {
@@ -160,10 +160,19 @@ tbody a, tbody a:visited, .projects-right a, .projects-right a:visited {
 	margin-bottom: 5px;
 
 }
+.click-hw:hover, .click-hw:active, .click-reading:hover, .click-reading:active, .click-project:active, .click-project:hover {
+	background: white !important;
+	color: black !important;
+}
+.click-hw:hover p.hw, .click-hw:active p.hw, .click-reading:hover p.hw, .click-reading:active p.hw, .click-project:active p.hw, .click-project:hover p.hw {
+		color: black !important;
+
+}
 .reset {
 		counter-reset: my-sec-counter;
 
 }
+
 .hover-reading {
 	display: none;
 	background: #16a085;
@@ -206,13 +215,36 @@ tbody a, tbody a:visited, .projects-right a, .projects-right a:visited {
     content: counter(my-sec-counter) ". ";
 
 }
-.hover-reading h3, .hover-hw h3, .hover-project h3 {
+
+.hover-project h3 {
 	text-align: center;
 	font-size: 1.2rem;
 	padding-left:2px;
 	padding-right: 2px;
 	font-weight: 700;
-	border-bottom: 1px solid white;
+	background: white;
+	color: #c0392b;
+	margin-top: 5px;
+}
+.hover-reading h3 {
+	text-align: center;
+	font-size: 1.2rem;
+	padding:2px;
+	font-weight: 700;
+	background: white;
+	color: #16a085;
+	margin-top: 5px;
+
+}
+.hover-hw h3 {
+	text-align: center;
+	font-size: 1.2rem;
+	padding:2px;
+	font-weight: 700;
+	background: white;
+	color:  #2c2c54;
+	margin-top: 5px;
+
 }
 .click-reading:active .hover-reading, .click-reading:hover .hover-reading, .click-hw:active .hover-hw, .click-hw:hover .hover-hw, .click-project:active .hover-project, .click-project:hover .hover-project, {
 	display: block;
@@ -1339,9 +1371,26 @@ nav.gradebook {
 @media only screen and (max-width: 600px) {
 
 	.hover-hw, .hover-reading, .hover-project {
-		left: 0;
+		left: 0%;
 		top: 100%;
+		width: 95%;
 	}
+	.simple-calendar thead th {
+        display: none !important;
+    }
+
+    .simple-calendar td, .simple-calendar th {
+        display: block !important;
+        width: 100% !important;
+        min-height: 200px;
+    }
+
+    .simple-calendar td[data-th]:before  {
+        content: attr(data-th) !important;
+    }
+   
+  
+  
 }
 @media only screen and (max-width: 500px) {
 	html {

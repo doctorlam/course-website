@@ -13,7 +13,7 @@
 
     <% lessons.each do |lesson| %>
     <% if lesson.readings.any? %>
-       <div class="click-reading"><p><i class="fas fa-book-open"></i> Readings  <i style="cursor:pointer;" class="toggle2 fas fa-plus-circle"></i></p>
+       <div class="click-reading"><p class="hw"><i class="fas fa-book-open"></i> Readings  <i style="cursor:pointer;" class="toggle2 fas fa-plus-circle"></i></p>
       <% else %>
     <% end %>
     <div class="hover-reading">
@@ -36,9 +36,9 @@
             <% if assignment.major_project == '0' %>
       <div class="click-hw">
 
-              <p class="hw">Homework: <i style="cursor:pointer;" class="toggle fas fa-plus-circle"></i></p>
+              <p class="hw">Assignment <i style="cursor:pointer;" class="toggle fas fa-plus-circle"></i></p>
       <div class="hover-hw">
-        <h3>Homework for <%= date %></h3>
+        <h3>Assignment for <%= date %></h3>
          
                 <h4><span style="color: white; font-weight: bold">[Turn In]</span> <%= link_to assignment.name, assignment_url(assignment) %></h4>  
             
@@ -56,7 +56,7 @@
     <% if assignment.major_project == '1' %>
     <div class="click-project">
 
-             <p onclick="myFunction()"><i class="fas fa-exclamation-circle"></i> Major Project: <i style="cursor:pointer;" class="toggle fas fa-plus-circle"></i></p>
+             <p class="hw"><i class="fas fa-exclamation-circle"></i> Major Project: <i style="cursor:pointer;" class="toggle fas fa-plus-circle"></i></p>
     <% else %>
         <% end %>
 
