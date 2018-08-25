@@ -125,7 +125,7 @@ tbody a, tbody a:visited, .projects-right a, .projects-right a:visited {
 }
 .hover-hw {
 	display: none;
-	background: #f1c40f;
+	background: #2c2c54;
 	color: white;
 	position: absolute;
 	width:300px;
@@ -150,10 +150,18 @@ tbody a, tbody a:visited, .projects-right a, .projects-right a:visited {
 .hover-hw a, .hover-reading a, .hover-project a {
 	color: white !important;
 }
+.hover-hw h4, .hover-project h4 {
+	font-size: 1.25rem;
+}
 .click-hw {
 	position: relative;
-	background: #f1c40f; 
-	padding: 3px
+	background: #2c2c54; 
+	padding: 3px;
+	margin-bottom: 5px;
+
+}
+.reset {
+		counter-reset: my-sec-counter;
 
 }
 .hover-reading {
@@ -189,6 +197,14 @@ tbody a, tbody a:visited, .projects-right a, .projects-right a:visited {
 	margin-bottom: 0px !important;
 	color: white;
 	min-width: 120px;
+	font-size: 1.25rem;
+}
+.click-hw p:before {
+	
+    /* Increment "my-sec-counter" by 1 */
+    counter-increment: my-sec-counter;
+    content: counter(my-sec-counter) ". ";
+
 }
 .hover-reading h3, .hover-hw h3, .hover-project h3 {
 	text-align: center;
@@ -200,7 +216,8 @@ tbody a, tbody a:visited, .projects-right a, .projects-right a:visited {
 }
 .click-reading:active .hover-reading, .click-reading:hover .hover-reading, .click-hw:active .hover-hw, .click-hw:hover .hover-hw, .click-project:active .hover-project, .click-project:hover .hover-project, {
 	display: block;
-}
+} 
+
 /* =======NOTES AND SLIDES ========*/
 
 
