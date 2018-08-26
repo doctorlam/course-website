@@ -22,12 +22,13 @@
 <body>
 
 <div class="container-fluid">
-<% if current_page?(submissions_path) or current_page?(usergrades_path) or current_page?(pages_graded_path) or current_page?(assignments_path) %>
-  <%= render 'layouts/header2'  %>
+<% if current_page?(abouts_path) or current_page?(root_path) or current_page?(new_user_session_path) or current_page?(new_user_registration_path) %>
+  <%= render 'layouts/header'  %>
 
 <% else %>
 
-  <%= render 'layouts/header'  %>
+  
+  <%= render 'layouts/header2'  %>
 <% end %>
 
  <% if flash[:alert] -%>

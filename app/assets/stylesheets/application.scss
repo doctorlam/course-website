@@ -214,7 +214,7 @@ tbody a, tbody a:visited, .projects-right a, .projects-right a:visited {
 
 }
 .click-hw:hover, .click-hw:active, .click-reading:hover, .click-reading:active, .click-project:active, .click-project:hover {
-	background: gray !important;
+	background: whitesmoke !important;
 	color: black !important;
 }
 .click-hw:hover p.hw, .click-hw:active p.hw, .click-reading:hover p.hw, .click-reading:active p.hw, .click-project:active p.hw, .click-project:hover p.hw {
@@ -498,7 +498,7 @@ select.pin-dropdown {
 .notes {
 	background: #FFFFA5 !important;
 	padding: 20px;
-	width: 80%;
+	width: 60%;
 	margin: 0 auto;
 }
 .note-box  {
@@ -518,6 +518,7 @@ select.pin-dropdown {
 }
 .note-box a, .note-box a {
 	text-decoration: none;
+	color: #0984e3 !important;
 }
 .note-box {
 		background: #FFFFA5 !important;
@@ -683,7 +684,7 @@ nav.gradbook ul {
 nav.gradebook li {
 	display:block;
 	margin-bottom: 30px;
-	text-align: center;
+	text-align: left;
 }
 .tutorial-content p {
 	font-size: 20px !important;
@@ -707,6 +708,11 @@ nav.gradebook li {
 
 .img-container img, .img-container-discussion img {
 	width: 100%;}
+
+.navbar-default .navbar-toggle {
+	border: none !important;
+}
+
 nav a:hover {
 	background: #1084FF !important;
 }
@@ -1441,7 +1447,14 @@ nav.gradebook {
     .simple-calendar td[data-th]:before  {
         content: attr(data-th) !important;
     }
-   
+ 
+  .simple-calendar .day {
+  	display: none !important;
+  }
+   .simple-calendar .has-events {
+   	min-height: 340px !important;
+   	display: block !important;
+   }
   
   
 }
