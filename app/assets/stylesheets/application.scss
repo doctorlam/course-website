@@ -612,6 +612,17 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5c9d96', end
 	position: absolute;
 	width: 100%;
 }
+.devise-container {
+	width: 500px;
+	margin: 0 auto;
+}
+.name {
+	display: flex;
+}
+.name label {
+	margin-left:2.5px;
+	margin-right: 2.5px;
+}
 .form label {
 	font-weight: 400 !important;
 	font-family: 'roboto';

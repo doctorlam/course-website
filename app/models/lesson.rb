@@ -25,7 +25,7 @@ class Lesson < ActiveRecord::Base
   	has_attached_file :document
 		  	attr_accessor :delete_document
 
-		    before_validation { document.clear if delete_document == '1' }
+		  before_validation { document.clear if delete_document == '1' }
 		 module DeletableAttachment
 		  extend ActiveSupport::Concern
 
