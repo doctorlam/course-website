@@ -2,7 +2,7 @@ class AssignmentsController < ApplicationController
   before_action :set_assignment, only: [:show, :edit, :update, :destroy]
    before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
     before_filter :check_user, only: [:edit, :update, :destroy]
-    before_filter :authorize_admin, only: [:index, :destroy, :edit, :create, :new]
+    before_filter :authorize_admin, only: [:destroy, :edit, :create, :new]
 
   # GET /assignments
   # GET /assignments.json

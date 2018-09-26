@@ -42,7 +42,9 @@
       <tr>
         <th>Name</th>
         <th>Due Date</th>
+      <% if current_user.try(:admin?) %>
         <th>Points</th>
+      <% end %>
         <th colspan="3"></th>
       </tr>
     </thead>
@@ -52,11 +54,9 @@
         <tr>
 
         
-                  <td><%= link_to assignment.name, assignment %></td>
-             
-
-         
+          <td><%= link_to assignment.name, assignment %></td>
           <td><%= assignment.deadline %></td>
+        <% if current_user.try(:admin?) %>
           <%= form_for(assignment) do |f| %>
           <td class="wider">
             <%= f.number_field :score, class: "form-control" %> / <%= assignment.fake_score %></td>
@@ -81,7 +81,6 @@
           <td><%= link_to assignment do %>
               <i class="material-icons">pageview</i>
           <% end %></td>
-        <% if current_user.try(:admin?) %>
           <td><%= link_to edit_assignment_path(assignment) do %>
               <i class="material-icons">edit</i>
               <% end %>
