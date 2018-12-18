@@ -42,6 +42,7 @@
       <tr>
         <th>Name</th>
         <th>Due Date</th>
+        <th>Points</th>
       <% if current_user.try(:admin?) %>
         <th>Points</th>
       <% end %>
@@ -56,6 +57,8 @@
         
           <td><%= link_to assignment.name, assignment %></td>
           <td><%= assignment.deadline %></td>
+          <td class="wider">
+            <%= assignment.fake_score %></td>
         <% if current_user.try(:admin?) %>
           <%= form_for(assignment) do |f| %>
           <td class="wider">
